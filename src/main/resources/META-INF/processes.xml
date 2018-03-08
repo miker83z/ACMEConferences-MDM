@@ -19,5 +19,13 @@
       <property name="isScanForProcessDefinitions">true</property>
     </properties>
   </process-archive>
+  
+  <process-archive name="partner-process">
+    <process-engine>default</process-engine>
+    <properties>
+      <property name="isDeleteUponUndeploy">false</property>
+      <property name="isScanForProcessDefinitions">true</property>
+    </properties>
+  </process-archive>
 
 </process-application>

@@ -1,0 +1,19 @@
+<form class="horizontal"
+	  role="form">
+	<div class="form-group">
+    <label class="control-label">Partner name:</label>
+  		<input cam-variable-name="partnerName"
+         	   type="text"
+			   name="partnerName"
+         	   readonly="true"
+         	   class="form-control" />
+	</div>
+	<div class="form-group">
+		<label class="control-label">Select this partner?</label>
+		<select cam-variable-name="partner_selected"
+				cam-variable-type="Boolean">
+			<option value="true">Yes</option>
+			<option value="false">No</option>
+		</select>
+	</div>
+</form>
