@@ -1,7 +1,5 @@
 package it.unibo.soseng.mdm.partners;
 
-import java.util.List;
-
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
