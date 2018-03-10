@@ -1,0 +1,81 @@
+<form name="partnerForm" role="form">
+
+	<script cam-script type="text/form-script">
+		
+		camForm.on('form-loaded', function() {
+  			// fetch the variable named 'partnerList'
+  			camForm.variableManager.fetchVariable('partnerList');
+		});
+
+		camForm.on('variables-fetched', function() {
+			// after the variables are fetched, bind the value of partnerList to an angular
+		  	// scope value such that the form can work on it
+		  	$scope.partnerList = camForm.variableManager.variable('partnerList').value;
+		});
+		
+		// camForm.on('variables-fetched', function() {
+        //     // This callback is executed after the variables have been fetched from the server    
+		// 	$scope.partnerList = variableManager.variableValue('partnerList');
+        // });
+	</script>
+
+	<h3>List of available partners</h3>
+	<hr>
+	<div>
+		<div ng-repeat="partner in partnerList">
+			<div class="control-group">
+				<label class="control-label" for="name">Name</label>
+		        <input cam-variable-name="partner.name"
+		     	   		type="text"
+				   		name="name"
+		     	   		readonly="true"
+		     	   		class="form-control" />
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="type">Type</label>
+			    <input cam-variable-name="partner.type"
+		 	   		type="text"
+			   		name="type"
+		 	   		readonly="true"
+		 	   		class="form-control" />
+			</div>
+			<h4>Addresses</h4>
+			<div ng-repeat="address in partner.addresses">
+				<div class="control-group">
+					<label class="control-label" for="street">Street</label>
+					<input cam-variable-name="address.street"
+			 	   		type="text"
+				   		name="street"
+			 	   		readonly="true"
+			 	   		class="form-control" />
+	      		</div>
+				<div class="control-group">
+	        		<label class="control-label" for="postalCode">Postal Code</label>
+					<input cam-variable-name="address.postalCode"
+			 	   		type="text"
+				   		name="postalCode"
+			 	   		readonly="true"
+			 	   		class="form-control" />
+	      		</div>
+	      		<div class="control-group">
+	        		<label class="control-label" for="city">City</label>
+					<input cam-variable-name="address.city"
+			 	   		type="text"
+				   		name="city"
+			 	   		readonly="true"
+			 	   		class="form-control" />
+	     		</div>
+	      		<div class="control-group">
+	        		<label class="control-label" for="country">Country</label>
+					<input cam-variable-name="address.country"
+			 	   		type="text"
+				   		name="country"
+			 	   		readonly="true"
+			 	   		class="form-control" />
+				</div>
+			</div>
+			<hr>
+		</div>
+	</div>
+</form>
