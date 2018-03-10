@@ -1,7 +1,15 @@
 package it.unibo.soseng.mdm.acme.venue;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.camunda.bpm.engine.variable.Variables;
+import org.camunda.bpm.engine.variable.value.ObjectValue;
+
+import it.unibo.soseng.mdm.acme.venue.model.Address;
+import it.unibo.soseng.mdm.acme.venue.model.PartnerData;
 
 public class FindFeasiblePartners implements JavaDelegate {
 
@@ -19,14 +27,31 @@ public class FindFeasiblePartners implements JavaDelegate {
 		//		  I can create the class using the XML created by the Partners
 		// FIXME: I'm not sure about the use of GIS in this point, see the BPMN schema
 		// 		  for other details
+			
+		// A sample partner
+		PartnerData partner = new PartnerData();
+		partner.setName("Dreaming solutions");
+		partner.setType("Hotel");
+		Address address = new Address();
+		address.setCity("Ferrara");
+		address.setCountry("Italia");
+		address.setStreet("Via Garibaldi, 111");
+		address.setPostalCode("44122");
+		List<Address> addresses = new ArrayList<>();
+		addresses.add(address);
+		partner.setAddresses(addresses);
 		
-		
-		// Create a fake list of partners and set the variable used by Contact Partners Subprocess
-		Integer numberOfPartners = 1;
-		Integer[] partnersInfo = new Integer[numberOfPartners];
+		// A sample list of partner
+		Integer numberOfPartners = 5;
+		List<PartnerData> partnerList = new ArrayList<>();
 		for (int i = 0; i < numberOfPartners; i++) {
-			partnersInfo[i] = i;
+			partnerList.add(partner);
 		}
-		execution.setVariable("partnersList", partnersInfo);
+		
+		// The invocation serializationDataFormat("application/json") tells 
+		// the process engine in which format the variable should be serialized
+		ObjectValue typedPartnerList = 
+				Variables.objectValue(partnerList).serializationDataFormat("application/json").create();		
+		execution.setVariable("partnerList", typedPartnerList);
 	}
 }
