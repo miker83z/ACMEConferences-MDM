@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.2">
   <bpmn:collaboration id="Collaboration_1qfj5m4">
     <bpmn:documentation>${!partner_selected}</bpmn:documentation>
     <bpmn:participant id="ACME_Id" name="ACME Conferences" processRef="acme-process" />
@@ -47,6 +47,21 @@
 
 Sono sempre più convinto che questo User Task serva, altrimenti come si setta la vaiabile che controlla l'esecuzone dell'exclusive gateway?]]></bpmn:text>
     </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0jp88fa">
+      <bpmn:text><![CDATA[FIXME: togliere l'end e ricollegarlo sopra]]></bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1lcgbqk">
+      <bpmn:text><![CDATA[FIXME: togliere l'end  e ricollegarlo al resto]]></bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_17bbso8">
+      <bpmn:text>FIXME: togliere lo start e ricollegarlo al resto</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0rz6hpw">
+      <bpmn:text>FIXME: Ma siamo sicuri che mi servano le comunicazioni GIS qui?</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0ijvpar">
+      <bpmn:text>FIXME: Ricordarsi di GIS</bpmn:text>
+    </bpmn:textAnnotation>
   </bpmn:collaboration>
   <bpmn:message id="message_0" name="ask_for_availability" />
   <bpmn:message id="message_1" name="job_estimate" />
@@ -63,7 +78,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_02fzzcu</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1iqxxkr</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>ServiceTask_1ifvn9t</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0jf3z10</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0r1cjah</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_08kz3ef</bpmn:flowNodeRef>
@@ -75,12 +89,13 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         <bpmn:flowNodeRef>IntermediateCatchEvent_1djmm6r</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_1g6k1bb</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ParallelGateway_1xo0wut</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>EndEvent_0vw309n</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_0y6gqln</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0t3awyr</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0gdrzmh</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_18rw246</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_18h7qvs</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_0vw309n</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ServiceTask_1ifvn9t</bpmn:flowNodeRef>
         <bpmn:childLaneSet xsi:type="bpmn:tLaneSet">
           <bpmn:lane id="Lane_1ur3lwy" name="" />
           <bpmn:lane id="Venue_Lane" name="Venue Management">
@@ -89,7 +104,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
             <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ExclusiveGateway_02fzzcu</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Task_1iqxxkr</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>ServiceTask_1ifvn9t</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Task_0jf3z10</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Task_0r1cjah</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Task_08kz3ef</bpmn:flowNodeRef>
@@ -101,12 +115,13 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
             <bpmn:flowNodeRef>IntermediateCatchEvent_1djmm6r</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>EndEvent_1g6k1bb</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ParallelGateway_1xo0wut</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>EndEvent_0vw309n</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ExclusiveGateway_0y6gqln</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Task_0t3awyr</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Task_0gdrzmh</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Task_18rw246</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Task_18h7qvs</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>EndEvent_0vw309n</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>ServiceTask_1ifvn9t</bpmn:flowNodeRef>
           </bpmn:lane>
         </bpmn:childLaneSet>
       </bpmn:lane>
@@ -157,7 +172,7 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         <bpmn:messageEventDefinition messageRef="message_1" />
       </bpmn:intermediateCatchEvent>
       <bpmn:sequenceFlow id="SequenceFlow_1kzm85p" sourceRef="Task_16pwkyn" targetRef="IntermediateThrowEvent_19k4tfx" />
-      <bpmn:userTask id="Task_16pwkyn" name="wait a moment">
+      <bpmn:userTask id="Task_16pwkyn" name="wait a moment" camunda:formKey="embedded:app:forms/debug-partner-list.html">
         <bpmn:incoming>SequenceFlow_0hfl8mx</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_1kzm85p</bpmn:outgoing>
       </bpmn:userTask>
@@ -187,10 +202,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
     <bpmn:userTask id="Task_1iqxxkr" name="Notify refused partner" camunda:assignee="john">
       <bpmn:incoming>SequenceFlow_1yuov0d</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0qaxnir</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:userTask id="ServiceTask_1ifvn9t" name="Find Feasible Partners">
-      <bpmn:incoming>SequenceFlow_1jsgd05</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0arzper</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:eventBasedGateway id="EventBasedGateway_1tar54u">
       <bpmn:incoming>SequenceFlow_1j258rx</bpmn:incoming>
@@ -242,9 +253,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
       <bpmn:incoming>SequenceFlow_01m9n6y</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1y7u6v9</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:endEvent id="EndEvent_0vw309n">
-      <bpmn:incoming>SequenceFlow_0ml7tt2</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:exclusiveGateway id="ExclusiveGateway_0y6gqln" name="Remaining Partners">
       <bpmn:incoming>SequenceFlow_0opmcyu</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1cqg5hz</bpmn:outgoing>
@@ -271,6 +279,13 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
       <bpmn:incoming>SequenceFlow_1uvyhwb</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0opmcyu</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:endEvent id="EndEvent_0vw309n">
+      <bpmn:incoming>SequenceFlow_0ml7tt2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="ServiceTask_1ifvn9t" name="Find Feasible Partners" camunda:class="it.unibo.soseng.mdm.acme.venue.FindFeasiblePartners">
+      <bpmn:incoming>SequenceFlow_1jsgd05</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0arzper</bpmn:outgoing>
+    </bpmn:serviceTask>
     <bpmn:association id="Association_0nz4hv0" sourceRef="SubProcess_0nf1lp4" targetRef="TextAnnotation_1btgbo7" />
     <bpmn:association id="Association_0jo3lid" sourceRef="EndEvent_0vw309n" targetRef="TextAnnotation_0bwu5qx" />
     <bpmn:association id="Association_01iqbxr" sourceRef="ServiceTask_1ifvn9t" targetRef="TextAnnotation_0ijvpar" />
@@ -293,9 +308,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
     </bpmn:textAnnotation>
     <bpmn:association id="Association_1ezmtou" sourceRef="Task_0r1cjah" targetRef="TextAnnotation_0oqlw2e" />
     <bpmn:association id="Association_1k2ykms" sourceRef="Task_08kz3ef" targetRef="TextAnnotation_0ba6nf9" />
-    <bpmn:textAnnotation id="TextAnnotation_0ba6nf9">
-      <bpmn:text>FIXME: solo debug</bpmn:text>
-    </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_00siu85">
       <bpmn:text>FIXME: only debug</bpmn:text>
     </bpmn:textAnnotation>
@@ -303,12 +315,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
     <bpmn:association id="Association_1ruicaq" sourceRef="Task_0gdrzmh" targetRef="TextAnnotation_0cvksfd" />
     <bpmn:textAnnotation id="TextAnnotation_0cvksfd">
       <bpmn:text>FIXME: only debug</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_09uhk02">
-      <bpmn:text>FIXME:metterlo come service task</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0ijvpar">
-      <bpmn:text>FIXME: Ricordarsi di GIS</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_0aajc6c">
       <bpmn:text><![CDATA[FIXME: lo start in realtà non c'è]]></bpmn:text>
@@ -318,9 +324,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
     </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_1btgbo7">
       <bpmn:text>FIXME: Ricordarsi del timer</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_10xhcdc">
-      <bpmn:text>FIXME: trasformare in send task e mettere parallelo</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_0bwu5qx">
       <bpmn:text><![CDATA[FIXME: Ricordarsi dell'error ]]></bpmn:text>
@@ -334,6 +337,26 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
     <bpmn:textAnnotation id="TextAnnotation_1u764u2">
       <bpmn:text>FIXME: solo debug oppure serve? Come viene settata la variabile dei remaining_partners?</bpmn:text>
     </bpmn:textAnnotation>
+    <bpmn:association id="Association_0t1h184" sourceRef="ServiceTask_1ifvn9t" targetRef="TextAnnotation_0ist0xp" />
+    <bpmn:textAnnotation id="TextAnnotation_09uhk02">
+      <bpmn:text>FIXME:metterlo come service task</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0ist0xp">
+      <bpmn:text><![CDATA[FIXME: da qualche parte dobbiamo leggere la lista dei partner convenzionati con noi per passare poi i dati al servizio GIS, il quale ci risponderà con la distanza tra il luogo in cui è organizzata la conferenza ed i partner. 
+
+Quindi questo Service Task dovrà essere collegato ad un DB o una qualche unità di memoria da cui leggere la lista dei Partner?]]></bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1l1khoe" sourceRef="Task_1iqxxkr" targetRef="TextAnnotation_17rm17f" />
+    <bpmn:textAnnotation id="TextAnnotation_10xhcdc">
+      <bpmn:text>FIXME: trasformare in send task</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_17rm17f">
+      <bpmn:text>FIXME: Ricordarsi del parallelo</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0ba6nf9">
+      <bpmn:text>FIXME: solo debug</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_02xglen" sourceRef="ServiceTask_1ifvn9t" targetRef="TextAnnotation_0rz6hpw" />
   </bpmn:process>
   <bpmn:process id="partner-process" name="Partner Process" isExecutable="true">
     <bpmn:eventBasedGateway id="EventBasedGateway_0ea4e8v">
@@ -432,7 +455,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
   <bpmn:process id="client-process" name="Client Process" isExecutable="true">
     <bpmn:exclusiveGateway id="ExclusiveGateway_0zf2gqh">
       <bpmn:incoming>SequenceFlow_0iqjs6i</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_18o3cln</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0ey4bzo</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:userTask id="UserTask_0pidfto" name="Offer Selection" camunda:formKey="embedded:app:forms/client-offer-selection.html" camunda:assignee="john">
@@ -445,7 +467,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
       <bpmn:outgoing>SequenceFlow_0pti0kq</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="SequenceFlow_0iqjs6i" sourceRef="IntermediateThrowEvent_0nkcevr" targetRef="ExclusiveGateway_0zf2gqh" />
-    <bpmn:sequenceFlow id="SequenceFlow_18o3cln" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="ExclusiveGateway_0zf2gqh" />
     <bpmn:sequenceFlow id="SequenceFlow_0ey4bzo" sourceRef="ExclusiveGateway_0zf2gqh" targetRef="UserTask_0pidfto" />
     <bpmn:sequenceFlow id="SequenceFlow_081rchj" sourceRef="UserTask_0pidfto" targetRef="ExclusiveGateway_0lqdtb0" />
     <bpmn:sequenceFlow id="SequenceFlow_04alofr" name="Selected One" sourceRef="ExclusiveGateway_0lqdtb0" targetRef="Task_0uroh85">
@@ -474,7 +495,7 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
     </bpmn:intermediateThrowEvent>
     <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1uxexe0" name="Refuse offers">
       <bpmn:incoming>SequenceFlow_1q233oj</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_18o3cln</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1adbxqs</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="message_4" camunda:class="it.unibo.soseng.mdm.client.RefusePartnerOffers" />
     </bpmn:intermediateThrowEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1q233oj" sourceRef="Task_0uhp163" targetRef="IntermediateThrowEvent_1uxexe0" />
@@ -492,12 +513,19 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
       <bpmn:incoming>SequenceFlow_0y2glzn</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1br555u</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:endEvent id="EndEvent_1rrmfp2">
+      <bpmn:incoming>SequenceFlow_1adbxqs</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1adbxqs" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="EndEvent_1rrmfp2" />
     <bpmn:association id="Association_05wg3nn" sourceRef="Task_0uhp163" targetRef="TextAnnotation_1q516nk" />
     <bpmn:association id="Association_0u2zmhw" sourceRef="Task_0uroh85" targetRef="TextAnnotation_029678c" />
     <bpmn:association id="Association_16e4dv5" sourceRef="Task_09r3zh7" targetRef="TextAnnotation_1vjpb2u" />
     <bpmn:textAnnotation id="TextAnnotation_1q516nk">
       <bpmn:text>FIXME: solo debug</bpmn:text>
     </bpmn:textAnnotation>
+    <bpmn:association id="Association_15huwem" sourceRef="EndEvent_1rrmfp2" targetRef="TextAnnotation_0jp88fa" />
+    <bpmn:association id="Association_0fb0l1i" sourceRef="EndEvent_1w687gd" targetRef="TextAnnotation_1lcgbqk" />
+    <bpmn:association id="Association_1eey65u" sourceRef="StartEvent_0a5sr55" targetRef="TextAnnotation_17bbso8" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1qfj5m4">
@@ -774,9 +802,9 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_0tibbnh_di" bpmnElement="EndEvent_0vw309n">
-        <dc:Bounds x="1708" y="769" width="36" height="36" />
+        <dc:Bounds x="1673" y="769" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1636" y="809" width="90" height="12" />
+          <dc:Bounds x="1601" y="809" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_1btgbo7_di" bpmnElement="TextAnnotation_1btgbo7">
@@ -790,8 +818,8 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         <dc:Bounds x="1660" y="849" width="100" height="54" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0jo3lid_di" bpmnElement="Association_0jo3lid">
-        <di:waypoint xsi:type="dc:Point" x="1723" y="804" />
-        <di:waypoint xsi:type="dc:Point" x="1714" y="849" />
+        <di:waypoint xsi:type="dc:Point" x="1694" y="804" />
+        <di:waypoint xsi:type="dc:Point" x="1704" y="849" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_0j02wnm_di" bpmnElement="Participant_0j02wnm">
         <dc:Bounds x="474" y="1033" width="1071" height="261" />
@@ -933,8 +961,8 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1gb0p14_di" bpmnElement="MessageFlow_1gb0p14">
-        <di:waypoint xsi:type="dc:Point" x="1364" y="377" />
-        <di:waypoint xsi:type="dc:Point" x="1364" y="326" />
+        <di:waypoint xsi:type="dc:Point" x="1387" y="372" />
+        <di:waypoint xsi:type="dc:Point" x="1387" y="326" />
         <di:waypoint xsi:type="dc:Point" x="1748" y="326" />
         <di:waypoint xsi:type="dc:Point" x="1748" y="1308" />
         <di:waypoint xsi:type="dc:Point" x="1099" y="1308" />
@@ -953,11 +981,11 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_0ijvpar_di" bpmnElement="TextAnnotation_0ijvpar">
-        <dc:Bounds x="328" y="454" width="100" height="53" />
+        <dc:Bounds x="-100" y="864" width="100" height="53" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_01iqbxr_di" bpmnElement="Association_01iqbxr">
-        <di:waypoint xsi:type="dc:Point" x="369.05226480836234" y="623.9674796747968" />
-        <di:waypoint xsi:type="dc:Point" x="369" y="507" />
+        <di:waypoint xsi:type="dc:Point" x="298" y="683" />
+        <di:waypoint xsi:type="dc:Point" x="-39" y="864" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_07vv5md_di" bpmnElement="TextAnnotation_07vv5md">
         <dc:Bounds x="1625" y="414" width="100" height="54" />
@@ -1010,14 +1038,6 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         <di:waypoint xsi:type="dc:Point" x="1068" y="-194" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1039" y="-215" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_18o3cln_di" bpmnElement="SequenceFlow_18o3cln">
-        <di:waypoint xsi:type="dc:Point" x="992" y="-81" />
-        <di:waypoint xsi:type="dc:Point" x="985" y="-81" />
-        <di:waypoint xsi:type="dc:Point" x="985" y="-169" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="943.5" y="-102" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="IntermediateThrowEvent_0c29azu_di" bpmnElement="IntermediateThrowEvent_1uxexe0">
@@ -1109,11 +1129,11 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         <di:waypoint xsi:type="dc:Point" x="1145" y="727" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_10xhcdc_di" bpmnElement="TextAnnotation_10xhcdc">
-        <dc:Bounds x="1239" y="250" width="100" height="81" />
+        <dc:Bounds x="1214" y="250" width="99.99156545209178" height="53.981106612685565" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_1ceu8jx_di" bpmnElement="Association_1ceu8jx">
-        <di:waypoint xsi:type="dc:Point" x="1341" y="377" />
-        <di:waypoint xsi:type="dc:Point" x="1312" y="331" />
+        <di:waypoint xsi:type="dc:Point" x="1336" y="377" />
+        <di:waypoint xsi:type="dc:Point" x="1282" y="304" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0ejeg78_di" bpmnElement="SequenceFlow_0ejeg78">
         <di:waypoint xsi:type="dc:Point" x="609" y="1174" />
@@ -1171,15 +1191,12 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
       <bpmndi:BPMNShape id="UserTask_1xv2shh_di" bpmnElement="Task_1iqxxkr">
         <dc:Bounds x="1314" y="377" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_134dkbq_di" bpmnElement="ServiceTask_1ifvn9t">
-        <dc:Bounds x="298" y="624" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_09uhk02_di" bpmnElement="TextAnnotation_09uhk02">
-        <dc:Bounds x="261" y="390" width="100" height="54" />
+        <dc:Bounds x="100" y="367" width="100" height="54" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_1q6q1o6_di" bpmnElement="Association_1q6q1o6">
-        <di:waypoint xsi:type="dc:Point" x="311.05226480836234" y="618.9674796747968" />
-        <di:waypoint xsi:type="dc:Point" x="311" y="444" />
+        <di:waypoint xsi:type="dc:Point" x="298" y="642" />
+        <di:waypoint xsi:type="dc:Point" x="166" y="421" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_10y1g2d_di" bpmnElement="SequenceFlow_10y1g2d">
         <di:waypoint xsi:type="dc:Point" x="907" y="1079" />
@@ -1359,17 +1376,17 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         <dc:Bounds x="1523" y="507" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0ba6nf9_di" bpmnElement="TextAnnotation_0ba6nf9">
-        <dc:Bounds x="1616" y="624.4853700516351" width="99.98924268502583" height="41.30808950086059" />
+        <dc:Bounds x="1501" y="438" width="100" height="41" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_1k2ykms_di" bpmnElement="Association_1k2ykms">
-        <di:waypoint xsi:type="dc:Point" x="1611" y="587" />
-        <di:waypoint xsi:type="dc:Point" x="1647" y="624" />
+        <di:waypoint xsi:type="dc:Point" x="1563" y="507" />
+        <di:waypoint xsi:type="dc:Point" x="1556" y="479" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0ml7tt2_di" bpmnElement="SequenceFlow_0ml7tt2">
         <di:waypoint xsi:type="dc:Point" x="1614" y="787" />
-        <di:waypoint xsi:type="dc:Point" x="1708" y="787" />
+        <di:waypoint xsi:type="dc:Point" x="1673" y="787" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1661" y="766" width="0" height="12" />
+          <dc:Bounds x="1598.5" y="766" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_0kwa3h2_di" bpmnElement="Task_0t3awyr">
@@ -1439,17 +1456,17 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
         <dc:Bounds x="139" y="1089" width="300" height="73" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="MessageFlow_09mf80k_di" bpmnElement="MessageFlow_09mf80k">
-        <di:waypoint xsi:type="dc:Point" x="333" y="711" />
-        <di:waypoint xsi:type="dc:Point" x="333" y="1088" />
+        <di:waypoint xsi:type="dc:Point" x="333" y="704" />
+        <di:waypoint xsi:type="dc:Point" x="333" y="1089" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="348" y="893.5" width="0" height="12" />
+          <dc:Bounds x="303" y="890.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1f24lob_di" bpmnElement="MessageFlow_1f24lob">
         <di:waypoint xsi:type="dc:Point" x="373" y="1089" />
         <di:waypoint xsi:type="dc:Point" x="373" y="704" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="388" y="890.5" width="0" height="12" />
+          <dc:Bounds x="343" y="890.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1j2nfdk_di" bpmnElement="SequenceFlow_1j2nfdk">
@@ -1473,6 +1490,64 @@ Sono sempre più convinto che questo User Task serva, altrimenti come si setta l
           <dc:Bounds x="1372" y="766" width="0" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0ist0xp_di" bpmnElement="TextAnnotation_0ist0xp">
+        <dc:Bounds x="294" y="368" width="207.98853077816491" height="181.18466898954705" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0t1h184_di" bpmnElement="Association_0t1h184">
+        <di:waypoint xsi:type="dc:Point" x="358" y="624" />
+        <di:waypoint xsi:type="dc:Point" x="375" y="549" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_17rm17f_di" bpmnElement="TextAnnotation_17rm17f">
+        <dc:Bounds x="1314.9622132253712" y="250" width="99.99156545209178" height="53.981106612685565" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1l1khoe_di" bpmnElement="Association_1l1khoe">
+        <di:waypoint xsi:type="dc:Point" x="1364" y="377" />
+        <di:waypoint xsi:type="dc:Point" x="1365" y="304" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1rrmfp2_di" bpmnElement="EndEvent_1rrmfp2">
+        <dc:Bounds x="927.9075235109718" y="-99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="945.9075235109718" y="-59" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1adbxqs_di" bpmnElement="SequenceFlow_1adbxqs">
+        <di:waypoint xsi:type="dc:Point" x="992" y="-81" />
+        <di:waypoint xsi:type="dc:Point" x="964" y="-81" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="978" y="-102" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0jp88fa_di" bpmnElement="TextAnnotation_0jp88fa">
+        <dc:Bounds x="630.9075235109718" y="-113.50470219435738" width="99.99510188087774" height="64.26332288401254" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_15huwem_di" bpmnElement="Association_15huwem">
+        <di:waypoint xsi:type="dc:Point" x="928" y="-81" />
+        <di:waypoint xsi:type="dc:Point" x="731" y="-82" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_1lcgbqk_di" bpmnElement="TextAnnotation_1lcgbqk">
+        <dc:Bounds x="1847.216757741348" y="-281.8506375227687" width="99.98292349726775" height="65.57377049180327" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0fb0l1i_di" bpmnElement="Association_0fb0l1i">
+        <di:waypoint xsi:type="dc:Point" x="1721" y="-199" />
+        <di:waypoint xsi:type="dc:Point" x="1847" y="-235" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_17bbso8_di" bpmnElement="TextAnnotation_17bbso8">
+        <dc:Bounds x="773" y="-400.8506375227687" width="99.98292349726775" height="65.57377049180327" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1eey65u_di" bpmnElement="Association_1eey65u">
+        <di:waypoint xsi:type="dc:Point" x="871" y="-270" />
+        <di:waypoint xsi:type="dc:Point" x="839" y="-335" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0rz6hpw_di" bpmnElement="TextAnnotation_0rz6hpw">
+        <dc:Bounds x="-67" y="954" width="256" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_02xglen_di" bpmnElement="Association_02xglen">
+        <di:waypoint xsi:type="dc:Point" x="312" y="704" />
+        <di:waypoint xsi:type="dc:Point" x="84" y="954" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1yt925m_di" bpmnElement="ServiceTask_1ifvn9t">
+        <dc:Bounds x="298" y="624" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
