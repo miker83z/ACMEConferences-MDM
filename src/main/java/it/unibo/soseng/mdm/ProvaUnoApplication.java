@@ -12,7 +12,7 @@ public class ProvaUnoApplication extends ServletProcessApplication {
 	@PostDeploy
 	  public void startService(ProcessEngine processEngine) throws Exception {
 	    RuntimeService runtimeService = processEngine.getRuntimeService();
-	    runtimeService.createMessageCorrelation("ask_for_availability");	   
+	    // runtimeService.createMessageCorrelation("ask_for_availability");	   
 	    runtimeService.createMessageCorrelation("job_estimate");	
 	    runtimeService.createMessageCorrelation("offers");	
 	    runtimeService.createMessageCorrelation("accepted_offer");

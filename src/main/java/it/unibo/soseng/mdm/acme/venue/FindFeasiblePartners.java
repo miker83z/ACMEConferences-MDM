@@ -33,6 +33,9 @@ public class FindFeasiblePartners implements JavaDelegate {
 		// The invocation serializationDataFormat("application/json") tells the process engine in which format the variable should be serialized
 		ObjectValue typedPartnerList = Variables.objectValue(partnerList).serializationDataFormat("application/json").create();		
 		execution.setVariable("partnerList", typedPartnerList);
+		
+		// Set also the number of retrieved partners used to define the loopCardinality of sequential processes
+		execution.setVariable("numberOfPartners", partnerList.size());
 	}
 	
 	/**
@@ -70,6 +73,7 @@ public class FindFeasiblePartners implements JavaDelegate {
 		partnerList.add(partner);
 		
 		// Third partner
+		/*
 		partner.setName("Tiffany");
 		partner.setType("Bar");
 		address.setCity("Padova");
@@ -80,6 +84,7 @@ public class FindFeasiblePartners implements JavaDelegate {
 		partner.setAddresses(addresses);
 		// Add to the list
 		partnerList.add(partner);
+		*/
 		
 		return partnerList;
 	}
