@@ -14,77 +14,79 @@ import it.unibo.soseng.mdm.acme.venue.model.PartnerData;
 public class FindFeasiblePartners implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {
-		/* TODO (??):
+		/* TODO:
 		 * 	1) Retrieve the list of partners from DB or something;
-		 *  2) Send partners' addresses to GIS and get the distance between 
-		 *     their address and conference's address;
-		 *  3) Create a list of near partners and set the variable.
+		 * 	2) Save in JSON and set in Camunda
 		 */
-		
-		// FIXME: The Partners can't be a package inside this project, It must be
-		//		  an external service called using Soap and reading their XML	
-		// FIXME: I'm not sure about the use of GIS in this point, see the BPMN schema
-		// 		  for other details
 			
 		// Retrieve the partner list
 		List<PartnerData> partnerList = new ArrayList<>();
 		partnerList = retrievePartnersList();
 		
 		// The invocation serializationDataFormat("application/json") tells the process engine in which format the variable should be serialized
-		ObjectValue typedPartnerList = Variables.objectValue(partnerList).serializationDataFormat("application/json").create();		
-		execution.setVariable("partnerList", typedPartnerList);
-		
-		// Set also the number of retrieved partners used to define the loopCardinality of sequential processes
-		execution.setVariable("numberOfPartners", partnerList.size());
+		ObjectValue JSONpartnerList = Variables.objectValue(partnerList).serializationDataFormat("application/json").create();
+		execution.setVariable("partnerList", JSONpartnerList);
+
 	}
 	
+	
 	/**
-	 * Create a fake list of partners
-	 * @return fake list of partners
+	 * Create a list of partners
+	 * @return The list of partners
 	 */
 	private List<PartnerData> retrievePartnersList() {
 		List<PartnerData> partnerList = new ArrayList<>();
-		PartnerData partner = new PartnerData();		
-		Address address = new Address();
-		List<Address> addresses = new ArrayList<>();
-		
+
 		// First partner
-		partner.setName("Dreaming solutions");
-		partner.setType("Manor");
-		address.setCity("Ferrara");
-		address.setCountry("Italia");
-		address.setStreet("Via Garibaldi, 111");
-		address.setPostalCode("44122");
-		addresses.add(address);
-		partner.setAddresses(addresses);
-		// Add to the list
-		partnerList.add(partner);
+		PartnerData p1 = new PartnerData();		
+		Address a1 = new Address();
+		List<Address> al1 = new ArrayList<>();
+		p1.setName("Dreaming solutions");
+		p1.setType("Manor");
+		a1.setCity("Ferrara");
+		a1.setCountry("Italia");
+		a1.setStreet("Via Garibaldi, 111");
+		a1.setPostalCode("44122");
+		al1.add(a1);
+		p1.setAddresses(al1);
+		p1.setContacted(false);
+		p1.setAvailability(true);
 
 		// Second partner
-		partner.setName("Hotel Carlton");
-		partner.setType("Hotel");
-		address.setCity("Bologna");
-		address.setCountry("Italia");
-		address.setStreet("Via Zamboni, 44");
-		address.setPostalCode("44444");
-		addresses.add(address);
-		partner.setAddresses(addresses);
-		// Add to the list
-		partnerList.add(partner);
+		PartnerData p2 = new PartnerData();		
+		Address a2 = new Address();
+		List<Address> al2 = new ArrayList<>();
+		p2.setName("Hotel Carlton");
+		p2.setType("Hotel");
+		a2.setCity("Bologna");
+		a2.setCountry("Italia");
+		a2.setStreet("Via Zamboni, 44");
+		a2.setPostalCode("44444");
+		al2.add(a2);
+		p2.setAddresses(al2);
+		p2.setAvailability(true);
+		p2.setContacted(false);
 		
 		// Third partner
-		/*
-		partner.setName("Tiffany");
-		partner.setType("Bar");
-		address.setCity("Padova");
-		address.setCountry("Italia");
-		address.setStreet("Via Belle Arti, 4/A");
-		address.setPostalCode("40111");
-		addresses.add(address);
-		partner.setAddresses(addresses);
+		PartnerData p3 = new PartnerData();		
+		Address a3 = new Address();
+		List<Address> al3 = new ArrayList<>();
+		p3.setName("Tiffany");
+		p3.setType("Bar");
+		a3.setCity("Padova");
+		a3.setCountry("Italia");
+		a3.setStreet("Via Belle Arti, 4/A");
+		a3.setPostalCode("40111");
+		al3.add(a3);
+		p3.setAddresses(al3);
+		p3.setAvailability(true);
+		p3.setContacted(false);
+		
 		// Add to the list
-		partnerList.add(partner);
-		*/
+		partnerList.add(p1);
+		partnerList.add(p2);
+		partnerList.add(p3);
+
 		
 		return partnerList;
 	}
