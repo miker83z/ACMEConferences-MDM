@@ -21,21 +21,24 @@ public class PresentOffers implements JavaDelegate {
 		// FIXME: non funziona questa lettura, non riesce a convertire da JSON ad ArrayList
 		ObjectValue typedPartnerList = execution.getVariableTyped("partnerList");
 		String JSONpartnerList = typedPartnerList.getValueSerialized();
-		partnerList = JSON(JSONpartnerList).mapTo("java.util.ArrayList<it.unibo.soseng.mdm.acme.venue.model.PartnerData>");
-				
-		// Create a list with only the available partners
-		List <PartnerData> availablePartners = new ArrayList<>();
-		for (PartnerData partnerData : partnerList) {
-			if (partnerData.isAvailable()) {
-				availablePartners.add(partnerData);
-			}
-		}
+		// partnerList = JSON(JSONpartnerList).mapTo("java.util.ArrayList<it.unibo.soseng.mdm.acme.venue.model.PartnerData>");
+		
+		
+		// // Create a list with only the available partners
+		// List <PartnerData> availablePartners = new ArrayList<>();
+		// for (PartnerData partnerData : partnerList) {
+		// 	if (partnerData.isAvailable()) {
+		// 		availablePartners.add(partnerData);
+		// 	}
+		// }
 		
 		// Send the message setting variables
 	    RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    runtimeService.createMessageCorrelation("offers")
 	    .processInstanceBusinessKey("AB-123")
-	    .setVariable("availablePartners", availablePartners)
-	    .correlate();	 
+	    .setVariable("JSONpartnerList", JSONpartnerList)
+	    .correlate();
+	    // .setVariable("availablePartners", availablePartners)
+	    // .correlate();	 
 	}
 }

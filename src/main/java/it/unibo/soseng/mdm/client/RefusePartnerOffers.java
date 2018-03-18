@@ -6,7 +6,6 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 public class RefusePartnerOffers implements JavaDelegate {
 
-	@Override
 	public void execute(DelegateExecution execution) throws Exception {
 	    // FIXME: send to ACME a message with a false
 		

@@ -26,7 +26,6 @@ public class FindFeasiblePartners implements JavaDelegate {
 		// The invocation serializationDataFormat("application/json") tells the process engine in which format the variable should be serialized
 		ObjectValue JSONpartnerList = Variables.objectValue(partnerList).serializationDataFormat("application/json").create();
 		execution.setVariable("partnerList", JSONpartnerList);
-
 	}
 	
 	
@@ -37,57 +36,27 @@ public class FindFeasiblePartners implements JavaDelegate {
 	private List<PartnerData> retrievePartnersList() {
 		List<PartnerData> partnerList = new ArrayList<>();
 
-		// First partner
-		PartnerData p1 = new PartnerData();		
-		Address a1 = new Address();
-		List<Address> al1 = new ArrayList<>();
-		p1.setName("Dreaming solutions");
-		p1.setType("Manor");
-		a1.setCity("Ferrara");
-		a1.setCountry("Italia");
-		a1.setStreet("Via Garibaldi, 111");
-		a1.setPostalCode("44122");
-		al1.add(a1);
-		p1.setAddresses(al1);
-		p1.setContacted(false);
-		p1.setAvailability(true);
-
-		// Second partner
-		PartnerData p2 = new PartnerData();		
-		Address a2 = new Address();
-		List<Address> al2 = new ArrayList<>();
-		p2.setName("Hotel Carlton");
-		p2.setType("Hotel");
-		a2.setCity("Bologna");
-		a2.setCountry("Italia");
-		a2.setStreet("Via Zamboni, 44");
-		a2.setPostalCode("44444");
-		al2.add(a2);
-		p2.setAddresses(al2);
-		p2.setAvailability(true);
-		p2.setContacted(false);
+		// Addresses
+		String[] countries = {"Italy", "Italy", "Italy"};
+		String[] cities = {"Ferrara", "Bologna", "Imola"};
+		String[] streets = {"Via Garibaldi, 1", "Via Zamboni, 2", "Via Marchesini, 3"};
+		String[] postalCodes = {"11111", "22222", "33333"};
 		
-		// Third partner
-		PartnerData p3 = new PartnerData();		
-		Address a3 = new Address();
-		List<Address> al3 = new ArrayList<>();
-		p3.setName("Tiffany");
-		p3.setType("Bar");
-		a3.setCity("Padova");
-		a3.setCountry("Italia");
-		a3.setStreet("Via Belle Arti, 4/A");
-		a3.setPostalCode("40111");
-		al3.add(a3);
-		p3.setAddresses(al3);
-		p3.setAvailability(true);
-		p3.setContacted(false);
+		// Partners
+		String[] names = {"Dreaming solutions", "Hotel Venezia", "Tiffany"};
+		String[] types = {"Manor", "Hotel", "Bar"};
+		String[] emails = {"dreaming@solutions.com", "hotel@venezia.com", "tiffany@bar.it"};
+		String[] phoneNumbers = {"0532121212", "0544232323", "051343434"};
 		
-		// Add to the list
-		partnerList.add(p1);
-		partnerList.add(p2);
-		partnerList.add(p3);
-
-		
+		// Create a list with partner informations
+		for (int i = 0; i < countries.length; i++) {
+			Address address = new Address(countries[i], cities[i], streets[i], postalCodes[i]);
+			List<Address> addresses = new ArrayList<>();
+			addresses.add(address);
+			PartnerData partner = new PartnerData(names[i], types[i], emails[i], phoneNumbers[i], addresses);
+			partnerList.add(partner);
+		}
+				
 		return partnerList;
 	}
 }
