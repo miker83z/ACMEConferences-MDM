@@ -1,24 +1,26 @@
 package it.unibo.soseng.mdm.acme.venue.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.io.Serializable;
+// import java.io.Serializable;
+import it.unibo.soseng.mdm.acme.venue.model.Addresses;
 
-public class PartnerData implements Serializable {
+public class PartnerData { // implements Serializable {
 	
-	protected String name;
-	protected String type;
-	protected String email;
-	protected String phoneNumber;
-	protected List<Address> addresses = new ArrayList<Address>();
-	protected Boolean available;
-	protected Boolean contacted;
+	/**
+	 * 
+	 */
+	private String name;
+	private String type;
+	private String email;
+	private String phoneNumber;
+	private Addresses addresses;
+	private Boolean available;
+	private Boolean contacted;
 	
 	public PartnerData() {
 		
 	}
 	
-	public PartnerData(String name, String type, String email, String phoneNumber, List<Address> addresses) {
+	public PartnerData(String name, String type, String email, String phoneNumber, Addresses addresses) {
 		this.name = name;
 		this.type = type;
 		this.email = email;
@@ -28,8 +30,7 @@ public class PartnerData implements Serializable {
 		this.contacted = false;
 	}
 	
-	public PartnerData(
-			String name, String type, String email, String phoneNumber, List<Address> addresses, 
+	public PartnerData(String name, String type, String email, String phoneNumber, Addresses addresses, 
 			Boolean available, Boolean contacted) {
 		this(name, type, email, phoneNumber, addresses);
 		this.available = available;
@@ -60,33 +61,32 @@ public class PartnerData implements Serializable {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public List<Address> getAddresses() {
+	public Addresses getAddresses() {
 		return addresses;
 	}
-	public void setAddresses(List<Address> addresses) {
+	public void setAddresses(Addresses addresses) {
 		this.addresses = addresses;
 	}
-	public Boolean isAvailable() {
+	public Boolean getAvailable() {
 		return available;
 	}
 	public void setAvailability(Boolean available) {
 		this.available = available;
 	}
-	public Boolean isContacted() {
+	public Boolean getContacted() {
 		return contacted;
 	}
 	public void setContacted(Boolean contacted) {
 		this.contacted = contacted;
 	}
 	
-	@Override
 	public String toString() {
 		return "PartnerData ["
 				+ "name=" + name + ", "
 				+ "type=" + type + ", "
 				+ "email=" + email + ", "
 				+ "phoneNumber=" + phoneNumber + ", "
-				+ addresses.toString() + ", "
+				+ "addresses=" + addresses + ", "
 				+ "available=" + available + ", "
 				+ "contacted=" + contacted
 				+ "]";

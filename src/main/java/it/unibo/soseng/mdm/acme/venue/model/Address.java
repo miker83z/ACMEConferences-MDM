@@ -1,11 +1,14 @@
 package it.unibo.soseng.mdm.acme.venue.model;
-import java.io.Serializable;
+// import java.io.Serializable;
 
-public class Address implements Serializable {
-	protected String country;
-	protected String city;
-	protected String street;
-	protected String postalCode;
+public class Address { // implements Serializable {
+	/**
+	 * 
+	 */
+	private String country;
+	private String city;
+	private String street;
+	private String postalCode;
 
 	public Address() {
 		
@@ -43,7 +46,6 @@ public class Address implements Serializable {
 		this.postalCode = postalCode;
 	}
 	
-	@Override
 	public String toString() {
 		return "Address ["
 				+ "country=" + country + ", "

@@ -9,6 +9,7 @@ import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.ObjectValue;
 
 import it.unibo.soseng.mdm.acme.venue.model.Address;
+import it.unibo.soseng.mdm.acme.venue.model.Addresses;
 import it.unibo.soseng.mdm.acme.venue.model.PartnerData;
 
 public class FindFeasiblePartners implements JavaDelegate {
@@ -24,10 +25,12 @@ public class FindFeasiblePartners implements JavaDelegate {
 		partnerList = retrievePartnersList();
 		
 		// The invocation serializationDataFormat("application/json") tells the process engine in which format the variable should be serialized
-		ObjectValue JSONpartnerList = Variables.objectValue(partnerList).serializationDataFormat("application/json").create();
+		ObjectValue JSONpartnerList = Variables
+				.objectValue(partnerList)
+				.serializationDataFormat("application/json")
+				.create();
 		execution.setVariable("partnerList", JSONpartnerList);
 	}
-	
 	
 	/**
 	 * Create a list of partners
@@ -35,7 +38,6 @@ public class FindFeasiblePartners implements JavaDelegate {
 	 */
 	private List<PartnerData> retrievePartnersList() {
 		List<PartnerData> partnerList = new ArrayList<>();
-
 		// Addresses
 		String[] countries = {"Italy", "Italy", "Italy"};
 		String[] cities = {"Ferrara", "Bologna", "Imola"};
@@ -51,12 +53,15 @@ public class FindFeasiblePartners implements JavaDelegate {
 		// Create a list with partner informations
 		for (int i = 0; i < countries.length; i++) {
 			Address address = new Address(countries[i], cities[i], streets[i], postalCodes[i]);
-			List<Address> addresses = new ArrayList<>();
+			Addresses addresses = new Addresses();
 			addresses.add(address);
 			PartnerData partner = new PartnerData(names[i], types[i], emails[i], phoneNumbers[i], addresses);
 			partnerList.add(partner);
 		}
-				
+		
+		// Set the last one as contacted
+		partnerList.get(partnerList.size()-1).setContacted(true);
+		
 		return partnerList;
 	}
 }

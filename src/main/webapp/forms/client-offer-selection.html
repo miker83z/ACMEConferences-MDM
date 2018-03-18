@@ -2,9 +2,29 @@
 
 	<script cam-script type="text/form-script">
 		
+		var selected_partner_value = false;
+		
+		// Change the value of the variable that control the next gateway
+		$("#select_partner").change(function(){
+	    	if($(this).val() == "null"){
+	      		selected_partner_value = false;
+	    	}
+	    	else{
+	      		selected_partner_value = true;
+	    	}
+		});
+	
 		camForm.on('form-loaded', function() {
   			// fetch the variable named 'partnerList'
   			camForm.variableManager.fetchVariable('availablePartners');
+  			
+  			// create the variable used in the next gateway
+  			camForm.variableManager.createVariable({
+    			name: 'selected_partner',
+    			type: 'Boolean',
+    			value: 'false',
+    			isDirty: true
+			});
 		});
 
 		camForm.on('variables-fetched', function() {
@@ -14,24 +34,12 @@
 		});
 		
 		
-  		camForm.on('submit', function(evt) {
-     		// this callback is executed when the form is submitted, *before* the 
+  		camForm.on('submit', function(err) {
+     	 	// this callback is executed when the form is submitted, *before* the 
      		// submit request to the server is executed
-			
-			if (selected_partner_name === "null") {
-			    camForm.variableManager.createVariable({
-        			name: 'selected_partner',
-        			type: 'Boolean',
-        			value: 'false'
-      			});
-      		}
-      		else {
-      			camForm.variableManager.createVariable({
-        			name: 'selected_partner',
-        			type: 'Boolean',
-        			value: 'true'
-      			});
-      		}
+		 	
+			// update the value of selected_partner
+			camForm.variableManager.variableValue('selected_partner', selected_partner_value);
   		});
 	</script>
 
@@ -39,17 +47,20 @@
 	<hr>
 	<div class="form-group">
 		<label for="selected_partner_name" class="col-xs-12 col-sm-8 col-md-6">
-			Choose one of these partners:
+			Choose one partner:
 		</label>
 		<div class="col-xs-12 col-sm-4 col-md-6">
-			<select cam-variable-name="selected_partner_name"
+			<select id="select_partner"
+					cam-variable-name="selected_partner_name"
 		    	    cam-variable-type="String">
 		    	<option ng-repeat="partner in partnerList" value="partner.name">{{partner.name}}</option>
 				<option value="null">None of this</option>
 			</select>
 		</div>
 	</div>
+	
 	<hr>
+	
 	<div>
 		<div ng-repeat="partner in partnerList">
 			<div class="control-group col-xs-12">
@@ -72,8 +83,28 @@
 		 	   			class="form-control" />
 				</div>
 			</div>
+			<div class="control-group col-xs-12">
+				<label class="control-label col-xs-12 col-sm-4 col-md-3" for="email">Email</label>
+				<div class="col-xs-12 col-sm-8 col-md-9">
+			    	<input cam-variable-name="partner.email"
+		 	   			type="text"
+			   			name="email"
+		 	   			readonly="true"
+		 	   			class="form-control" />
+				</div>
+			</div>
+			<div class="control-group col-xs-12">
+				<label class="control-label col-xs-12 col-sm-4 col-md-3" for="phoneNumber">Phone number</label>
+				<div class="col-xs-12 col-sm-8 col-md-9">
+			    	<input cam-variable-name="partner.phoneNumber"
+		 	   			type="text"
+			   			name="phoneNumber"
+		 	   			readonly="true"
+		 	   			class="form-control" />
+				</div>
+			</div>
 			<h4 class="col-xs-12">Addresses</h4>
-			<div ng-repeat="address in partner.addresses">
+			<div ng-repeat="address in partner.addresses.addresses">
 				<div class="control-group col-xs-12">
 					<label class="control-label col-xs-12 col-sm-4 col-md-3" for="street">Street</label>
 					<div class="col-xs-12 col-sm-8 col-md-9">
@@ -115,7 +146,9 @@
 			 	   	</div>
 				</div>
   			</div>
+  			
 			<hr>
+			
 		</div>
 	</div>
 </form>

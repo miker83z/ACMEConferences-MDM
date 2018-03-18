@@ -45,7 +45,7 @@
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-core</artifactId>
     </dependency>
-
+	
   </dependencies>
 
   <build>
