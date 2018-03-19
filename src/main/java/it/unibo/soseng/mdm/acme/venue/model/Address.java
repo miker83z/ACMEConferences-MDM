@@ -1,6 +1,10 @@
 package it.unibo.soseng.mdm.acme.venue.model;
 // import java.io.Serializable;
 
+import static org.camunda.spin.Spin.JSON;
+
+import org.camunda.spin.json.SpinJsonNode;
+
 public class Address { // implements Serializable {
 	/**
 	 * 
@@ -46,6 +50,9 @@ public class Address { // implements Serializable {
 		this.postalCode = postalCode;
 	}
 	
+	/**
+	 * 
+	 */
 	public String toString() {
 		return "Address ["
 				+ "country=" + country + ", "
@@ -53,5 +60,30 @@ public class Address { // implements Serializable {
 				+ "street=" + street + ", "
 				+ "postalCode=" + postalCode
 				+ "]";
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String toJSON() {
+		return "{"
+				+ "\"country\": \"" + country + "\", "
+				+ "\"city\": \"" + city + "\", "
+				+ "\"street\": \"" + street + "\", "
+				+ "\"postalCode\": \"" + postalCode + "\""
+				+ "}";
+	}
+	
+	/**
+	 * 
+	 * @param jsonNode
+	 */
+	public void setValueFromJSON(SpinJsonNode jsonNode) {	
+		// Set address value
+		setCountry(jsonNode.prop("country").stringValue());
+		setCity(jsonNode.prop("city").stringValue());
+		setStreet(jsonNode.prop("street").stringValue());
+		setPostalCode(jsonNode.prop("postalCode").stringValue());
 	}
 }

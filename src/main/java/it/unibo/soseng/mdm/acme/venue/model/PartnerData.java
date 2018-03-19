@@ -1,7 +1,14 @@
 package it.unibo.soseng.mdm.acme.venue.model;
 
 // import java.io.Serializable;
-import it.unibo.soseng.mdm.acme.venue.model.Addresses;
+import it.unibo.soseng.mdm.acme.venue.model.Address;
+import static org.camunda.spin.Spin.JSON;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.camunda.spin.SpinList;
+import org.camunda.spin.json.SpinJsonNode;
 
 public class PartnerData { // implements Serializable {
 	
@@ -12,7 +19,7 @@ public class PartnerData { // implements Serializable {
 	private String type;
 	private String email;
 	private String phoneNumber;
-	private Addresses addresses;
+	private List<Address> addresses = new ArrayList<Address>();
 	private Boolean available;
 	private Boolean contacted;
 	
@@ -20,7 +27,7 @@ public class PartnerData { // implements Serializable {
 		
 	}
 	
-	public PartnerData(String name, String type, String email, String phoneNumber, Addresses addresses) {
+	public PartnerData(String name, String type, String email, String phoneNumber, List<Address> addresses) {
 		this.name = name;
 		this.type = type;
 		this.email = email;
@@ -30,13 +37,13 @@ public class PartnerData { // implements Serializable {
 		this.contacted = false;
 	}
 	
-	public PartnerData(String name, String type, String email, String phoneNumber, Addresses addresses, 
+	public PartnerData(String name, String type, String email, String phoneNumber, List<Address> addresses, 
 			Boolean available, Boolean contacted) {
 		this(name, type, email, phoneNumber, addresses);
 		this.available = available;
 		this.contacted = contacted;
 	}
-	
+		
 	public String getName() {
 		return name;
 	}
@@ -61,11 +68,14 @@ public class PartnerData { // implements Serializable {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public Addresses getAddresses() {
+	public List<Address> getAddresses() {
 		return addresses;
 	}
-	public void setAddresses(Addresses addresses) {
+	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
+	}
+	public void addAddress(Address address) {
+		this.addresses.add(address);
 	}
 	public Boolean getAvailable() {
 		return available;
@@ -92,4 +102,65 @@ public class PartnerData { // implements Serializable {
 				+ "]";
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
+	private String addressesToJSON() {
+		
+		String addressesJSON = "[";
+		for (int i = 0; i < addresses.size(); i++) {
+			addressesJSON += addresses.get(i).toJSON();
+			if (i < addresses.size() - 1) {
+				addressesJSON += ", ";
+			}
+		}
+		addressesJSON += "]";
+		
+		return addressesJSON;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String toJSON() {
+		return "{"
+				+ "\"name\": \"" + name + "\", "
+				+ "\"type\": \"" + type + "\", "
+				+ "\"email\": \"" + email + "\", "
+				+ "\"phoneNumber\": \"" + phoneNumber + "\", "
+				+ "\"addresses\": " + addressesToJSON() + ", "
+				+ "\"available\": " + available + ", "
+				+ "\"contacted\": " + contacted
+				+ "}";
+	}	
+	
+	/**
+	 * 
+	 * @param jsonNode
+	 */
+	public void setValueFromJSON(SpinJsonNode jsonNode) {	
+		// Set partnerns value
+		setName(jsonNode.prop("name").stringValue());
+		setType(jsonNode.prop("type").stringValue());
+		setEmail(jsonNode.prop("email").stringValue());
+		setPhoneNumber(jsonNode.prop("phoneNumber").stringValue());
+		setAvailability(jsonNode.prop("available").boolValue());
+		setContacted(jsonNode.prop("contacted").boolValue());
+		
+		// Fetch a list of items when your property is an array of data
+		SpinJsonNode addressesProperty = jsonNode.prop("addresses");
+		@SuppressWarnings("rawtypes")
+		SpinList addresses = addressesProperty.elements();
+		for (int i = 0; i < addresses.size(); i++) {
+			// Get the i-th element
+			SpinJsonNode addressJSON = (SpinJsonNode) addresses.get(i);
+			// Convert to Address object
+			Address address = new Address();
+			address.setValueFromJSON(addressJSON);
+			// Add to addresses
+			addAddress(address);
+		}
+	}
 }
