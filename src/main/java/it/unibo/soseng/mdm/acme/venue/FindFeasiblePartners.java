@@ -6,12 +6,9 @@ import java.util.List;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.value.ObjectValue;
 import org.camunda.spin.json.SpinJsonNode;
 
 import it.unibo.soseng.mdm.acme.venue.model.Address;
-import it.unibo.soseng.mdm.acme.venue.model.Addresses;
 import it.unibo.soseng.mdm.acme.venue.model.PartnerData;
 
 public class FindFeasiblePartners implements JavaDelegate {

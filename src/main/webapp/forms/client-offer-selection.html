@@ -17,29 +17,47 @@
 		camForm.on('form-loaded', function() {
   			// fetch the variable named 'partnerList'
   			camForm.variableManager.fetchVariable('availablePartners');
-  			
-  			// create the variable used in the next gateway
-  			camForm.variableManager.createVariable({
-    			name: 'selected_partner',
-    			type: 'Boolean',
-    			value: 'false',
-    			isDirty: true
-			});
 		});
 
 		camForm.on('variables-fetched', function() {
 			// after the variables are fetched, bind the value of partnerList to an angular
 		  	// scope value such that the form can work on it
 		  	$scope.partnerList = camForm.variableManager.variable('availablePartners').value;
-		});
 		
+			// temporary variable
+			$scope.selected_partner_name = "";
+		});
 		
   		camForm.on('submit', function(err) {
      	 	// this callback is executed when the form is submitted, *before* the 
      		// submit request to the server is executed
-		 	
-			// update the value of selected_partner
-			camForm.variableManager.variableValue('selected_partner', selected_partner_value);
+
+  			// create the variable used in the next gateway
+  			camForm.variableManager.createVariable({
+    			name: 'selected_partner',
+    			type: 'Boolean',
+    			value: selected_partner_value,
+    			isDirty: true
+			});		 	
+	
+			// update informations about the selected partner
+			if (selected_partner_value === true) {
+				angular.forEach($scope.partnerList, function(partner) {
+					// Find the partner
+					if (partner.name === $scope.selected_partner_name) {
+			 			// create the variable for informations about the selected partner
+						camForm.variableManager.createVariable({
+      						name: 'chosenPartner',
+      						type: 'json',
+      						value: partner,
+							isDirty: true
+    					});
+					}
+				});
+			}
+			else {
+				console.log("All refused");
+			}
   		});
 	</script>
 
@@ -53,9 +71,8 @@
 		</label>
 		<div class="col-xs-12 col-sm-5 col-md-6">
 			<select id="select_partner"
-					cam-variable-name="selected_partner_name"
-		    	    cam-variable-type="String">
-		    	<option ng-repeat="partner in partnerList" value="partner.name">{{partner.name}}</option>
+					ng-model="selected_partner_name">
+		    	<option ng-repeat="partner in partnerList" ng-attr-id="{{'partner-' + $index}}" value="{{partner.name}}">{{partner.name}}</option>
 				<option value="null">None of this</option>
 			</select>
 		</div>

@@ -1,11 +1,8 @@
 package it.unibo.soseng.mdm.acme.venue.model;
-// import java.io.Serializable;
-
-import static org.camunda.spin.Spin.JSON;
 
 import org.camunda.spin.json.SpinJsonNode;
 
-public class Address { // implements Serializable {
+public class Address {
 	/**
 	 * 
 	 */

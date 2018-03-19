@@ -1,8 +1,6 @@
 package it.unibo.soseng.mdm.acme.venue.model;
 
-// import java.io.Serializable;
 import it.unibo.soseng.mdm.acme.venue.model.Address;
-import static org.camunda.spin.Spin.JSON;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +8,7 @@ import java.util.List;
 import org.camunda.spin.SpinList;
 import org.camunda.spin.json.SpinJsonNode;
 
-public class PartnerData { // implements Serializable {
+public class PartnerData {
 	
 	/**
 	 * 
@@ -90,6 +88,9 @@ public class PartnerData { // implements Serializable {
 		this.contacted = contacted;
 	}
 	
+	/**
+	 * 
+	 */
 	public String toString() {
 		return "PartnerData ["
 				+ "name=" + name + ", "

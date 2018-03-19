@@ -7,10 +7,11 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 public class SendSelectedOffer implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {
-	    // FIXME: send to ACME a message with the name of the selected partner
+	    /* TODO: 
+	     * 	1) Retrieve the 'chosenPartner' variable from Camunda engine
+	     *  2) Send to ACME a message with the informations about the selected partner
+	     */
 		
-		// FIXME: maybe we can create a single class for Refuse/Select offer in which 
-		// 		  we use the variable ${partner_selected} to know the type of message
 		RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    runtimeService.createMessageCorrelation("accepted_offer")
 	    .processInstanceBusinessKey("AB-123")

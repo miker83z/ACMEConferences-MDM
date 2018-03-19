@@ -17,15 +17,6 @@
     <bpmn:textAnnotation id="TextAnnotation_1vjpb2u">
       <bpmn:text>FIXME: solo debug</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_1lcgbqk">
-      <bpmn:text><![CDATA[FIXME: togliere l'end  e ricollegarlo al resto]]></bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_17bbso8">
-      <bpmn:text>FIXME: togliere lo start e ricollegarlo al resto</bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0p8q7v6">
-      <bpmn:text>FIXME: in questo User Task direi che servirebbe un Form in cui visualizzare i possibili partner, per poi avere un elenco per scegliere uno di questi oppure nessuno</bpmn:text>
-    </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_0vvezi7">
       <bpmn:text>FIXME: ricordarsi di ricollegare tutto nel modo corretto come nello schema reale</bpmn:text>
     </bpmn:textAnnotation>
@@ -206,7 +197,6 @@
     </bpmn:exclusiveGateway>
     <bpmn:association id="Association_0jo3lid" sourceRef="EndEvent_0vw309n" targetRef="TextAnnotation_0bwu5qx" />
     <bpmn:association id="Association_03j024v" sourceRef="EndEvent_1g6k1bb" targetRef="TextAnnotation_07vv5md" />
-    <bpmn:association id="Association_16rzfbj" sourceRef="StartEvent_1" targetRef="TextAnnotation_0aajc6c" />
     <bpmn:association id="Association_0ip9o29" sourceRef="Task_0jf3z10" targetRef="TextAnnotation_04ehwkp" />
     <bpmn:association id="Association_0gwjj97" sourceRef="Task_18h7qvs" targetRef="TextAnnotation_1u764u2" />
     <bpmn:textAnnotation id="TextAnnotation_0oqlw2e">
@@ -225,16 +215,10 @@
     <bpmn:textAnnotation id="TextAnnotation_07vv5md">
       <bpmn:text>FIXME: Ricordarsi del Catering</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:association id="Association_0t1h184" sourceRef="ServiceTask_1ifvn9t" targetRef="TextAnnotation_0ist0xp" />
     <bpmn:textAnnotation id="TextAnnotation_0ba6nf9">
       <bpmn:text>FIXME: solo debug</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_02xglen" sourceRef="ServiceTask_1ifvn9t" targetRef="TextAnnotation_0rz6hpw" />
-    <bpmn:textAnnotation id="TextAnnotation_0ist0xp">
-      <bpmn:text><![CDATA[FIXME: da qualche parte dobbiamo leggere la lista dei partner convenzionati con noi per passare poi i dati al servizio GIS, il quale ci risponderà con la distanza tra il luogo in cui è organizzata la conferenza ed i partner. 
-
-Quindi questo Service Task dovrà essere collegato ad un DB o una qualche unità di memoria da cui leggere la lista dei Partner?]]></bpmn:text>
-    </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_04ehwkp">
       <bpmn:text><![CDATA[FIXME: ho sostituito il sub-process con uno UserTask per due motivi:
 1) per prima cosa, mi sono accorto che nella consegna dice che ACME prende contatto con i partner, quindi in realtà non mi sembra necessario modellare anche partner e catering come entità di questo schema, probabilmente nella realtà ci sarà un utente che telefonerà ai gestori e si segnerà da qualche parte quali sono quelli disponibili
@@ -260,13 +244,6 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
     <bpmn:textAnnotation id="TextAnnotation_0rz6hpw">
       <bpmn:text>FIXME: Rileggendo bene la consegna, sono piuttosto sicuro che GIS non serva a nulla qui</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_0aajc6c">
-      <bpmn:text><![CDATA[FIXME: lo start in realtà non c'è]]></bpmn:text>
-    </bpmn:textAnnotation>
-    <bpmn:association id="Association_13v79fo" sourceRef="ServiceTask_1ifvn9t" targetRef="TextAnnotation_0gytztg" />
-    <bpmn:textAnnotation id="TextAnnotation_0gytztg">
-      <bpmn:text>FIXME: se resta tutto così comìè, allora sarebbe utile che nella lista dei partner ci fosse anche indicato se quel partner è già stato contattato oppure no</bpmn:text>
-    </bpmn:textAnnotation>
   </bpmn:process>
   <bpmn:process id="client-process" name="Client Process" isExecutable="true">
     <bpmn:exclusiveGateway id="ExclusiveGateway_0zf2gqh">
@@ -284,14 +261,9 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!selected_partner}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_15db0cb" sourceRef="StartEvent_0a5sr55" targetRef="IntermediateThrowEvent_0nkcevr" />
-    <bpmn:endEvent id="EndEvent_1w687gd">
+    <bpmn:endEvent id="EndEvent_1w687gd" name="Fake end">
       <bpmn:incoming>SequenceFlow_1br555u</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1gvondy" name="Send selected offer">
-      <bpmn:incoming>SequenceFlow_0otrrtk</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0y2glzn</bpmn:outgoing>
-      <bpmn:messageEventDefinition messageRef="message_3" camunda:class="it.unibo.soseng.mdm.client.SendSelectedOffer" />
-    </bpmn:intermediateThrowEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1q233oj" sourceRef="Task_0uhp163" targetRef="IntermediateThrowEvent_1uxexe0" />
     <bpmn:sequenceFlow id="SequenceFlow_0otrrtk" sourceRef="Task_0uroh85" targetRef="IntermediateThrowEvent_1gvondy" />
     <bpmn:userTask id="Task_0uroh85" name="accept one">
@@ -331,15 +303,17 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
     <bpmn:startEvent id="StartEvent_0a5sr55" name="Fake start">
       <bpmn:outgoing>SequenceFlow_15db0cb</bpmn:outgoing>
     </bpmn:startEvent>
+    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1gvondy" name="Send selected offer">
+      <bpmn:incoming>SequenceFlow_0otrrtk</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0y2glzn</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="message_3" camunda:class="it.unibo.soseng.mdm.client.SendSelectedOffer" />
+    </bpmn:intermediateThrowEvent>
     <bpmn:association id="Association_05wg3nn" sourceRef="Task_0uhp163" targetRef="TextAnnotation_1q516nk" />
     <bpmn:association id="Association_0u2zmhw" sourceRef="Task_0uroh85" targetRef="TextAnnotation_029678c" />
     <bpmn:association id="Association_16e4dv5" sourceRef="Task_09r3zh7" targetRef="TextAnnotation_1vjpb2u" />
     <bpmn:textAnnotation id="TextAnnotation_1q516nk">
       <bpmn:text>FIXME: solo debug</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:association id="Association_0fb0l1i" sourceRef="EndEvent_1w687gd" targetRef="TextAnnotation_1lcgbqk" />
-    <bpmn:association id="Association_1eey65u" sourceRef="StartEvent_0a5sr55" targetRef="TextAnnotation_17bbso8" />
-    <bpmn:association id="Association_0125yaq" sourceRef="UserTask_0pidfto" targetRef="TextAnnotation_0p8q7v6" />
     <bpmn:association id="Association_17t1yvg" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="TextAnnotation_0vvezi7" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -601,22 +575,22 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="IntermediateThrowEvent_1p3h6fi_di" bpmnElement="IntermediateThrowEvent_1gvondy">
-        <dc:Bounds x="1481" y="-212" width="36" height="36" />
+        <dc:Bounds x="1487" y="-213" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1463" y="-244" width="72" height="24" />
+          <dc:Bounds x="1469" y="-245" width="72" height="24" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_1w687gd_di" bpmnElement="EndEvent_1w687gd">
         <dc:Bounds x="1686" y="-212" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1659" y="-172" width="90" height="12" />
+          <dc:Bounds x="1680" y="-172" width="48" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0y2glzn_di" bpmnElement="SequenceFlow_0y2glzn">
-        <di:waypoint xsi:type="dc:Point" x="1517" y="-194" />
-        <di:waypoint xsi:type="dc:Point" x="1555" y="-194" />
+        <di:waypoint xsi:type="dc:Point" x="1523" y="-195" />
+        <di:waypoint xsi:type="dc:Point" x="1555" y="-195" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1491" y="-215" width="90" height="12" />
+          <dc:Bounds x="1494" y="-216" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_0t0taya_di" bpmnElement="TextAnnotation_0t0taya">
@@ -647,20 +621,13 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1z0potv_di" bpmnElement="MessageFlow_1z0potv">
-        <di:waypoint xsi:type="dc:Point" x="1499" y="-176" />
-        <di:waypoint xsi:type="dc:Point" x="1499" y="126" />
+        <di:waypoint xsi:type="dc:Point" x="1505" y="-177" />
+        <di:waypoint xsi:type="dc:Point" x="1505" y="126" />
         <di:waypoint xsi:type="dc:Point" x="1085" y="126" />
         <di:waypoint xsi:type="dc:Point" x="1085" y="529" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1247" y="105" width="90" height="12" />
+          <dc:Bounds x="1250" y="105" width="90" height="12" />
         </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="TextAnnotation_0aajc6c_di" bpmnElement="TextAnnotation_0aajc6c">
-        <dc:Bounds x="97" y="747" width="100" height="42" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_16rzfbj_di" bpmnElement="Association_16rzfbj">
-        <di:waypoint xsi:type="dc:Point" x="146" y="682" />
-        <di:waypoint xsi:type="dc:Point" x="146" y="747" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0pti0kq_di" bpmnElement="SequenceFlow_0pti0kq">
         <di:waypoint xsi:type="dc:Point" x="1188" y="-169" />
@@ -709,20 +676,20 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0otrrtk_di" bpmnElement="SequenceFlow_0otrrtk">
         <di:waypoint xsi:type="dc:Point" x="1422" y="-194" />
-        <di:waypoint xsi:type="dc:Point" x="1481" y="-194" />
+        <di:waypoint xsi:type="dc:Point" x="1487" y="-195" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1451.5" y="-215" width="0" height="12" />
+          <dc:Bounds x="1409.5" y="-215.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_1llws1u_di" bpmnElement="Task_0uroh85">
         <dc:Bounds x="1322" y="-234" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_029678c_di" bpmnElement="TextAnnotation_029678c">
-        <dc:Bounds x="1433.2358003442341" y="-361.3364888123924" width="99.98924268502583" height="41.30808950086059" />
+        <dc:Bounds x="1433" y="-361" width="100" height="42" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0u2zmhw_di" bpmnElement="Association_0u2zmhw">
         <di:waypoint xsi:type="dc:Point" x="1402" y="-234" />
-        <di:waypoint xsi:type="dc:Point" x="1468" y="-320" />
+        <di:waypoint xsi:type="dc:Point" x="1468" y="-319" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1br555u_di" bpmnElement="SequenceFlow_1br555u">
         <di:waypoint xsi:type="dc:Point" x="1655" y="-194" />
@@ -845,34 +812,12 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
           <dc:Bounds x="1237.5" y="766" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="TextAnnotation_0ist0xp_di" bpmnElement="TextAnnotation_0ist0xp">
-        <dc:Bounds x="271" y="368" width="208" height="181" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_0t1h184_di" bpmnElement="Association_0t1h184">
-        <di:waypoint xsi:type="dc:Point" x="382" y="624" />
-        <di:waypoint xsi:type="dc:Point" x="377" y="549" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="TextAnnotation_1lcgbqk_di" bpmnElement="TextAnnotation_1lcgbqk">
-        <dc:Bounds x="1847.216757741348" y="-281.8506375227687" width="99.98292349726775" height="65.57377049180327" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_0fb0l1i_di" bpmnElement="Association_0fb0l1i">
-        <di:waypoint xsi:type="dc:Point" x="1721" y="-199" />
-        <di:waypoint xsi:type="dc:Point" x="1847" y="-235" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="TextAnnotation_17bbso8_di" bpmnElement="TextAnnotation_17bbso8">
-        <dc:Bounds x="773" y="-400.8506375227687" width="99.98292349726775" height="65.57377049180327" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_1eey65u_di" bpmnElement="Association_1eey65u">
-        <di:waypoint xsi:type="dc:Point" x="887" y="-266" />
-        <di:waypoint xsi:type="dc:Point" x="844" y="-335" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_0rz6hpw_di" bpmnElement="TextAnnotation_0rz6hpw">
-        <dc:Bounds x="96" y="360" width="154" height="83" />
+        <dc:Bounds x="191" y="399" width="154" height="83" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_02xglen_di" bpmnElement="Association_02xglen">
-        <di:waypoint xsi:type="dc:Point" x="326" y="642" />
-        <di:waypoint xsi:type="dc:Point" x="233" y="549" />
-        <di:waypoint xsi:type="dc:Point" x="131" y="445" />
+        <di:waypoint xsi:type="dc:Point" x="354.47735191637634" y="622.3855981416957" />
+        <di:waypoint xsi:type="dc:Point" x="268" y="484" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_1yt925m_di" bpmnElement="ServiceTask_1ifvn9t">
         <dc:Bounds x="333" y="624" width="100" height="80" />
@@ -907,20 +852,6 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmndi:BPMNEdge id="Association_16hbp56_di" bpmnElement="Association_16hbp56">
         <di:waypoint xsi:type="dc:Point" x="1275" y="533" />
         <di:waypoint xsi:type="dc:Point" x="1321" y="473" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="TextAnnotation_0gytztg_di" bpmnElement="TextAnnotation_0gytztg">
-        <dc:Bounds x="307" y="743" width="188" height="88" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_13v79fo_di" bpmnElement="Association_13v79fo">
-        <di:waypoint xsi:type="dc:Point" x="389" y="704" />
-        <di:waypoint xsi:type="dc:Point" x="395" y="743" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="TextAnnotation_0p8q7v6_di" bpmnElement="TextAnnotation_0p8q7v6">
-        <dc:Bounds x="924" y="-438" width="219" height="91" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_0125yaq_di" bpmnElement="Association_0125yaq">
-        <di:waypoint xsi:type="dc:Point" x="1073" y="-234" />
-        <di:waypoint xsi:type="dc:Point" x="1045" y="-347" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_134wqxl_di" bpmnElement="SequenceFlow_134wqxl">
         <di:waypoint xsi:type="dc:Point" x="1015" y="-81" />

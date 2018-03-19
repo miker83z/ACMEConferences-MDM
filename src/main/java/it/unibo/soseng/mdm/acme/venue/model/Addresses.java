@@ -1,11 +1,7 @@
 package it.unibo.soseng.mdm.acme.venue.model;
 
-import static org.camunda.spin.Spin.JSON;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import org.camunda.spin.json.SpinJsonNode;
 
 // import java.io.Serializable;
 import it.unibo.soseng.mdm.acme.venue.model.Address;

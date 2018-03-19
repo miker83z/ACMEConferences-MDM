@@ -8,8 +8,6 @@ import java.util.List;
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.value.ObjectValue;
 import org.camunda.spin.SpinList;
 import org.camunda.spin.json.SpinJsonNode;
 
@@ -17,7 +15,6 @@ import it.unibo.soseng.mdm.acme.venue.model.PartnerData;
 
 public class PresentOffers implements JavaDelegate {
 
-	@SuppressWarnings("unchecked")
 	public void execute(DelegateExecution execution) throws Exception {		
 		
 		/*
