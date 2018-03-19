@@ -2,31 +2,6 @@
 
 	<script cam-script type="text/form-script">
 		
-		debugger;
-		
-		$scope.saveAvailable = function(i) {
-			var checkbox = document.getElementById('available'+i);
-			var j = 0;
-			angular.forEach($scope.partnerList, function(partner) {
-				debugger;
-				if (i == j) {
-					partner.available = !partner.available;
-				}
-				j = j + 1;
-			});
-		}
-
-		$scope.saveContacted = function(i) {
-			var checkbox = document.getElementById('contacted'+i);
-			var j = 0;
-			angular.forEach($scope.partnerList, function(partner) {
-				if (i == j) {
-					partner.contacted = !partner.contacted;
-				}
-				j = j + 1;
-			});
-		}
-
 		camForm.on('form-loaded', function() {
   			// fetch the variable named 'partnerList'
   			camForm.variableManager.fetchVariable('partnerList');
@@ -44,9 +19,8 @@
 		 	
 			// TODO: devo controllare che sia stato selezionato almeno un partner
 			
-			// FIXME: Non funziona
 			// update values 
-			// camForm.variableManager.variableValue('partnerList', $scope.partnerList);
+			camForm.variableManager.variableValue('partnerList', $scope.partnerList);
   		});
 		
 	</script>
@@ -100,7 +74,7 @@
 			
 			<h4 class="col-xs-12 text-center">Addresses</h4>
 			
-			<div ng-repeat="address in partner.addresses.addresses">
+			<div ng-repeat="address in partner.addresses">
 				<div class="control-group col-xs-12">
 					<label class="control-label col-xs-12 col-sm-4 col-md-3" for="street">Street</label>
 					<div class="col-xs-12 col-sm-8 col-md-9">
@@ -149,9 +123,7 @@
        					cam-variable-name="partner.available"
        					cam-variable-type="Boolean"
        					name="partner.available"
-       					ng-model="partner.available"
-       					ng-attr-id="{{'available'+$index}}"
-       					ng-click="saveAvailable($index)" />
+       					ng-model="partner.available" />
        			</div>
        		</div>
 			<div class="control-group col-xs-12">
@@ -161,9 +133,7 @@
        					cam-variable-name="partner.contacted"
        					cam-variable-type="Boolean"
        					name="partner.contacted"
-       					ng-model="partner.contacted"
-       					ng-attr-id="{{'contacted'+$index}}"
-       					ng-click="saveContacted($index)" />
+       					ng-model="partner.contacted" />
        			</div>
 	       	</div>
 	       	

@@ -44,12 +44,14 @@
 	</script>
 
 	<h3>List of available partners</h3>
+	
 	<hr>
+	
 	<div class="form-group">
-		<label for="selected_partner_name" class="col-xs-12 col-sm-8 col-md-6">
+		<label for="selected_partner_name" class="col-xs-12 col-sm-7 col-md-6">
 			Choose one partner:
 		</label>
-		<div class="col-xs-12 col-sm-4 col-md-6">
+		<div class="col-xs-12 col-sm-5 col-md-6">
 			<select id="select_partner"
 					cam-variable-name="selected_partner_name"
 		    	    cam-variable-type="String">
@@ -58,97 +60,99 @@
 			</select>
 		</div>
 	</div>
-	
-	<hr>
-	
-	<div>
-		<div ng-repeat="partner in partnerList">
-			<div class="control-group col-xs-12">
-				<label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">Name</label>
-		        <div class="col-xs-12 col-sm-8 col-md-9">
-		        	<input cam-variable-name="partner.name"
-		     	   		type="text"
-				   		name="name"
-		     	   		readonly="true"
-		     	   		class="form-control" />
-		     	</div>
-			</div>
-			<div class="control-group col-xs-12">
-				<label class="control-label col-xs-12 col-sm-4 col-md-3" for="type">Type</label>
-				<div class="col-xs-12 col-sm-8 col-md-9">
-			    	<input cam-variable-name="partner.type"
-		 	   			type="text"
-			   			name="type"
-		 	   			readonly="true"
-		 	   			class="form-control" />
-				</div>
-			</div>
-			<div class="control-group col-xs-12">
-				<label class="control-label col-xs-12 col-sm-4 col-md-3" for="email">Email</label>
-				<div class="col-xs-12 col-sm-8 col-md-9">
-			    	<input cam-variable-name="partner.email"
-		 	   			type="text"
-			   			name="email"
-		 	   			readonly="true"
-		 	   			class="form-control" />
-				</div>
-			</div>
-			<div class="control-group col-xs-12">
-				<label class="control-label col-xs-12 col-sm-4 col-md-3" for="phoneNumber">Phone number</label>
-				<div class="col-xs-12 col-sm-8 col-md-9">
-			    	<input cam-variable-name="partner.phoneNumber"
-		 	   			type="text"
-			   			name="phoneNumber"
-		 	   			readonly="true"
-		 	   			class="form-control" />
-				</div>
-			</div>
-			<h4 class="col-xs-12">Addresses</h4>
-			<div ng-repeat="address in partner.addresses.addresses">
-				<div class="control-group col-xs-12">
-					<label class="control-label col-xs-12 col-sm-4 col-md-3" for="street">Street</label>
-					<div class="col-xs-12 col-sm-8 col-md-9">
-						<input cam-variable-name="address.street"
-			 	   			type="text"
-				   			name="street"
-			 	   			readonly="true"
-			 	   			class="form-control" />
-	      			</div>
-	      		</div>
-				<div class="control-group col-xs-12">
-	        		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="postalCode">Postal Code</label>
-	        		<div class="col-xs-12 col-sm-8 col-md-9">
-						<input cam-variable-name="address.postalCode"
-			 	   			type="text"
-				   			name="postalCode"
-			 	   			readonly="true"
-			 	   			class="form-control" />
-			 	   	</div>
-	      		</div>
-	      		<div class="control-group col-xs-12">
-	        		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="city">City</label>
-					<div class="col-xs-12 col-sm-8 col-md-9">
-						<input cam-variable-name="address.city"
-				 	   		type="text"
-					   		name="city"
-				 	   		readonly="true"
-			 		   		class="form-control" />
-	     			</div>
-	      		</div>
-	      		<div class="control-group col-xs-12">
-	        		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="country">Country</label>
-					<div class="col-xs-12 col-sm-8 col-md-9">
-						<input cam-variable-name="address.country"
-			 	   			type="text"
-				   			name="country"
-			 	   			readonly="true"
-			 	   			class="form-control" />
-			 	   	</div>
-				</div>
-  			</div>
-  			
-			<hr>
+		
+	<div ng-repeat="partner in partnerList">
 			
+		<hr>
+			
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">Name</label>
+	        <div class="col-xs-12 col-sm-8 col-md-9">
+	        	<input cam-variable-name="partner.name"
+	     	   		type="text"
+			   		name="name"
+	     	   		readonly="true"
+	     	   		class="form-control" />
+	     	</div>
 		</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="type">Type</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+		    	<input cam-variable-name="partner.type"
+	 	   			type="text"
+		   			name="type"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+			</div>
+		</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="email">Email</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+		    	<input cam-variable-name="partner.email"
+	 	   			type="text"
+		   			name="email"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+			</div>
+		</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="phoneNumber">Phone number</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+		    	<input cam-variable-name="partner.phoneNumber"
+	 	   			type="text"
+		   			name="phoneNumber"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+			</div>
+		</div>
+		
+		<h4 class="col-xs-12 text-centered">Addresses</h4>
+		
+		<div ng-repeat="address in partner.addresses">
+			<div class="control-group col-xs-12">
+				<label class="control-label col-xs-12 col-sm-4 col-md-3" for="street">Street</label>
+				<div class="col-xs-12 col-sm-8 col-md-9">
+					<input cam-variable-name="address.street"
+		 	   			type="text"
+			   			name="street"
+		 	   			readonly="true"
+		 	   			class="form-control" />
+	     			</div>
+	     		</div>
+			<div class="control-group col-xs-12">
+	       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="postalCode">Postal Code</label>
+	       		<div class="col-xs-12 col-sm-8 col-md-9">
+					<input cam-variable-name="address.postalCode"
+		 	   			type="text"
+			   			name="postalCode"
+		 	   			readonly="true"
+		 	   			class="form-control" />
+		 	   	</div>
+	   		</div>
+	   		<div class="control-group col-xs-12">
+	      		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="city">City</label>
+				<div class="col-xs-12 col-sm-8 col-md-9">
+					<input cam-variable-name="address.city"
+			 	   		type="text"
+				   		name="city"
+			 	   		readonly="true"
+		 		   		class="form-control" />
+	    			</div>
+	     		</div>
+	   		<div class="control-group col-xs-12">
+	       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="country">Country</label>
+				<div class="col-xs-12 col-sm-8 col-md-9">
+					<input cam-variable-name="address.country"
+		 	   			type="text"
+			   			name="country"
+		 	   			readonly="true"
+		 	   			class="form-control" />
+		 	   	</div>
+			</div>
+			
+			<hr>	
+			<br>
+			
+  		</div>
 	</div>
 </form>
