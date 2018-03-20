@@ -13,7 +13,7 @@ public class RefusePartnerOffers implements JavaDelegate {
 		// 		  we use the variable ${partner_selected} to know the type of message
 		RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    runtimeService.createMessageCorrelation("refuse_offers")
-	    .processInstanceBusinessKey("AB-123")
+	    .processInstanceBusinessKey(execution.getBusinessKey())
 	    .setVariable("response", false)
 	    .correlate();
 
