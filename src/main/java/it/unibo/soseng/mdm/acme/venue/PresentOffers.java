@@ -74,11 +74,11 @@ public class PresentOffers implements JavaDelegate {
 		availablePartnersJSON += "]";
 		// Convert the string in JSON
 		SpinJsonNode availablePartnersJsonNode = JSON(availablePartnersJSON);	
-		
+				
 		// Send the message setting variables
 	    RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    runtimeService.createMessageCorrelation("offers")
-	    .processInstanceBusinessKey("AB-123")
+	    .processInstanceBusinessKey(execution.getBusinessKey())
 	    .setVariable("availablePartners", availablePartnersJsonNode)
 	    .correlate();					
 	}
