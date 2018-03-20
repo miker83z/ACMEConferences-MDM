@@ -17,6 +17,7 @@ public class PartnerData {
 	private String type;
 	private String email;
 	private String phoneNumber;
+	private double price;
 	private List<Address> addresses = new ArrayList<Address>();
 	private Boolean available;
 	private Boolean contacted;
@@ -31,13 +32,16 @@ public class PartnerData {
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.addresses = addresses;
+		// Default values
+		this.price = 0.0;
 		this.available = true;
 		this.contacted = false;
 	}
 	
 	public PartnerData(String name, String type, String email, String phoneNumber, List<Address> addresses, 
-			Boolean available, Boolean contacted) {
+			double price, Boolean available, Boolean contacted) {
 		this(name, type, email, phoneNumber, addresses);
+		this.price = price;
 		this.available = available;
 		this.contacted = contacted;
 	}
@@ -65,6 +69,12 @@ public class PartnerData {
 	}
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	public List<Address> getAddresses() {
 		return addresses;
@@ -97,6 +107,7 @@ public class PartnerData {
 				+ "type=" + type + ", "
 				+ "email=" + email + ", "
 				+ "phoneNumber=" + phoneNumber + ", "
+				+ "price=" + price + ", "
 				+ "addresses=" + addresses + ", "
 				+ "available=" + available + ", "
 				+ "contacted=" + contacted
@@ -131,6 +142,7 @@ public class PartnerData {
 				+ "\"type\": \"" + type + "\", "
 				+ "\"email\": \"" + email + "\", "
 				+ "\"phoneNumber\": \"" + phoneNumber + "\", "
+				+ "\"price\": " + price + ", "
 				+ "\"addresses\": " + addressesToJSON() + ", "
 				+ "\"available\": " + available + ", "
 				+ "\"contacted\": " + contacted
@@ -147,6 +159,7 @@ public class PartnerData {
 		setType(jsonNode.prop("type").stringValue());
 		setEmail(jsonNode.prop("email").stringValue());
 		setPhoneNumber(jsonNode.prop("phoneNumber").stringValue());
+		setPrice(jsonNode.prop("price").numberValue().doubleValue());
 		setAvailability(jsonNode.prop("available").boolValue());
 		setContacted(jsonNode.prop("contacted").boolValue());
 		
