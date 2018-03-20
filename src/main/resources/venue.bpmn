@@ -20,6 +20,9 @@
     <bpmn:textAnnotation id="TextAnnotation_0vvezi7">
       <bpmn:text>FIXME: ricordarsi di ricollegare tutto nel modo corretto come nello schema reale</bpmn:text>
     </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_13mks7o">
+      <bpmn:text>FIXME: probabilmente a questo send event non serve nemmeno la classe</bpmn:text>
+    </bpmn:textAnnotation>
   </bpmn:collaboration>
   <bpmn:message id="message_0" name="ask_for_availability_${partnerName}" />
   <bpmn:message id="message_1" name="job_estimate" />
@@ -85,7 +88,7 @@
         </bpmn:childLaneSet>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:serviceTask id="ServiceTask_03a0bph" name="Add Bill to Payment" camunda:class="it.unibo.soseng.mdm.acme.venue.AddBillToPayments">
+    <bpmn:serviceTask id="ServiceTask_03a0bph" name="Add Bill to Payment [DONE]" camunda:class="it.unibo.soseng.mdm.acme.venue.AddBillToPayments">
       <bpmn:incoming>SequenceFlow_1vdz4nj</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_07o0wxc</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -121,7 +124,7 @@
       <bpmn:outgoing>SequenceFlow_1vdz4nj</bpmn:outgoing>
     </bpmn:parallelGateway>
     <bpmn:sequenceFlow id="SequenceFlow_0r54b92" sourceRef="Task_0r1cjah" targetRef="ParallelGateway_01crubh" />
-    <bpmn:userTask id="Task_0r1cjah" name="accepted">
+    <bpmn:userTask id="Task_0r1cjah" name="accepted [DONE]" camunda:formKey="embedded:app:forms/debug-show-partner.html">
       <bpmn:incoming>SequenceFlow_17s8ih0</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0r54b92</bpmn:outgoing>
     </bpmn:userTask>
@@ -134,17 +137,17 @@
       <bpmn:outgoing>SequenceFlow_01m9n6y</bpmn:outgoing>
     </bpmn:parallelGateway>
     <bpmn:sequenceFlow id="SequenceFlow_1y7u6v9" sourceRef="Task_08kz3ef" targetRef="EndEvent_1g6k1bb" />
-    <bpmn:userTask id="Task_08kz3ef" name="good end of acme">
+    <bpmn:userTask id="Task_08kz3ef" name="good end of acme [DONE]">
       <bpmn:incoming>SequenceFlow_01m9n6y</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1y7u6v9</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_0ml7tt2" sourceRef="Task_0t3awyr" targetRef="EndEvent_0vw309n" />
-    <bpmn:userTask id="Task_0t3awyr" name="bad end of acme">
+    <bpmn:userTask id="Task_0t3awyr" name="bad end of acme [DONE]">
       <bpmn:incoming>SequenceFlow_0i1zakr</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0ml7tt2</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_0m612u0" sourceRef="Task_0gdrzmh" targetRef="ExclusiveGateway_02fzzcu" />
-    <bpmn:userTask id="Task_0gdrzmh" name="ask again for partners">
+    <bpmn:userTask id="Task_0gdrzmh" name="ask again for partners [DONE]">
       <bpmn:incoming>SequenceFlow_1cqg5hz</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0m612u0</bpmn:outgoing>
     </bpmn:userTask>
@@ -152,21 +155,21 @@
     <bpmn:endEvent id="EndEvent_0vw309n">
       <bpmn:incoming>SequenceFlow_0ml7tt2</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:userTask id="Task_0jf3z10" name="Contact Partners" camunda:formKey="embedded:app:forms/partner-list.html">
+    <bpmn:userTask id="Task_0jf3z10" name="Contact Partners [DONE]" camunda:formKey="embedded:app:forms/partner-list.html">
       <bpmn:incoming>SequenceFlow_1o6f6q4</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0km50b2</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_1o6f6q4" sourceRef="ServiceTask_1ifvn9t" targetRef="Task_0jf3z10" />
-    <bpmn:serviceTask id="ServiceTask_1ifvn9t" name="Find Feasible Partners" camunda:class="it.unibo.soseng.mdm.acme.venue.FindFeasiblePartners">
+    <bpmn:serviceTask id="ServiceTask_1ifvn9t" name="Find Feasible Partners [DONE]" camunda:class="it.unibo.soseng.mdm.acme.venue.FindFeasiblePartners">
       <bpmn:incoming>SequenceFlow_1jsgd05</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1o6f6q4</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_17t0wz5" sourceRef="IntermediateCatchEvent_0kle9g3" targetRef="Task_18h7qvs" />
-    <bpmn:userTask id="SendTask_1c5rqyk" name="Contact the selected partner">
+    <bpmn:userTask id="SendTask_1c5rqyk" name="Contact the selected partner [DONE]" camunda:formKey="embedded:app:forms/contact-the-selected-partner.html">
       <bpmn:incoming>SequenceFlow_1u0qxf8</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0qcczji</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1rcroxo" name="Present offers">
+    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1rcroxo" name="Present offers [DONE]">
       <bpmn:incoming>SequenceFlow_0km50b2</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1j258rx</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="message_2" camunda:class="it.unibo.soseng.mdm.acme.venue.PresentOffers" />
@@ -244,6 +247,10 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
     <bpmn:textAnnotation id="TextAnnotation_0rz6hpw">
       <bpmn:text>FIXME: Rileggendo bene la consegna, sono piuttosto sicuro che GIS non serva a nulla qui</bpmn:text>
     </bpmn:textAnnotation>
+    <bpmn:association id="Association_0nsovzx" sourceRef="ServiceTask_03a0bph" targetRef="TextAnnotation_1j86qen" />
+    <bpmn:textAnnotation id="TextAnnotation_1j86qen">
+      <bpmn:text>FIXME: ma i bills dove sono salvati?</bpmn:text>
+    </bpmn:textAnnotation>
   </bpmn:process>
   <bpmn:process id="client-process" name="Client Process" isExecutable="true">
     <bpmn:exclusiveGateway id="ExclusiveGateway_0zf2gqh">
@@ -266,16 +273,16 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1q233oj" sourceRef="Task_0uhp163" targetRef="IntermediateThrowEvent_1uxexe0" />
     <bpmn:sequenceFlow id="SequenceFlow_0otrrtk" sourceRef="Task_0uroh85" targetRef="IntermediateThrowEvent_1gvondy" />
-    <bpmn:userTask id="Task_0uroh85" name="accept one">
+    <bpmn:userTask id="Task_0uroh85" name="accept one [DONE]">
       <bpmn:incoming>SequenceFlow_04alofr</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0otrrtk</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_1br555u" sourceRef="Task_09r3zh7" targetRef="EndEvent_1w687gd" />
-    <bpmn:userTask id="Task_09r3zh7" name="end client">
+    <bpmn:userTask id="Task_09r3zh7" name="end client [DONE]">
       <bpmn:incoming>SequenceFlow_0y2glzn</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1br555u</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="UserTask_0pidfto" name="Offer Selection" camunda:formKey="embedded:app:forms/client-offer-selection.html" camunda:assignee="john">
+    <bpmn:userTask id="UserTask_0pidfto" name="Offer Selection [DONE]" camunda:formKey="embedded:app:forms/client-offer-selection.html" camunda:assignee="john">
       <bpmn:incoming>SequenceFlow_0ey4bzo</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_081rchj</bpmn:outgoing>
     </bpmn:userTask>
@@ -284,11 +291,11 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmn:outgoing>SequenceFlow_04alofr</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_0pti0kq</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:userTask id="Task_0uhp163" name="refuse all">
+    <bpmn:userTask id="Task_0uhp163" name="refuse all [DONE]">
       <bpmn:incoming>SequenceFlow_0pti0kq</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1q233oj</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1uxexe0" name="Refuse offers">
+    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1uxexe0" name="Refuse offers [DONE]">
       <bpmn:incoming>SequenceFlow_1q233oj</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_134wqxl</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="message_4" camunda:class="it.unibo.soseng.mdm.client.RefusePartnerOffers" />
@@ -303,7 +310,7 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
     <bpmn:startEvent id="StartEvent_0a5sr55" name="Fake start">
       <bpmn:outgoing>SequenceFlow_15db0cb</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1gvondy" name="Send selected offer">
+    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1gvondy" name="Send selected offer [DONE]">
       <bpmn:incoming>SequenceFlow_0otrrtk</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0y2glzn</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="message_3" camunda:class="it.unibo.soseng.mdm.client.SendSelectedOffer" />
@@ -315,6 +322,7 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmn:text>FIXME: solo debug</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_17t1yvg" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="TextAnnotation_0vvezi7" />
+    <bpmn:association id="Association_1wyxibe" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="TextAnnotation_13mks7o" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1qfj5m4">
@@ -342,7 +350,7 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmndi:BPMNShape id="IntermediateThrowEvent_0nidb06_di" bpmnElement="IntermediateThrowEvent_1rcroxo">
         <dc:Bounds x="765" y="646" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="747" y="686" width="71" height="12" />
+          <dc:Bounds x="747" y="686" width="71" height="24" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EventBasedGateway_1tar54u_di" bpmnElement="EventBasedGateway_1tar54u">
@@ -571,7 +579,7 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmndi:BPMNShape id="IntermediateThrowEvent_0c29azu_di" bpmnElement="IntermediateThrowEvent_1uxexe0">
         <dc:Bounds x="1015" y="-99" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1024" y="-120" width="68" height="12" />
+          <dc:Bounds x="1024" y="-120" width="68" height="24" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="IntermediateThrowEvent_1p3h6fi_di" bpmnElement="IntermediateThrowEvent_1gvondy">
@@ -868,6 +876,20 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmndi:BPMNEdge id="Association_17t1yvg_di" bpmnElement="Association_17t1yvg">
         <di:waypoint xsi:type="dc:Point" x="1015" y="-80" />
         <di:waypoint xsi:type="dc:Point" x="757" y="-71" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_1j86qen_di" bpmnElement="TextAnnotation_1j86qen">
+        <dc:Bounds x="1492" y="356.777" width="100" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0nsovzx_di" bpmnElement="Association_0nsovzx">
+        <di:waypoint xsi:type="dc:Point" x="1407" y="509" />
+        <di:waypoint xsi:type="dc:Point" x="1512" y="413" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_13mks7o_di" bpmnElement="TextAnnotation_13mks7o">
+        <dc:Bounds x="593.0150987224158" y="-211.36817653890824" width="99.99274099883856" height="97.5609756097561" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1wyxibe_di" bpmnElement="Association_1wyxibe">
+        <di:waypoint xsi:type="dc:Point" x="1016" y="-84" />
+        <di:waypoint xsi:type="dc:Point" x="693" y="-151" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
