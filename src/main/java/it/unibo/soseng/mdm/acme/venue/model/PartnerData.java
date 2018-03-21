@@ -8,11 +8,12 @@ import java.util.List;
 import org.camunda.spin.SpinList;
 import org.camunda.spin.json.SpinJsonNode;
 
+/**
+ * Stores all informations about a partner for venue.
+ * @author davide
+ *
+ */
 public class PartnerData {
-	
-	/**
-	 * 
-	 */
 	private String name;
 	private String type;
 	private String email;
@@ -32,6 +33,7 @@ public class PartnerData {
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.addresses = addresses;
+		
 		// Default values
 		this.price = 0.0;
 		this.available = true;
@@ -97,10 +99,6 @@ public class PartnerData {
 	public void setContacted(Boolean contacted) {
 		this.contacted = contacted;
 	}
-	
-	/**
-	 * 
-	 */
 	public String toString() {
 		return "PartnerData ["
 				+ "name=" + name + ", "
@@ -115,8 +113,8 @@ public class PartnerData {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Convert the list of Address in a string with JSON format
+	 * @return All the addresses in JSON 
 	 */
 	private String addressesToJSON() {
 		
@@ -133,8 +131,8 @@ public class PartnerData {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Convert the partner informations in a string with JSON format
+	 * @return The JSON with partner informations
 	 */
 	public String toJSON() {
 		return "{"
@@ -150,8 +148,8 @@ public class PartnerData {
 	}	
 	
 	/**
-	 * 
-	 * @param jsonNode
+	 * Convert a JSON into a PartnerData object
+	 * @param jsonNode The JSON with all partner informations
 	 */
 	public void setValueFromJSON(SpinJsonNode jsonNode) {	
 		// Set partnerns value

@@ -2,10 +2,10 @@ package it.unibo.soseng.mdm.acme.venue.model;
 
 import org.camunda.spin.json.SpinJsonNode;
 
+/**
+ * Stores all informations about the address.
+ */
 public class Address {
-	/**
-	 * 
-	 */
 	private String country;
 	private String city;
 	private String street;
@@ -46,10 +46,6 @@ public class Address {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
-	
-	/**
-	 * 
-	 */
 	public String toString() {
 		return "Address ["
 				+ "country=" + country + ", "
@@ -60,8 +56,8 @@ public class Address {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Convert the Address object to a String in JSON format
+	 * @return The JSON with address informations
 	 */
 	public String toJSON() {
 		return "{"
@@ -73,11 +69,11 @@ public class Address {
 	}
 	
 	/**
-	 * 
-	 * @param jsonNode
+	 * Convert a JSON in to an Address object
+	 * @param jsonNode The JSON with all address informations
 	 */
 	public void setValueFromJSON(SpinJsonNode jsonNode) {	
-		// Set address value
+		// Set address values
 		setCountry(jsonNode.prop("country").stringValue());
 		setCity(jsonNode.prop("city").stringValue());
 		setStreet(jsonNode.prop("street").stringValue());

@@ -15,49 +15,15 @@ public class FindFeasiblePartners implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {
 		/* TODO:
-		 * 	1) Retrieve the list of partners from DB or something;
+		 * 	1) Retrieve the list of partners from CSV;
 		 * 	2) Save in JSON and set in Camunda
 		 */
-			
-		// // Retrieve the partner list
-		// List<PartnerData> partnerList = new ArrayList<>();
-		// partnerList = retrievePartnersList();
-		// // The invocation serializationDataFormat("application/json") tells the process engine in which format the variable should be serialized
-		// ObjectValue JSONpartnerList = Variables
-		// 		.objectValue(partnerList)
-		// 		.serializationDataFormat("application/json")
-		// 		.create();
-		// execution.setVariable("partnerList", JSONpartnerList);
-				
-		/* A Sample JSON
-		String prova = ""
-				+ "["
-					+ "{"
-						+ "\"name\": \"" + partnerList.get(0).getName() + "\", "
-						+ "\"type\": \"" + partnerList.get(0).getType() + "\", "
-						+ "\"email\": \"" + partnerList.get(0).getEmail() + "\", "
-						+ "\"phoneNumber\": \"" + partnerList.get(0).getPhoneNumber() + "\", "
-						+ "\"addresses\": "
-						+ "["
-							+ "{"
-								+ "\"country\": \"" + partnerList.get(0).getAddresses().get(0).getCountry() + "\", "
-								+ "\"city\": \"" + partnerList.get(0).getAddresses().get(0).getCity() + "\", "
-								+ "\"street\": \"" + partnerList.get(0).getAddresses().get(0).getStreet() + "\", "
-								+ "\"postalCode\": \"" + partnerList.get(0).getAddresses().get(0).getPostalCode() + "\""
-							+ "}"
-						+ "], "
-						+ "\"available\": " + partnerList.get(0).getAvailable() + ", "
-						+ "\"contacted\": " + partnerList.get(0).getContacted()
-					+ "}"
-				+ "]";
-		*/
 		
 		// Retrieve the partner list
 		List<PartnerData> partnerList = new ArrayList<>();
 		partnerList = retrievePartnersList();
 		
-		// FIXME: questo pezzo c'è anche in PresentOffers
-		// Create the string with all partner informations
+		// Create a string in JSON format with all partner informations
 		String partnerListJSON = "[";
 		for (int i = 0; i < partnerList.size(); i++) {
 			partnerListJSON += partnerList.get(i).toJSON();
@@ -66,8 +32,10 @@ public class FindFeasiblePartners implements JavaDelegate {
 			}
 		}
 		partnerListJSON += "]";
+		
 		// Convert the string in JSON
 		SpinJsonNode jsonNode = JSON(partnerListJSON);
+		
 		// Set variable
 		execution.setVariable("partnerList", jsonNode);
 	}
@@ -93,7 +61,6 @@ public class FindFeasiblePartners implements JavaDelegate {
 		// Create a list with partner informations
 		for (int i = 0; i < countries.length; i++) {
 			Address address = new Address(countries[i], cities[i], streets[i], postalCodes[i]);
-			// Addresses addresses = new Addresses();
 			List<Address> addresses = new ArrayList<>();
 			addresses.add(address);
 			PartnerData partner = new PartnerData(names[i], types[i], emails[i], phoneNumbers[i], addresses);

@@ -20,9 +20,6 @@
     <bpmn:textAnnotation id="TextAnnotation_0vvezi7">
       <bpmn:text>FIXME: ricordarsi di ricollegare tutto nel modo corretto come nello schema reale</bpmn:text>
     </bpmn:textAnnotation>
-    <bpmn:textAnnotation id="TextAnnotation_13mks7o">
-      <bpmn:text>FIXME: probabilmente a questo send event non serve nemmeno la classe</bpmn:text>
-    </bpmn:textAnnotation>
   </bpmn:collaboration>
   <bpmn:message id="message_0" name="ask_for_availability_${partnerName}" />
   <bpmn:message id="message_1" name="job_estimate" />
@@ -267,7 +264,6 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
     <bpmn:sequenceFlow id="SequenceFlow_0pti0kq" name="Denied all" sourceRef="ExclusiveGateway_0lqdtb0" targetRef="Task_0uhp163">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!selected_partner}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="SequenceFlow_15db0cb" sourceRef="StartEvent_0a5sr55" targetRef="IntermediateThrowEvent_0nkcevr" />
     <bpmn:endEvent id="EndEvent_1w687gd" name="Fake end">
       <bpmn:incoming>SequenceFlow_1br555u</bpmn:incoming>
     </bpmn:endEvent>
@@ -300,21 +296,22 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmn:outgoing>SequenceFlow_134wqxl</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="message_4" camunda:class="it.unibo.soseng.mdm.client.RefusePartnerOffers" />
     </bpmn:intermediateThrowEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_134wqxl" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="IntermediateThrowEvent_0nkcevr" />
-    <bpmn:intermediateCatchEvent id="IntermediateThrowEvent_0nkcevr" name="Offers incoming">
-      <bpmn:incoming>SequenceFlow_15db0cb</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_134wqxl</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0iqjs6i</bpmn:outgoing>
-      <bpmn:messageEventDefinition messageRef="message_2" />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:startEvent id="StartEvent_0a5sr55" name="Fake start">
-      <bpmn:outgoing>SequenceFlow_15db0cb</bpmn:outgoing>
-    </bpmn:startEvent>
     <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1gvondy" name="Send selected offer [DONE]">
       <bpmn:incoming>SequenceFlow_0otrrtk</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0y2glzn</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="message_3" camunda:class="it.unibo.soseng.mdm.client.SendSelectedOffer" />
     </bpmn:intermediateThrowEvent>
+    <bpmn:intermediateCatchEvent id="IntermediateThrowEvent_0nkcevr" name="Offers incoming">
+      <bpmn:incoming>SequenceFlow_134wqxl</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_15db0cb</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0iqjs6i</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="message_2" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_134wqxl" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="IntermediateThrowEvent_0nkcevr" />
+    <bpmn:startEvent id="StartEvent_0a5sr55" name="Fake start">
+      <bpmn:outgoing>SequenceFlow_15db0cb</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_15db0cb" sourceRef="StartEvent_0a5sr55" targetRef="IntermediateThrowEvent_0nkcevr" />
     <bpmn:association id="Association_05wg3nn" sourceRef="Task_0uhp163" targetRef="TextAnnotation_1q516nk" />
     <bpmn:association id="Association_0u2zmhw" sourceRef="Task_0uroh85" targetRef="TextAnnotation_029678c" />
     <bpmn:association id="Association_16e4dv5" sourceRef="Task_09r3zh7" targetRef="TextAnnotation_1vjpb2u" />
@@ -322,7 +319,6 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
       <bpmn:text>FIXME: solo debug</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_17t1yvg" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="TextAnnotation_0vvezi7" />
-    <bpmn:association id="Association_1wyxibe" sourceRef="IntermediateThrowEvent_1uxexe0" targetRef="TextAnnotation_13mks7o" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1qfj5m4">
@@ -546,7 +542,7 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
         <di:waypoint xsi:type="dc:Point" x="915" y="-194" />
         <di:waypoint xsi:type="dc:Point" x="960" y="-194" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="892.5" y="-215" width="90" height="12" />
+          <dc:Bounds x="893" y="-215" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_081rchj_di" bpmnElement="SequenceFlow_081rchj">
@@ -644,25 +640,6 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
         <di:waypoint xsi:type="dc:Point" x="1188" y="-121" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1196" y="-162.45454545454547" width="51" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="IntermediateCatchEvent_13fdlic_di" bpmnElement="IntermediateThrowEvent_0nkcevr">
-        <dc:Bounds x="879" y="-212" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="896" y="-151" width="79" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="StartEvent_0a5sr55_di" bpmnElement="StartEvent_0a5sr55">
-        <dc:Bounds x="879" y="-269" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="925" y="-257" width="51" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_15db0cb_di" bpmnElement="SequenceFlow_15db0cb">
-        <di:waypoint xsi:type="dc:Point" x="897" y="-233" />
-        <di:waypoint xsi:type="dc:Point" x="897" y="-212" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="867" y="-228.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1q233oj_di" bpmnElement="SequenceFlow_1q233oj">
@@ -861,15 +838,6 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
         <di:waypoint xsi:type="dc:Point" x="1275" y="533" />
         <di:waypoint xsi:type="dc:Point" x="1321" y="473" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_134wqxl_di" bpmnElement="SequenceFlow_134wqxl">
-        <di:waypoint xsi:type="dc:Point" x="1015" y="-81" />
-        <di:waypoint xsi:type="dc:Point" x="847" y="-81" />
-        <di:waypoint xsi:type="dc:Point" x="847" y="-194" />
-        <di:waypoint xsi:type="dc:Point" x="879" y="-194" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="862" y="-143.5" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_0vvezi7_di" bpmnElement="TextAnnotation_0vvezi7">
         <dc:Bounds x="593" y="-107" width="164" height="80" />
       </bpmndi:BPMNShape>
@@ -884,12 +852,33 @@ Probabilmente si potrebbe fare che il primo Service Task ricava una lista di par
         <di:waypoint xsi:type="dc:Point" x="1407" y="509" />
         <di:waypoint xsi:type="dc:Point" x="1512" y="413" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="TextAnnotation_13mks7o_di" bpmnElement="TextAnnotation_13mks7o">
-        <dc:Bounds x="593.0150987224158" y="-211.36817653890824" width="99.99274099883856" height="97.5609756097561" />
+      <bpmndi:BPMNShape id="IntermediateCatchEvent_13fdlic_di" bpmnElement="IntermediateThrowEvent_0nkcevr">
+        <dc:Bounds x="879" y="-212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="896" y="-151" width="79" height="12" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_1wyxibe_di" bpmnElement="Association_1wyxibe">
-        <di:waypoint xsi:type="dc:Point" x="1016" y="-84" />
-        <di:waypoint xsi:type="dc:Point" x="693" y="-151" />
+      <bpmndi:BPMNEdge id="SequenceFlow_134wqxl_di" bpmnElement="SequenceFlow_134wqxl">
+        <di:waypoint xsi:type="dc:Point" x="1015" y="-81" />
+        <di:waypoint xsi:type="dc:Point" x="847" y="-81" />
+        <di:waypoint xsi:type="dc:Point" x="847" y="-194" />
+        <di:waypoint xsi:type="dc:Point" x="879" y="-194" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="817" y="-143" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_0a5sr55_di" bpmnElement="StartEvent_0a5sr55">
+        <dc:Bounds x="879" y="-269" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="925" y="-257" width="51" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_15db0cb_di" bpmnElement="SequenceFlow_15db0cb">
+        <di:waypoint xsi:type="dc:Point" x="897" y="-233" />
+        <di:waypoint xsi:type="dc:Point" x="897" y="-212" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="867" y="-228" width="90" height="12" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
