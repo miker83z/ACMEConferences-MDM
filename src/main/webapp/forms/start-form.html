@@ -1,0 +1,31 @@
+<form name="inputConferenceData">
+  <script cam-script type="text/form-script">
+
+    camForm.on('submit', function() {
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      for (var i = 0; i < 32; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+      camForm.businessKey = text;
+    });
+
+    inject([ '$rootScope', function($rootScope) {
+      // get variable manager
+      var variableManager = camForm.variableManager;
+
+      // current authentication to get the current logged in user
+      var user = $rootScope.authentication.name;
+
+      // a new variable will add it to the form submit
+      variableManager.createVariable({
+        name: 'processInstantiator',
+        type: 'String',
+        value: user,
+        isDirty: true
+      });
+    }]);
+
+  </script>
+</form>

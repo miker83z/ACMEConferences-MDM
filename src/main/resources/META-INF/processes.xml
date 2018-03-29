@@ -20,7 +20,7 @@
     </properties>
   </process-archive>
   
-    <process-archive name="chirpter">
+  <process-archive name="partner-process">
     <process-engine>default</process-engine>
     <properties>
       <property name="isDeleteUponUndeploy">false</property>
