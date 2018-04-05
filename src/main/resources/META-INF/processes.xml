@@ -18,6 +18,6 @@
       <property name="isDeleteUponUndeploy">false</property>
       <property name="isScanForProcessDefinitions">true</property>
     </properties>
-  </process-archive>
-  
+  </process-archive> 
+    
 </process-application>

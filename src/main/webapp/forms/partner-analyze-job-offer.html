@@ -1,0 +1,114 @@
+<form name="partnerForm" role="form">
+
+	<script cam-script type="text/form-script">
+		
+		camForm.on('form-loaded', function() {
+  			// fetch variables
+			camForm.variableManager.fetchVariable('jobInformations');
+		});
+
+		camForm.on('variables-fetched', function() {
+			// save fetched variables in AngularJS scope
+		    $scope.jobinfo = camForm.variableManager.variable('jobInformations').value;
+			// create new variables
+			$scope.available = false;
+			$scope.estimate = 0.0;
+		});
+				
+	</script>
+
+	<h3>Job informations</h3>
+	
+	<hr>
+	
+	<div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="jobinfo.clientName">Client name</label>
+	        <div class="col-xs-12 col-sm-8 col-md-9">
+	        	<input cam-variable-name="jobinfo.clientName"
+	        		cam-variable-type="String"
+	     	   		type="text"
+	     	   		readonly="true"
+	     	   		class="form-control" />
+	     	</div>
+		</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="jobinfo.date">Date</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+		    	<input cam-variable-name="jobinfo.date"
+	 	   			cam-variable-type="String"
+	 	   			type="text"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+			</div>
+		</div>
+		
+		<h5 class="col-xs-12">Address</h4>
+			
+     	<div class="control-group col-xs-12">
+       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="jobinfo.address.country">Country</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input cam-variable-name="jobinfo.address.country"
+	 	   			cam-variable-type="String"
+	 	   			type="text"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+	 	   	</div>
+		</div>
+		<div class="control-group col-xs-12">
+       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="jobinfo.address.city">City</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input cam-variable-name="jobinfo.address.city"
+		 	   		cam-variable-type="String"
+		 	   		type="text"
+		 	   		readonly="true"
+	 		   		class="form-control" />
+    		</div>
+     	</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="jobinfo.address.street">Street</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input cam-variable-name="jobinfo.address.street"
+	 	   			cam-variable-type="String"
+	 	   			type="text"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+     		</div>
+     	</div>
+		<div class="control-group col-xs-12">
+       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="jobinfo.address.postalCode">Postal Code</label>
+       		<div class="col-xs-12 col-sm-8 col-md-9">
+				<input cam-variable-name="jobinfo.address.postalCode"
+	 	   			cam-variable-type="String"
+	 	   			type="text"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+	 	   	</div>
+     	</div>
+		
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="available">Accept the job?</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input type="checkbox"
+      					cam-variable-name="available"
+      					cam-variable-type="Boolean"
+      					name="available"
+      					ng-model="available"
+      					class="form-control" />
+      		</div>
+      	</div>
+      	
+      	<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="estimate">Job estimate:</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input type="number"
+						step="any"
+      					cam-variable-name="estimate"
+      					cam-variable-type="Double"
+      					name="estimate"
+      					ng-model="estimate"
+      					class="form-control" />
+      		</div>
+      	</div>
+	</div>
+</form>

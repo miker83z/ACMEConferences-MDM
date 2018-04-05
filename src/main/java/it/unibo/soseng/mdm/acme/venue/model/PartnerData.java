@@ -2,15 +2,10 @@ package it.unibo.soseng.mdm.acme.venue.model;
 
 import it.unibo.soseng.mdm.acme.venue.model.Address;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.camunda.spin.SpinList;
 import org.camunda.spin.json.SpinJsonNode;
 
 /**
  * Stores all informations about a partner for venue.
- * @author davide
  *
  */
 public class PartnerData {
@@ -19,7 +14,7 @@ public class PartnerData {
 	private String email;
 	private String phoneNumber;
 	private double price;
-	private List<Address> addresses = new ArrayList<Address>();
+	private Address address;
 	private Boolean available;
 	private Boolean contacted;
 	
@@ -27,12 +22,12 @@ public class PartnerData {
 		
 	}
 	
-	public PartnerData(String name, String type, String email, String phoneNumber, List<Address> addresses) {
+	public PartnerData(String name, String type, String email, String phoneNumber, Address address) {
 		this.name = name;
 		this.type = type;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
-		this.addresses = addresses;
+		this.address = address;
 		
 		// Default values
 		this.price = 0.0;
@@ -40,9 +35,9 @@ public class PartnerData {
 		this.contacted = false;
 	}
 	
-	public PartnerData(String name, String type, String email, String phoneNumber, List<Address> addresses, 
+	public PartnerData(String name, String type, String email, String phoneNumber, Address address,  
 			double price, Boolean available, Boolean contacted) {
-		this(name, type, email, phoneNumber, addresses);
+		this(name, type, email, phoneNumber, address); ;
 		this.price = price;
 		this.available = available;
 		this.contacted = contacted;
@@ -50,6 +45,9 @@ public class PartnerData {
 		
 	public String getName() {
 		return name;
+	}
+	public String getNameWithoutWhitespaces() {
+		return name.replaceAll("\\s+","");
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -78,14 +76,11 @@ public class PartnerData {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public List<Address> getAddresses() {
-		return addresses;
+	public Address getAddress() {
+		return address;
 	}
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
-	}
-	public void addAddress(Address address) {
-		this.addresses.add(address);
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	public Boolean getAvailable() {
 		return available;
@@ -99,6 +94,7 @@ public class PartnerData {
 	public void setContacted(Boolean contacted) {
 		this.contacted = contacted;
 	}
+
 	public String toString() {
 		return "PartnerData ["
 				+ "name=" + name + ", "
@@ -106,28 +102,10 @@ public class PartnerData {
 				+ "email=" + email + ", "
 				+ "phoneNumber=" + phoneNumber + ", "
 				+ "price=" + price + ", "
-				+ "addresses=" + addresses + ", "
+				+ "address=" + address + ", "
 				+ "available=" + available + ", "
 				+ "contacted=" + contacted
 				+ "]";
-	}
-
-	/**
-	 * Convert the list of Address in a string with JSON format
-	 * @return All the addresses in JSON 
-	 */
-	private String addressesToJSON() {
-		
-		String addressesJSON = "[";
-		for (int i = 0; i < addresses.size(); i++) {
-			addressesJSON += addresses.get(i).toJSON();
-			if (i < addresses.size() - 1) {
-				addressesJSON += ", ";
-			}
-		}
-		addressesJSON += "]";
-		
-		return addressesJSON;
 	}
 
 	/**
@@ -141,38 +119,107 @@ public class PartnerData {
 				+ "\"email\": \"" + email + "\", "
 				+ "\"phoneNumber\": \"" + phoneNumber + "\", "
 				+ "\"price\": " + price + ", "
-				+ "\"addresses\": " + addressesToJSON() + ", "
+				+ "\"address\": " + address.toJSON() + ", "
 				+ "\"available\": " + available + ", "
 				+ "\"contacted\": " + contacted
 				+ "}";
 	}	
 	
 	/**
-	 * Convert a JSON into a PartnerData object
-	 * @param jsonNode The JSON with all partner informations
+	 * Convert a JSON into a PartnerData object.
+	 * @param jsonNode The JSON with all partner informations.
+	 * @param nameProperty The name of the JSON property for "name" of partner.
+	 * @param typeProperty The name of the JSON property for "type" of partner.
+	 * @param emailProperty The name of the JSON property for "email" of partner.
+	 * @param phoneNumberProperty The name of the JSON property for "phoneNumber" of partner.
+	 * @param priceProperty The name of the JSON property for "price" of partner.
+	 * @param availableProperty The name of the JSON property for "available" partner's property.
+	 * @param contactedProperty The name of the JSON property for "contacted" partner's property.
+	 * @param addressProperty The name of the JSON property for the "address" of partner.
 	 */
-	public void setValueFromJSON(SpinJsonNode jsonNode) {	
-		// Set partnerns value
-		setName(jsonNode.prop("name").stringValue());
-		setType(jsonNode.prop("type").stringValue());
-		setEmail(jsonNode.prop("email").stringValue());
-		setPhoneNumber(jsonNode.prop("phoneNumber").stringValue());
-		setPrice(jsonNode.prop("price").numberValue().doubleValue());
-		setAvailability(jsonNode.prop("available").boolValue());
-		setContacted(jsonNode.prop("contacted").boolValue());
+	public void setValueFromJSON(SpinJsonNode jsonNode,
+			String nameProperty, String typeProperty, String emailProperty, String phoneNumberProperty,
+			String priceProperty, String availableProperty, String contactedProperty, 
+			String addressProperty) {
+		// Set partners value
+		setName(jsonNode.prop(nameProperty).stringValue());
+		setType(jsonNode.prop(typeProperty).stringValue());
+		setEmail(jsonNode.prop(emailProperty).stringValue());
+		setPhoneNumber(jsonNode.prop(phoneNumberProperty).stringValue());
+		setPrice(jsonNode.prop(priceProperty).numberValue().doubleValue());
+		setAvailability(jsonNode.prop(availableProperty).boolValue());
+		setContacted(jsonNode.prop(contactedProperty).boolValue());
 		
 		// Fetch a list of items when your property is an array of data
-		SpinJsonNode addressesProperty = jsonNode.prop("addresses");
-		@SuppressWarnings("rawtypes")
-		SpinList addresses = addressesProperty.elements();
-		for (int i = 0; i < addresses.size(); i++) {
-			// Get the i-th element
-			SpinJsonNode addressJSON = (SpinJsonNode) addresses.get(i);
-			// Convert to Address object
-			Address address = new Address();
-			address.setValueFromJSON(addressJSON);
-			// Add to addresses
-			addAddress(address);
-		}
+		SpinJsonNode addressJSON = jsonNode.prop(addressProperty);
+		Address address = new Address();
+		address.setValueFromJSON(addressJSON);
+		setAddress(address);		
+	}
+	/**
+	 * Convert a JSON into a PartnerData object. The properties of the JSON must have the same name
+	 * of PartnerData object's properties:
+	 * "name", "type", "email", "phoneNumber", "price", "available", "contacted", "address".
+	 * @param jsonNode The JSON with all partner informations.
+	 */
+	public void setValueFromJSON(SpinJsonNode jsonNode) {
+		setValueFromJSON(jsonNode, 
+				"name", "type", "email", "phoneNumber",
+				"price", "available", "contacted", 
+				"address");
+	}
+	
+	/**
+	 * Convert a string array to a PartnerData object specifying the correct position of 
+	 * properties' values.
+	 * @param partner The string array with partner informations.
+	 * @param nameIdx Index of name property.
+	 * @param typeIdx Index of type property.
+	 * @param emailIdx Index of email property.
+	 * @param phoneNumberIdx Index of phoneNumber property.
+	 * @param addressCountryIdx Index of country property.
+	 * @param addressCityIdx Index of city property.
+	 * @param addressStreetIdx Index of street property.
+	 * @param addressPostalCodeIdx Index of postalCode property.
+	 * @param availabilityIdx Index of available property.
+	 * @param contactedIdx Index of contacted property.
+	 */
+	public void setValueFromStrings(String[] partner, 
+			Integer nameIdx, Integer typeIdx, Integer emailIdx, Integer phoneNumberIdx,
+			Integer addressCountryIdx, Integer addressCityIdx, Integer addressStreetIdx, Integer addressPostalCodeIdx,
+			Integer availabilityIdx, Integer contactedIdx) {
+		setName(partner[nameIdx]);
+		setType(partner[typeIdx]);
+		setEmail(partner[emailIdx]);
+		setPhoneNumber(partner[phoneNumberIdx]);
+		setAddress(new Address(partner[addressCountryIdx], partner[addressCityIdx], partner[addressStreetIdx], partner[addressPostalCodeIdx]));
+		setAvailability(Boolean.valueOf(partner[availabilityIdx]));
+		setContacted(Boolean.valueOf(partner[contactedIdx]));
+	}
+	/**
+	 * Convert a string array to a PartnerData object. The order of properties in the string must be:
+	 * "name","type","email","phoneNumber","country","city","street","postalCode","available","contacted".
+	 * @param partner The string array with partner informations.
+	 */
+	public void setValueFromStrings(String[] partner) {
+		setValueFromStrings(partner, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+	}
+	
+	/**
+	 * 
+	 * @param separator
+	 * @return
+	 */
+	public String getValuesForCSV(String separator) {
+		return getName() + separator 
+			   + getType() + separator 
+			   + getEmail() + separator 
+			   + getPhoneNumber() + separator 
+			   + getAddress().getCountry() + separator 
+			   + getAddress().getCity() + separator 
+			   + getAddress().getStreet() + separator 
+			   + getAddress().getPostalCode() + separator 
+			   + String.valueOf(getAvailable()) + separator 
+			   + String.valueOf(getContacted());
 	}
 }

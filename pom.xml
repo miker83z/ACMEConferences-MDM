@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>it.unibo.isos.mdm</groupId>
-  <artifactId>ACMEConferences</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
@@ -10,8 +9,8 @@
     <version.javaxservlet>3.0.1</version.javaxservlet>
     <version.mavenwarplugin>2.3</version.mavenwarplugin>
     <version.mavencompilerplugin>3.1</version.mavencompilerplugin>
-    <maven.compiler.source>1.7</maven.compiler.source>
-	<maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -45,7 +44,19 @@
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-core</artifactId>
     </dependency>
+    
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-email</artifactId>
+      <version>1.2</version>
+	</dependency>
 	
+	<dependency>
+    	<groupId>org.junit.jupiter</groupId>
+    	<artifactId>junit-jupiter-api</artifactId>
+    	<version>5.0.0-M5</version>
+   		<scope>test</scope>
+	</dependency>
   </dependencies>
 
   <build>
@@ -66,4 +77,5 @@
     </plugins>
   </build>
 
+  <artifactId>ACMEConferences-MDM</artifactId>
 </project>

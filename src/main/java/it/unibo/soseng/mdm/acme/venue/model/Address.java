@@ -1,5 +1,7 @@
 package it.unibo.soseng.mdm.acme.venue.model;
 
+import java.math.BigDecimal;
+
 import org.camunda.spin.json.SpinJsonNode;
 
 /**
@@ -10,6 +12,7 @@ public class Address {
 	private String city;
 	private String street;
 	private String postalCode;
+	private BigDecimal distanceFromUserRequest;
 
 	public Address() {
 		
@@ -20,6 +23,7 @@ public class Address {
 		this.city = city;
 		this.street = street;
 		this.postalCode = postalCode;
+		this.distanceFromUserRequest = BigDecimal.valueOf(0.0);
 	}
 	
 	public String getCountry() {
@@ -46,13 +50,21 @@ public class Address {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
+	public BigDecimal getDistanceFromUserRequest() {
+		return distanceFromUserRequest;
+	}
+	public void setDistanceFromUserRequest(BigDecimal distanceFromUserRequest) {
+		this.distanceFromUserRequest = distanceFromUserRequest;
+	}
+
 	public String toString() {
 		return "Address ["
 				+ "country=" + country + ", "
 				+ "city=" + city + ", "
 				+ "street=" + street + ", "
-				+ "postalCode=" + postalCode
-				+ "]";
+				+ "postalCode=" + postalCode + ", "
+				+ "distanceFromUserRequest=" + distanceFromUserRequest 
+				+ "]"; 
 	}
 	
 	/**
@@ -64,19 +76,44 @@ public class Address {
 				+ "\"country\": \"" + country + "\", "
 				+ "\"city\": \"" + city + "\", "
 				+ "\"street\": \"" + street + "\", "
-				+ "\"postalCode\": \"" + postalCode + "\""
+				+ "\"postalCode\": \"" + postalCode + "\", "
+				+ "\"distanceFromUserRequest\": " + distanceFromUserRequest 
 				+ "}";
 	}
 	
 	/**
-	 * Convert a JSON in to an Address object
-	 * @param jsonNode The JSON with all address informations
+	 * Convert a JSON into an Address object.
+	 * @param jsonNode The JSON with all address informations.
+	 * @param countryProperty The name of the JSON property for the "country".
+	 * @param cityProperty The name of the JSON property for the "city".
+	 * @param streetProperty The name of the JSON property for the "street".
+	 * @param postalCodeProperty The name of the JSON property for the "postalCode".
+	 * @param distanceProperty The name of the JSON property for the "distanceFromUserRequest".
 	 */
-	public void setValueFromJSON(SpinJsonNode jsonNode) {	
-		// Set address values
-		setCountry(jsonNode.prop("country").stringValue());
-		setCity(jsonNode.prop("city").stringValue());
-		setStreet(jsonNode.prop("street").stringValue());
-		setPostalCode(jsonNode.prop("postalCode").stringValue());
+	public void setValueFromJSON(SpinJsonNode jsonNode,
+			String countryProperty, String cityProperty, String streetProperty, String postalCodeProperty,
+			String distanceProperty) {	
+		setCountry(jsonNode.prop(countryProperty).stringValue());
+		setCity(jsonNode.prop(cityProperty).stringValue());
+		setStreet(jsonNode.prop(streetProperty).stringValue());
+		setPostalCode(jsonNode.prop(postalCodeProperty).stringValue());
+		setDistanceFromUserRequest(BigDecimal.valueOf(jsonNode.prop(distanceProperty).numberValue().doubleValue()));
+	}
+	/**
+	 * Convert a JSON into an Address object. The properties of the JSON must have the same name
+	 * of Address object's properties:
+	 * "country", "city", "street", "postalCode".
+	 * @param jsonNode The JSON with all address informations.
+	 */
+	public void setValueFromJSON(SpinJsonNode jsonNode) {
+		setValueFromJSON(jsonNode, "country", "city", "street", "postalCode", "distanceFromUserRequest");
+	}
+	
+	/**
+	 * Create a string that is readable from the GIS external service.
+	 * @return The string with address informations
+	 */
+	public String toGisReadableString() {
+		return country + ", " + city + ", " + street;
 	}
 }
