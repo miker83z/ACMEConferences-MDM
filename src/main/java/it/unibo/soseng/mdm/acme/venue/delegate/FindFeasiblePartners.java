@@ -33,6 +33,9 @@ public class FindFeasiblePartners implements JavaDelegate {
 		// Leave only the two nearest partners
 		partners.cutPartnersList(NUMBER_OF_PARTNERS);
 		
+		// Set loop cardinality for the parallel sub-process
+		execution.setVariable("numberOfPartners", partners.getPartnerList().size());
+		
 		// Set partner list
 		execution.setVariable("partnerList", JSON(partners.toJSON()));
 	}

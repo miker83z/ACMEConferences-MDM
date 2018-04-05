@@ -12,7 +12,7 @@ import it.unibo.soseng.mdm.util.RandomAlphanumericString;
 
 import static org.camunda.spin.Spin.JSON;
 
-public class AskForAvailability implements JavaDelegate {
+public class UNUSED_AskForAvailability implements JavaDelegate {
 
 	// Values for email
 	private static final String EMAIL_USERNAME = "provecamundaisos@gmail.com";
