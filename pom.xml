@@ -10,13 +10,8 @@
     <version.javaxservlet>3.0.1</version.javaxservlet>
     <version.mavenwarplugin>2.3</version.mavenwarplugin>
     <version.mavencompilerplugin>3.1</version.mavencompilerplugin>
-<<<<<<< HEAD
     <maven.compiler.source>1.8</maven.compiler.source>
 	<maven.compiler.target>1.8</maven.compiler.target>
-=======
-    <maven.compiler.source>1.7</maven.compiler.source>
-	<maven.compiler.target>1.7</maven.compiler.target>
->>>>>>> origin/VenueManagement
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -50,7 +45,6 @@
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-core</artifactId>
     </dependency>
-<<<<<<< HEAD
     
     <dependency>
     	<groupId>javax.xml.ws</groupId> 
@@ -83,9 +77,6 @@
     	<version>5.0.0-M5</version>
    		<scope>test</scope>
 	</dependency>
-=======
-	
->>>>>>> origin/VenueManagement
   </dependencies>
 
   <build>

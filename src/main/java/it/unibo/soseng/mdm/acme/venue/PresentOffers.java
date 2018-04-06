@@ -20,11 +20,11 @@ public class PresentOffers implements JavaDelegate {
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("partnerList");
 		
 		// Convert the JSON to a list of PartnerData
-		List<PartnerData> partnerList = new ArrayList<>();
+		List<PartnerData> partnerList = new ArrayList<PartnerData>();
 		partnerList = retrievePartnersFromJSON(jsonNode);
 		
 		// Create a list with only the available and contacted partners
-		List<PartnerData> availablePartners = new ArrayList<>();
+		List<PartnerData> availablePartners = new ArrayList<PartnerData>();
 		for (PartnerData partnerData : partnerList) {
 			if (partnerData.getAvailable() && partnerData.getContacted()) {
 				availablePartners.add(partnerData);
@@ -58,7 +58,7 @@ public class PresentOffers implements JavaDelegate {
 	 * @return
 	 */
 	private List<PartnerData> retrievePartnersFromJSON(SpinJsonNode jsonNode) {
-		List<PartnerData> partnerList = new ArrayList<>();
+		List<PartnerData> partnerList = new ArrayList<PartnerData>();
 		
 		// Fetch a list of items when your property is an array of data
 		@SuppressWarnings("rawtypes")

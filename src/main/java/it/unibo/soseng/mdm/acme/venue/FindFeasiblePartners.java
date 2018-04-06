@@ -20,7 +20,7 @@ public class FindFeasiblePartners implements JavaDelegate {
 		 */
 		
 		// Retrieve the partner list
-		List<PartnerData> partnerList = new ArrayList<>();
+		List<PartnerData> partnerList = new ArrayList<PartnerData>();
 		partnerList = retrievePartnersList();
 		
 		// Create a string in JSON format with all partner informations
@@ -45,7 +45,7 @@ public class FindFeasiblePartners implements JavaDelegate {
 	 * @return The list of partners
 	 */
 	private List<PartnerData> retrievePartnersList() {
-		List<PartnerData> partnerList = new ArrayList<>();
+		List<PartnerData> partnerList = new ArrayList<PartnerData>();
 		// Addresses
 		String[] countries = {"Italy", "Italy", "Italy"};
 		String[] cities = {"Ferrara", "Bologna", "Imola"};
@@ -61,7 +61,7 @@ public class FindFeasiblePartners implements JavaDelegate {
 		// Create a list with partner informations
 		for (int i = 0; i < countries.length; i++) {
 			Address address = new Address(countries[i], cities[i], streets[i], postalCodes[i]);
-			List<Address> addresses = new ArrayList<>();
+			List<Address> addresses = new ArrayList<Address>();
 			addresses.add(address);
 			PartnerData partner = new PartnerData(names[i], types[i], emails[i], phoneNumbers[i], addresses);
 			partnerList.add(partner);

@@ -11,16 +11,13 @@ public class ProvaUnoApplication extends ServletProcessApplication {
 	
 	@PostDeploy
 	  public void startService(ProcessEngine processEngine) throws Exception {
-<<<<<<< HEAD
 	    //RuntimeService runtimeService = processEngine.getRuntimeService();
 	    //runtimeService.createMessageCorrelation("Start");	   
 	    //runtimeService.createMessageCorrelation("Confirmation");	
 	    //runtimeService.createMessageCorrelation("Rejection");	
-=======
 	    RuntimeService runtimeService = processEngine.getRuntimeService();
 	    runtimeService.createMessageCorrelation("offers");	
 	    runtimeService.createMessageCorrelation("accepted_offer");
 	    runtimeService.createMessageCorrelation("refused_offers");
->>>>>>> origin/VenueManagement
 	  }
 }
