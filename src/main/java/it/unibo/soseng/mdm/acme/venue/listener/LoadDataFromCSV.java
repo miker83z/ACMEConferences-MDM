@@ -5,8 +5,8 @@ import static org.camunda.spin.Spin.JSON;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.ExecutionListener;
 
-import it.unibo.soseng.mdm.acme.venue.model.JobData;
-import it.unibo.soseng.mdm.acme.venue.model.PartnerDatas;
+import it.unibo.soseng.mdm.acme.model.JobData;
+import it.unibo.soseng.mdm.acme.model.PartnerDatas;
 import it.unibo.soseng.mdm.util.CSVUtils;
 
 public class LoadDataFromCSV implements ExecutionListener {

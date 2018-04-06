@@ -6,8 +6,8 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.spin.json.SpinJsonNode;
 
-import it.unibo.soseng.mdm.acme.venue.model.JobData;
-import it.unibo.soseng.mdm.acme.venue.model.PartnerDatas;
+import it.unibo.soseng.mdm.acme.model.JobData;
+import it.unibo.soseng.mdm.acme.model.PartnerDatas;
 
 public class SearchBestPartner implements JavaDelegate {
 

@@ -4,7 +4,7 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.ExecutionListener;
 import org.camunda.spin.json.SpinJsonNode;
 
-import it.unibo.soseng.mdm.acme.venue.model.PartnerDatas;
+import it.unibo.soseng.mdm.acme.model.PartnerDatas;
 
 public class SearchRemainingPartners implements ExecutionListener {
 	
