@@ -5,12 +5,22 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
+  <properties>
+    <version.camunda>7.8.0</version.camunda>
+    <version.javaxservlet>3.0.1</version.javaxservlet>
+    <version.mavenwarplugin>2.3</version.mavenwarplugin>
+    <version.mavencompilerplugin>3.1</version.mavencompilerplugin>
+    <maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.camunda.bpm</groupId>
         <artifactId>camunda-bom</artifactId>
-        <version>7.8.0</version>
+        <version>${version.camunda}</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -23,17 +33,17 @@
       <artifactId>camunda-engine</artifactId>
       <scope>provided</scope>
     </dependency>
-    
-    <dependency>
-  		<groupId>org.camunda.spin</groupId>
-  		<artifactId>camunda-spin-core</artifactId>
-	</dependency>
-	
+
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>3.0.1</version>
+      <version>${version.javaxservlet}</version>
       <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.camunda.spin</groupId>
+      <artifactId>camunda-spin-core</artifactId>
     </dependency>
     
     <dependency>
@@ -55,6 +65,18 @@
   		<version>2.9.9</version>
 	</dependency> 
     
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-email</artifactId>
+      <version>1.2</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.junit.jupiter</groupId>
+    	<artifactId>junit-jupiter-api</artifactId>
+    	<version>5.0.0-M5</version>
+   		<scope>test</scope>
+	</dependency>
   </dependencies>
 
   <build>
@@ -62,11 +84,16 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.3</version>
+        <version>${version.mavenwarplugin}</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-compiler-plugin</artifactId>
+    	<version>${version.mavencompilerplugin}</version>
+	  </plugin>
     </plugins>
   </build>
 
