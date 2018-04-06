@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *         &lt;element name="receiver" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="userID" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="userID" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,7 +41,8 @@ public class TransferPayment {
     protected double quantity;
     @XmlElement(required = true)
     protected String receiver;
-    protected int userID;
+    @XmlElement(required = true)
+    protected String userID;
 
     /**
      * Gets the value of the quantity property.
@@ -86,16 +87,24 @@ public class TransferPayment {
     /**
      * Gets the value of the userID property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
     /**
      * Sets the value of the userID property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setUserID(int value) {
+    public void setUserID(String value) {
         this.userID = value;
     }
 

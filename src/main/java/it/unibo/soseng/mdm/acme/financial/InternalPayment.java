@@ -1,5 +1,10 @@
 package it.unibo.soseng.mdm.acme.financial;
 
+import java.util.ArrayList;
+
+import javax.xml.ws.WebServiceException;
+
+import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
@@ -7,38 +12,47 @@ import it.unibo.soseng.mdm.acme.generated.BankPort;
 import it.unibo.soseng.mdm.acme.generated.BankPortService;
 import it.unibo.soseng.mdm.acme.generated.TransferPayment;
 import it.unibo.soseng.mdm.acme.generated.TransferPaymentResponse;
-import it.unibo.soseng.mdm.acme.generated.UserLogin;
-import it.unibo.soseng.mdm.acme.generated.UserLoginResponse;
-import it.unibo.soseng.mdm.acme.generated.UserLogout;
-import it.unibo.soseng.mdm.acme.generated.UserLogoutResponse;
+import it.unibo.soseng.mdm.acme.model.Bill;
+import it.unibo.soseng.mdm.acme.model.BillsCollection;
 
 public class InternalPayment implements JavaDelegate{
 	
+	//wsimport -s /home/miker/eclipse-workspace/ACMEConferences/src/main/java -p it.unibo.soseng.mdm.acme.generated -Xnocompile -b binding.xml -wsdllocation /server.wsdl server.wsdl
+	
 	public void execute(DelegateExecution execution) throws Exception {
-		String username = "mirko";//(String) execution.getVariable("usrBank");
-		String password = "mirko";//(String) execution.getVariable("pswBank");
-		BankPortService bankService = new BankPortService();
-		BankPort bank = bankService.getBankPortServicePort();
-		UserLogin loginRequest = new UserLogin();
-		loginRequest.setUsername(username);
-		loginRequest.setPassword(password);
-		UserLoginResponse loginResponse = bank.userLogin(loginRequest);
-		if(loginResponse.isFlag()) {
-			execution.setVariable("loginResponse", loginResponse.getUserID());
-			int tmpID = loginResponse.getUserID();
+		execution.setVariable("transferAttempts",((Integer) execution.getVariable("transferAttempts")) + 1 );
+		try {
+			BankPortService bankService = new BankPortService();
+			BankPort bank = bankService.getBankPortServicePort();
 			
-			TransferPayment transferRequest = new TransferPayment();
-			transferRequest.setUserID(tmpID);
-			transferRequest.setQuantity(1000.0);
-			transferRequest.setReceiver("michele");
-			TransferPaymentResponse transferResponse = bank.transferPayment(transferRequest);
-			if( transferResponse.isFlag() )
-				execution.setVariable("transferResponse", transferResponse.getMessage());
+			String bankID = (String)execution.getVariable("acmeBankID");
+			BillsCollection bills = (BillsCollection) execution.getVariable("billsToPay");
 			
-			UserLogout logoutRequest = new UserLogout();
-			logoutRequest.setUserID(tmpID);
-			UserLogoutResponse logoutResponse = bank.userLogout(logoutRequest);
-			execution.setVariable("logoutResponse", logoutResponse.isFlag());
+			boolean allPaymentsCompletedflag = true;
+			ArrayList<Bill> billsPayed = new ArrayList<Bill>();
+			for(Bill bill : bills.getBills()) {
+				TransferPayment transferRequest = new TransferPayment();
+				transferRequest.setUserID(bankID);
+				transferRequest.setQuantity(bill.getAmount());
+				transferRequest.setReceiver(bill.getReceiver());
+				TransferPaymentResponse transferResponse = bank.transferPayment(transferRequest);
+				if( transferResponse.isFlag() ) {
+					billsPayed.add(bill);
+				}
+				else {
+					allPaymentsCompletedflag = false;
+					bill.setErrorMessage(transferResponse.getMessage());
+				}
+			}
+			BillsCollection payed = (BillsCollection) execution.getVariable("billsPayed");
+			for(Bill bill : billsPayed) {
+				execution.setVariable("sumPayed", (Double) execution.getVariable("sumPayed") + bill.getAmount());
+				bills.removeBill(bill);
+				payed.addBill(bill);
+			}
+			execution.setVariable("allPaymentsCompleted", allPaymentsCompletedflag);
+		} catch(WebServiceException e) {
+			throw new BpmnError("WEB_SERVICE_ERROR");
 		}
 	}
 }
