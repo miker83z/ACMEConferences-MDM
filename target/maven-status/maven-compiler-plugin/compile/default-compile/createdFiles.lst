@@ -1,0 +1,10 @@
+it/unibo/soseng/mdm/acme/venue/AddBillToPayments.class
+it/unibo/soseng/mdm/acme/venue/model/PartnerData.class
+it/unibo/soseng/mdm/acme/venue/PresentOffers.class
+it/unibo/soseng/mdm/client/RefusePartnerOffers.class
+it/unibo/soseng/mdm/acme/management/MyMessageDelegate.class
+it/unibo/soseng/mdm/client/SendSelectedOffer.class
+it/unibo/soseng/mdm/acme/venue/model/Address.class
+it/unibo/soseng/mdm/acme/venue/FindFeasiblePartners.class
+it/unibo/soseng/mdm/acme/venue/model/Addresses.class
+it/unibo/soseng/mdm/ProvaUnoApplication.class
