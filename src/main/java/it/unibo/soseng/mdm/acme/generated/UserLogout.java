@@ -1,7 +1,6 @@
 
 package it.unibo.soseng.mdm.acme.generated;
 
-import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -10,16 +9,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+ *         &lt;element name="userID" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "result"
+    "userID"
 })
-@XmlRootElement(name = "getDistanceBetweenResponse")
-public class GetDistanceBetweenResponse {
+@XmlRootElement(name = "userLogout")
+public class UserLogout {
 
     @XmlElement(required = true)
-    protected BigDecimal result;
+    protected String userID;
 
     /**
-     * Recupera il valore della proprietà result.
+     * Gets the value of the userID property.
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public BigDecimal getResult() {
-        return result;
+    public String getUserID() {
+        return userID;
     }
 
     /**
-     * Imposta il valore della proprietà result.
+     * Sets the value of the userID property.
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public void setResult(BigDecimal value) {
-        this.result = value;
+    public void setUserID(String value) {
+        this.userID = value;
     }
 
 }

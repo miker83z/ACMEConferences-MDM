@@ -7,8 +7,8 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the it.unibo.soseng.ws.generated package. 
- * <p>An ObjectFactory allows you to programmatically 
+ * generated in the it.unibo.soseng.mdm.acme.generated package. 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -23,26 +23,58 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: it.unibo.soseng.ws.generated
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: it.unibo.soseng.mdm.acme.generated
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link GetDistanceBetween }
+     * Create an instance of {@link UserLogin }
      * 
      */
-    public GetDistanceBetween createGetDistanceBetween() {
-        return new GetDistanceBetween();
+    public UserLogin createUserLogin() {
+        return new UserLogin();
     }
 
     /**
-     * Create an instance of {@link GetDistanceBetweenResponse }
+     * Create an instance of {@link UserLoginResponse }
      * 
      */
-    public GetDistanceBetweenResponse createGetDistanceBetweenResponse() {
-        return new GetDistanceBetweenResponse();
+    public UserLoginResponse createUserLoginResponse() {
+        return new UserLoginResponse();
+    }
+
+    /**
+     * Create an instance of {@link UserLogoutResponse }
+     * 
+     */
+    public UserLogoutResponse createUserLogoutResponse() {
+        return new UserLogoutResponse();
+    }
+
+    /**
+     * Create an instance of {@link UserLogout }
+     * 
+     */
+    public UserLogout createUserLogout() {
+        return new UserLogout();
+    }
+
+    /**
+     * Create an instance of {@link TransferPaymentResponse }
+     * 
+     */
+    public TransferPaymentResponse createTransferPaymentResponse() {
+        return new TransferPaymentResponse();
+    }
+
+    /**
+     * Create an instance of {@link TransferPayment }
+     * 
+     */
+    public TransferPayment createTransferPayment() {
+        return new TransferPayment();
     }
 
 }

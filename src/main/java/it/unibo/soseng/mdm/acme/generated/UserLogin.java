@@ -9,17 +9,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per anonymous complex type.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="address1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="address2" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,63 +30,63 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "address1",
-    "address2"
+    "password",
+    "username"
 })
-@XmlRootElement(name = "getDistanceBetween")
-public class GetDistanceBetween {
+@XmlRootElement(name = "userLogin")
+public class UserLogin {
 
     @XmlElement(required = true)
-    protected String address1;
+    protected String password;
     @XmlElement(required = true)
-    protected String address2;
+    protected String username;
 
     /**
-     * Recupera il valore della proprietà address1.
+     * Gets the value of the password property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAddress1() {
-        return address1;
+    public String getPassword() {
+        return password;
     }
 
     /**
-     * Imposta il valore della proprietà address1.
+     * Sets the value of the password property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAddress1(String value) {
-        this.address1 = value;
+    public void setPassword(String value) {
+        this.password = value;
     }
 
     /**
-     * Recupera il valore della proprietà address2.
+     * Gets the value of the username property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAddress2() {
-        return address2;
+    public String getUsername() {
+        return username;
     }
 
     /**
-     * Imposta il valore della proprietà address2.
+     * Sets the value of the username property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAddress2(String value) {
-        this.address2 = value;
+    public void setUsername(String value) {
+        this.username = value;
     }
 
 }
