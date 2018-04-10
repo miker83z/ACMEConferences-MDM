@@ -4,16 +4,26 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.ExecutionListener;
 import org.joda.time.DateTime;
 
+import it.unibo.soseng.mdm.acme.model.Address;
 import it.unibo.soseng.mdm.acme.model.ConferenceData;
 
 public class ReceiveConferenceDataListener implements ExecutionListener{
 
 	public void notify(DelegateExecution execution) throws Exception {
 		ConferenceData conference = (ConferenceData) execution.getVariable("conferenceData");
+			
+		
 		//ConferenceData conference = new ConferenceData(conferenceData);
 		//execution.setVariable("confTitle", conference.getTitle());
 		//execution.setVariable("confFirstDay", conference.getFirstDay());
-		execution.setVariable("confLastDayPlus60", new DateTime(conference.getLastDay()).plusDays(60).toDate() );
+		
+		
+		
+		// TODO: forse questo va riabilitato
+		// execution.setVariable("confLastDayPlus60", new DateTime(conference.getLastDay()).plusDays(60).toDate() );
+		
+		
+		
 		//execution.setVariable("confTicketPrice", conference.getTicketPrice());
 		execution.setVariable("allin", conference.getIsAllin());
 		/*if( conference.getIsAllin() ) {

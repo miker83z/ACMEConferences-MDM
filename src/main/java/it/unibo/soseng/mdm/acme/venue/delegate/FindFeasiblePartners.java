@@ -8,7 +8,6 @@ import org.camunda.spin.json.SpinJsonNode;
 
 import it.unibo.soseng.mdm.acme.model.Address;
 import it.unibo.soseng.mdm.acme.model.ConferenceData;
-import it.unibo.soseng.mdm.acme.model.JobData;
 import it.unibo.soseng.mdm.acme.model.PartnerDatas;
 import it.unibo.soseng.mdm.util.EmailSender;
 
@@ -38,10 +37,10 @@ public class FindFeasiblePartners implements JavaDelegate {
 			execution.setVariable("remaining_partners", true);
 			
 			// Retrieve job informations from Camunda
-			ConferenceData conferenceData = (ConferenceData) execution.getVariable("conferenceData");
+			ConferenceData conference = (ConferenceData) execution.getVariable("conferenceData");
 					
 			// FIXME: invece di questo address usare la variabile Address dentro conferenceData
-			Address address = new Address("Italia", conferenceData.getAllinLocation(), "", "");
+			Address address = new Address("Italia", conference.getAllinLocation(), "", "");
 			partners.orderPartnersList(address);
 			
 			// Leave only the two nearest partners

@@ -1,0 +1,41 @@
+<form name="debtPayment" role="form">
+
+  <script cam-script type="text/form-script">
+    
+    camForm.on('form-loaded', function() {
+    
+      // fetch the variable named 'billsToPay'
+      camForm.variableManager.fetchVariable('ACMEBillToPay');
+    
+    });
+
+    camForm.on('variables-fetched', function() {
+     
+      // after the variables are fetched, bind the value of billsToPay to a angular
+      // scope value such that the form can work on it
+      $scope.bill = camForm.variableManager.variable('ACMEBillToPay').value;
+    
+    });
+  </script>
+
+  <p class="lead">ACME Debt to pay</p><br>
+  Please, insert bank username and password to pay via transfer wire:<br> 
+  {{bill.amount}} euro to {{bill.receiver}}.<br>
+
+  <div>
+    <label>Username</label>
+    <input 
+    type="text" 
+    required 
+    cam-variable-name="bankUsername"
+    cam-variable-type="String"
+    class="form-control" /><br>
+    <label>Password</label>
+    <input 
+    type="password" 
+    required 
+    cam-variable-name="bankPassword"
+    cam-variable-type="String"
+    class="form-control" /><br>
+  </div>
+</form>

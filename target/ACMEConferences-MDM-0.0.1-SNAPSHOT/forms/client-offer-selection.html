@@ -1,0 +1,181 @@
+<form name="offersForm" role="form">
+
+	<script cam-script type="text/form-script">
+		
+		var selected_partner_value = false;
+		
+		// Change the value of the variable that control the next gateway
+		$("#select_partner").change(function(){
+	    	if($(this).val() == "null"){
+	      		selected_partner_value = false;
+	    	}
+	    	else{
+	      		selected_partner_value = true;
+	    	}
+		});
+	
+		camForm.on('form-loaded', function() {
+  			// fetch the variable named 'partnerList'
+  			camForm.variableManager.fetchVariable('availablePartners');
+		});
+
+		camForm.on('variables-fetched', function() {
+			// after the variables are fetched, bind the value of partnerList to an angular
+		  	// scope value such that the form can work on it
+		  	$scope.partnerList = camForm.variableManager.variable('availablePartners').value;
+		
+			// temporary variable
+			$scope.selected_partner_name = "";
+		});
+		
+  		camForm.on('submit', function(err) {
+     	 	// this callback is executed when the form is submitted, *before* the 
+     		// submit request to the server is executed
+
+  			// create the variable used in the next gateway
+  			camForm.variableManager.createVariable({
+    			name: 'selected_partner',
+    			type: 'Boolean',
+    			value: selected_partner_value,
+    			isDirty: true
+			});		 	
+	
+			// update informations about the selected partner
+			if (selected_partner_value === true) {
+				angular.forEach($scope.partnerList, function(partner) {
+					// Find the partner
+					if (partner.name === $scope.selected_partner_name) {
+			 			// create the variable for informations about the selected partner
+						camForm.variableManager.createVariable({
+      						name: 'chosenPartner',
+      						type: 'json',
+      						value: partner,
+							isDirty: true
+    					});
+					}
+				});
+			}
+			else {
+				console.log("All refused");
+			}
+  		});
+	</script>
+
+	<h3>List of available partners</h3>
+	
+	<hr>
+	
+	<div class="form-group">
+		<label for="selected_partner_name" class="col-xs-12 col-sm-7 col-md-6">
+			Choose one partner:
+		</label>
+		<div class="col-xs-12 col-sm-5 col-md-6">
+			<select id="select_partner"
+					ng-model="selected_partner_name">
+		    	<option ng-repeat="partner in partnerList" ng-attr-id="{{'partner-' + $index}}" value="{{partner.name}}">{{partner.name}}</option>
+				<option value="null">None of this</option>
+			</select>
+		</div>
+	</div>
+		
+	<div ng-repeat="partner in partnerList">
+			
+		<hr>
+			
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">Name</label>
+	        <div class="col-xs-12 col-sm-8 col-md-9">
+	        	<input cam-variable-name="partner.name"
+	     	   		type="text"
+			   		name="name"
+	     	   		readonly="true"
+	     	   		class="form-control" />
+	     	</div>
+		</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="type">Type</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+		    	<input cam-variable-name="partner.type"
+	 	   			type="text"
+		   			name="type"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+			</div>
+		</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="email">Email</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+		    	<input cam-variable-name="partner.email"
+	 	   			type="text"
+		   			name="email"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+			</div>
+		</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="phoneNumber">Phone number</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+		    	<input cam-variable-name="partner.phoneNumber"
+	 	   			type="text"
+		   			name="phoneNumber"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+			</div>
+		</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="price">Price</label>
+	        <div class="col-xs-12 col-sm-8 col-md-9">
+	        	<input cam-variable-name="partner.price"
+	     	   		type="text"
+			   		name="price"
+	     	   		readonly="true"
+	     	   		class="form-control" />
+	     	</div>
+		</div>
+		
+		<h4 class="col-xs-12">Address</h4>
+   		<div class="control-group col-xs-12">
+       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="country">Country</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input cam-variable-name="partner.address.country"
+	 	   			type="text"
+		   			name="country"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+	 	   	</div>
+		</div>		
+		<div class="control-group col-xs-12">
+      		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="city">City</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input cam-variable-name="partner.address.city"
+		 	   		type="text"
+			   		name="city"
+		 	   		readonly="true"
+	 		   		class="form-control" />
+    		</div>
+     	</div>
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="street">Street</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input cam-variable-name="partner.address.street"
+	 	   			type="text"
+		   			name="street"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+     			</div>
+     		</div>
+		<div class="control-group col-xs-12">
+       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="postalCode">Postal Code</label>
+       		<div class="col-xs-12 col-sm-8 col-md-9">
+				<input cam-variable-name="partner.address.postalCode"
+	 	   			type="text"
+		   			name="postalCode"
+	 	   			readonly="true"
+	 	   			class="form-control" />
+	 	   	</div>
+   		</div>
+
+		<hr>	
+		<br>
+	</div>
+</form>

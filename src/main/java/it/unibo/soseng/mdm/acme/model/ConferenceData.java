@@ -8,7 +8,7 @@ import org.camunda.spin.json.SpinJsonNode;
 import org.joda.time.DateTime;
 
 public class ConferenceData {
-
+	
 	private String title;
 	private List<Date> dates = new ArrayList<Date>();
 	private double ticketPrice;
@@ -16,7 +16,11 @@ public class ConferenceData {
 	private String allinLocation;
 	private int allinExpectedAttendance;
 	private String stdAddress;
-	private int stdMaxPartecipants;
+	private int stdMaxParticipants;
+	
+	// New properties
+	private String clientName;
+	private Address allinAddress;
 	
 	public ConferenceData() {
 		//
@@ -28,7 +32,7 @@ public class ConferenceData {
 	}
 	
 	public ConferenceData(String title, List<Date> dates, double ticketPrice, boolean isAllin, String allinLocation,
-			int allinExpectedAttendance, String stdAddress, int stdMaxPartecipants) {
+			int allinExpectedAttendance, String stdAddress, int stdMaxParticipants) {
 		this.title = title;
 		this.dates = dates;
 		this.ticketPrice = ticketPrice;
@@ -36,23 +40,37 @@ public class ConferenceData {
 		this.allinLocation = allinLocation;
 		this.allinExpectedAttendance = allinExpectedAttendance;
 		this.stdAddress = stdAddress;
-		this.stdMaxPartecipants = stdMaxPartecipants;
+		this.stdMaxParticipants = stdMaxParticipants;
+		
+		// Default values
+		this.clientName = "clientName";
+		this.allinAddress = new Address("Italia", "Bologna", "Via indipendenza, 3", "11111");
 	}
 	
+	// New constructor
+	public ConferenceData(String title, List<Date> dates, double ticketPrice, boolean isAllin, String allinLocation,
+			int allinExpectedAttendance, String stdAddress, int stdMaxParticipants, 
+			String clientName, Address allinAddress) {
+		this(title, dates, ticketPrice, isAllin, allinLocation, allinExpectedAttendance, stdAddress, stdMaxParticipants);
+		this.clientName = clientName;
+		this.allinAddress = allinAddress;
+	}
+	// FIXME: questi servono?
+	/*
 	public Date getFirstDay() {
 		if(dates != null && dates.size() > 0)
 			return dates.get(0);
 		else
 			return new DateTime("2019-01-01T12:00:00").toDate();
 	}
-	
+
 	public Date getLastDay() {
 		if(dates != null && dates.size() > 0)
 			return dates.get(dates.size() - 1);
 		else
 			return new DateTime("2019-01-01T12:00:00").toDate();
-	}
-
+	} 
+	*/
 	public String getTitle() {
 		return title;
 	}
@@ -111,14 +129,31 @@ public class ConferenceData {
 		this.stdAddress = stdAddress;
 	}
 
-	public int getStdMaxPartecipants() {
-		return stdMaxPartecipants;
+	public int getStdMaxParticipants() {
+		return stdMaxParticipants;
 	}
 
-	public void setStdMaxPartecipants(int stdMaxPartecipants) {
-		this.stdMaxPartecipants = stdMaxPartecipants;
+	public void setStdMaxParticipants(int stdMaxParticipants) {
+		this.stdMaxParticipants = stdMaxParticipants;
+	}
+	
+	// New methods
+	public String getClientName() {
+		return clientName;
 	}
 
+	public void setClientName(String clientName) {
+		this.clientName = clientName;
+	}
+
+	public Address getAllinAddress() {
+		return allinAddress;
+	}
+
+	public void setAllinAddress(Address allinAddress) {
+		this.allinAddress = allinAddress;
+	}
+	
 	public void setValueFromJSON(SpinJsonNode jsonNode) {
 		//Title
 		if( !jsonNode.prop("title").isNull() )
@@ -165,34 +200,34 @@ public class ConferenceData {
 		//std
 		if( !jsonNode.prop("stdprop").isNull() ) {
 			//stdAddress
-			if( !jsonNode.prop("stdprop").prop("address").isNull() )
-				setStdAddress(jsonNode.prop("stdprop").prop("address").toString());
+			if( !jsonNode.prop("stdprop").prop("allinAddress").isNull() )
+				setStdAddress(jsonNode.prop("stdprop").prop("allinAddress").toString());
 			else
 				setStdAddress("");
-			//stdMaxPartecipants
-			if( !jsonNode.prop("stdprop").prop("maxPartecipants").isNull() )
-				setStdMaxPartecipants(jsonNode.prop("stdprop").prop("maxPartecipants").numberValue().intValue());
+			//stdMaxParticipants
+			if( !jsonNode.prop("stdprop").prop("maxParticipants").isNull() )
+				setStdMaxParticipants(jsonNode.prop("stdprop").prop("maxParticipants").numberValue().intValue());
 			else
-				setStdMaxPartecipants(0);
+				setStdMaxParticipants(0);
 		}
 		else {
 			setStdAddress("");
-			setStdMaxPartecipants(0);
+			setStdMaxParticipants(0);
 		}		
 	}
 
 	@Override
 	public String toString() {
-		return "ConferenceData [" + 
-					"title=" + title + "," +
-					"dates=" + dates + ", " + 
-					"ticketPrice=" + ticketPrice + ", " + 
-					"isAllin=" + isAllin + ", " + 
-					"allinLocation=" + allinLocation + ", " + 
-					"allinExpectedAttendance=" + allinExpectedAttendance + ", " + 
-					"stdAddress=" + stdAddress + ", " + 
-					"stdMaxPartecipants=" + stdMaxPartecipants + 
-					"]";
+		return "ConferenceData [title=" + title + ", "
+				+ "dates=" + dates + ", "
+				+ "ticketPrice=" + ticketPrice + ", "
+				+ "isAllin=" + isAllin + ", "
+				+ "allinLocation=" + allinLocation + ", "
+				+ "allinExpectedAttendance=" + allinExpectedAttendance + ", "
+				+ "stdAddress=" + stdAddress + ", "
+				+ "stdMaxParticipants=" + stdMaxParticipants + ", "
+				+ "clientName=" + clientName + ", "
+				+ "allinAddress=" + allinAddress + "]";
 	}
 	
 }
