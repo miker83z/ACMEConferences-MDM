@@ -9,6 +9,7 @@ import it.unibo.soseng.mdm.acme.model.PartnerData;
 public class AddBillToPayments implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {		
+		// FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("chosenPartner");
 		PartnerData partner = new PartnerData();

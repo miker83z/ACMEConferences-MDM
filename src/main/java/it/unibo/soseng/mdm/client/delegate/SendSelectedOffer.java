@@ -8,6 +8,7 @@ import org.camunda.spin.json.SpinJsonNode;
 public class SendSelectedOffer implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {
+		// FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine
 		SpinJsonNode chosenPartner = (SpinJsonNode) execution.getVariable("chosenPartner");
 				

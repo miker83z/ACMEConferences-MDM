@@ -21,29 +21,31 @@ public class PartnerNotAvailableListener implements ExecutionListener {
 		// Get my id
 		Integer id = (Integer) execution.getVariable("loopCounter");
 		
+		// FIXME: togliere JSON
 		// Get partner list
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("allPartners");
-		
-		// Convert the JSON to a list of PartnerData
 		PartnerDatas partners = new PartnerDatas();
 		partners.setPartnersFromJSON(jsonNode);
 		
 		// Update partner values
 		partners.getPartnerList().get(id).setAvailability(false);
 		
+		// FIXME: togliere JSON
 		// Update partner list
 		execution.setVariable("allPartners", JSON(partners.toJSON()));
 		
+		// FIXME: togliere JSON
 		// Get the contacted partner list
-		SpinJsonNode contactedJsonNode = (SpinJsonNode) execution.getVariable("partnerList");		
+		SpinJsonNode contactedJsonNode = (SpinJsonNode) execution.getVariable("contactedPartners");		
 		PartnerDatas contactedPartners = new PartnerDatas();
 		contactedPartners.setPartnersFromJSON(contactedJsonNode);
 		
 		// Update partner values
 		contactedPartners.getPartnerList().get(id).setAvailability(false);
 		
+		// FIXME: togliere JSON
 		// Update partner list
-		execution.setVariable("partnerList", JSON(contactedPartners.toJSON()));
+		execution.setVariable("contactedPartners", JSON(contactedPartners.toJSON()));
 		
 	}
 

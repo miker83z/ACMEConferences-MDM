@@ -11,17 +11,17 @@ import it.unibo.soseng.mdm.acme.model.PartnerDatas;
 
 public class PresentOffers implements JavaDelegate {
 
-	public void execute(DelegateExecution execution) throws Exception {			
+	public void execute(DelegateExecution execution) throws Exception {		
+		// FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine
-		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("partnerList");
-		
-		// Convert the JSON to a list of PartnerData
+		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("contactedPartners");
 		PartnerDatas partners = new PartnerDatas();
 		partners.setPartnersFromJSON(jsonNode);
 
 		// Create a list with only the available and contacted partners
 		partners.getAvailablePartners();
-						
+		
+		// FIXME: togliere JSON
 		// Send the message setting variables
 	    RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    runtimeService.createMessageCorrelation("offers")

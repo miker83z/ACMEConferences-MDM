@@ -17,8 +17,6 @@ public class SendJobEstimate implements JavaDelegate {
 		// Set partner name variable for the next event-based gateway
 		execution.setVariable("partnerName", partnerName);
 		
-		System.out.println("[PROVA2] REALBK: " + (String) execution.getBusinessKey());
-		
 		// Send message
 		RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    runtimeService.createMessageCorrelation("job_estimate_" + partnerName)

@@ -25,6 +25,7 @@ public class PartnerAvailableListener implements ExecutionListener {
 		 *  nessuna delle offerte ricevute e voglia vederne altre: da questa lista di
 		 *  partner posso controllare se tutti i partners sono stati contattati oppure no.
 		 */
+		// FIXME: togliere JSON
 		// Get the full partner list
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("allPartners");		
 		PartnerDatas partners = new PartnerDatas();
@@ -34,6 +35,7 @@ public class PartnerAvailableListener implements ExecutionListener {
 		partners.getPartnerList().get(id).setAvailability(true);
 		partners.getPartnerList().get(id).setPrice(jobEstimate);
 		
+		// FIXME: togliere JSON
 		// Update partner list
 		execution.setVariable("allPartners", JSON(partners.toJSON()));
 		
@@ -43,8 +45,9 @@ public class PartnerAvailableListener implements ExecutionListener {
 		 * 	Questa variabile è quella che passerò poi alla pool del Client per mostrargli
 		 *  i preventivi dei soli partners contattati e disponibili.
 		 */
+		// FIXME: togliere JSON
 		// Get the contacted partner list
-		SpinJsonNode contactedJsonNode = (SpinJsonNode) execution.getVariable("partnerList");		
+		SpinJsonNode contactedJsonNode = (SpinJsonNode) execution.getVariable("contactedPartners");		
 		PartnerDatas contactedPartners = new PartnerDatas();
 		contactedPartners.setPartnersFromJSON(contactedJsonNode);
 		
@@ -52,8 +55,9 @@ public class PartnerAvailableListener implements ExecutionListener {
 		contactedPartners.getPartnerList().get(id).setAvailability(true);
 		contactedPartners.getPartnerList().get(id).setPrice(jobEstimate);
 		
+		// FIXME: togliere JSON
 		// Update partner list
-		execution.setVariable("partnerList", JSON(contactedPartners.toJSON()));
+		execution.setVariable("contactedPartners", JSON(contactedPartners.toJSON()));
 	}
 
 }

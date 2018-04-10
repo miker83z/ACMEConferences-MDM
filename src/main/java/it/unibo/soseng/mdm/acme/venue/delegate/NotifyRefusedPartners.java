@@ -15,11 +15,13 @@ public class NotifyRefusedPartners implements JavaDelegate {
 		// Get Camunda runtime service 
 	    RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 		
+	    // FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine (contacted partners)
-		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("partnerList");
+		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("contactedPartners");
 		PartnerDatas partners = new PartnerDatas();
 		partners.setPartnersFromJSON(jsonNode);
-				
+		
+		// FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine (chosen partner)
 		SpinJsonNode chosenJsonNode = (SpinJsonNode) execution.getVariable("chosenPartner");
 		PartnerData chosenPartner = new PartnerData();
@@ -27,29 +29,21 @@ public class NotifyRefusedPartners implements JavaDelegate {
 		
 		// Index of the chosen partner in contacted partners list
 		Integer index = partners.indexOf(chosenPartner.getName());
+				
+		// Get my id
+		Integer id = (Integer) execution.getVariable("loopCounter");
 		
-		// Send message to all contacted partners, except for the chosen one and the not available
-		for (int i = 0; i < partners.getPartnerList().size(); i++) {
-			
-			System.out.println("[PROVA2] PARTNER: " + i);
-			System.out.println("[PROVA2] INFO: " + partners.getPartnerList().get(i).toString());
-			
-			if (index != i && partners.getPartnerList().get(i).getAvailable()) {
-				// Get his businessKey
-				String partnerNameWithoutWhitespaces = partners.getPartnerList().get(i).getNameWithoutWhitespaces();
-				String partnerBusinessKey = (String) execution.getVariable(partnerNameWithoutWhitespaces + "BusinessKey");
-				
-				System.out.println("[PROVA2] NAME: " + partnerNameWithoutWhitespaces);
-				System.out.println("[PROVA2] BK: " + partnerBusinessKey);
-				
-				// Send message
-			    runtimeService.createMessageCorrelation("job_refused_" + partnerNameWithoutWhitespaces)
-			    .processInstanceBusinessKey(partnerBusinessKey)
-			    .correlate();	
-			} else {
-				System.out.println("[PROVA2] SALTATO");
-			}
-		}
+		// Send message to the partner, except for the chosen one and the not available
+		if (index != id && partners.getPartnerList().get(id).getAvailable()) {
+			// Get his businessKey
+			String partnerNameWithoutWhitespaces = partners.getPartnerList().get(id).getNameWithoutWhitespaces();
+			String partnerBusinessKey = (String) execution.getVariable(partnerNameWithoutWhitespaces + "BusinessKey");
+						
+			// Send message
+		    runtimeService.createMessageCorrelation("job_refused_" + partnerNameWithoutWhitespaces)
+		    .processInstanceBusinessKey(partnerBusinessKey)
+		    .correlate();	
+		} 
 						
 	}
 

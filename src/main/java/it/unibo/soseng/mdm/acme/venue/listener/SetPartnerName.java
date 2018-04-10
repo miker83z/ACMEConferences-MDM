@@ -13,10 +13,9 @@ public class SetPartnerName implements ExecutionListener {
 		// Get loop counter
 		Integer id = (Integer) delegateExecution.getVariable("loopCounter");
 		
+		// FIXME: togliere JSON
 		// Get partner list
-		SpinJsonNode jsonNode = (SpinJsonNode) delegateExecution.getVariable("partnerList");
-		
-		// Convert the JSON to a list of PartnerData
+		SpinJsonNode jsonNode = (SpinJsonNode) delegateExecution.getVariable("contactedPartners");
 		PartnerDatas partners = new PartnerDatas();
 		partners.setPartnersFromJSON(jsonNode);
 		

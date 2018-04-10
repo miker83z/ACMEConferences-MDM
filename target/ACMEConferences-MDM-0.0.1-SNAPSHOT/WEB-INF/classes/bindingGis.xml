@@ -1,6 +1,0 @@
-<bindings
- xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
- wsdlLocation="gis.wsdl"
- xmlns="http://java.sun.com/xml/ns/jaxws">
-  <enableWrapperStyle>false</enableWrapperStyle>
-</bindings>

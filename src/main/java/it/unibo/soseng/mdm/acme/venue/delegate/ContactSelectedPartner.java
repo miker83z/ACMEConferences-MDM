@@ -11,6 +11,7 @@ public class ContactSelectedPartner implements JavaDelegate {
 
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
+		// FIXME: togliere JSON
 		// Get chosen partner
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("chosenPartner");
 		PartnerData partner = new PartnerData();
@@ -19,9 +20,6 @@ public class ContactSelectedPartner implements JavaDelegate {
 		// Get his businessKey
 		String partnerNameWithoutWhitespaces = partner.getNameWithoutWhitespaces();
 		String partnerBusinessKey = (String) execution.getVariable(partnerNameWithoutWhitespaces + "BusinessKey");
-		
-		System.out.println("[PROVA2] NAME: " + partnerNameWithoutWhitespaces);
-		System.out.println("[PROVA2] BK: " + partnerBusinessKey);
 		
 		// Send message
 	    RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
