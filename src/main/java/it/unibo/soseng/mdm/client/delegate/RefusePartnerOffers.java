@@ -10,7 +10,7 @@ public class RefusePartnerOffers implements JavaDelegate {
 	    // Send to ACME a empty message
 		RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    runtimeService.createMessageCorrelation("refuse_offers")
-	    .processInstanceBusinessKey(execution.getBusinessKey())
+	    .processInstanceBusinessKey((String) execution.getVariable("businessKeyACME"))
 	    .correlate();
 	    
 	}
