@@ -16,7 +16,7 @@ public class PartnerNotAvailable implements ExecutionListener {
 		// Get the contacted partner
 		SpinJsonNode contactedJsonNode = (SpinJsonNode) execution.getVariable("cateringPartner");		
 		PartnerData contactedPartner = new PartnerData();
-		contactedPartner.setValueFromJSON(contactedJsonNode);
+		contactedPartner.defineValueFromJSON(contactedJsonNode);
 		
 		// Update partner values
 		contactedPartner.setAvailability(false);
@@ -27,7 +27,7 @@ public class PartnerNotAvailable implements ExecutionListener {
 		// Get partner list
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("allCatering");
 		PartnerDatas cateringList = new PartnerDatas();
-		cateringList.setPartnersFromJSON(jsonNode);
+		cateringList.definePartnersFromJSON(jsonNode);
 		
 		// Get the index of the contacted partner
 		Integer index = cateringList.indexOf(contactedPartner.getName());

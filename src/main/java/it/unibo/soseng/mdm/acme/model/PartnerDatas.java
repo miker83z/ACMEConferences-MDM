@@ -1,7 +1,6 @@
 package it.unibo.soseng.mdm.acme.model;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +9,8 @@ import org.camunda.spin.json.SpinJsonNode;
 
 import it.unibo.soseng.mdm.acme.generated.gis.GIS;
 import it.unibo.soseng.mdm.acme.generated.gis.GISPortType;
+import it.unibo.soseng.mdm.acme.generated.gis.GetDistanceBetween;
+import it.unibo.soseng.mdm.acme.generated.gis.GetDistanceBetweenResponse;
 import it.unibo.soseng.mdm.util.CSVUtils;
 
 /**
@@ -39,7 +40,7 @@ public class PartnerDatas {
 		return DEFAULT_MAX_NUMBER_OF_PARTNERS;
 	}
 	
-	public Integer getNumberOfPartners() {
+	public Integer retrieveNumberOfPartners() {
 		return partnerList.size();
 	}
 	
@@ -67,7 +68,7 @@ public class PartnerDatas {
 	 * Get all partner's informations from JSON and save in the object
 	 * @param jsonNode All partner informations in JSON format
 	 */
-	public void setPartnersFromJSON(SpinJsonNode jsonNode) {		
+	public void definePartnersFromJSON(SpinJsonNode jsonNode) {		
 		// Fetch a list of items when your property is an array of data
 		@SuppressWarnings("rawtypes")
 		SpinList partners = jsonNode.elements();
@@ -76,7 +77,7 @@ public class PartnerDatas {
 			SpinJsonNode partnerJSON = (SpinJsonNode) partners.get(i);
 			// Convert to PartnerData object
 			PartnerData partnerData = new PartnerData();
-			partnerData.setValueFromJSON(partnerJSON);
+			partnerData.defineValueFromJSON(partnerJSON);
 			// Add to list
 			partnerList.add(partnerData);
 		}
@@ -88,14 +89,14 @@ public class PartnerDatas {
 	 * @param csvFile The CSV file with all the partner informations.
 	 * @param csvSplitBy The character used to split values in the CSV.
 	 */
-	public void setPartnersListFromCSV(String csvFile, String csvSplitBy) {		
+	public void definePartnersListFromCSV(String csvFile, String csvSplitBy) {		
 		// Create the CSVreader object
 		CSVUtils csvReader = new CSVUtils(csvFile, csvSplitBy);
 		
 		// Read line-by-line the CSV and save all the partners' informations
 		for (int i = 0; i < csvReader.getNumberOfLines(); i++) {
 			PartnerData partnerData = new PartnerData();
-			partnerData.setValueFromStrings(csvReader.readLine(i+1));
+			partnerData.defineValueFromStrings(csvReader.readLine(i+1));
 			partnerList.add(partnerData);
 		}
 	}
@@ -117,7 +118,12 @@ public class PartnerDatas {
 			String address2 = partner.getAddress().toGisReadableString();
 						
 			// Ask to GIS the distance
-			//TODO
+			GetDistanceBetween getDistanceBetween = new GetDistanceBetween();
+			getDistanceBetween.setAddress1(address1);
+			getDistanceBetween.setAddress2(address2);
+			GetDistanceBetweenResponse distance = gis.getDistanceBetween(getDistanceBetween);
+			partner.getAddress().setDistanceFromUserRequest(distance.getResult()); 
+			
 			//BigDecimal distance = gis.getDistanceBetween(address1, address2);
 			// Save the distance
 			//partner.getAddress().setDistanceFromUserRequest(distance);
@@ -147,7 +153,7 @@ public class PartnerDatas {
 	/**
 	 * Leave in the list only the contacted partners that are available
 	 */
-	public void getAvailablePartners() {
+	public void retrieveAvailablePartners() {
 		// Create a list with only the available and contacted partners
 		List<PartnerData> availablePartners = new ArrayList<>();
 		
@@ -183,7 +189,7 @@ public class PartnerDatas {
 		CSVUtils csvUtils = new CSVUtils(filename, separator);
 		List<String> values = new ArrayList<>();
 		for (PartnerData partner : partnerList) {
-			values.add(partner.getValuesForCSV(separator));
+			values.add(partner.retrieveValuesForCSV(separator));
 		}
 		csvUtils.writeLines(values);
 	}

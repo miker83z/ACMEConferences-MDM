@@ -15,10 +15,10 @@ public class ContactSelectedPartner implements JavaDelegate {
 		// Get chosen partner
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("chosenPartner");
 		PartnerData partner = new PartnerData();
-		partner.setValueFromJSON(jsonNode);
+		partner.defineValueFromJSON(jsonNode);
 		
 		// Get his businessKey
-		String partnerNameWithoutWhitespaces = partner.getNameWithoutWhitespaces();
+		String partnerNameWithoutWhitespaces = partner.retrieveNameWithoutWhitespaces();
 		String partnerBusinessKey = (String) execution.getVariable(partnerNameWithoutWhitespaces + "BusinessKey");
 		
 		// Send message

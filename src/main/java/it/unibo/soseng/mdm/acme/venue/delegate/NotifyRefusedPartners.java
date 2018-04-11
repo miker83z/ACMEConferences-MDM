@@ -19,13 +19,13 @@ public class NotifyRefusedPartners implements JavaDelegate {
 		// Get the JSON variable from Camunda engine (contacted partners)
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("contactedPartners");
 		PartnerDatas partners = new PartnerDatas();
-		partners.setPartnersFromJSON(jsonNode);
+		partners.definePartnersFromJSON(jsonNode);
 		
 		// FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine (chosen partner)
 		SpinJsonNode chosenJsonNode = (SpinJsonNode) execution.getVariable("chosenPartner");
 		PartnerData chosenPartner = new PartnerData();
-		chosenPartner.setValueFromJSON(chosenJsonNode);;
+		chosenPartner.defineValueFromJSON(chosenJsonNode);;
 		
 		// Index of the chosen partner in contacted partners list
 		Integer index = partners.indexOf(chosenPartner.getName());
@@ -36,7 +36,7 @@ public class NotifyRefusedPartners implements JavaDelegate {
 		// Send message to the partner, except for the chosen one and the not available
 		if (index != id && partners.getPartnerList().get(id).getAvailable()) {
 			// Get his businessKey
-			String partnerNameWithoutWhitespaces = partners.getPartnerList().get(id).getNameWithoutWhitespaces();
+			String partnerNameWithoutWhitespaces = partners.getPartnerList().get(id).retrieveNameWithoutWhitespaces();
 			String partnerBusinessKey = (String) execution.getVariable(partnerNameWithoutWhitespaces + "BusinessKey");
 						
 			// Send message

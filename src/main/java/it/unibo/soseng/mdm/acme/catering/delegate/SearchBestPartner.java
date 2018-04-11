@@ -16,7 +16,7 @@ public class SearchBestPartner implements JavaDelegate {
 		// Get the JSON variable from Camunda engine
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("allCatering");
 		PartnerDatas catering = new PartnerDatas();
-		catering.setPartnersFromJSON(jsonNode);
+		catering.definePartnersFromJSON(jsonNode);
 				
 		// Retrieve job informations from Camunda
 		SpinJsonNode jobJsonNode = (SpinJsonNode) execution.getVariable("jobInformations");

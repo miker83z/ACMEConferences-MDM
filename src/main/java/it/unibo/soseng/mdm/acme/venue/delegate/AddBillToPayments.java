@@ -13,7 +13,7 @@ public class AddBillToPayments implements JavaDelegate {
 		// Get the JSON variable from Camunda engine
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("chosenPartner");
 		PartnerData partner = new PartnerData();
-		partner.setValueFromJSON(jsonNode);
+		partner.defineValueFromJSON(jsonNode);
 		
 		// Add price to bills
 		// FIXME: Ma questi "bills" dove li salvo? Creiamo un file temporaneo?

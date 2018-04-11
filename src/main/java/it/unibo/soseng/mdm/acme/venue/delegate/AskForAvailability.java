@@ -1,14 +1,12 @@
 package it.unibo.soseng.mdm.acme.venue.delegate;
 
-import static org.camunda.spin.Spin.JSON;
-
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.spin.json.SpinJsonNode;
+import org.camunda.bpm.engine.variable.Variables;
+import org.camunda.bpm.engine.variable.value.ObjectValue;
 
 import it.unibo.soseng.mdm.acme.model.ConferenceData;
-import it.unibo.soseng.mdm.acme.model.JobData;
 import it.unibo.soseng.mdm.acme.model.PartnerDatas;
 import it.unibo.soseng.mdm.util.EmailSender;
 import it.unibo.soseng.mdm.util.RandomAlphanumericString;
@@ -27,17 +25,11 @@ public class AskForAvailability implements JavaDelegate {
 		// Get Camunda runtime service 
 	    RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 		
-	    // FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine (contacted partners)
-		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("contactedPartners");
-		PartnerDatas partners = new PartnerDatas();
-		partners.setPartnersFromJSON(jsonNode);
+		PartnerDatas partners = (PartnerDatas) execution.getVariable("contactedPartners");
 				
-		// FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine (all partners)
-		SpinJsonNode allPartnersJsonNode = (SpinJsonNode) execution.getVariable("allPartners");
-		PartnerDatas allPartners = new PartnerDatas();
-		allPartners.setPartnersFromJSON(allPartnersJsonNode);
+		PartnerDatas allPartners = (PartnerDatas) execution.getVariable("allPartners");
 		
 		// Retrieve job informations from Camunda
 		ConferenceData conferenceData = (ConferenceData) execution.getVariable("conferenceData");
@@ -50,12 +42,11 @@ public class AskForAvailability implements JavaDelegate {
 		Integer id = (Integer) execution.getVariable("loopCounter");
 		
 		// FIXME: mettere username e password con cui il partner farà il login su Camunda
-		// FIXME: usare la variabile clientName di conferenceData
 		String clientName = "CLIENT";
 		// Create and send an email to the partner
 		String emailMessage = "Dear " + partners.getPartnerList().get(id).getName() + ",\n"
 				+ "\n"
-				// FIXME: controllare che cosa restituisce la conferenceData.getDates();
+				// FIXME: trasformare il conference.getDates() in una data leggibile
 				+ "We would like to formally offer you a job for " + clientName + ", the starting date is " + conferenceData.getDates() + ".\n"
 				+ "\n" 
 				+ "We would like to have your response by tomorrow.\n"
@@ -77,26 +68,26 @@ public class AskForAvailability implements JavaDelegate {
 		partners.getPartnerList().get(id).setContacted(true);
 		
 		// Set the new partner businessKey
-		String partnerNameWithoutWhitespaces = partners.getPartnerList().get(id).getNameWithoutWhitespaces();
+		String partnerNameWithoutWhitespaces = partners.getPartnerList().get(id).retrieveNameWithoutWhitespaces();
 		String partnerBusinessKey = RandomAlphanumericString.generate();
 		execution.setVariable(partnerNameWithoutWhitespaces + "BusinessKey", partnerBusinessKey);
-					
+		
+		// Set JSON serialization for conference data
+		ObjectValue typedConferenceData = Variables.objectValue(conferenceData).serializationDataFormat("application/json").create();
+		
 		// Send the message to create the partner pool
 		runtimeService.createMessageCorrelation("job_proposal")
 		.processInstanceBusinessKey(partnerBusinessKey)					// business key of the new instance
 		.setVariable("acmeBusinessKey", execution.getBusinessKey())		// business key to communicate with ACME
 		.setVariable("processTenant", partnerNameWithoutWhitespaces)	// the username of partner in Camunda
-		.setVariable("conferenceData", conferenceData)					// the informations about the job
+		.setVariable("conferenceData", typedConferenceData)				// the informations about the conference
 		.correlate();
 					
-		// FIXME: togliere JSON
 		// Update partner list (contacted partners)
-		execution.setVariable("contactedPartners", JSON(partners.toJSON()));
+		execution.setVariable("contactedPartners", partners);
 		
-		// FIXME: togliere JSON
 		// Update partner list (all partners)
-		execution.setVariable("allPartners", JSON(allPartners.toJSON()));
-
+		execution.setVariable("allPartners", allPartners);
 	}
 
 }

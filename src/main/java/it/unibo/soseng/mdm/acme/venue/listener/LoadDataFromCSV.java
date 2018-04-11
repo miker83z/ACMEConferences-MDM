@@ -1,10 +1,11 @@
 package it.unibo.soseng.mdm.acme.venue.listener;
 
-import static org.camunda.spin.Spin.JSON;
-
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.ExecutionListener;
+import org.camunda.bpm.engine.variable.Variables;
+import org.camunda.bpm.engine.variable.value.ObjectValue;
 
+import it.unibo.soseng.mdm.acme.model.ConferenceData;
 import it.unibo.soseng.mdm.acme.model.PartnerDatas;
 
 public class LoadDataFromCSV implements ExecutionListener {
@@ -18,11 +19,16 @@ public class LoadDataFromCSV implements ExecutionListener {
 				
 		// Retrieve partners informations from CSV
 		PartnerDatas partners = new PartnerDatas();
-		partners.setPartnersListFromCSV(CSV_FILENAME_PARTNERS, CSV_SPLIT_BY_PARTNERS);
+		partners.definePartnersListFromCSV(CSV_FILENAME_PARTNERS, CSV_SPLIT_BY_PARTNERS);
 			
 		// Set partner list
-		execution.setVariable("allPartners", JSON(partners.toJSON()));
-
+		execution.setVariable("allPartners", partners);
+		
+		// TODO: rimuovere queste righe al momento del merge, in teoria lo fa già Mirko precedentemente
+		ConferenceData conference = (ConferenceData) execution.getVariable("conferenceData");
+		ObjectValue typedConferenceData = Variables.objectValue(conference).serializationDataFormat("application/json").create();
+		execution.setVariable("conferenceData", typedConferenceData);
+		
 	}
 
 }

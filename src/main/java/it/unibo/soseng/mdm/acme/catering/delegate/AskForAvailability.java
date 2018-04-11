@@ -26,12 +26,12 @@ public class AskForAvailability implements JavaDelegate {
 		// Get the JSON variable from Camunda engine (contacted partner)
 		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("cateringPartner");
 		PartnerData catering = new PartnerData();
-		catering.setValueFromJSON(jsonNode);
+		catering.defineValueFromJSON(jsonNode);
 				
 		// Get the JSON variable from Camunda engine (all partners)
 		SpinJsonNode allPartnersJsonNode = (SpinJsonNode) execution.getVariable("allCatering");
 		PartnerDatas allPartners = new PartnerDatas();
-		allPartners.setPartnersFromJSON(allPartnersJsonNode);
+		allPartners.definePartnersFromJSON(allPartnersJsonNode);
 		
 		// Retrieve job informations from Camunda
 		SpinJsonNode jobJsonNode = (SpinJsonNode) execution.getVariable("jobInformations");
@@ -66,7 +66,7 @@ public class AskForAvailability implements JavaDelegate {
 		catering.setContacted(true);
 		
 		// Set the new catering businessKey
-		String partnerNameWithoutWhitespaces = catering.getNameWithoutWhitespaces();
+		String partnerNameWithoutWhitespaces = catering.retrieveNameWithoutWhitespaces();
 		String partnerBusinessKey = RandomAlphanumericString.generate();
 		execution.setVariable(partnerNameWithoutWhitespaces + "BusinessKey", partnerBusinessKey);
 					
