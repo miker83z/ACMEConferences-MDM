@@ -57,6 +57,7 @@
 /home/davide/Scrivania/ProgettoISOS/github_repository/ACMEConferences-MDM/src/main/java/it/unibo/soseng/mdm/acme/model/Address.java
 /home/davide/Scrivania/ProgettoISOS/github_repository/ACMEConferences-MDM/src/main/java/it/unibo/soseng/mdm/acme/generated/gis/ObjectFactory.java
 /home/davide/Scrivania/ProgettoISOS/github_repository/ACMEConferences-MDM/src/main/java/it/unibo/soseng/mdm/client/listener/DebtPaymentTaskListener.java
+/home/davide/Scrivania/ProgettoISOS/github_repository/ACMEConferences-MDM/src/main/java/it/unibo/soseng/mdm/acme/venue/listener/CheckPartnersAvailability.java
 /home/davide/Scrivania/ProgettoISOS/github_repository/ACMEConferences-MDM/src/main/java/it/unibo/soseng/mdm/acme/generated/bank/TransferPayment.java
 /home/davide/Scrivania/ProgettoISOS/github_repository/ACMEConferences-MDM/src/main/java/it/unibo/soseng/mdm/acme/generated/bank/BankPortService.java
 /home/davide/Scrivania/ProgettoISOS/github_repository/ACMEConferences-MDM/src/main/java/it/unibo/soseng/mdm/acme/financial/delegate/SendDebtSettlementRequest.java

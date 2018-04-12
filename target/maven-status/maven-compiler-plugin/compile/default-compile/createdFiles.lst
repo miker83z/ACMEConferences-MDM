@@ -68,6 +68,7 @@ it/unibo/soseng/mdm/acme/financial/listener/PayViaWireTransferSetup.class
 it/unibo/soseng/mdm/acme/chirpter/delegate/ApacheHttpClientPost.class
 it/unibo/soseng/mdm/catering/delegate/SendJobEstimate.class
 it/unibo/soseng/mdm/client/listener/DebtPaymentTaskListener.class
+it/unibo/soseng/mdm/acme/venue/listener/CheckPartnersAvailability.class
 it/unibo/soseng/mdm/acme/financial/listener/FinalBillsToPayListener.class
 it/unibo/soseng/mdm/acme/generated/bank/package-info.class
 it/unibo/soseng/mdm/acme/financial/delegate/LoginBank.class

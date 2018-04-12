@@ -42,22 +42,48 @@
 	
 			// update informations about the selected partner
 			if (selected_partner_value === true) {
-				angular.forEach($scope.partnerList, function(partner) {
+				// console.log("Dentro");
+				// console.log($scope.selected_partner_name);
+							
+				// var counter = 0;
+
+				angular.forEach($scope.partnerList.partnerList, function(partner) {
+					// console.log(partner);
+
+					delete partner.$$hashKey;
+
 					// Find the partner
 					if (partner.name === $scope.selected_partner_name) {
-			 			// create the variable for informations about the selected partner
+			 		
+						// camForm.variableManager.createVariable({
+						// 	name: 'partnerPosition',
+						// 	type: 'Integer',
+						// 	value: counter,
+						// 	isDirty: true
+						// });			
+						
+						// console.log("id found");
+						// console.log(counter);
+
+						// create the variable for informations about the selected partner
 						camForm.variableManager.createVariable({
-      						name: 'chosenPartner',
-      						type: 'Object',
-      						value: partner,
-							valueInfo: {
-								serializationDataFormat: 'application/json',
-								objectTypeName: 'it.unibo.soseng.mdm.acme.model.PartnerData'
-							}
+      					 	name: 'chosenPartner',
+      					 	type: 'Object',
+      					 	value: partner,
+						 	valueInfo: {
+						 		serializationDataFormat: 'application/json',
+						 		objectTypeName: 'it.unibo.soseng.mdm.acme.model.PartnerData'
+						 	},
+						 	isDirty: true
     					});
 					}
+
+					// console.log(partner);
+
+					// counter += 1;
 				});
 			}
+			console.log("fine");
   		});
 	</script>
 
@@ -72,13 +98,13 @@
 		<div class="col-xs-12 col-sm-5 col-md-6">
 			<select id="select_partner"
 					ng-model="selected_partner_name">
-		    	<option ng-repeat="partner in partnerList" ng-attr-id="{{'partner-' + $index}}" value="{{partner.name}}">{{partner.name}}</option>
+		    	<option ng-repeat="partner in partnerList.partnerList" ng-attr-id="{{'partner-' + $index}}" value="{{partner.name}}">{{partner.name}}</option>
 				<option value="null">None of this</option>
 			</select>
 		</div>
 	</div>
 		
-	<div ng-repeat="partner in partnerList">
+	<div ng-repeat="partner in partnerList.partnerList">
 			
 		<hr>
 			
@@ -86,6 +112,7 @@
 			<label class="col-xs-12 col-sm-4 col-md-3" for="name">Name</label>
 	        <div class="col-xs-12 col-sm-8 col-md-9">
 	        	<input cam-variable-name="partner.name"
+	        		cam-variable-type="String"
 	     	   		type="text"
 			   		name="name"
 	     	   		readonly="true"
@@ -96,6 +123,7 @@
 			<label class=" col-xs-12 col-sm-4 col-md-3" for="type">Type</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 		    	<input cam-variable-name="partner.type"
+		    		cam-variable-type="String"
 	 	   			type="text"
 		   			name="type"
 	 	   			readonly="true"
@@ -106,6 +134,7 @@
 			<label class="col-xs-12 col-sm-4 col-md-3" for="email">Email</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 		    	<input cam-variable-name="partner.email"
+		    		cam-variable-type="String"
 	 	   			type="text"
 		   			name="email"
 	 	   			readonly="true"
@@ -116,6 +145,7 @@
 			<label class="col-xs-12 col-sm-4 col-md-3" for="phoneNumber">Phone number</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 		    	<input cam-variable-name="partner.phoneNumber"
+		    		cam-variable-type="String"
 	 	   			type="text"
 		   			name="phoneNumber"
 	 	   			readonly="true"
@@ -126,6 +156,7 @@
 			<label class=" col-xs-12 col-sm-4 col-md-3" for="price">Price</label>
 	        <div class="col-xs-12 col-sm-8 col-md-9">
 	        	<input cam-variable-name="partner.price"
+	        		cam-variable-type="Double"
 	     	   		type="text"
 			   		name="price"
 	     	   		readonly="true"
@@ -138,6 +169,7 @@
        		<label class=" col-xs-12 col-sm-4 col-md-3" for="country">Country</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<input cam-variable-name="partner.address.country"
+					cam-variable-type="String"
 	 	   			type="text"
 		   			name="country"
 	 	   			readonly="true"
@@ -148,6 +180,7 @@
       		<label class=" col-xs-12 col-sm-4 col-md-3" for="city">City</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<input cam-variable-name="partner.address.city"
+					cam-variable-type="String"
 		 	   		type="text"
 			   		name="city"
 		 	   		readonly="true"
@@ -158,6 +191,7 @@
 			<label class=" col-xs-12 col-sm-4 col-md-3" for="street">Street</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<input cam-variable-name="partner.address.street"
+					cam-variable-type="String"
 	 	   			type="text"
 		   			name="street"
 	 	   			readonly="true"
@@ -168,6 +202,7 @@
        		<label class=" col-xs-12 col-sm-4 col-md-3" for="postalCode">Postal Code</label>
        		<div class="col-xs-12 col-sm-8 col-md-9">
 				<input cam-variable-name="partner.address.postalCode"
+					cam-variable-type="String"
 	 	   			type="text"
 		   			name="postalCode"
 	 	   			readonly="true"
