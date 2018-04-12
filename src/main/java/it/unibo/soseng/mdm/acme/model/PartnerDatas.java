@@ -167,6 +167,20 @@ public class PartnerDatas {
 	}
 	
 	/**
+	 * Return true if there is at least one available partner, else false.
+	 * @return Boolean value
+	 */
+	public Boolean atLeastOneAvailablePartner() {		
+		for (PartnerData partnerData : partnerList) {
+			if (partnerData.getAvailable()) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	/**
 	 * Remove all the contacted partners from the list
 	 */
 	public void removeContactedPartners() {		

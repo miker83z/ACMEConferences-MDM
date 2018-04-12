@@ -19,7 +19,9 @@ public class FindFeasiblePartners implements JavaDelegate {
 	
 	public void execute(DelegateExecution execution) throws Exception {		
 		// Get the JSON variable from Camunda engine
-		PartnerDatas partners = (PartnerDatas) execution.getVariable("allPartners");
+		PartnerDatas allPartners = (PartnerDatas) execution.getVariable("allPartners");
+		PartnerDatas partners = new PartnerDatas();
+		partners.setPartnerList(allPartners.getPartnerList());
 		
 		// Remove contacted partners
 		partners.removeContactedPartners();
@@ -41,7 +43,6 @@ public class FindFeasiblePartners implements JavaDelegate {
 			execution.setVariable("numberOfPartners", partners.getPartnerList().size());
 			
 			// Set partner list
-			// execution.setVariable("contactedPartners", JSON(partners.toJSON()));
 			execution.setVariable("contactedPartners", partners);
 		} 
 		// End

@@ -85,7 +85,7 @@ public class PartnerData {
 	public Boolean getAvailable() {
 		return available;
 	}
-	public void setAvailability(Boolean available) {
+	public void setAvailable(Boolean available) {
 		this.available = available;
 	}
 	public Boolean getContacted() {
@@ -147,7 +147,7 @@ public class PartnerData {
 		setEmail(jsonNode.prop(emailProperty).stringValue());
 		setPhoneNumber(jsonNode.prop(phoneNumberProperty).stringValue());
 		setPrice(jsonNode.prop(priceProperty).numberValue().doubleValue());
-		setAvailability(jsonNode.prop(availableProperty).boolValue());
+		setAvailable(jsonNode.prop(availableProperty).boolValue());
 		setContacted(jsonNode.prop(contactedProperty).boolValue());
 		
 		// Fetch a list of items when your property is an array of data
@@ -193,7 +193,7 @@ public class PartnerData {
 		setEmail(partner[emailIdx]);
 		setPhoneNumber(partner[phoneNumberIdx]);
 		setAddress(new Address(partner[addressCountryIdx], partner[addressCityIdx], partner[addressStreetIdx], partner[addressPostalCodeIdx]));
-		setAvailability(Boolean.valueOf(partner[availabilityIdx]));
+		setAvailable(Boolean.valueOf(partner[availabilityIdx]));
 		setContacted(Boolean.valueOf(partner[contactedIdx]));
 	}
 	/**

@@ -19,7 +19,7 @@ public class PartnerNotAvailable implements ExecutionListener {
 		contactedPartner.defineValueFromJSON(contactedJsonNode);
 		
 		// Update partner values
-		contactedPartner.setAvailability(false);
+		contactedPartner.setAvailable(false);
 		
 		// Update partner 
 		execution.setVariable("cateringPartner", JSON(contactedPartner.toJSON()));
@@ -33,7 +33,7 @@ public class PartnerNotAvailable implements ExecutionListener {
 		Integer index = cateringList.indexOf(contactedPartner.getName());
 		
 		// Update partner values
-		cateringList.getPartnerList().get(index).setAvailability(false);
+		cateringList.getPartnerList().get(index).setAvailable(false);
 		
 		// Update partner list
 		execution.setVariable("allCatering", JSON(cateringList.toJSON()));

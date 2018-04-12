@@ -33,9 +33,7 @@ public class BillsCollection {
 	
 	@Override
 	public String toString() {
-		return "ClientBills [" + 
-					"bills=" + bills + 
-					"]";
+		return "BillsCollection [bills=" + bills + "]";
 	}
 
 }

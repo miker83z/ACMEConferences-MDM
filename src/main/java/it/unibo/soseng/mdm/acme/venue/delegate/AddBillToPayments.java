@@ -2,22 +2,28 @@ package it.unibo.soseng.mdm.acme.venue.delegate;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.spin.json.SpinJsonNode;
 
+import it.unibo.soseng.mdm.acme.model.Bill;
+import it.unibo.soseng.mdm.acme.model.BillsCollection;
 import it.unibo.soseng.mdm.acme.model.PartnerData;
 
 public class AddBillToPayments implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {		
-		// FIXME: togliere JSON
 		// Get the JSON variable from Camunda engine
-		SpinJsonNode jsonNode = (SpinJsonNode) execution.getVariable("chosenPartner");
-		PartnerData partner = new PartnerData();
-		partner.defineValueFromJSON(jsonNode);
+		PartnerData partner = (PartnerData) execution.getVariable("chosenPartner");
 		
-		// Add price to bills
-		// FIXME: Ma questi "bills" dove li salvo? Creiamo un file temporaneo?
+		// TODO: controllare insieme a Mirko se questi valori sono settati correttamente
+		execution.setVariable("partnerBillsToPay", true);
 		
+		Bill bill = new Bill();
+		bill.setReceiver(partner.getName());
+		bill.setAmount(partner.getPrice());
+		
+		BillsCollection billsCollection = new BillsCollection();
+		billsCollection.addBill(bill);
+		
+		execution.setVariable("otherBillsToPay", billsCollection);
 	}
 
 }

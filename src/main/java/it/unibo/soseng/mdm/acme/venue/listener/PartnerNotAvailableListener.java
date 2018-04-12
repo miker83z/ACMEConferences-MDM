@@ -22,7 +22,7 @@ public class PartnerNotAvailableListener implements ExecutionListener {
 		PartnerDatas partners = (PartnerDatas) execution.getVariable("allPartners");
 		
 		// Update partner values
-		partners.getPartnerList().get(id).setAvailability(false);
+		partners.getPartnerList().get(id).setAvailable(false);
 		
 		// Update partner list
 		execution.setVariable("allPartners", partners);
@@ -31,7 +31,7 @@ public class PartnerNotAvailableListener implements ExecutionListener {
 		PartnerDatas contactedPartners = (PartnerDatas) execution.getVariable("contactedPartners");
 		
 		// Update partner values
-		contactedPartners.getPartnerList().get(id).setAvailability(false);
+		contactedPartners.getPartnerList().get(id).setAvailable(false);
 		
 		// Update partner list
 		execution.setVariable("contactedPartners", contactedPartners);

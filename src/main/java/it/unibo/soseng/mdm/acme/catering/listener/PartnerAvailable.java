@@ -21,7 +21,7 @@ public class PartnerAvailable implements ExecutionListener {
 		contactedPartner.defineValueFromJSON(contactedJsonNode);
 		
 		// Update partner values
-		contactedPartner.setAvailability(true);
+		contactedPartner.setAvailable(true);
 		contactedPartner.setPrice(jobEstimate);
 		
 		// Update partner list
@@ -36,7 +36,7 @@ public class PartnerAvailable implements ExecutionListener {
 		Integer index = cateringList.indexOf(contactedPartner.getName());
 		
 		// Update partner values
-		cateringList.getPartnerList().get(index).setAvailability(true);
+		cateringList.getPartnerList().get(index).setAvailable(true);
 		cateringList.getPartnerList().get(index).setPrice(jobEstimate);
 		
 		// Update partner list
