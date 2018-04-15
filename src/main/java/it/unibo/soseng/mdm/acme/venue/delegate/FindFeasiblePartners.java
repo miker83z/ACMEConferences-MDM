@@ -18,6 +18,9 @@ public class FindFeasiblePartners implements JavaDelegate {
 	private static final String EMAIL_SUBJECT = "Job offer from ACME Conferences";
 	
 	public void execute(DelegateExecution execution) throws Exception {		
+		// Venue/catering flag
+		Boolean itsCateringTime = (Boolean) execution.getVariable("itsCateringTime");
+		
 		// Get the JSON variable from Camunda engine
 		PartnerDatas allPartners = (PartnerDatas) execution.getVariable("allPartners");
 		PartnerDatas partners = new PartnerDatas();
@@ -36,17 +39,25 @@ public class FindFeasiblePartners implements JavaDelegate {
 			// Order partners from distance to the conference location
 			partners.orderPartnersList(conference.getAllinAddress());
 			
-			// Leave only the two nearest partners
-			partners.cutPartnersList(NUMBER_OF_PARTNERS);
+			// Leave only the nearest partners
+			if (!itsCateringTime) {
+				partners.cutPartnersList(NUMBER_OF_PARTNERS);
+				// Set loop cardinality for the parallel sub-process
+				execution.setVariable("numberOfPartners", partners.getPartnerList().size());
+				// Set partner list
+				execution.setVariable("contactedPartners", partners);
+			}
+			else {
+				partners.cutPartnersList();
+				// Set partner for catering
+				execution.setVariable("cateringPartner", partners.getPartnerList().get(0));
+			}
 			
-			// Set loop cardinality for the parallel sub-process
-			execution.setVariable("numberOfPartners", partners.getPartnerList().size());
-			
-			// Set partner list
-			execution.setVariable("contactedPartners", partners);
 		} 
 		// End
 		else {
+			// FIXME: per la parte del catering è uguale?
+			
 			// Create a connection between Camunda and Google Mail server
 			EmailSender emailSender = new EmailSender(EMAIL_USERNAME, EMAIL_PASSWORD, EMAIL_NAME);
 			emailSender.configureConnection();

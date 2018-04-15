@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.2">
   <bpmn:collaboration id="Collaboration_0g4094e">
     <bpmn:participant id="Participant_0mrcusf" name="Client" processRef="client-process" />
     <bpmn:participant id="Participant_0vpwf5y" name="ACME" processRef="acme-process" />
@@ -29,7 +29,7 @@
     <bpmn:messageFlow id="MessageFlow_17jylqq" sourceRef="ServiceTask_1k21xcf" targetRef="Participant_0eblk1r" />
     <bpmn:messageFlow id="MessageFlow_00nao26" sourceRef="Participant_0eblk1r" targetRef="ServiceTask_1k21xcf" />
     <bpmn:textAnnotation id="TextAnnotation_064dlq3">
-      <bpmn:text>FIXME: mi sa che questo toglie i token solo da questa pool, non da tutte </bpmn:text>
+      <bpmn:text>FIXME: mi sa che questo toglie i token solo da questa pool, non da tutte</bpmn:text>
     </bpmn:textAnnotation>
   </bpmn:collaboration>
   <bpmn:message id="conference-data" name="ConferenceData" />
@@ -229,7 +229,6 @@
   <bpmn:process id="acme-process" name="Conference Management" isExecutable="true">
     <bpmn:laneSet>
       <bpmn:lane id="Lane_1a5fb1t" name="All-In Services">
-        <bpmn:flowNodeRef>ServiceTask_19y0ibn</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ServiceTask_1i0q6c5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ServiceTask_05ll0go</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>SendTask_0z1dssc</bpmn:flowNodeRef>
@@ -237,9 +236,7 @@
         <bpmn:flowNodeRef>IntermediateThrowEvent_06hp1nb</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EventBasedGateway_0fqtyeh</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ParallelGateway_0bxpndk</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>IntermediateThrowEvent_1xb4ifg</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>IntermediateCatchEvent_1jgeltj</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>ParallelGateway_0pdmc9l</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_1p22bl7</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_0u6mq65</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>SubProcess_0vn3lqd</bpmn:flowNodeRef>
@@ -247,30 +244,31 @@
         <bpmn:flowNodeRef>ServiceTask_1k21xcf</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_0j4sram</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_1ln2633</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_06vopnp</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_17z1zxn</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>SubProcess_0urb485</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_1m70fow</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_0eo8gs6</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_1li1a6x</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>IntermediateThrowEvent_1xb4ifg</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ServiceTask_19y0ibn</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ParallelGateway_0pdmc9l</bpmn:flowNodeRef>
         <bpmn:childLaneSet xsi:type="bpmn:tLaneSet">
           <bpmn:lane id="Lane_0vifanf" name="Venue">
-            <bpmn:flowNodeRef>ServiceTask_19y0ibn</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ServiceTask_05ll0go</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>SendTask_0z1dssc</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>IntermediateCatchEvent_15diwhz</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>IntermediateThrowEvent_06hp1nb</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>EventBasedGateway_0fqtyeh</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ParallelGateway_0bxpndk</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>IntermediateThrowEvent_1xb4ifg</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>IntermediateCatchEvent_1jgeltj</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>ParallelGateway_0pdmc9l</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ExclusiveGateway_1p22bl7</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Task_06vopnp</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>SubProcess_0urb485</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ExclusiveGateway_1m70fow</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>EndEvent_0eo8gs6</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ExclusiveGateway_1li1a6x</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>IntermediateThrowEvent_1xb4ifg</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>ServiceTask_19y0ibn</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>ParallelGateway_0pdmc9l</bpmn:flowNodeRef>
           </bpmn:lane>
           <bpmn:lane id="Lane_104xzgy" name="Catering">
             <bpmn:flowNodeRef>ServiceTask_1i0q6c5</bpmn:flowNodeRef>
@@ -711,7 +709,11 @@
       <bpmn:incoming>SequenceFlow_1fvad8a</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1jcvncs</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="SequenceFlow_0mome9s" sourceRef="ParallelGateway_0pdmc9l" targetRef="Task_17z1zxn" />
+    <bpmn:sequenceFlow id="SequenceFlow_0mome9s" sourceRef="ParallelGateway_0pdmc9l" targetRef="Task_17z1zxn">
+      <bpmn:extensionElements>
+        <camunda:executionListener class="it.unibo.soseng.mdm.acme.venue.listener.LoadDataFromCSV" event="take" />
+      </bpmn:extensionElements>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_11ai6xs" name="No" sourceRef="ExclusiveGateway_0u6mq65" targetRef="ExclusiveGateway_1t7zf7g">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!catering_available}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
@@ -743,16 +745,11 @@
       <bpmn:outgoing>SequenceFlow_14xa9ox</bpmn:outgoing>
     </bpmn:eventBasedGateway>
     <bpmn:parallelGateway id="ParallelGateway_0bxpndk">
-      <bpmn:incoming>SequenceFlow_13rrb28</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_02qhst1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0nl2904</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_0on6njf</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_188oj56</bpmn:outgoing>
     </bpmn:parallelGateway>
-    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1xb4ifg" name="Contact the selected partner">
-      <bpmn:incoming>SequenceFlow_0nl2904</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0qv2ad9</bpmn:outgoing>
-      <bpmn:messageEventDefinition messageRef="message_6" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.ContactSelectedPartner" />
-    </bpmn:intermediateThrowEvent>
     <bpmn:intermediateCatchEvent id="IntermediateCatchEvent_1jgeltj" name="All offers refused">
       <bpmn:incoming>SequenceFlow_14xa9ox</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0apzncu</bpmn:outgoing>
@@ -762,7 +759,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_0qv2ad9" sourceRef="IntermediateThrowEvent_1xb4ifg" targetRef="ParallelGateway_0pdmc9l" />
     <bpmn:sequenceFlow id="SequenceFlow_04yx27o" sourceRef="SendTask_0z1dssc" targetRef="ParallelGateway_0pdmc9l" />
     <bpmn:sequenceFlow id="SequenceFlow_0ww5mtq" sourceRef="EventBasedGateway_0fqtyeh" targetRef="IntermediateCatchEvent_15diwhz" />
-    <bpmn:sequenceFlow id="SequenceFlow_02qhst1" sourceRef="IntermediateCatchEvent_15diwhz" targetRef="Task_06vopnp" />
+    <bpmn:sequenceFlow id="SequenceFlow_02qhst1" sourceRef="IntermediateCatchEvent_15diwhz" targetRef="ParallelGateway_0bxpndk" />
     <bpmn:sequenceFlow id="SequenceFlow_1bbf1f5" sourceRef="IntermediateThrowEvent_06hp1nb" targetRef="EventBasedGateway_0fqtyeh" />
     <bpmn:sequenceFlow id="SequenceFlow_14xa9ox" sourceRef="EventBasedGateway_0fqtyeh" targetRef="IntermediateCatchEvent_1jgeltj" />
     <bpmn:sequenceFlow id="SequenceFlow_0nl2904" sourceRef="ParallelGateway_0bxpndk" targetRef="IntermediateThrowEvent_1xb4ifg" />
@@ -777,12 +774,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_1ewynfl" name="No" sourceRef="ExclusiveGateway_1m70fow" targetRef="EndEvent_0eo8gs6">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!remaining_partners}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:parallelGateway id="ParallelGateway_0pdmc9l">
-      <bpmn:incoming>SequenceFlow_182u79r</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_0qv2ad9</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_04yx27o</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0mome9s</bpmn:outgoing>
-    </bpmn:parallelGateway>
     <bpmn:sequenceFlow id="SequenceFlow_1ks80u8" sourceRef="ServiceTask_1i0q6c5" targetRef="ExclusiveGateway_0ohhu54" />
     <bpmn:startEvent id="StartEvent_1kvjhd3" name="Receive Conference Data">
       <bpmn:extensionElements>
@@ -792,6 +783,9 @@
       <bpmn:messageEventDefinition messageRef="conference-data" />
     </bpmn:startEvent>
     <bpmn:exclusiveGateway id="ExclusiveGateway_12e2pyf" name="All Inclusive">
+      <bpmn:extensionElements>
+        <camunda:executionListener class="it.unibo.soseng.mdm.acme.venue.listener.SetFlagToFalse" event="start" />
+      </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_05gw9ru</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0yp78c6</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_014zw73</bpmn:outgoing>
@@ -825,7 +819,7 @@
       </bpmn:eventBasedGateway>
       <bpmn:intermediateCatchEvent id="IntermediateCatchEvent_13nc8zo" name="Partner not available">
         <bpmn:extensionElements>
-          <camunda:executionListener class="it.unibo.soseng.mdm.acme.catering.listener.PartnerNotAvailable" event="end" />
+          <camunda:executionListener class="it.unibo.soseng.mdm.acme.venue.listener.PartnerNotAvailableListener" event="end" />
         </bpmn:extensionElements>
         <bpmn:incoming>SequenceFlow_0o07cpt</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_11gyjuj</bpmn:outgoing>
@@ -839,7 +833,7 @@
       </bpmn:exclusiveGateway>
       <bpmn:intermediateCatchEvent id="IntermediateCatchEvent_0qbikgl" name="1 day">
         <bpmn:extensionElements>
-          <camunda:executionListener class="it.unibo.soseng.mdm.acme.catering.listener.PartnerNotAvailable" event="end" />
+          <camunda:executionListener class="it.unibo.soseng.mdm.acme.venue.listener.PartnerNotAvailableListener" event="end" />
         </bpmn:extensionElements>
         <bpmn:incoming>SequenceFlow_0pclaw6</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_0khqvgs</bpmn:outgoing>
@@ -849,13 +843,13 @@
       </bpmn:intermediateCatchEvent>
       <bpmn:intermediateCatchEvent id="IntermediateCatchEvent_0bax72w" name="Receive Job Estimate">
         <bpmn:extensionElements>
-          <camunda:executionListener class="it.unibo.soseng.mdm.acme.catering.listener.PartnerAvailable" event="end" />
+          <camunda:executionListener class="it.unibo.soseng.mdm.acme.venue.listener.PartnerAvailableListener" event="end" />
         </bpmn:extensionElements>
         <bpmn:incoming>SequenceFlow_0mj0fik</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_0t3tr36</bpmn:outgoing>
         <bpmn:messageEventDefinition messageRef="message_11" />
       </bpmn:intermediateCatchEvent>
-      <bpmn:sendTask id="SendTask_1sqxhl4" name="Ask for availability" camunda:class="it.unibo.soseng.mdm.acme.catering.delegate.AskForAvailability">
+      <bpmn:sendTask id="SendTask_1sqxhl4" name="Ask for availability" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.AskForAvailability">
         <bpmn:incoming>SequenceFlow_0246z4y</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_1jacbyt</bpmn:outgoing>
       </bpmn:sendTask>
@@ -880,7 +874,7 @@
       <bpmn:incoming>SequenceFlow_08d5xy2</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0wsin7q</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:serviceTask id="ServiceTask_1k21xcf" name="Select best partner" camunda:class="it.unibo.soseng.mdm.acme.catering.delegate.SearchBestPartner">
+    <bpmn:serviceTask id="ServiceTask_1k21xcf" name="Select best partner" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.FindFeasiblePartners">
       <bpmn:incoming>SequenceFlow_0wsin7q</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_170q09o</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -893,21 +887,12 @@
       <bpmn:incoming>SequenceFlow_03vf1qj</bpmn:incoming>
       <bpmn:terminateEventDefinition />
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_13rrb28" sourceRef="Task_06vopnp" targetRef="ParallelGateway_0bxpndk" />
-    <bpmn:userTask id="Task_06vopnp" name="5a" camunda:assignee="demo">
-      <bpmn:incoming>SequenceFlow_02qhst1</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_13rrb28</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_08d5xy2" sourceRef="Task_17z1zxn" targetRef="ExclusiveGateway_1t7zf7g" />
     <bpmn:userTask id="Task_17z1zxn" name="end partner" camunda:assignee="demo">
       <bpmn:incoming>SequenceFlow_0mome9s</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_08d5xy2</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:serviceTask id="ServiceTask_19y0ibn" name="Add Bill to Payment" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.AddBillToPayments">
-      <bpmn:incoming>SequenceFlow_0on6njf</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_182u79r</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:serviceTask id="ServiceTask_1i0q6c5" name="Add Bill to Payments" camunda:class="it.unibo.soseng.mdm.acme.catering.delegate.AddBillToPayments">
+    <bpmn:serviceTask id="ServiceTask_1i0q6c5" name="Add Bill to Payments" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.AddBillToPayments">
       <bpmn:incoming>SequenceFlow_15zuuy5</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ks80u8</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -1013,12 +998,32 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!at_least_one_available}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0pgfom6" sourceRef="SubProcess_0urb485" targetRef="ExclusiveGateway_1li1a6x" />
+    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1xb4ifg" name="Contact the selected partner">
+      <bpmn:incoming>SequenceFlow_0nl2904</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0qv2ad9</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="message_6" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.ContactSelectedPartner" />
+    </bpmn:intermediateThrowEvent>
+    <bpmn:serviceTask id="ServiceTask_19y0ibn" name="Add Bill to Payment" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.AddBillToPayments">
+      <bpmn:incoming>SequenceFlow_0on6njf</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_182u79r</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:parallelGateway id="ParallelGateway_0pdmc9l">
+      <bpmn:extensionElements>
+        <camunda:executionListener class="it.unibo.soseng.mdm.acme.venue.listener.SetFlagToTrue" event="end" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_182u79r</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0qv2ad9</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_04yx27o</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0mome9s</bpmn:outgoing>
+    </bpmn:parallelGateway>
     <bpmn:textAnnotation id="TextAnnotation_1j06c9t">
       <bpmn:text>Not considering ACME Service Bill as a Bill to pay if there are enough funds</bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_1cbl3ys" sourceRef="ExclusiveGateway_0bp31ue" targetRef="TextAnnotation_1j06c9t" />
     <bpmn:textAnnotation id="TextAnnotation_0kmdv6y">
-      <bpmn:text>FIXME: quando arrivo qui, il CLIENT è già partito e potrebbe aver fatto le azioni del form PROVIDE BILLS</bpmn:text>
+      <bpmn:text><![CDATA[FIXME: quando arrivo qui, il CLIENT è già partito e potrebbe aver fatto le azioni del form PROVIDE BILLS.
+
+Forse bisogna triggerare un errore]]></bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:association id="Association_1cto6fb" sourceRef="EndEvent_1ln2633" targetRef="TextAnnotation_0kmdv6y" />
     <bpmn:association id="Association_0rqzulc" sourceRef="EndEvent_0eo8gs6" targetRef="TextAnnotation_064dlq3" />
@@ -1053,7 +1058,7 @@
     <bpmn:endEvent id="EndEvent_1hw8zny">
       <bpmn:incoming>SequenceFlow_1att5rv</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:endEvent id="EndEvent_0kmjwxp" name="Fake end">
+    <bpmn:endEvent id="EndEvent_0kmjwxp" name="">
       <bpmn:incoming>SequenceFlow_05mxx24</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_0ixgm9k" sourceRef="StartEvent_12swry4" targetRef="UserTask_0z9iybh" />
@@ -2389,9 +2394,9 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ParallelGateway_0pdmc9l_di" bpmnElement="ParallelGateway_0pdmc9l">
-        <dc:Bounds x="507" y="2121" width="50" height="50" />
+        <dc:Bounds x="432" y="2121" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="397" y="2175" width="90" height="12" />
+          <dc:Bounds x="322" y="2175" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="IntermediateCatchEvent_15diwhz_di" bpmnElement="IntermediateCatchEvent_15diwhz">
@@ -2419,16 +2424,16 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="IntermediateThrowEvent_1xb4ifg_di" bpmnElement="IntermediateThrowEvent_1xb4ifg">
-        <dc:Bounds x="289" y="2241" width="36" height="36" />
+        <dc:Bounds x="247" y="2241" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="267" y="2212" width="80" height="24" />
+          <dc:Bounds x="224" y="2212" width="82" height="24" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SendTask_0z1dssc_di" bpmnElement="SendTask_0z1dssc">
         <dc:Bounds x="152" y="2007" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_19y0ibn_di" bpmnElement="ServiceTask_19y0ibn">
-        <dc:Bounds x="356" y="2106" width="100" height="80" />
+        <dc:Bounds x="279" y="2106" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ExclusiveGateway_1t7zf7g_di" bpmnElement="ExclusiveGateway_1t7zf7g" isMarkerVisible="true">
         <dc:Bounds x="597" y="1732" width="50" height="50" />
@@ -2470,33 +2475,34 @@
         <dc:Bounds x="1878" y="1768" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_182u79r_di" bpmnElement="SequenceFlow_182u79r">
-        <di:waypoint xsi:type="dc:Point" x="456" y="2146" />
-        <di:waypoint xsi:type="dc:Point" x="507" y="2146" />
+        <di:waypoint xsi:type="dc:Point" x="379" y="2146" />
+        <di:waypoint xsi:type="dc:Point" x="432" y="2146" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="436.5" y="2125" width="90" height="12" />
+          <dc:Bounds x="360.5" y="2125" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0qv2ad9_di" bpmnElement="SequenceFlow_0qv2ad9">
-        <di:waypoint xsi:type="dc:Point" x="325" y="2259" />
-        <di:waypoint xsi:type="dc:Point" x="532" y="2259" />
-        <di:waypoint xsi:type="dc:Point" x="532" y="2171" />
+        <di:waypoint xsi:type="dc:Point" x="283" y="2259" />
+        <di:waypoint xsi:type="dc:Point" x="457" y="2259" />
+        <di:waypoint xsi:type="dc:Point" x="457" y="2171" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="383.5" y="2238" width="90" height="12" />
+          <dc:Bounds x="325" y="2238" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_04yx27o_di" bpmnElement="SequenceFlow_04yx27o">
         <di:waypoint xsi:type="dc:Point" x="252" y="2047" />
-        <di:waypoint xsi:type="dc:Point" x="532" y="2047" />
-        <di:waypoint xsi:type="dc:Point" x="532" y="2121" />
+        <di:waypoint xsi:type="dc:Point" x="457" y="2047" />
+        <di:waypoint xsi:type="dc:Point" x="457" y="2121" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="347" y="2026" width="90" height="12" />
+          <dc:Bounds x="309.5" y="2026" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0mome9s_di" bpmnElement="SequenceFlow_0mome9s">
-        <di:waypoint xsi:type="dc:Point" x="532" y="2121" />
+        <di:waypoint xsi:type="dc:Point" x="482" y="2146" />
+        <di:waypoint xsi:type="dc:Point" x="532" y="2146" />
         <di:waypoint xsi:type="dc:Point" x="532" y="1919" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="502" y="2014" width="90" height="12" />
+          <dc:Bounds x="462" y="2125" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0ww5mtq_di" bpmnElement="SequenceFlow_0ww5mtq">
@@ -2508,10 +2514,10 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_02qhst1_di" bpmnElement="SequenceFlow_02qhst1">
-        <di:waypoint xsi:type="dc:Point" x="19" y="2156" />
-        <di:waypoint xsi:type="dc:Point" x="58" y="2185" />
+        <di:waypoint xsi:type="dc:Point" x="23" y="2146" />
+        <di:waypoint xsi:type="dc:Point" x="97" y="2146" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="-6.5" y="2149.5" width="90" height="12" />
+          <dc:Bounds x="15" y="2125" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1bbf1f5_di" bpmnElement="SequenceFlow_1bbf1f5">
@@ -2532,16 +2538,16 @@
       <bpmndi:BPMNEdge id="SequenceFlow_0nl2904_di" bpmnElement="SequenceFlow_0nl2904">
         <di:waypoint xsi:type="dc:Point" x="122" y="2171" />
         <di:waypoint xsi:type="dc:Point" x="122" y="2259" />
-        <di:waypoint xsi:type="dc:Point" x="289" y="2259" />
+        <di:waypoint xsi:type="dc:Point" x="247" y="2259" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="92" y="2209" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0on6njf_di" bpmnElement="SequenceFlow_0on6njf">
         <di:waypoint xsi:type="dc:Point" x="147" y="2146" />
-        <di:waypoint xsi:type="dc:Point" x="356" y="2146" />
+        <di:waypoint xsi:type="dc:Point" x="279" y="2146" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="206.5" y="2125" width="90" height="12" />
+          <dc:Bounds x="168" y="2125" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_188oj56_di" bpmnElement="SequenceFlow_188oj56">
@@ -3078,12 +3084,12 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_15icgra_di" bpmnElement="MessageFlow_15icgra">
-        <di:waypoint xsi:type="dc:Point" x="307" y="2277" />
-        <di:waypoint xsi:type="dc:Point" x="307" y="2448" />
+        <di:waypoint xsi:type="dc:Point" x="265" y="2277" />
+        <di:waypoint xsi:type="dc:Point" x="265" y="2448" />
         <di:waypoint xsi:type="dc:Point" x="-340" y="2448" />
         <di:waypoint xsi:type="dc:Point" x="-340" y="2488" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="-61.5" y="2427" width="90" height="12" />
+          <dc:Bounds x="-82.5" y="2427" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1bilv0e_di" bpmnElement="MessageFlow_1bilv0e">
@@ -3102,9 +3108,9 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_0of8q65_di" bpmnElement="MessageFlow_0of8q65">
         <di:waypoint xsi:type="dc:Point" x="1478" y="2641" />
-        <di:waypoint xsi:type="dc:Point" x="1478" y="1817" />
+        <di:waypoint xsi:type="dc:Point" x="1481" y="1818" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1448" y="2223" width="90" height="12" />
+          <dc:Bounds x="1434.5" y="2208.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1ks80u8_di" bpmnElement="SequenceFlow_1ks80u8">
@@ -3243,17 +3249,6 @@
           <dc:Bounds x="879" y="1880.3643724696358" width="0" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_13rrb28_di" bpmnElement="SequenceFlow_13rrb28">
-        <di:waypoint xsi:type="dc:Point" x="105" y="2225" />
-        <di:waypoint xsi:type="dc:Point" x="122" y="2225" />
-        <di:waypoint xsi:type="dc:Point" x="122" y="2171" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="113.5" y="2204" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_121txqu_di" bpmnElement="Task_06vopnp">
-        <dc:Bounds x="5" y="2185" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_08d5xy2_di" bpmnElement="SequenceFlow_08d5xy2">
         <di:waypoint xsi:type="dc:Point" x="532" y="1839" />
         <di:waypoint xsi:type="dc:Point" x="532" y="1757" />
@@ -3266,11 +3261,11 @@
         <dc:Bounds x="482" y="1839" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0kmdv6y_di" bpmnElement="TextAnnotation_0kmdv6y">
-        <dc:Bounds x="844" y="2060" width="224" height="59" />
+        <dc:Bounds x="844" y="2060" width="224" height="84" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_1cto6fb_di" bpmnElement="Association_1cto6fb">
-        <di:waypoint xsi:type="dc:Point" x="885" y="1876" />
-        <di:waypoint xsi:type="dc:Point" x="947" y="2060" />
+        <di:waypoint xsi:type="dc:Point" x="884" y="1876" />
+        <di:waypoint xsi:type="dc:Point" x="943" y="2060" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ExclusiveGateway_1li1a6x_di" bpmnElement="ExclusiveGateway_1li1a6x" isMarkerVisible="true">
         <dc:Bounds x="-339.568" y="2175" width="50" height="50" />

@@ -2,9 +2,7 @@ package it.unibo.soseng.mdm.acme.management.listener;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.ExecutionListener;
-import org.joda.time.DateTime;
 
-import it.unibo.soseng.mdm.acme.model.Address;
 import it.unibo.soseng.mdm.acme.model.ConferenceData;
 
 public class ReceiveConferenceDataListener implements ExecutionListener{

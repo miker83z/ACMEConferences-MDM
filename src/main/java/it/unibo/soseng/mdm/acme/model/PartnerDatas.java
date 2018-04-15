@@ -21,7 +21,7 @@ public class PartnerDatas {
 	
 	protected List<PartnerData> partnerList = new ArrayList<>();
 	
-	private static final Integer DEFAULT_MAX_NUMBER_OF_PARTNERS = 2;
+	private static final Integer DEFAULT_MAX_NUMBER_OF_PARTNERS = 1;
 	
 	public PartnerDatas() {
 		

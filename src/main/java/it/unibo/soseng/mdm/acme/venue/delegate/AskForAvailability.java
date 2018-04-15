@@ -7,6 +7,7 @@ import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.ObjectValue;
 
 import it.unibo.soseng.mdm.acme.model.ConferenceData;
+import it.unibo.soseng.mdm.acme.model.PartnerData;
 import it.unibo.soseng.mdm.acme.model.PartnerDatas;
 import it.unibo.soseng.mdm.util.EmailSender;
 import it.unibo.soseng.mdm.util.RandomAlphanumericString;
@@ -21,14 +22,13 @@ public class AskForAvailability implements JavaDelegate {
 	
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
-		
 		// Get Camunda runtime service 
 	    RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 		
-		// Get the JSON variable from Camunda engine (contacted partners)
-		PartnerDatas partners = (PartnerDatas) execution.getVariable("contactedPartners");
-				
-		// Get the JSON variable from Camunda engine (all partners)
+	    // Venue/catering flag
+	    Boolean itsCateringTime = (Boolean) execution.getVariable("itsCateringTime");
+	    
+		// Get the variable from Camunda engine (all partners)
 		PartnerDatas allPartners = (PartnerDatas) execution.getVariable("allPartners");
 		
 		// Retrieve job informations from Camunda
@@ -38,16 +38,60 @@ public class AskForAvailability implements JavaDelegate {
 		EmailSender emailSender = new EmailSender(EMAIL_USERNAME, EMAIL_PASSWORD, EMAIL_NAME);
 		emailSender.configureConnection();
 		
-		// Get my id 
-		Integer id = (Integer) execution.getVariable("loopCounter");
+		// Partner informations
+		String partnerName;
+		String partnerEmail;
+		String partnerNameWithoutWhitespaces;
+		
+		// Name of the message
+		String messageCorrelation;
+		
+		if (!itsCateringTime) {
+			// Get the list of contacted partners
+	    	PartnerDatas partners = (PartnerDatas) execution.getVariable("contactedPartners");
+	    	
+			// Get my id 
+			Integer id = (Integer) execution.getVariable("loopCounter");
+			
+			// Set partner informations
+			partnerName = partners.getPartnerList().get(id).getName();
+			partnerEmail = partners.getPartnerList().get(id).getEmail();
+			partnerNameWithoutWhitespaces = partners.getPartnerList().get(id).retrieveNameWithoutWhitespaces();
+			
+			// Set the partner as "contacted" (contacted partners list)
+			partners.getPartnerList().get(id).setContacted(true);
+			
+			// Update partner list (contacted partners)
+			execution.setVariable("contactedPartners", partners);
+			
+			// Set message name for correlation
+			messageCorrelation = "job_proposal";
+		}
+		else {
+			// Get the best catering partner
+	    	PartnerData partner = (PartnerData) execution.getVariable("cateringPartner");
+	    	
+	    	// Set catering informations
+	    	partnerName = partner.getName();
+	    	partnerEmail = partner.getEmail();
+	    	partnerNameWithoutWhitespaces = partner.retrieveNameWithoutWhitespaces();
+	    	
+			// Set the partner as "contacted" 
+			partner.setContacted(true);
+			
+			// Update partner
+			execution.setVariable("cateringPartner", partner);
+			
+			// Set message name for correlation
+			messageCorrelation = "catering_job_proposal";
+		}
 		
 		// FIXME: mettere username e password con cui il partner farà il login su Camunda
-		String clientName = "CLIENT";
 		// Create and send an email to the partner
-		String emailMessage = "Dear " + partners.getPartnerList().get(id).getName() + ",\n"
+		String emailMessage = "Dear " + partnerName + ",\n"
 				+ "\n"
 				// FIXME: trasformare il conference.getDates() in una data leggibile
-				+ "We would like to formally offer you a job for " + clientName + ", the starting date is " + conferenceData.getDates() + ".\n"
+				+ "We would like to formally offer you a job for " + conferenceData.getClientName() + ", the starting date is " + conferenceData.getDates() + ".\n"
 				+ "\n" 
 				+ "We would like to have your response by tomorrow.\n"
 				+ "Subscribe to our platform http://localhost:8080/camunda/tasklist/default/.\n"
@@ -58,17 +102,13 @@ public class AskForAvailability implements JavaDelegate {
 				+ "Demo demo\n"
 				+ "President of ACME Conferences";
 	
-		emailSender.send(partners.getPartnerList().get(id).getName() + " - " + EMAIL_SUBJECT, emailMessage, partners.getPartnerList().get(id).getEmail());
+		emailSender.send(partnerName + " - " + EMAIL_SUBJECT, emailMessage, partnerEmail);
 		
 		// Set the partner as "contacted" (all partners list)
-		Integer index = allPartners.indexOf(partners.getPartnerList().get(id).getName());
+		Integer index = allPartners.indexOf(partnerName);
 		allPartners.getPartnerList().get(index).setContacted(true);
 		
-		// Set the partner as "contacted" (contacted partners list)
-		partners.getPartnerList().get(id).setContacted(true);
-		
 		// Set the new partner businessKey
-		String partnerNameWithoutWhitespaces = partners.getPartnerList().get(id).retrieveNameWithoutWhitespaces();
 		String partnerBusinessKey = RandomAlphanumericString.generate();
 		execution.setVariable(partnerNameWithoutWhitespaces + "BusinessKey", partnerBusinessKey);
 		
@@ -76,16 +116,13 @@ public class AskForAvailability implements JavaDelegate {
 		ObjectValue typedConferenceData = Variables.objectValue(conferenceData).serializationDataFormat("application/json").create();
 		
 		// Send the message to create the partner pool
-		runtimeService.createMessageCorrelation("job_proposal")
+		runtimeService.createMessageCorrelation(messageCorrelation)
 		.processInstanceBusinessKey(partnerBusinessKey)					// business key of the new instance
 		.setVariable("acmeBusinessKey", execution.getBusinessKey())		// business key to communicate with ACME
 		.setVariable("processTenant", partnerNameWithoutWhitespaces)	// the username of partner in Camunda
 		.setVariable("conferenceData", typedConferenceData)				// the informations about the conference
 		.correlate();
 					
-		// Update partner list (contacted partners)
-		execution.setVariable("contactedPartners", partners);
-		
 		// Update partner list (all partners)
 		execution.setVariable("allPartners", allPartners);
 	}

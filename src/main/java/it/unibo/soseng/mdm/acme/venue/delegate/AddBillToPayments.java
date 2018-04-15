@@ -10,8 +10,17 @@ import it.unibo.soseng.mdm.acme.model.PartnerData;
 public class AddBillToPayments implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {		
-		// Get the JSON variable from Camunda engine
-		PartnerData partner = (PartnerData) execution.getVariable("chosenPartner");
+		// Venue/catering flag
+		Boolean itsCateringTime = (Boolean) execution.getVariable("itsCateringTime");
+		
+		// Get the available partner
+		PartnerData partner;
+		if (!itsCateringTime) {
+			partner = (PartnerData) execution.getVariable("chosenPartner");
+		}
+		else {
+			partner = (PartnerData) execution.getVariable("contactedPartner");
+		}
 		
 		// TODO: controllare insieme a Mirko se questi valori sono settati correttamente
 		execution.setVariable("partnerBillsToPay", true);
