@@ -58,7 +58,7 @@ public class PartnerAvailableListener implements ExecutionListener {
 			 * 	Aggiorno il partner contattato.
 			 */
 			// Get the contacted partner
-			PartnerData contactedPartner = (PartnerData) execution.getVariable("contactedPartner");
+			PartnerData contactedPartner = (PartnerData) execution.getVariable("cateringPartner");
 						
 			// Update partner values
 			contactedPartner.setAvailable(true);

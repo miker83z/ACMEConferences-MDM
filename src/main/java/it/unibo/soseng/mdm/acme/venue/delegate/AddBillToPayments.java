@@ -19,7 +19,7 @@ public class AddBillToPayments implements JavaDelegate {
 			partner = (PartnerData) execution.getVariable("chosenPartner");
 		}
 		else {
-			partner = (PartnerData) execution.getVariable("contactedPartner");
+			partner = (PartnerData) execution.getVariable("cateringPartner");
 		}
 		
 		// TODO: controllare insieme a Mirko se questi valori sono settati correttamente

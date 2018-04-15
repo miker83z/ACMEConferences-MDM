@@ -34,7 +34,7 @@ public class PartnerNotAvailableListener implements ExecutionListener {
 		}
 		else {
 			// Get the contacted partner
-			PartnerData contactedPartner = (PartnerData) execution.getVariable("contactedPartner");
+			PartnerData contactedPartner = (PartnerData) execution.getVariable("cateringPartner");
 						
 			// Update partner values
 			contactedPartner.setAvailable(false);

@@ -26,7 +26,10 @@ public class PresentOffers implements JavaDelegate {
 	    .processInstanceBusinessKey((String) execution.getVariable("businessKeyClient"))
 	    .setVariable("businessKeyACME", execution.getBusinessKey())
 	    .setVariable("availablePartners", typedPartnerDatas)
-	    .correlate();					
+	    .correlate();		
+	    
+	    // Set number of partners for the next parallel message task
+	    execution.setVariable("numberOfPartners", partners.retrieveNumberOfPartners());
 	}
 	
 }

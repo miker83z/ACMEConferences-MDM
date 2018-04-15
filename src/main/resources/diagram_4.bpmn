@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.2">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3">
   <bpmn:collaboration id="Collaboration_0g4094e">
     <bpmn:participant id="Participant_0mrcusf" name="Client" processRef="client-process" />
     <bpmn:participant id="Participant_0vpwf5y" name="ACME" processRef="acme-process" />
@@ -244,7 +244,6 @@
         <bpmn:flowNodeRef>ServiceTask_1k21xcf</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_0j4sram</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_1ln2633</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_17z1zxn</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>SubProcess_0urb485</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_1m70fow</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_0eo8gs6</bpmn:flowNodeRef>
@@ -278,7 +277,6 @@
             <bpmn:flowNodeRef>ServiceTask_1k21xcf</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>ExclusiveGateway_0j4sram</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>EndEvent_1ln2633</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Task_17z1zxn</bpmn:flowNodeRef>
           </bpmn:lane>
         </bpmn:childLaneSet>
       </bpmn:lane>
@@ -709,7 +707,7 @@
       <bpmn:incoming>SequenceFlow_1fvad8a</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1jcvncs</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="SequenceFlow_0mome9s" sourceRef="ParallelGateway_0pdmc9l" targetRef="Task_17z1zxn">
+    <bpmn:sequenceFlow id="SequenceFlow_0mome9s" sourceRef="ParallelGateway_0pdmc9l" targetRef="ExclusiveGateway_1t7zf7g">
       <bpmn:extensionElements>
         <camunda:executionListener class="it.unibo.soseng.mdm.acme.venue.listener.LoadDataFromCSV" event="take" />
       </bpmn:extensionElements>
@@ -864,14 +862,14 @@
       <bpmn:sequenceFlow id="SequenceFlow_0khqvgs" sourceRef="IntermediateCatchEvent_0qbikgl" targetRef="ExclusiveGateway_0wpmmvc" />
     </bpmn:subProcess>
     <bpmn:sequenceFlow id="SequenceFlow_19wiqy4" name="Yes" sourceRef="ExclusiveGateway_0j4sram" targetRef="SubProcess_0vn3lqd">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">{remaining_partners}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${remaining_partners}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_03vf1qj" name="No" sourceRef="ExclusiveGateway_0j4sram" targetRef="EndEvent_1ln2633">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">{!remaining_partners}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!remaining_partners}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:exclusiveGateway id="ExclusiveGateway_1t7zf7g">
       <bpmn:incoming>SequenceFlow_11ai6xs</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_08d5xy2</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0mome9s</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0wsin7q</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:serviceTask id="ServiceTask_1k21xcf" name="Select best partner" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.FindFeasiblePartners">
@@ -887,11 +885,6 @@
       <bpmn:incoming>SequenceFlow_03vf1qj</bpmn:incoming>
       <bpmn:terminateEventDefinition />
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_08d5xy2" sourceRef="Task_17z1zxn" targetRef="ExclusiveGateway_1t7zf7g" />
-    <bpmn:userTask id="Task_17z1zxn" name="end partner" camunda:assignee="demo">
-      <bpmn:incoming>SequenceFlow_0mome9s</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_08d5xy2</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:serviceTask id="ServiceTask_1i0q6c5" name="Add Bill to Payments" camunda:class="it.unibo.soseng.mdm.acme.venue.delegate.AddBillToPayments">
       <bpmn:incoming>SequenceFlow_15zuuy5</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ks80u8</bpmn:outgoing>
@@ -2500,9 +2493,10 @@ Forse bisogna triggerare un errore]]></bpmn:text>
       <bpmndi:BPMNEdge id="SequenceFlow_0mome9s_di" bpmnElement="SequenceFlow_0mome9s">
         <di:waypoint xsi:type="dc:Point" x="482" y="2146" />
         <di:waypoint xsi:type="dc:Point" x="532" y="2146" />
-        <di:waypoint xsi:type="dc:Point" x="532" y="1919" />
+        <di:waypoint xsi:type="dc:Point" x="532" y="1757" />
+        <di:waypoint xsi:type="dc:Point" x="597" y="1757" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="462" y="2125" width="90" height="12" />
+          <dc:Bounds x="502" y="1945.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0ww5mtq_di" bpmnElement="SequenceFlow_0ww5mtq">
@@ -3248,17 +3242,6 @@ Forse bisogna triggerare un errore]]></bpmn:text>
         <bpmndi:BPMNLabel>
           <dc:Bounds x="879" y="1880.3643724696358" width="0" height="12" />
         </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_08d5xy2_di" bpmnElement="SequenceFlow_08d5xy2">
-        <di:waypoint xsi:type="dc:Point" x="532" y="1839" />
-        <di:waypoint xsi:type="dc:Point" x="532" y="1757" />
-        <di:waypoint xsi:type="dc:Point" x="597" y="1757" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="547" y="1792" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_1xpj18x_di" bpmnElement="Task_17z1zxn">
-        <dc:Bounds x="482" y="1839" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0kmdv6y_di" bpmnElement="TextAnnotation_0kmdv6y">
         <dc:Bounds x="844" y="2060" width="224" height="84" />
