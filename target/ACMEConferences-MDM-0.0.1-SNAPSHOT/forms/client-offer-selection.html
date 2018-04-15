@@ -42,29 +42,10 @@
 	
 			// update informations about the selected partner
 			if (selected_partner_value === true) {
-				// console.log("Dentro");
-				// console.log($scope.selected_partner_name);
-							
-				// var counter = 0;
-
 				angular.forEach($scope.partnerList.partnerList, function(partner) {
-					// console.log(partner);
-
 					delete partner.$$hashKey;
-
 					// Find the partner
 					if (partner.name === $scope.selected_partner_name) {
-			 		
-						// camForm.variableManager.createVariable({
-						// 	name: 'partnerPosition',
-						// 	type: 'Integer',
-						// 	value: counter,
-						// 	isDirty: true
-						// });			
-						
-						// console.log("id found");
-						// console.log(counter);
-
 						// create the variable for informations about the selected partner
 						camForm.variableManager.createVariable({
       					 	name: 'chosenPartner',
@@ -77,13 +58,8 @@
 						 	isDirty: true
     					});
 					}
-
-					// console.log(partner);
-
-					// counter += 1;
 				});
 			}
-			console.log("fine");
   		});
 	</script>
 
