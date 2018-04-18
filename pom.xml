@@ -43,7 +43,7 @@
     <dependency>
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-core</artifactId>
-    </dependency>
+    </dependency>    
     
     <dependency>
     	<groupId>javax.xml.ws</groupId> 
@@ -53,9 +53,9 @@
 	</dependency>
     
     <dependency>
-	  <groupId>org.apache.httpcomponents</groupId>
-	  <artifactId>httpclient</artifactId>
-	  <version>4.1.1</version>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.5</version>
 	</dependency>
 	
 	<dependency>

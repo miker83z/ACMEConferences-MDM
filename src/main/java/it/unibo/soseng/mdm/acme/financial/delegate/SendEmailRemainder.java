@@ -2,32 +2,36 @@ package it.unibo.soseng.mdm.acme.financial.delegate;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.camunda.bpm.engine.identity.User;
 
+import it.unibo.soseng.mdm.util.EmailSender;
+
+/**
+ * The Class SendEmailRemainder, used for "Send email remainder" task.
+ * @author Mirko Zichichi
+ */
 public class SendEmailRemainder implements JavaDelegate{
 	
-	//private final static Logger LOGGER = Logger.getLogger(SendEmailRemainder.class.getName());
-	
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	public void execute(DelegateExecution execution) throws Exception {
 		String clientID = (String) execution.getVariable("clientId");
-		String recipient = execution.getProcessEngineServices().getIdentityService().createUserQuery().userId(clientID).singleResult().getEmail();
+		User client = execution.getProcessEngineServices().getIdentityService().createUserQuery().userId(clientID).singleResult();
 		
-		//Send Email
-		/*
-		Email email = new SimpleEmail();
-		email.setHostName(HOST);
-        email.setAuthentication(USER, PWD);
+		EmailSender emailSender = new EmailSender("provecamundaisos@gmail.com", "camundaisos", "ACME Conferences");
+		emailSender.configureConnection();
 
-        try {
-          email.setFrom("noreply@camunda.org");
-          email.setSubject("Pay your bill");
-          email.setMsg("Pay.");
-          email.addTo(recipient);
-          email.send();
-          
-          LOGGER.info("Task Assignment Email successfully sent to user '" + clientID + "' with address '" + recipient + "'.");           
-        } catch (Exception e) {
-          LOGGER.log(Level.WARNING, "Could not send email to assignee", e);
-        }
-        */
+		// Create and send an email to the client
+		String emailMessage = "Dear " + client.getFirstName() + " " + client.getLastName() + ",\n"
+				+ "\n"
+				+ "Pay your Debt\n"
+				+ "\n"
+				+ "\n"
+				+ "Best regards,\n"
+				+ "Demo demo\n"
+				+ "President of ACME Conferences";
+	
+		emailSender.send(client.getLastName() + " Pay your Debt", emailMessage, "provecamundaisos@gmail.com" /*client.getEmail()*/);
 	}
 }

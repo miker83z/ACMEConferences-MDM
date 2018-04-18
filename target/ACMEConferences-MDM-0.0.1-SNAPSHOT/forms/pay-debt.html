@@ -4,7 +4,7 @@
     
     camForm.on('form-loaded', function() {
     
-      // fetch the variable named 'billsToPay'
+      // fetch the variable named 'ACMEBillToPay'
       camForm.variableManager.fetchVariable('ACMEBillToPay');
     
     });
@@ -19,23 +19,9 @@
   </script>
 
   <p class="lead">ACME Debt to pay</p><br>
-  Please, insert bank username and password to pay via transfer wire:<br> 
-  {{bill.amount}} euro to {{bill.receiver}}.<br>
+  Please, pay via transfer wire <a ng-href="http://172.17.0.2" target="_blank">BANK Web Site</a>  (IP depends on docker configuration)<br> 
+  <strong>AMOUNT</strong>: {{bill.amount}} euro <br> 
+  <strong>RECEIVER</strong>: {{bill.receiver}}.<br><br>
 
-  <div>
-    <label>Username</label>
-    <input 
-    type="text" 
-    required 
-    cam-variable-name="bankUsername"
-    cam-variable-type="String"
-    class="form-control" /><br>
-    <label>Password</label>
-    <input 
-    type="password" 
-    required 
-    cam-variable-name="bankPassword"
-    cam-variable-type="String"
-    class="form-control" /><br>
-  </div>
+  After the operation, please send an email to <a ng-href="mailto:provecamundaisos@gmail.com">provecamundaisos@gmail.com</a> with payment info, then submit this form.
 </form>

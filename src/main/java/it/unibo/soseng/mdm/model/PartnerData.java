@@ -1,8 +1,8 @@
-package it.unibo.soseng.mdm.acme.model;
+package it.unibo.soseng.mdm.model;
 
 import org.camunda.spin.json.SpinJsonNode;
 
-import it.unibo.soseng.mdm.acme.model.Address;
+import it.unibo.soseng.mdm.model.Address;
 
 /**
  * Stores all informations about a partner for venue.

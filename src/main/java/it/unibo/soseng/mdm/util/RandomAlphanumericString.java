@@ -2,10 +2,19 @@ package it.unibo.soseng.mdm.util;
 
 import java.util.Random;
 
+/**
+ * The Class RandomAlphanumericString, used to generate random alpha numeric strings.
+ */
 public final class RandomAlphanumericString {
 
+	/** The Constant stringLength. */
 	private static final int stringLength = 32; 
 	
+	/**
+	 * Generate a random string.
+	 *
+	 * @return the string
+	 */
 	public static String generate() {
 	    StringBuilder stringBuilder = new StringBuilder();
 
@@ -27,6 +36,12 @@ public final class RandomAlphanumericString {
 	    return stringBuilder.toString();
 	}
 	
+	/**
+	 * Generate a random string with stringLength characters.
+	 *
+	 * @param stringLength the string length
+	 * @return the string
+	 */
 	public static String generate( int stringLength ) {
 	    StringBuilder stringBuilder = new StringBuilder();
 
@@ -48,6 +63,11 @@ public final class RandomAlphanumericString {
 	    return stringBuilder.toString();
 	}
 	
+	/**
+	 * Gets the string length.
+	 *
+	 * @return the string length
+	 */
 	public static int getStringLength() {
 		return stringLength;
 	}

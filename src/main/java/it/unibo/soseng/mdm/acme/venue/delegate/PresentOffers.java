@@ -7,7 +7,7 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.spin.json.SpinJsonNode;
 
-import it.unibo.soseng.mdm.acme.model.PartnerDatas;
+import it.unibo.soseng.mdm.model.PartnerDatas;
 
 public class PresentOffers implements JavaDelegate {
 

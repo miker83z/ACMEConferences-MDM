@@ -23,8 +23,9 @@
   </script>
 
   <p class="lead">Manual Payments</p>
-  Click on &check; after payment<br><br>
-
+  <a ng-href="http://172.17.0.2" target="_blank">BANK Web Site</a>  (IP depends on docker configuration)<br><br>
+  
+  Click on &check; after payment
   <ul>
     <li ng-repeat="bill in billsToPay.bills">
       Pay to {{bill.receiver}}: &emsp; &emsp;

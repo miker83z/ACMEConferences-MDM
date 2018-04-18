@@ -12,7 +12,12 @@
 
     var conferenceData = $scope.conferenceData = {
       dates : [],
-      isAllin : false
+      isAllin : false, 
+      stdAddress: {
+        city : '',
+        street : '',
+        country : ''
+      }
     }
 
     $scope.buttonText = 'Choose All-Inclusive';
@@ -83,7 +88,7 @@
           // indicate that object is serialized as json
           serializationDataFormat: 'application/json',
           // provide classname of java object
-          objectTypeName: 'it.unibo.soseng.mdm.acme.model.ConferenceData'
+          objectTypeName: 'it.unibo.soseng.mdm.model.ConferenceData'
         }
       });
     });
@@ -97,19 +102,28 @@
       camForm.businessKey = text;
 
       //manage null prop
-        if( conferenceData.title == undefined || conferenceData.title == null   ) {
-          conferenceData.title = 'title'
+      if( conferenceData.title == null ) {
+        conferenceData.title = 'title';
+      }
+      if( conferenceData.isAllin ) {
+        if( conferenceData.allinLocation == null ) {
+          conferenceData.allinLocation = 'locationNull';
         }
-        if( conferenceData.isAllin ) {
-          if( conferenceData.allinLocation == undefined || conferenceData.allinLocation == null   ) {
-            conferenceData.allinLocation = 'locationNull'
-          }
-        }  
-        else {
-          if( conferenceData.stdAddress == undefined || conferenceData.stdAddress == null   ) {
-            conferenceData.stdAddress = 'addressNull'
-          }
-        } 
+        if( conferenceData.allinExpectedAttendance == null   ) {
+          conferenceData.allinExpectedAttendance = '1';
+        }
+      }  else {
+        if( conferenceData.stdAddress.country == '' ) {
+          conferenceData.stdAddress.country = 'Italia';
+        }
+        if( conferenceData.stdAddress.city == '' ) {
+          conferenceData.stdAddress.city = 'Bologna';
+        }
+        if( conferenceData.stdAddress.street == '' ) {
+          conferenceData.stdAddress.street = 'via Zamboni';
+        }
+      }
+
       //sort dates
       if(conferenceData.dates.length == 0){
         var today = new Date();
@@ -277,10 +291,14 @@
     <div id="std" class="unhidden">
       <div class="content3">
         <p><font size="4"><b>Standard package</b></font></p>
-        <label>Address</label>
-        <input type="text" ng-model="conferenceData.stdAddress"/><br>
+        <label>Address Country</label>
+        <input type="text" ng-model="conferenceData.stdAddress.country"/><br>
+        <label>Address City</label>
+        <input type="text" ng-model="conferenceData.stdAddress.city"/><br>
+        <label>Address Street (and number)</label>
+        <input type="text" ng-model="conferenceData.stdAddress.street"/><br>
         <label>Max Partecipants</label>
-        <input type="number" min="1" max="100000" step="1" ng-model="conferenceData.stdMaxPartecipants" value="100" />
+        <input type="number" min="1" max="100000" step="1" ng-model="conferenceData.stdMaxParticipants" value="100" />
       </div>
     </div>
     <div id="all" class="hidden">

@@ -1,4 +1,4 @@
-package it.unibo.soseng.mdm.acme.model;
+package it.unibo.soseng.mdm.model;
 
 import java.io.IOException;
 import java.math.BigDecimal;

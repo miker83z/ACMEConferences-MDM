@@ -45,6 +45,7 @@
       var tmp = {};
       tmp.receiver = $scope.receiverName;
       tmp.amount = $scope.billAmount;
+      if( tmp.receiver != null && tmp.amount != null    )
       $scope.clientBills.bills.push(tmp);
     }
 
@@ -63,7 +64,7 @@
           // indicate that object is serialized as json
           serializationDataFormat: 'application/json',
           // provide classname of java object
-          objectTypeName: 'it.unibo.soseng.mdm.acme.model.BillsCollection'
+          objectTypeName: 'it.unibo.soseng.mdm.model.BillsCollection'
         }
       });
 

@@ -4,20 +4,21 @@ import org.camunda.bpm.application.PostDeploy;
 import org.camunda.bpm.application.ProcessApplication;
 import org.camunda.bpm.application.impl.ServletProcessApplication;
 import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.RuntimeService;
 
+/**
+ * The Class ProvaUnoApplication, used for the Camunda Process.
+ */
 @ProcessApplication("Prova Uno App")
 public class ProvaUnoApplication extends ServletProcessApplication {
 	
+	/**
+	 * Start service.
+	 *
+	 * @param processEngine the process engine
+	 * @throws Exception the exception
+	 */
 	@PostDeploy
 	  public void startService(ProcessEngine processEngine) throws Exception {
-	    //RuntimeService runtimeService = processEngine.getRuntimeService();
-	    //runtimeService.createMessageCorrelation("Start");	   
-	    //runtimeService.createMessageCorrelation("Confirmation");	
-	    //runtimeService.createMessageCorrelation("Rejection");	
-	    RuntimeService runtimeService = processEngine.getRuntimeService();
-	    runtimeService.createMessageCorrelation("offers");	
-	    runtimeService.createMessageCorrelation("accepted_offer");
-	    runtimeService.createMessageCorrelation("refused_offers");
+	    //Stert Service
 	  }
 }

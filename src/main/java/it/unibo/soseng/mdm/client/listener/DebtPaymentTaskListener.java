@@ -14,10 +14,17 @@ import it.unibo.soseng.mdm.acme.generated.bank.UserLogin;
 import it.unibo.soseng.mdm.acme.generated.bank.UserLoginResponse;
 import it.unibo.soseng.mdm.acme.generated.bank.UserLogout;
 import it.unibo.soseng.mdm.acme.generated.bank.UserLogoutResponse;
-import it.unibo.soseng.mdm.acme.model.Bill;
+import it.unibo.soseng.mdm.model.Bill;
 
+/**
+ * The class DebtPaymentTaskListener, used for "Pay" task to let the user outside of ACME to pay a bill to ACME.
+ * @author Mirko Zichichi
+ */
 public class DebtPaymentTaskListener implements TaskListener {
 	
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.TaskListener#notify(org.camunda.bpm.engine.delegate.DelegateTask)
+	 */
 	public void notify(DelegateTask delegateTask) {
 		boolean ACMEPaymentSuccesful = false;
 		String username = (String) delegateTask.getVariable("bankUsername");
@@ -42,6 +49,7 @@ public class DebtPaymentTaskListener implements TaskListener {
 				ACMEPaymentSuccesful = transferResponse.isFlag();
 				UserLogout logoutRequest = new UserLogout();
 				logoutRequest.setUserID(bankID);
+				@SuppressWarnings("unused")
 				UserLogoutResponse logoutResponse = bank.userLogout(logoutRequest);
 			}
 		} catch(WebServiceException e) {
