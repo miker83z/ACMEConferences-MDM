@@ -1,16 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>it.unibo.isos.mcm</groupId>
-  <artifactId>ACMEConferences</artifactId>
+  <groupId>it.unibo.isos.mdm</groupId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+
+  <properties>
+    <version.camunda>7.8.0</version.camunda>
+    <version.javaxservlet>3.0.1</version.javaxservlet>
+    <version.mavenwarplugin>2.3</version.mavenwarplugin>
+    <version.mavencompilerplugin>3.1</version.mavencompilerplugin>
+    <maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.camunda.bpm</groupId>
         <artifactId>camunda-bom</artifactId>
-        <version>7.8.0</version>
+        <version>${version.camunda}</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -27,16 +36,39 @@
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>3.0.1</version>
+      <version>${version.javaxservlet}</version>
       <scope>provided</scope>
     </dependency>
     
     <dependency>
-	  <groupId>org.apache.httpcomponents</groupId>
-	  <artifactId>httpclient</artifactId>
-	  <version>4.1.1</version>
+      <groupId>org.camunda.spin</groupId>
+      <artifactId>camunda-spin-core</artifactId>
+    </dependency>    
+    
+    <dependency>
+    	<groupId>javax.xml.ws</groupId> 
+    	<artifactId>jaxws-api</artifactId> 
+		<version>2.3.0</version> 
+		<scope>provided</scope>
 	</dependency>
     
+    <dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.5</version>
+	</dependency>
+	
+	<dependency>
+  		<groupId>joda-time</groupId>
+  		<artifactId>joda-time</artifactId>
+  		<version>2.9.9</version>
+	</dependency> 
+    
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-email</artifactId>
+      <version>1.2</version>
+	</dependency>
   </dependencies>
 
   <build>
@@ -44,12 +76,18 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.3</version>
+        <version>${version.mavenwarplugin}</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-compiler-plugin</artifactId>
+    	<version>${version.mavencompilerplugin}</version>
+	  </plugin>
     </plugins>
   </build>
 
+  <artifactId>ACMEConferences-MDM</artifactId>
 </project>
