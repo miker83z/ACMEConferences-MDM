@@ -1,0 +1,57 @@
+<form name="inspectInvoice" role="form">
+
+  <script cam-script type="text/form-script">
+    
+    camForm.on('form-loaded', function() {
+    
+      // fetch the variable named 'ACMEInvoice'
+      camForm.variableManager.fetchVariable('ACMEInvoice');
+    
+    });
+
+    camForm.on('variables-fetched', function() {
+     
+      // after the variables are fetched, bind the value of ACMEInvoice to a angular
+      // scope value such that the form can work on it
+      $scope.ACMEInvoice = camForm.variableManager.variable('ACMEInvoice').value;
+    
+    });
+
+    camForm.on('submit', function() {
+
+      // remove '$$hashKey' properties from bills objects
+      angular.forEach($scope.ACMEInvoice.billsPayed.bills, function(bill) {
+        delete bill.$$hashKey;
+      });
+
+    });
+  </script>
+
+  <p class="lead">ACME Invoice</p>
+  <div class="control-group col-xs-12">
+    <label>Bills Payed</label>
+    <li ng-repeat="bill in ACMEInvoice.billsPayed.bills">
+      Payed {{bill.amount}} euro to {{bill.receiver}}
+    </li>
+  </div>
+  <div class="control-group col-xs-12">
+    <label>ACME Services Costs</label>
+    {{ACMEInvoice.acmeServicesCosts}} euro<br>
+  </div>
+  <div class="control-group col-xs-12">
+    <label class="control-label col-xs-12 col-sm-4 col-md-3">Total</label>
+    {{ACMEInvoice.totPayed}} euro<br>
+  </div>
+  <div class="control-group col-xs-12">
+    <label class="control-label col-xs-12 col-sm-4 col-md-3">Funds obtained by Participants</label>
+    {{ACMEInvoice.registrationFunds}} euro<br>
+  </div>
+  <div class="control-group col-xs-12">
+    <label class="control-label col-xs-12 col-sm-4 col-md-3">Remaining Funds</label>
+    {{ACMEInvoice.remainingFunds}} euro<br>
+  </div>
+  <div class="control-group col-xs-12">
+    <label class="control-label col-xs-12 col-sm-4 col-md-3">Funds payed by Client</label>
+    {{ACMEInvoice.clientDebtPayed}} euro<br>
+  </div>
+</form>

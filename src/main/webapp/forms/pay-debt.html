@@ -1,0 +1,49 @@
+<form name="debtPayment" role="form">
+
+  <script cam-script type="text/form-script">
+    
+    camForm.on('form-loaded', function() {
+    
+      // fetch the variable named 'ACMEBillToPay'
+      camForm.variableManager.fetchVariable('ACMEBillToPay');
+    
+    });
+
+    camForm.on('variables-fetched', function() {
+     
+      // after the variables are fetched, bind the value of billsToPay to a angular
+      // scope value such that the form can work on it
+      $scope.bill = camForm.variableManager.variable('ACMEBillToPay').value;
+    
+    });
+  </script>
+
+  <p class="lead">ACME Debt to pay</p><br>
+  Please, login through the EBank application to pay via transfer wire: <br><br><br>
+  <fieldset>
+    <legend>EBank Login</legend>
+    <img src="https://preview.ibb.co/nraMwx/ebank.jpg" alt="Ebank Logo" width="210" height="90"><br>
+    <strong>AMOUNT</strong>: {{bill.amount}} euro <br> 
+    <strong>RECEIVER</strong>: {{bill.receiver}}.<br><br>
+
+    <div class="form-group">
+    <label for="username-field">Bank Username</label>
+    <input type="text" 
+           required
+           cam-variable-name="bankUsername"
+           cam-variable-type="String"
+           class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="amount-field">Password</label>
+      <input type="password" 
+             required 
+             cam-variable-name="bankPassword"
+             cam-variable-type="String"
+             class="form-control" />
+    </div>
+  </fieldset>
+
+  For any help, please send an email to <a ng-href="mailto:provecamundaisos@gmail.com">provecamundaisos@gmail.com</a> with payment info or visit the bank site: <br>
+  <a ng-href="http://172.17.0.2" target="_blank">EBANK Web Site</a>  (IP depends on docker configuration) 
+</form>

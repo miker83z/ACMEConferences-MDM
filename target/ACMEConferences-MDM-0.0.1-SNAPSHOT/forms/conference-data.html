@@ -1,0 +1,411 @@
+<style>
+.hidden{
+    display:none;
+}
+
+.unhidden{
+    display:block;
+}
+</style>
+<form name="inputConferenceData">
+  <script cam-script type="text/form-script">
+
+    var conferenceData = $scope.conferenceData = {
+      subsStart : '',
+      contDeadline : '',
+      subsDeadline : '',
+      dates : [],
+      isAllin : false, 
+      allinLocation: {
+        city : '',
+        street : '',
+        country : ''
+      },
+      stdAddress: {
+        city : '',
+        street : '',
+        country : ''
+      }
+    }
+
+    $scope.buttonText = 'Choose All-Inclusive';
+    $scope.unhide = function() {
+      var item = document.getElementById('std');
+      var item2 = document.getElementById('all');
+
+      if( $scope.buttonText == 'Choose Standard' ){
+        $scope.buttonText = 'Choose All-Inclusive';
+        conferenceData.isAllin = false;
+        item.className = 'unhidden';
+        item2.className = 'hidden';
+      }
+      else{
+        $scope.buttonText = 'Choose Standard';
+        conferenceData.isAllin = true;
+        item.className = 'hidden';
+        item2.className = 'unhidden';
+      }
+    }
+
+    //Functions for dates variable
+    $scope.addItem = function () {
+      var date = $scope.dayConf;
+      var hours = $scope.dayHours;
+      var minutes = $scope.dayMinutes;
+      var finDate = date.concat('T', hours, ':', minutes);
+
+      var flagda = 1;
+      angular.forEach($scope.conferenceData.dates, function(value, key) {
+        if ( angular.equals(value, finDate) ) {
+          flagda = 0;
+        }
+      });
+
+      if(flagda == 1){
+        $scope.conferenceData.dates.push(finDate);
+      }
+    }
+
+    $scope.removeItem = function (x) {
+        $scope.conferenceData.dates.splice(x, 1);
+    } 
+
+    camForm.on('form-loaded', function() {
+    
+      //To set min input date as today
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0
+      var yyyy = today.getFullYear();
+      if(dd < 10){
+          dd='0'+dd
+      } 
+      if(mm < 10){
+          mm='0'+mm
+      } 
+
+      today = yyyy+'-'+mm+'-'+dd;
+      document.getElementById("datefield").setAttribute("min", today);
+      document.getElementById("datefieldSubsStart").setAttribute("min", today);
+      document.getElementById("datefieldContDead").setAttribute("min", today);
+      document.getElementById("datefieldSubsDead").setAttribute("min", today);
+
+      // declare variable 'conferenceData' incuding metadata for serialization
+      camForm.variableManager.createVariable({
+        name: 'conferenceData',
+        type: 'Object',
+        value: conferenceData,
+        valueInfo: {
+          // indicate that object is serialized as json
+          serializationDataFormat: 'application/json',
+          // provide classname of java object
+          objectTypeName: 'it.unibo.soseng.mdm.model.ConferenceData'
+        }
+      });
+    });
+
+    camForm.on('submit', function() {
+      //Generate random business key
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      for (var i = 0; i < 32; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      camForm.businessKey = text;
+
+      //manage null prop
+      if( conferenceData.title == null ) {
+        conferenceData.title = 'title';
+      }
+      if( conferenceData.isAllin ) {
+        if( conferenceData.allinLocation.country == '' ) {
+          conferenceData.allinLocation.country = 'Italia';
+        }
+        if( conferenceData.allinLocation.city == '' ) {
+          conferenceData.allinLocation.city = 'Bologna';
+        }
+        if( conferenceData.allinLocation.street == '' ) {
+          conferenceData.allinLocation.street = 'via Zamboni';
+        }
+      } else {
+        if( conferenceData.stdAddress.country == '' ) {
+          conferenceData.stdAddress.country = 'Italia';
+        }
+        if( conferenceData.stdAddress.city == '' ) {
+          conferenceData.stdAddress.city = 'Bologna';
+        }
+        if( conferenceData.stdAddress.street == '' ) {
+          conferenceData.stdAddress.street = 'via Zamboni';
+        }
+        if( conferenceData.stdVenueName == '' ) {
+          conferenceData.stdVenueName = 'Hotel';
+        }
+      }
+      //sort dates
+      var today = new Date();
+      today.setHours(today.getHours() - 3);
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0
+      var yyyy = today.getFullYear();
+      var hh = today.getHours();
+      var min = today.getMinutes();
+      if(dd < 10){
+          dd='0'+dd
+      } 
+      if(mm < 10){
+          mm='0'+mm
+      }  
+      if(hh < 10){
+          hh='0'+hh
+      }  
+      if(min < 10){
+          min='0'+min
+      } 
+
+      today = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+min+':00';
+
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dd = tomorrow.getDate();
+      mm = tomorrow.getMonth()+1; //January is 0
+      yyyy = tomorrow.getFullYear();
+      hh = tomorrow.getHours();
+      min = tomorrow.getMinutes();
+      if(dd < 10){
+          dd='0'+dd
+      } 
+      if(mm < 10){
+          mm='0'+mm
+      }  
+      if(hh < 10){
+          hh='0'+hh
+      }  
+      if(min < 10){
+          min='0'+min
+      } 
+
+      tomorrow = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+min+':00';
+
+      var aWeek = new Date();
+      aWeek.setDate(aWeek.getDate() + 7);
+      dd = aWeek.getDate();
+      mm = aWeek.getMonth()+1; //January is 0
+      yyyy = aWeek.getFullYear();
+      hh = aWeek.getHours();
+      min = aWeek.getMinutes();
+      if(dd < 10){
+          dd='0'+dd
+      } 
+      if(mm < 10){
+          mm='0'+mm
+      }  
+      if(hh < 10){
+          hh='0'+hh
+      }  
+      if(min < 10){
+          min='0'+min
+      } 
+
+      aWeek = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+min+':00';
+      
+
+      if(conferenceData.dates.length == 0){
+        $scope.conferenceData.dates.push(today);
+      }
+      else {
+        conferenceData.dates.sort(function(a,b){
+          return new Date(a) - new Date(b);
+        });
+      }
+
+      if( conferenceData.subsStart == '' ) {
+        conferenceData.subsStart = today;
+      }
+      if( conferenceData.contDeadline == '' ) {
+        conferenceData.contDeadline = today;
+      }
+      if( conferenceData.subsDeadline == '' ) {
+        conferenceData.subsDeadline = today;
+      }
+
+      //set allin
+      camForm.variableManager.createVariable({
+        name: 'allin',
+        type: 'Boolean',
+        value: conferenceData.isAllin,
+        isDirty: true
+      });
+    });
+
+    //Set variable processInstantiator
+    inject([ '$rootScope', function($rootScope, Notifications) {
+      // get variable manager
+      var variableManager = camForm.variableManager;
+
+      // current authentication to get the current logged in user
+      var user = $rootScope.authentication.name;
+
+      // a new variable will add it to the form submit
+      variableManager.createVariable({
+        name: 'processInstantiator',
+        type: 'String',
+        value: user,
+        isDirty: true
+      });
+    }]);
+  </script>
+  <legend>Required informations:</legend>
+  <div>
+    <label>Conference Title</label>
+    <input type="text" ng-model="conferenceData.title"/>
+  </div>
+  <div>
+    <label for="dayConf">Subscription Starting Date</label>
+    <input type="date" id="datefieldSubsStart" min='1899-01-01' ng-model="conferenceData.subsStart"/>
+  </div>
+  <div>
+    <label for="dayConf">Contribution Submission Deadline Date</label>
+    <input type="date" id="datefieldContDead" min='1899-01-01' ng-model="conferenceData.contDeadline"/>
+  </div>
+  <div>
+    <label for="dayConf">Subscription Deadline Date</label>
+    <input type="date" id="datefieldSubsDead" min='1899-01-01' ng-model="conferenceData.subsDeadline"/>
+  </div>
+  
+  <fieldset>
+    <legend>Conference Dates</legend>
+    <input type="date" id="datefield" min='1899-01-01' ng-model="dayConf"/>
+    <label for="selct1">Time</label>
+    <select id="selct1" ng-model="dayHours">
+      <option value="07">07</option>
+      <option value="08">08</option>
+      <option value="09" selected="selected">09</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+    </select>
+    <select id="selct2" ng-model="dayMinutes">
+      <option value="00:00" selected="selected">00</option>
+      <option value="01:00">01</option>
+      <option value="02:00">02</option>
+      <option value="03:00">03</option>
+      <option value="04:00">04</option>
+      <option value="05:00">05</option>
+      <option value="06:00">06</option>
+      <option value="07:00">07</option>
+      <option value="08:00">08</option>
+      <option value="09:00">09</option>
+      <option value="10:00">10</option>
+      <option value="11:00">11</option>
+      <option value="12:00">12</option>
+      <option value="13:00">13</option>
+      <option value="14:00">14</option>
+      <option value="15:00">15</option>
+      <option value="16:00">16</option>
+      <option value="17:00">17</option>
+      <option value="18:00">18</option>
+      <option value="19:00">19</option>
+      <option value="20:00">20</option>
+      <option value="21:00">21</option>
+      <option value="22:00">22</option>
+      <option value="23:00">23</option>
+      <option value="24:00">24</option>
+      <option value="25:00">25</option>
+      <option value="26:00">26</option>
+      <option value="27:00">27</option>
+      <option value="28:00">28</option>
+      <option value="29:00">29</option>
+      <option value="30:00">30</option>
+      <option value="31:00">31</option>
+      <option value="32:00">32</option>
+      <option value="33:00">33</option>
+      <option value="34:00">34</option>
+      <option value="35:00">35</option>
+      <option value="36:00">36</option>
+      <option value="37:00">37</option>
+      <option value="38:00">38</option>
+      <option value="39:00">39</option>
+      <option value="40:00">40</option>
+      <option value="41:00">41</option>
+      <option value="42:00">42</option>
+      <option value="43:00">43</option>
+      <option value="44:00">44</option>
+      <option value="45:00">45</option>
+      <option value="46:00">46</option>
+      <option value="47:00">47</option>
+      <option value="48:00">48</option>
+      <option value="49:00">49</option>
+      <option value="50:00">50</option>
+      <option value="51:00">51</option>
+      <option value="52:00">52</option>
+      <option value="53:00">53</option>
+      <option value="54:00">54</option>
+      <option value="55:00">55</option>
+      <option value="56:00">56</option>
+      <option value="57:00">57</option>
+      <option value="58:00">58</option>
+      <option value="59:00">59</option>
+    </select>
+    <br>
+    <button ng-click="addItem()">Submit Date</button>
+    <ul>
+      <li ng-repeat="x in conferenceData.dates">
+        {{x}}
+        <span ng-click="removeItem($index)">&times;</span>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Prices</legend>
+    <label>Ticket Price for Participant:</label>
+    <input type="number" min="0.00" max="10000.00" step="0.01" ng-model="conferenceData.ticketParticipant" value="19.99" /> euro <br>
+    <label>Ticket Price for Contributors:</label>
+    <input type="number" min="0.00" max="10000.00" step="0.01" ng-model="conferenceData.ticketContributor" value="99.99" /> euro
+  </fieldset>  
+  <fieldset>
+    <legend>ACME Package</legend>
+    <label for="selct">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Package: </label>
+    <button ng-click="unhide()">{{buttonText}}</button>
+    <div id="std" class="unhidden">
+      <div class="content3">
+        <p><font size="4"><b>Standard package</b></font></p>
+        <p><font size="3"><b>Insert address</b></font></p>
+        Country
+        <input type="text" ng-model="conferenceData.stdAddress.country"/><br>
+        City
+        <input type="text" ng-model="conferenceData.stdAddress.city"/><br>
+        Street (and number)
+        <input type="text" ng-model="conferenceData.stdAddress.street"/><br>
+        <p><font size="3"><b>Other data</b></font></p>
+        <label>Venue Name</label>
+        <input type="text" ng-model="conferenceData.stdVenueName"/><br>
+        <label>Max Partecipants</label>
+        <input type="number" min="1" max="100000" step="1" ng-model="conferenceData.stdMaxParticipants" value="100" />
+      </div>
+    </div>
+    <div id="all" class="hidden">
+      <div class="content3">
+        <p><font size="4"><b>All-Inclusive package</b></font></p>
+        <p><font size="3"><b>Insert address</b></font></p>
+        Country
+        <input type="text" ng-model="conferenceData.allinLocation.country"/><br>
+        City
+        <input type="text" ng-model="conferenceData.allinLocation.city"/><br>
+        Street or Zone
+        <input type="text" ng-model="conferenceData.allinLocation.street"/><br>
+        <p><font size="3"><b>Other data</b></font></p>
+        <label>Expected Attendance</label>
+        <input type="number" min="1" max="100000" step="1" ng-model="conferenceData.allinExpectedAttendance" value="100" />
+      </div>
+    </div>
+  </fieldset>
+</form>
