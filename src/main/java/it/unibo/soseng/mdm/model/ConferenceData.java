@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.joda.time.DateTime;
-
 /**
  * The Class ConferenceData, used to store the conference data.
  * @author Mirko Zichichi
@@ -18,17 +16,32 @@ public class ConferenceData {
 	/** The dates. */
 	private List<Date> dates = new ArrayList<Date>();
 	
-	/** The ticket price. */
-	private double ticketPrice;
+	/** The subscriptions starting date. */
+	private Date subsStart;
+
+	/** The contributions deadline date. */
+	private Date contDeadline;
+
+	/** The subscriptions deadline date. */
+	private Date subsDeadline;
+	
+	/** The ticket price.for Participants */
+	private double ticketParticipant;
+	
+	/** The ticket price.for Contributors */
+	private double ticketContributor;
 	
 	/** The All-Inclusive flag. */
 	private boolean isAllin;
 	
 	/** The location if it is All-Inclusive. */
-	private String allinLocation;
+	private Address allinLocation;
 	
 	/** The expected attendance if it is All-Inclusive. */
 	private int allinExpectedAttendance;
+	
+	/** The venue name if it is Standard. */
+	private Address stdVenueName;
 	
 	/** The address if it is Standard. */
 	private Address stdAddress;
@@ -42,29 +55,38 @@ public class ConferenceData {
 	public ConferenceData() {
 		//
 	}
-	
+
 	/**
 	 * Instantiates a new conference data.
 	 *
 	 * @param title the title
 	 * @param dates the dates
-	 * @param ticketPrice the ticket price
+	 * @param subsStart the subs start
+	 * @param contDeadline the cont deadline
+	 * @param subsDeadline the subs deadline
+	 * @param ticketParticipant the ticket participant
+	 * @param ticketContributor the ticket contributor
 	 * @param isAllin the is allin
 	 * @param allinLocation the allin location
 	 * @param allinExpectedAttendance the allin expected attendance
 	 * @param stdAddress the std address
-	 * @param stdMaxPartecipants the std max partecipants
+	 * @param stdMaxParticipants the std max participants
 	 */
-	public ConferenceData(String title, List<Date> dates, double ticketPrice, boolean isAllin, String allinLocation,
-			int allinExpectedAttendance, Address stdAddress, int stdMaxPartecipants) {
+	public ConferenceData(String title, List<Date> dates, Date subsStart, Date contDeadline, Date subsDeadline,
+			double ticketParticipant, double ticketContributor, boolean isAllin, Address allinLocation,
+			int allinExpectedAttendance, Address stdAddress, int stdMaxParticipants) {
 		this.title = title;
 		this.dates = dates;
-		this.ticketPrice = ticketPrice;
+		this.subsStart = subsStart;
+		this.contDeadline = contDeadline;
+		this.subsDeadline = subsDeadline;
+		this.ticketParticipant = ticketParticipant;
+		this.ticketContributor = ticketContributor;
 		this.isAllin = isAllin;
 		this.allinLocation = allinLocation;
 		this.allinExpectedAttendance = allinExpectedAttendance;
 		this.stdAddress = stdAddress;
-		this.stdMaxParticipants = stdMaxPartecipants;
+		this.stdMaxParticipants = stdMaxParticipants;
 	}
 
 	/**
@@ -103,25 +125,98 @@ public class ConferenceData {
 	public void setDates(List<Date> dates) {
 		this.dates = dates;
 	}
-
-	/**
-	 * Gets the ticket price.
-	 *
-	 * @return the ticket price
-	 */
-	public double getTicketPrice() {
-		return ticketPrice;
-	}
-
-	/**
-	 * Sets the ticket price.
-	 *
-	 * @param ticketPrice the new ticket price
-	 */
-	public void setTicketPrice(double ticketPrice) {
-		this.ticketPrice = ticketPrice;
-	}
 	
+	
+	/**
+	 * Gets the subs start.
+	 *
+	 * @return the subs start
+	 */
+	public Date getSubsStart() {
+		return subsStart;
+	}
+
+	/**
+	 * Sets the subs start.
+	 *
+	 * @param subsStart the new subs start
+	 */
+	public void setSubsStart(Date subsStart) {
+		this.subsStart = subsStart;
+	}
+
+	/**
+	 * Gets the cont deadline.
+	 *
+	 * @return the cont deadline
+	 */
+	public Date getContDeadline() {
+		return contDeadline;
+	}
+
+	/**
+	 * Sets the cont deadline.
+	 *
+	 * @param contDeadline the new cont deadline
+	 */
+	public void setContDeadline(Date contDeadline) {
+		this.contDeadline = contDeadline;
+	}
+
+	/**
+	 * Gets the subs deadline.
+	 *
+	 * @return the subs deadline
+	 */
+	public Date getSubsDeadline() {
+		return subsDeadline;
+	}
+
+	/**
+	 * Sets the subs deadline.
+	 *
+	 * @param subsDeadline the new subs deadline
+	 */
+	public void setSubsDeadline(Date subsDeadline) {
+		this.subsDeadline = subsDeadline;
+	}
+
+	/**
+	 * Gets the ticket participant.
+	 *
+	 * @return the ticket participant
+	 */
+	public double getTicketParticipant() {
+		return ticketParticipant;
+	}
+
+	/**
+	 * Sets the ticket participant.
+	 *
+	 * @param ticketParticipant the new ticket participant
+	 */
+	public void setTicketParticipant(double ticketParticipant) {
+		this.ticketParticipant = ticketParticipant;
+	}
+
+	/**
+	 * Gets the ticket contributor.
+	 *
+	 * @return the ticket contributor
+	 */
+	public double getTicketContributor() {
+		return ticketContributor;
+	}
+
+	/**
+	 * Sets the ticket contributor.
+	 *
+	 * @param ticketContributor the new ticket contributor
+	 */
+	public void setTicketContributor(double ticketContributor) {
+		this.ticketContributor = ticketContributor;
+	}
+
 	/**
 	 * Gets the checks if is allin.
 	 *
@@ -146,7 +241,7 @@ public class ConferenceData {
 	 *
 	 * @return the allin location
 	 */
-	public String getAllinLocation() {
+	public Address getAllinLocation() {
 		return allinLocation;
 	}
 
@@ -155,7 +250,7 @@ public class ConferenceData {
 	 *
 	 * @param allinLocation the new allin location
 	 */
-	public void setAllinLocation(String allinLocation) {
+	public void setAllinLocation(Address allinLocation) {
 		this.allinLocation = allinLocation;
 	}
 
@@ -175,6 +270,24 @@ public class ConferenceData {
 	 */
 	public void setAllinExpectedAttendance(int allinExpectedAttendance) {
 		this.allinExpectedAttendance = allinExpectedAttendance;
+	}
+	
+	/**
+	 * Gets the std venue name.
+	 *
+	 * @return the std venue name
+	 */
+	public Address getStdVenueName() {
+		return stdVenueName;
+	}
+
+	/**
+	 * Sets the std venue name.
+	 *
+	 * @param stdVenueName the new std venue name
+	 */
+	public void setStdVenueName(Address stdVenueName) {
+		this.stdVenueName = stdVenueName;
 	}
 
 	/**
@@ -279,29 +392,6 @@ public class ConferenceData {
 		}		
 	}
 	*/
-	
-	/**
-	 * To JSON.
-	 *
-	 * @return the string
-	 */
-	public String toJSON() {
-		String datesJSON = "[";
-		datesJSON += "\"" + new DateTime(dates.get(0)).toString() + "\"";
-		for( int i = 1; i < dates.size(); i++ )
-			datesJSON += ", \"" + new DateTime(dates.get(i)).toString() + "\"";
-		datesJSON += "]";
-		return "{"
-				+ "\"title\": \"" + title + "\", "
-				+ "\"dates\": \"" + datesJSON + "\", "
-				+ "\"ticketPrice\": \"" + ticketPrice + "\", "
-				+ "\"isAllin\": \"" + isAllin + "\", "
-				+ "\"allinLocation\": " + allinLocation + ", "
-				+ "\"allinExpectedAttendance\": " + allinExpectedAttendance + ", "
-				+ "\"stdAddress\": " + stdAddress + ", "
-				+ "\"stdMaxParticipants\": " + stdMaxParticipants
-				+ "}";
-	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -311,7 +401,11 @@ public class ConferenceData {
 		return "ConferenceData [" + 
 					"title=" + title + "," +
 					"dates=" + dates + ", " + 
-					"ticketPrice=" + ticketPrice + ", " + 
+					"subsStart=" + subsStart + ", " + 
+					"contDeadline=" + contDeadline + ", " + 
+					"subsDeadline=" + subsDeadline + ", " + 
+					"ticketParticipant=" + ticketParticipant + ", " + 
+					"ticketContributor=" + ticketContributor + ", " + 
 					"isAllin=" + isAllin + ", " + 
 					"allinLocation=" + allinLocation + ", " + 
 					"allinExpectedAttendance=" + allinExpectedAttendance + ", " + 

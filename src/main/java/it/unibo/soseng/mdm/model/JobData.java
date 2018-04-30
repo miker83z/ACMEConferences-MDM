@@ -73,7 +73,7 @@ public class JobData {
 		setDate(jsonNode.prop(dateProperty).stringValue());
 		SpinJsonNode addressJSON = jsonNode.prop(addressProperty);
 		Address address = new Address();
-		address.setValueFromJSON(addressJSON);
+		address.defineValueFromJSON(addressJSON);
 		setAddress(address);
 	}
 	/**

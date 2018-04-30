@@ -28,7 +28,7 @@ public class SendBills implements JavaDelegate {
 	    	
 			runtimeService.createMessageCorrelation("ClientBills")
 			.processInstanceBusinessKey(businessKeyA)
-			.setVariable("billsToPay", typedBillsValue)
+			.setVariable("clientBillsToPay", typedBillsValue)
 			.correlate();
 	    }
 	    else //Empty form

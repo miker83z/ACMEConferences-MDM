@@ -24,6 +24,8 @@ public class PayViaWireTransferStart implements ExecutionListener{
 		execution.setVariable("allPaymentsCompleted", false);
 		execution.setVariable("logoutResponse", false);
 		execution.setVariable("logoutAttempts", 0 );
+
+		execution.setVariable("payLock", true );
 		
 		if(!execution.hasVariable("billsPayed")) {
 			BillsCollection bills = new BillsCollection(); 

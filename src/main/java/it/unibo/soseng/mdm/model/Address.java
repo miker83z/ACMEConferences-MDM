@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import org.camunda.spin.json.SpinJsonNode;
 
+
 /**
  * Stores all informations about the address.
  */
@@ -90,7 +91,7 @@ public class Address {
 	 * @param postalCodeProperty The name of the JSON property for the "postalCode".
 	 * @param distanceProperty The name of the JSON property for the "distanceFromUserRequest".
 	 */
-	public void setValueFromJSON(SpinJsonNode jsonNode,
+	public void defineValueFromJSON(SpinJsonNode jsonNode,
 			String countryProperty, String cityProperty, String streetProperty, String postalCodeProperty,
 			String distanceProperty) {	
 		setCountry(jsonNode.prop(countryProperty).stringValue());
@@ -105,8 +106,8 @@ public class Address {
 	 * "country", "city", "street", "postalCode".
 	 * @param jsonNode The JSON with all address informations.
 	 */
-	public void setValueFromJSON(SpinJsonNode jsonNode) {
-		setValueFromJSON(jsonNode, "country", "city", "street", "postalCode", "distanceFromUserRequest");
+	public void defineValueFromJSON(SpinJsonNode jsonNode) {
+		defineValueFromJSON(jsonNode, "country", "city", "street", "postalCode", "distanceFromUserRequest");
 	}
 	
 	/**

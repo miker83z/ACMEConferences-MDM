@@ -28,7 +28,15 @@ public class GenerateInvoiceTaskListener implements TaskListener {
 		if( delegateTask.hasVariable("clientDebt") )
 			clientDebtPayed = ((Bill) delegateTask.getVariable("clientDebt")).getAmount();
 		
-		Invoice invoice = new Invoice(billsPayed, availableFunds, clientDebtPayed, acmeServicesCosts, remainingFunds);
+		Bill remainingFundsBill = new Bill();
+		if( delegateTask.hasVariable("remainingFundsBill") )
+			remainingFundsBill = (Bill) delegateTask.getVariable("remainingFundsBill");
+		BillsCollection tmp = new BillsCollection();
+		for (Bill bill : billsPayed.getBills())
+			if(!bill.equals(remainingFundsBill))
+				tmp.addBill(bill);
+		
+		Invoice invoice = new Invoice(tmp, availableFunds, clientDebtPayed, acmeServicesCosts, remainingFunds);
 		ObjectValue typedInvoiceValue = Variables.objectValue(invoice).serializationDataFormat("application/json").create();
 		delegateTask.setVariable("ACMEInvoice", typedInvoiceValue);		
 	}

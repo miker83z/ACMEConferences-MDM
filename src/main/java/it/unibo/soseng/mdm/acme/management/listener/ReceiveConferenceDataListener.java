@@ -7,6 +7,7 @@ import org.camunda.bpm.engine.variable.value.ObjectValue;
 import org.joda.time.DateTime;
 
 import it.unibo.soseng.mdm.model.ConferenceData;
+import it.unibo.soseng.mdm.model.RelevantEvents;
 
 /**
  * The class ReceiveConferenceDataListener, used for the ACME process start event to setup variables
@@ -21,12 +22,18 @@ public class ReceiveConferenceDataListener implements ExecutionListener{
 		ConferenceData conference = (ConferenceData) execution.getVariable("conferenceData");
 		ObjectValue value = Variables.objectValue(conference).serializationDataFormat("application/json").create();
 		execution.setVariable("conferenceData", value);
-		execution.setVariable("confLastDayPlus60", new DateTime(conference.getDates().get(0)).plusDays(60).toDate() );
+		execution.setVariable("relevantEvents", new RelevantEvents(conference));
 		execution.setVariable("confLastDayPlus60", new DateTime(conference.getDates().get(conference.getDates().size()-1)).plusDays(60).toDate() );
+		execution.setVariable("firstDayOfConference", new DateTime(conference.getDates().get(0)).toDate());
 		execution.setVariable("allin", conference.getIsAllin());
 		
 		execution.setVariable("sumPayed", 0.0);
+		execution.setVariable("payLock", false);
+		execution.setVariable("sumReservedForManualPayment", 0.0);
 		execution.setVariable("subscriptionClosed", false);
 		execution.setVariable("partnerBillsToPay", false);
+		execution.setVariable("itsCateringTime", false);
+		execution.setVariable("chirpterToken", "YI7WYvrEwCf7IXOV+N4RJoXHnKj0N5AOA12BlRZfd7E=");
+		
 	}
 }

@@ -59,6 +59,7 @@ public class InternalPayment implements JavaDelegate{
 			}
 			execution.setVariable("allPaymentsCompleted", allPaymentsCompletedflag);
 		} catch(WebServiceException e) {
+			e.printStackTrace();
 			throw new BpmnError("WEB_SERVICE_ERROR");
 		}
 	}

@@ -13,6 +13,18 @@ public class BillsCollection {
 	private List<Bill> bills = new ArrayList<Bill>();
 
 	/**
+	 * Obtain total sum of bills.
+	 *
+	 * @return double tot sum
+	 */
+	public Double obtainTotSum() {
+		Double tot = 0.0;
+		for (Bill bill : bills)
+			tot += bill.getAmount();
+		return tot;
+	}
+	
+	/**
 	 * Gets the bill.
 	 *
 	 * @param i the i

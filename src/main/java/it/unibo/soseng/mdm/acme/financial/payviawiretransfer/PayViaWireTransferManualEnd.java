@@ -19,27 +19,21 @@ public class PayViaWireTransferManualEnd implements ExecutionListener{
 	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
 	 */
 	public void notify(DelegateExecution execution) throws Exception {
-		BillsCollection bills = (BillsCollection) execution.getVariable("billsToPay");
+		BillsCollection billsManuallyPayed = (BillsCollection) execution.getVariable("billsManuallyPayed");
 		BillsCollection billsPayed = (BillsCollection) execution.getVariable("billsPayed");
+		double tmp = 0.0;
 		
 		//add to payed
-		Double tmp = (Double) execution.getVariable("sumBeforeManualPayment");
-		for(Bill bill : bills.getBills() ) {
-			tmp -= bill.getAmount();
-			billsPayed.removeBill(bill);
-		}
+		for(Bill bill : billsManuallyPayed.getBills() )
+			if(!billsPayed.getBills().contains(bill)) {
+				tmp += bill.getAmount();
+				billsPayed.addBill(bill);
+			}
 		execution.setVariable("sumPayed",((Double) execution.getVariable("sumPayed")) + tmp);
-		execution.removeVariable("sumBeforeManualPayment");
-		
-		//Add other bills to pay to billsToPay
-		BillsCollection otherBillsToPay = new BillsCollection();
-		if (execution.hasVariable("otherBillsToPay"))
-			otherBillsToPay = (BillsCollection) execution.getVariable("otherBillsToPay");
-		for(Bill bill : otherBillsToPay.getBills())
-			bills.addBill(bill);
-		otherBillsToPay.getBills().clear();
+		execution.setVariable("sumReservedForManualPayment", 0.0);
 			
 		//Clear sub-process variables
+		BillsCollection bills = (BillsCollection) execution.getVariable("billsToPay");
 		ObjectValue typedBillsValue = Variables.objectValue(bills).serializationDataFormat("application/json").create();
 		execution.setVariable("billsToPay", typedBillsValue);
 		ObjectValue typedBillsPValue = Variables.objectValue(billsPayed).serializationDataFormat("application/json").create();
@@ -50,5 +44,6 @@ public class PayViaWireTransferManualEnd implements ExecutionListener{
 		execution.removeVariable("allPaymentsCompleted");
 		execution.removeVariable("logoutResponse");
 		execution.removeVariable("logoutAttempts");
+		execution.setVariable("payLock", false);
 	}
 }

@@ -5,7 +5,6 @@ import org.camunda.bpm.engine.delegate.ExecutionListener;
 import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.ObjectValue;
 
-import it.unibo.soseng.mdm.model.Bill;
 import it.unibo.soseng.mdm.model.BillsCollection;
 
 /**
@@ -21,14 +20,6 @@ public class PayViaWireTransferEnd implements ExecutionListener{
 	public void notify(DelegateExecution execution) throws Exception {
 		BillsCollection bills = (BillsCollection) execution.getVariable("billsToPay");
 		BillsCollection billsPayed = (BillsCollection) execution.getVariable("billsPayed");
-		
-		//Add other bills to pay to billsToPay
-		if (execution.hasVariable("otherBillsToPay")) {
-			BillsCollection otherBillsToPay = (BillsCollection) execution.getVariable("otherBillsToPay");
-			for(Bill bill : otherBillsToPay.getBills())
-				bills.addBill(bill);
-			otherBillsToPay.getBills().clear();
-		}
 			
 		//Clear sub-process variables
 		ObjectValue typedBillsValue = Variables.objectValue(bills).serializationDataFormat("application/json").create();
@@ -41,5 +32,6 @@ public class PayViaWireTransferEnd implements ExecutionListener{
 		execution.removeVariable("allPaymentsCompleted");
 		execution.removeVariable("logoutResponse");
 		execution.removeVariable("logoutAttempts");
+		execution.setVariable("payLock", false);
 	}
 }

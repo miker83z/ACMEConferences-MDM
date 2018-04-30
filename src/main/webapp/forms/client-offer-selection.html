@@ -15,14 +15,14 @@
 		});
 	
 		camForm.on('form-loaded', function() {
-  			// fetch the variable named 'partnerList'
+  			// fetch the variable named 'availablePartners'
   			camForm.variableManager.fetchVariable('availablePartners');
 		});
 
 		camForm.on('variables-fetched', function() {
-			// after the variables are fetched, bind the value of partnerList to an angular
+			// after the variables are fetched, bind the value of availablePartners to an angular
 		  	// scope value such that the form can work on it
-		  	$scope.partnerList = camForm.variableManager.variable('availablePartners').value;
+		  	$scope.availablePartners = camForm.variableManager.variable('availablePartners').value;
 		
 			// temporary variable
 			$scope.selected_partner_name = "";
@@ -41,23 +41,23 @@
 			});		 	
 	
 			// update informations about the selected partner
-			if (selected_partner_value === true) {
-				angular.forEach($scope.partnerList, function(partner) {
-					// Find the partner
-					if (partner.name === $scope.selected_partner_name) {
-			 			// create the variable for informations about the selected partner
-						camForm.variableManager.createVariable({
-      						name: 'chosenPartner',
-      						type: 'json',
-      						value: partner,
-							isDirty: true
-    					});
-					}
-				});
-			}
-			else {
-				console.log("All refused");
-			}
+			angular.forEach($scope.availablePartners.partnerList, function(partner) {
+				delete partner.$$hashKey;
+				// Find the partner
+				if (partner.name === $scope.selected_partner_name) {
+					// create the variable for informations about the selected partner
+					camForm.variableManager.createVariable({
+  					 	name: 'chosenPartner',
+  					 	type: 'Object',
+  					 	value: partner,
+					 	valueInfo: {
+					 		serializationDataFormat: 'application/json',
+					 		objectTypeName: 'it.unibo.soseng.mdm.model.PartnerData'
+					 	},
+					 	isDirty: true
+					});
+				}
+			});
   		});
 	</script>
 
@@ -72,110 +72,136 @@
 		<div class="col-xs-12 col-sm-5 col-md-6">
 			<select id="select_partner"
 					ng-model="selected_partner_name">
-		    	<option ng-repeat="partner in partnerList" ng-attr-id="{{'partner-' + $index}}" value="{{partner.name}}">{{partner.name}}</option>
+		    	<option ng-repeat="partner in availablePartners.partnerList" ng-attr-id="{{'partner-' + $index}}" value="{{partner.name}}">{{partner.name}}</option>
 				<option value="null">None of this</option>
 			</select>
 		</div>
 	</div>
 		
-	<div ng-repeat="partner in partnerList">
+	<div ng-repeat="partner in availablePartners.partnerList">
 			
 		<hr>
-			
-		<div class="control-group col-xs-12">
-			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">Name</label>
+
+		<h4 class="col-xs-12">Partner</h4>	
+		<div class="col-xs-12">
+			<label class="col-xs-12 col-sm-4 col-md-3" for="name">Name</label>
 	        <div class="col-xs-12 col-sm-8 col-md-9">
 	        	<input cam-variable-name="partner.name"
+	        		cam-variable-type="String"
 	     	   		type="text"
 			   		name="name"
 	     	   		readonly="true"
-	     	   		class="form-control" />
+	     	   		/>
 	     	</div>
 		</div>
-		<div class="control-group col-xs-12">
-			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="type">Type</label>
+		<div class=" col-xs-12">
+			<label class=" col-xs-12 col-sm-4 col-md-3" for="type">Type</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 		    	<input cam-variable-name="partner.type"
+		    		cam-variable-type="String"
 	 	   			type="text"
 		   			name="type"
 	 	   			readonly="true"
-	 	   			class="form-control" />
+	 	   			 />
 			</div>
 		</div>
-		<div class="control-group col-xs-12">
-			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="email">Email</label>
+		<div class=" col-xs-12">
+			<label class="col-xs-12 col-sm-4 col-md-3" for="email">Email</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 		    	<input cam-variable-name="partner.email"
+		    		cam-variable-type="String"
 	 	   			type="text"
 		   			name="email"
 	 	   			readonly="true"
-	 	   			class="form-control" />
+	 	   			 />
 			</div>
 		</div>
-		<div class="control-group col-xs-12">
-			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="phoneNumber">Phone number</label>
+		<div class=" col-xs-12">
+			<label class="col-xs-12 col-sm-4 col-md-3" for="phoneNumber">Phone number</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 		    	<input cam-variable-name="partner.phoneNumber"
+		    		cam-variable-type="String"
 	 	   			type="text"
 		   			name="phoneNumber"
 	 	   			readonly="true"
-	 	   			class="form-control" />
+	 	   			 />
 			</div>
 		</div>
-		<div class="control-group col-xs-12">
-			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="price">Price</label>
+		<div class=" col-xs-12">
+			<label class=" col-xs-12 col-sm-4 col-md-3" for="price">Price</label>
 	        <div class="col-xs-12 col-sm-8 col-md-9">
 	        	<input cam-variable-name="partner.price"
+	        		cam-variable-type="Double"
 	     	   		type="text"
 			   		name="price"
 	     	   		readonly="true"
-	     	   		class="form-control" />
+	     	   		 />
 	     	</div>
 		</div>
-		
-		<h4 class="col-xs-12">Address</h4>
-   		<div class="control-group col-xs-12">
-       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="country">Country</label>
+		<div class=" col-xs-12">
+			<label class=" col-xs-12 col-sm-4 col-md-3" for="price">Maximum Seats</label>
+	        <div class="col-xs-12 col-sm-8 col-md-9">
+	        	<input cam-variable-name="partner.maxSeats"
+	        		cam-variable-type="Integer"
+	     	   		type="text"
+			   		name="maxSeats"
+	     	   		readonly="true"
+	     	   		 />
+	     	</div>
+		</div>
+		<br>
+		<div class=" col-xs-12">
+       		<label class=" col-xs-12 col-sm-4 col-md-3" for="country">Address</label>
+		</div>	
+   		<div class=" col-xs-12">
+       		<label class=" col-xs-12 col-sm-4 col-md-3" for="country">Country</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<input cam-variable-name="partner.address.country"
+					cam-variable-type="String"
 	 	   			type="text"
 		   			name="country"
 	 	   			readonly="true"
-	 	   			class="form-control" />
+	 	   			/>
 	 	   	</div>
 		</div>		
-		<div class="control-group col-xs-12">
-      		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="city">City</label>
+		<div class=" col-xs-12">
+      		<label class=" col-xs-12 col-sm-4 col-md-3" for="city">City</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<input cam-variable-name="partner.address.city"
+					cam-variable-type="String"
 		 	   		type="text"
 			   		name="city"
 		 	   		readonly="true"
-	 		   		class="form-control" />
+	 		   		/>
     		</div>
      	</div>
-		<div class="control-group col-xs-12">
-			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="street">Street</label>
+		<div class=" col-xs-12">
+			<label class=" col-xs-12 col-sm-4 col-md-3" for="street">Street</label>
 			<div class="col-xs-12 col-sm-8 col-md-9">
 				<input cam-variable-name="partner.address.street"
+					cam-variable-type="String"
 	 	   			type="text"
 		   			name="street"
 	 	   			readonly="true"
-	 	   			class="form-control" />
+	 	   			 />
      			</div>
      		</div>
-		<div class="control-group col-xs-12">
-       		<label class="control-label col-xs-12 col-sm-4 col-md-3" for="postalCode">Postal Code</label>
+		<div class=" col-xs-12">
+       		<label class=" col-xs-12 col-sm-4 col-md-3" for="postalCode">Postal Code</label>
        		<div class="col-xs-12 col-sm-8 col-md-9">
 				<input cam-variable-name="partner.address.postalCode"
+					cam-variable-type="String"
 	 	   			type="text"
 		   			name="postalCode"
 	 	   			readonly="true"
-	 	   			class="form-control" />
+	 	   			 />
 	 	   	</div>
    		</div>
+   		
+		<br><br>
 
+		<hr>
+		<hr>
 		<hr>	
-		<br>
 	</div>
 </form>

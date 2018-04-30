@@ -22,6 +22,13 @@ public class SumBills implements JavaDelegate{
 			for(Bill bill : otherBillsToPay.getBills())
 				bills.addBill(bill);
 			otherBillsToPay.getBills().clear();
+			//Cleaning
+			execution.removeVariable("otherBillsToPay");
+			execution.removeVariable("allBillsPayedTmp");
+			execution.removeVariable("sumReservedForManualPayment");
+			execution.removeVariable("sufficientFunds");
+			execution.removeVariable("payLock");
+			execution.removeVariable("partnerBillsToPay");
 		}
 	}
 }

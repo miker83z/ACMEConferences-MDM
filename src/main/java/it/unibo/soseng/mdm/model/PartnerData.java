@@ -14,6 +14,7 @@ public class PartnerData {
 	private String email;
 	private String phoneNumber;
 	private double price;
+	private int maxSeats;
 	private Address address;
 	private Boolean available;
 	private Boolean contacted;
@@ -31,14 +32,16 @@ public class PartnerData {
 		
 		// Default values
 		this.price = 0.0;
+		this.maxSeats = 0;
 		this.available = true;
 		this.contacted = false;
 	}
 	
 	public PartnerData(String name, String type, String email, String phoneNumber, Address address,  
-			double price, Boolean available, Boolean contacted) {
+			double price, int maxSeats, Boolean available, Boolean contacted) {
 		this(name, type, email, phoneNumber, address); ;
 		this.price = price;
+		this.maxSeats = maxSeats;
 		this.available = available;
 		this.contacted = contacted;
 	}
@@ -46,7 +49,7 @@ public class PartnerData {
 	public String getName() {
 		return name;
 	}
-	public String getNameWithoutWhitespaces() {
+	public String retrieveNameWithoutWhitespaces() {
 		return name.replaceAll("\\s+","");
 	}
 	public void setName(String name) {
@@ -76,6 +79,12 @@ public class PartnerData {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	public int getMaxSeats() {
+		return maxSeats;
+	}
+	public void setMaxSeats(int maxSeats) {
+		this.maxSeats = maxSeats;
+	}
 	public Address getAddress() {
 		return address;
 	}
@@ -85,7 +94,7 @@ public class PartnerData {
 	public Boolean getAvailable() {
 		return available;
 	}
-	public void setAvailability(Boolean available) {
+	public void setAvailable(Boolean available) {
 		this.available = available;
 	}
 	public Boolean getContacted() {
@@ -102,6 +111,7 @@ public class PartnerData {
 				+ "email=" + email + ", "
 				+ "phoneNumber=" + phoneNumber + ", "
 				+ "price=" + price + ", "
+				+ "maxSeats=" + maxSeats + ", "
 				+ "address=" + address + ", "
 				+ "available=" + available + ", "
 				+ "contacted=" + contacted
@@ -119,6 +129,7 @@ public class PartnerData {
 				+ "\"email\": \"" + email + "\", "
 				+ "\"phoneNumber\": \"" + phoneNumber + "\", "
 				+ "\"price\": " + price + ", "
+				+ "\"maxSeats\": " + maxSeats + ", "
 				+ "\"address\": " + address.toJSON() + ", "
 				+ "\"available\": " + available + ", "
 				+ "\"contacted\": " + contacted
@@ -137,7 +148,7 @@ public class PartnerData {
 	 * @param contactedProperty The name of the JSON property for "contacted" partner's property.
 	 * @param addressProperty The name of the JSON property for the "address" of partner.
 	 */
-	public void setValueFromJSON(SpinJsonNode jsonNode,
+	public void defineValueFromJSON(SpinJsonNode jsonNode,
 			String nameProperty, String typeProperty, String emailProperty, String phoneNumberProperty,
 			String priceProperty, String availableProperty, String contactedProperty, 
 			String addressProperty) {
@@ -147,13 +158,13 @@ public class PartnerData {
 		setEmail(jsonNode.prop(emailProperty).stringValue());
 		setPhoneNumber(jsonNode.prop(phoneNumberProperty).stringValue());
 		setPrice(jsonNode.prop(priceProperty).numberValue().doubleValue());
-		setAvailability(jsonNode.prop(availableProperty).boolValue());
+		setAvailable(jsonNode.prop(availableProperty).boolValue());
 		setContacted(jsonNode.prop(contactedProperty).boolValue());
 		
 		// Fetch a list of items when your property is an array of data
 		SpinJsonNode addressJSON = jsonNode.prop(addressProperty);
 		Address address = new Address();
-		address.setValueFromJSON(addressJSON);
+		address.defineValueFromJSON(addressJSON);
 		setAddress(address);		
 	}
 	/**
@@ -162,8 +173,8 @@ public class PartnerData {
 	 * "name", "type", "email", "phoneNumber", "price", "available", "contacted", "address".
 	 * @param jsonNode The JSON with all partner informations.
 	 */
-	public void setValueFromJSON(SpinJsonNode jsonNode) {
-		setValueFromJSON(jsonNode, 
+	public void defineValueFromJSON(SpinJsonNode jsonNode) {
+		defineValueFromJSON(jsonNode, 
 				"name", "type", "email", "phoneNumber",
 				"price", "available", "contacted", 
 				"address");
@@ -184,7 +195,7 @@ public class PartnerData {
 	 * @param availabilityIdx Index of available property.
 	 * @param contactedIdx Index of contacted property.
 	 */
-	public void setValueFromStrings(String[] partner, 
+	public void defineValueFromStrings(String[] partner, 
 			Integer nameIdx, Integer typeIdx, Integer emailIdx, Integer phoneNumberIdx,
 			Integer addressCountryIdx, Integer addressCityIdx, Integer addressStreetIdx, Integer addressPostalCodeIdx,
 			Integer availabilityIdx, Integer contactedIdx) {
@@ -193,7 +204,7 @@ public class PartnerData {
 		setEmail(partner[emailIdx]);
 		setPhoneNumber(partner[phoneNumberIdx]);
 		setAddress(new Address(partner[addressCountryIdx], partner[addressCityIdx], partner[addressStreetIdx], partner[addressPostalCodeIdx]));
-		setAvailability(Boolean.valueOf(partner[availabilityIdx]));
+		setAvailable(Boolean.valueOf(partner[availabilityIdx]));
 		setContacted(Boolean.valueOf(partner[contactedIdx]));
 	}
 	/**
@@ -201,8 +212,8 @@ public class PartnerData {
 	 * "name","type","email","phoneNumber","country","city","street","postalCode","available","contacted".
 	 * @param partner The string array with partner informations.
 	 */
-	public void setValueFromStrings(String[] partner) {
-		setValueFromStrings(partner, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+	public void defineValueFromStrings(String[] partner) {
+		defineValueFromStrings(partner, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 	}
 	
 	/**
@@ -210,7 +221,7 @@ public class PartnerData {
 	 * @param separator
 	 * @return
 	 */
-	public String getValuesForCSV(String separator) {
+	public String retrieveValuesForCSV(String separator) {
 		return getName() + separator 
 			   + getType() + separator 
 			   + getEmail() + separator 

@@ -1,0 +1,161 @@
+<form name="partnerForm">
+
+	<script cam-script type="text/form-script">
+
+		camForm.on('form-loaded', function() {
+  			// fetch variables
+			camForm.variableManager.fetchVariable('conferenceData');
+			camForm.variableManager.fetchVariable('chosenPartner');
+		});
+
+		camForm.on('variables-fetched', function() {
+			// save fetched variables in AngularJS scope
+		    $scope.jobinfo = camForm.variableManager.variable('conferenceData').value;
+		    $scope.partnerinfo = camForm.variableManager.variable('chosenPartner').value;
+			// create new variables
+			$scope.available = false;
+			$scope.estimate = 0.0;
+
+			$scope.dates = [];
+			for (var i = 0; i < $scope.jobinfo.dates.length; i++){
+				var d = new Date(parseInt($scope.jobinfo.dates[i], 10));
+				$scope.dates.push(d.toString('MM/dd/yy HH:mm'));
+			}
+			
+		});
+				
+	</script>
+
+	<h3>Job informations</h3>
+	
+	<hr>
+
+	<div class=" col-xs-12">
+		<label class=" col-xs-12 col-sm-4 col-md-3" for="jobinfo.title">Conference title</label>
+        <div class="col-xs-12 col-sm-8 col-md-9">
+        	<input cam-variable-name="jobinfo.title"
+        		cam-variable-type="String"
+     	   		type="text"
+     	   		readonly="true"
+     	   		 />
+     	</div>
+	</div>
+	<div class="col-xs-12">
+		<label class="col-xs-12 col-sm-4 col-md-3" for="jobinfo.ticketParticipant">Ticket price for Participant</label>
+        <div class="col-xs-12 col-sm-8 col-md-9">
+        	<input cam-variable-name="jobinfo.ticketParticipant"
+        		cam-variable-type="Double"
+     	   		type="text"
+     	   		readonly="true" />
+     	</div>
+	</div>
+	<div class="col-xs-12">
+		<label class="col-xs-12 col-sm-4 col-md-3" for="jobinfo.ticketContributor">Ticket price for Contributors</label>
+        <div class="col-xs-12 col-sm-8 col-md-9">
+        	<input cam-variable-name="jobinfo.ticketContributor"
+        		cam-variable-type="Double"
+     	   		type="text"
+     	   		readonly="true" />
+     	</div>
+	</div>
+	<div class="col-xs-12">
+		<label class="col-xs-12 col-sm-4 col-md-3" for="jobinfo.stdMaxParticipants">Expected number of Participants</label>
+        <div class="col-xs-12 col-sm-8 col-md-9">
+        	<input cam-variable-name="jobinfo.stdMaxParticipants"
+        		cam-variable-type="Integer"
+     	   		type="text"
+     	   		readonly="true" />
+     	</div>
+	</div>
+	<div class="col-xs-12">
+		<label class="col-xs-12 col-sm-4 col-md-3" for="jobinfo.stdMaxParticipants">Maximum number of Seats</label>
+        <div class="col-xs-12 col-sm-8 col-md-9">
+        	<input cam-variable-name="partnerinfo.maxSeats"
+        		cam-variable-type="Integer"
+     	   		type="text"
+     	   		readonly="true" />
+     	</div>
+	</div>
+	<hr> 
+	
+	<h5 class="col-xs-12">Dates</h5>
+	
+	<div ng-repeat="date in dates">
+		<p><font size="4">{{date}}</font></p><br>
+	</div>
+
+	<h5 class="col-xs-12">Venue Partner Info</h5>
+		
+    	<div class=" col-xs-12">
+      		<label class=" col-xs-12 col-sm-4 col-md-3" for="partnerinfo.name">Name</label>
+		<div class="col-xs-12 col-sm-8 col-md-9">
+			<input cam-variable-name="partnerinfo.name"
+ 	   			cam-variable-type="String"
+ 	   			type="text"
+ 	   			readonly="true" />
+ 	   	</div>
+	</div>
+	
+	<h5 class="col-xs-12">Address</h5>
+		
+    	<div class=" col-xs-12">
+      		<label class=" col-xs-12 col-sm-4 col-md-3" for="partnerinfo.address.country">Country</label>
+		<div class="col-xs-12 col-sm-8 col-md-9">
+			<input cam-variable-name="partnerinfo.address.country"
+ 	   			cam-variable-type="String"
+ 	   			type="text"
+ 	   			readonly="true" />
+ 	   	</div>
+	</div>
+	<div class=" col-xs-12">
+      		<label class=" col-xs-12 col-sm-4 col-md-3" for="partnerinfo.address.city">City</label>
+		<div class="col-xs-12 col-sm-8 col-md-9">
+			<input cam-variable-name="partnerinfo.address.city"
+	 	   		cam-variable-type="String"
+	 	   		type="text"
+	 	   		readonly="true" />
+   		</div>
+    	</div>
+	<div class=" col-xs-12">
+		<label class=" col-xs-12 col-sm-4 col-md-3" for="partnerinfo.address.street">Street</label>
+		<div class="col-xs-12 col-sm-8 col-md-9">
+			<input cam-variable-name="partnerinfo.address.street"
+ 	   			cam-variable-type="String"
+ 	   			type="text"
+ 	   			readonly="true" />
+    		</div>
+    	</div>
+	
+	
+	<hr>
+	<hr>
+
+	<br><br>
+	
+	<div class="form-group">
+		<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="available">Accept the job?</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input type="checkbox"
+      					cam-variable-name="available"
+      					cam-variable-type="Boolean"
+      					name="available"
+      					ng-model="available"
+      					class="form-control" />
+      		</div>
+      	</div>
+      	
+      	<div class="control-group col-xs-12">
+			<label class="control-label col-xs-12 col-sm-4 col-md-3" for="estimate">Job estimate:</label>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<input type="number"
+						step="any"
+      					cam-variable-name="estimate"
+      					cam-variable-type="Double"
+      					name="estimate"
+      					ng-model="estimate"
+      					class="form-control" />
+      		</div>
+      	</div>
+	</div>
+</form>

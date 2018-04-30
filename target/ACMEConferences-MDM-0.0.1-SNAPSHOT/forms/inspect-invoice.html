@@ -29,25 +29,29 @@
 
   <p class="lead">ACME Invoice</p>
   <div class="control-group col-xs-12">
-    <label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">Bills Payed</label>
+    <label>Bills Payed</label>
     <li ng-repeat="bill in ACMEInvoice.billsPayed.bills">
       Payed {{bill.amount}} euro to {{bill.receiver}}
     </li>
   </div>
   <div class="control-group col-xs-12">
-    <label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">Funds obtained by Partecipants</label>
-    {{ACMEInvoice.registrationFunds}} euro<br>
-  </div>
-  <div class="control-group col-xs-12">
-    <label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">Remaining Funds</label>
-    {{ACMEInvoice.remainingFunds}} euro<br>
-  </div>
-  <div class="control-group col-xs-12">
-    <label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">ACME Services Costs</label>
+    <label>ACME Services Costs</label>
     {{ACMEInvoice.acmeServicesCosts}} euro<br>
   </div>
   <div class="control-group col-xs-12">
-    <label class="control-label col-xs-12 col-sm-4 col-md-3" for="name">Funds payed by Client</label>
+    <label class="control-label col-xs-12 col-sm-4 col-md-3">Total</label>
+    {{ACMEInvoice.totPayed}} euro<br>
+  </div>
+  <div class="control-group col-xs-12">
+    <label class="control-label col-xs-12 col-sm-4 col-md-3">Funds obtained by Participants</label>
+    {{ACMEInvoice.registrationFunds}} euro<br>
+  </div>
+  <div class="control-group col-xs-12">
+    <label class="control-label col-xs-12 col-sm-4 col-md-3">Remaining Funds</label>
+    {{ACMEInvoice.remainingFunds}} euro<br>
+  </div>
+  <div class="control-group col-xs-12">
+    <label class="control-label col-xs-12 col-sm-4 col-md-3">Funds payed by Client</label>
     {{ACMEInvoice.clientDebtPayed}} euro<br>
   </div>
 </form>

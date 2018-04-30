@@ -17,9 +17,7 @@ public class FinalBillsToPayListener implements ExecutionListener{
 	/* (non-Javadoc)
 	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
 	 */
-	public void notify(DelegateExecution execution) throws Exception {
-		execution.removeVariable("otherBillsToPay");	//Cleaning
-		
+	public void notify(DelegateExecution execution) throws Exception {		
 		//Compute the actual funds state
 		Double availableFunds = obtainAvailableFunds();	//From Registration service
 		execution.setVariable("availableFunds", availableFunds);
@@ -33,11 +31,11 @@ public class FinalBillsToPayListener implements ExecutionListener{
 		Bill ACMEBill = new Bill();
 	    ACMEBill.setReceiver("ACME");
 	    ACMEBill.setAmount(500.0);
-		ObjectValue value = Variables.objectValue(ACMEBill).serializationDataFormat("application/json").create();
+	    ObjectValue value = Variables.objectValue(ACMEBill).serializationDataFormat("application/json").create();
 	    execution.setVariable("ACMEBill", value);
 		Double sumToPay = ACMEBill.getAmount();
 		
-		//Remeining bills to pay
+		//Remaining bills to pay
 		BillsCollection billsToPay = new BillsCollection();
 		if(execution.hasVariable("billsToPay"))
 			billsToPay = (BillsCollection) execution.getVariable("billsToPay");
@@ -55,7 +53,8 @@ public class FinalBillsToPayListener implements ExecutionListener{
 			Bill clientBill = new Bill();
 			clientBill.setAmount(difference);
 			clientBill.setReceiver("ACME");
-			execution.setVariable("clientDebt", clientBill);
+			ObjectValue value2 = Variables.objectValue(clientBill).serializationDataFormat("application/json").create();
+			execution.setVariable("clientDebt", value2);
 		}
 		//There are NO bills to pay (but funds could be not sufficient to pay ACME bill)
 		else {
@@ -67,6 +66,7 @@ public class FinalBillsToPayListener implements ExecutionListener{
 					Bill remainingFundsBill = new Bill();
 					remainingFundsBill.setReceiver( (String) execution.getVariable("clientId"));
 					remainingFundsBill.setAmount(actualFunds - sumToPay);
+					execution.setVariable("remainingFundsBill", remainingFundsBill);
 					billsToPay.addBill(remainingFundsBill);
 					execution.setVariable("remainingFunds", true);
 				}

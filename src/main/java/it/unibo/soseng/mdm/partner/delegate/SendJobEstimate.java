@@ -14,6 +14,9 @@ public class SendJobEstimate implements JavaDelegate {
 		// Get job estimate
 		Double jobEstimate = (Double) execution.getVariable("estimate");
 		
+		// Get max seats
+		Integer maxSeats = (Integer) execution.getVariable("maxSeats");
+		
 		// Set partner name variable for the next event-based gateway
 		execution.setVariable("partnerName", partnerName);
 		
@@ -21,6 +24,7 @@ public class SendJobEstimate implements JavaDelegate {
 		RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    runtimeService.createMessageCorrelation("job_estimate_" + partnerName)
 	    .setVariable("jobEstimate", jobEstimate)
+	    .setVariable("maxSeats", maxSeats)
 	    .processInstanceBusinessKey((String) execution.getVariable("acmeBusinessKey"))
 	    .correlate();	
 

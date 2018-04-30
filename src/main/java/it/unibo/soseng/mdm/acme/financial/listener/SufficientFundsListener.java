@@ -21,15 +21,17 @@ public class SufficientFundsListener implements ExecutionListener{
 	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
 	 */
 	public void notify(DelegateExecution execution) throws Exception {
-		Double actualFunds = obtainAvailableFunds() - (Double) execution.getVariable("sumPayed");
+		Double actualFunds = obtainAvailableFunds() - (Double) execution.getVariable("sumPayed") - (Double) execution.getVariable("sumReservedForManualPayment");
 		Double sumToPay = 0.0;
 		
 		//Retrieve billsToPay
 		BillsCollection billsToPay = new BillsCollection();
 		if(execution.hasVariable("billsToPay"))
 			billsToPay = (BillsCollection) execution.getVariable("billsToPay");
-		else
-			execution.setVariable("billsToPay", billsToPay);
+		else {
+			ObjectValue typedBillsValue = Variables.objectValue(billsToPay).serializationDataFormat("application/json").create();
+			execution.setVariable("billsToPay", typedBillsValue);
+		}
 
 		//Retrieve otherBillsToPay or create a new one
 		BillsCollection otherBillsToPay = new BillsCollection();
@@ -40,16 +42,19 @@ public class SufficientFundsListener implements ExecutionListener{
 		execution.setVariable("otherBillsToPay", typedOBillsValue);
 		
 		//Select bills in billsToPay available to be payed
+		ArrayList<Bill> tmp = new ArrayList<Bill>();
 		for( Bill bill : billsToPay.getBills() )
-			if( bill.getAmount() + sumToPay > actualFunds )
+			if( bill.getAmount() + sumToPay > actualFunds ) {
 				otherBillsToPay.addBill(bill);
+				tmp.add(bill);
+			}
 			else
 				sumToPay += bill.getAmount();
-		for( Bill bill : otherBillsToPay.getBills() )
+		for( Bill bill : tmp )
 			billsToPay.removeBill(bill);
+		tmp.clear();
 		//Select bills in otherBillsToPay available to be payed
 		if(hasOtherBillsToPay) {
-			ArrayList<Bill> tmp = new ArrayList<Bill>();
 			for( Bill bill : otherBillsToPay.getBills() )
 				if( bill.getAmount() + sumToPay <= actualFunds ) {
 					billsToPay.addBill(bill);
@@ -62,7 +67,7 @@ public class SufficientFundsListener implements ExecutionListener{
 		
 		//Check and set sufficientFunds 
 		boolean sufFun = false;
-		if( billsToPay.getBills().size() > otherBillsToPay.getBills().size() || (billsToPay.getBills().size() > 0 && (Boolean) execution.getVariable("subscriptionClosed")) ) 
+		if( !billsToPay.getBills().isEmpty() )
 			sufFun = true;
 		execution.setVariable("sufficientFunds", sufFun);
 	}

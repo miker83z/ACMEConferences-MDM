@@ -8,6 +8,9 @@ public class Invoice {
 	/** The bills payed. */
 	private BillsCollection billsPayed;
 	
+	/** The tot payed. */
+	private Double totPayed;
+	
 	/** The registration funds. */
 	private Double registrationFunds;
 	
@@ -39,6 +42,7 @@ public class Invoice {
 	public Invoice(BillsCollection billsPayed, Double registrationFunds, Double clientDebtPayed,
 			Double acmeServicesCosts, Double remainingFunds) {
 		this.billsPayed = billsPayed;
+		this.totPayed = billsPayed.obtainTotSum() + acmeServicesCosts;
 		this.registrationFunds = registrationFunds;
 		this.clientDebtPayed = clientDebtPayed;
 		this.acmeServicesCosts = acmeServicesCosts;
@@ -61,6 +65,24 @@ public class Invoice {
 	 */
 	public void setBillsPayed(BillsCollection billsPayed) {
 		this.billsPayed = billsPayed;
+	}
+
+	/**
+	 * Gets the tot payed.
+	 *
+	 * @return the tot payed
+	 */
+	public Double getTotPayed() {
+		return totPayed;
+	}
+
+	/**
+	 * Sets the tot payed.
+	 *
+	 * @param totPayed the new tot payed
+	 */
+	public void setTotPayed(Double totPayed) {
+		this.totPayed = totPayed;
 	}
 
 	/**

@@ -11,8 +11,16 @@
   <script cam-script type="text/form-script">
 
     var conferenceData = $scope.conferenceData = {
+      subsStart : '',
+      contDeadline : '',
+      subsDeadline : '',
       dates : [],
       isAllin : false, 
+      allinLocation: {
+        city : '',
+        street : '',
+        country : ''
+      },
       stdAddress: {
         city : '',
         street : '',
@@ -78,6 +86,9 @@
 
       today = yyyy+'-'+mm+'-'+dd;
       document.getElementById("datefield").setAttribute("min", today);
+      document.getElementById("datefieldSubsStart").setAttribute("min", today);
+      document.getElementById("datefieldContDead").setAttribute("min", today);
+      document.getElementById("datefieldSubsDead").setAttribute("min", today);
 
       // declare variable 'conferenceData' incuding metadata for serialization
       camForm.variableManager.createVariable({
@@ -106,13 +117,16 @@
         conferenceData.title = 'title';
       }
       if( conferenceData.isAllin ) {
-        if( conferenceData.allinLocation == null ) {
-          conferenceData.allinLocation = 'locationNull';
+        if( conferenceData.allinLocation.country == '' ) {
+          conferenceData.allinLocation.country = 'Italia';
         }
-        if( conferenceData.allinExpectedAttendance == null   ) {
-          conferenceData.allinExpectedAttendance = '1';
+        if( conferenceData.allinLocation.city == '' ) {
+          conferenceData.allinLocation.city = 'Bologna';
         }
-      }  else {
+        if( conferenceData.allinLocation.street == '' ) {
+          conferenceData.allinLocation.street = 'via Zamboni';
+        }
+      } else {
         if( conferenceData.stdAddress.country == '' ) {
           conferenceData.stdAddress.country = 'Italia';
         }
@@ -122,37 +136,95 @@
         if( conferenceData.stdAddress.street == '' ) {
           conferenceData.stdAddress.street = 'via Zamboni';
         }
+        if( conferenceData.stdVenueName == '' ) {
+          conferenceData.stdVenueName = 'Hotel';
+        }
       }
-
       //sort dates
-      if(conferenceData.dates.length == 0){
-        var today = new Date();
-        today.setDate(today.getDate() + 1);
-        var dd = today.getDate();
-        var mm = today.getMonth()+1; //January is 0
-        var yyyy = today.getFullYear();
-        var hh = today.getHours();
-        var min = today.getMinutes();
-        if(dd < 10){
-            dd='0'+dd
-        } 
-        if(mm < 10){
-            mm='0'+mm
-        }  
-        if(hh < 10){
-            hh='0'+hh
-        }  
-        if(min < 10){
-            min='0'+min
-        } 
+      var today = new Date();
+      today.setHours(today.getHours() - 3);
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0
+      var yyyy = today.getFullYear();
+      var hh = today.getHours();
+      var min = today.getMinutes();
+      if(dd < 10){
+          dd='0'+dd
+      } 
+      if(mm < 10){
+          mm='0'+mm
+      }  
+      if(hh < 10){
+          hh='0'+hh
+      }  
+      if(min < 10){
+          min='0'+min
+      } 
 
-        today = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+min+':00';
+      today = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+min+':00';
+
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dd = tomorrow.getDate();
+      mm = tomorrow.getMonth()+1; //January is 0
+      yyyy = tomorrow.getFullYear();
+      hh = tomorrow.getHours();
+      min = tomorrow.getMinutes();
+      if(dd < 10){
+          dd='0'+dd
+      } 
+      if(mm < 10){
+          mm='0'+mm
+      }  
+      if(hh < 10){
+          hh='0'+hh
+      }  
+      if(min < 10){
+          min='0'+min
+      } 
+
+      tomorrow = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+min+':00';
+
+      var aWeek = new Date();
+      aWeek.setDate(aWeek.getDate() + 7);
+      dd = aWeek.getDate();
+      mm = aWeek.getMonth()+1; //January is 0
+      yyyy = aWeek.getFullYear();
+      hh = aWeek.getHours();
+      min = aWeek.getMinutes();
+      if(dd < 10){
+          dd='0'+dd
+      } 
+      if(mm < 10){
+          mm='0'+mm
+      }  
+      if(hh < 10){
+          hh='0'+hh
+      }  
+      if(min < 10){
+          min='0'+min
+      } 
+
+      aWeek = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+min+':00';
+      
+
+      if(conferenceData.dates.length == 0){
         $scope.conferenceData.dates.push(today);
       }
       else {
         conferenceData.dates.sort(function(a,b){
-        return new Date(a) - new Date(b);
+          return new Date(a) - new Date(b);
         });
+      }
+
+      if( conferenceData.subsStart == '' ) {
+        conferenceData.subsStart = today;
+      }
+      if( conferenceData.contDeadline == '' ) {
+        conferenceData.contDeadline = today;
+      }
+      if( conferenceData.subsDeadline == '' ) {
+        conferenceData.subsDeadline = today;
       }
 
       //set allin
@@ -181,13 +253,26 @@
       });
     }]);
   </script>
-  <legend>Conference Info </legend>
+  <legend>Required informations:</legend>
   <div>
     <label>Conference Title</label>
     <input type="text" ng-model="conferenceData.title"/>
   </div>
   <div>
-    <label for="dayConf">Date</label>
+    <label for="dayConf">Subscription Starting Date</label>
+    <input type="date" id="datefieldSubsStart" min='1899-01-01' ng-model="conferenceData.subsStart"/>
+  </div>
+  <div>
+    <label for="dayConf">Contribution Submission Deadline Date</label>
+    <input type="date" id="datefieldContDead" min='1899-01-01' ng-model="conferenceData.contDeadline"/>
+  </div>
+  <div>
+    <label for="dayConf">Subscription Deadline Date</label>
+    <input type="date" id="datefieldSubsDead" min='1899-01-01' ng-model="conferenceData.subsDeadline"/>
+  </div>
+  
+  <fieldset>
+    <legend>Conference Dates</legend>
     <input type="date" id="datefield" min='1899-01-01' ng-model="dayConf"/>
     <label for="selct1">Time</label>
     <select id="selct1" ng-model="dayHours">
@@ -278,12 +363,14 @@
         <span ng-click="removeItem($index)">&times;</span>
       </li>
     </ul>
-  </div>
-  <div>
-    <label>Ticket Price:</label>
-    <input type="number" min="0.00" max="10000.00" step="0.01" ng-model="conferenceData.ticketPrice" value="9.99" /> euro
-  </div>
-  
+  </fieldset>
+  <fieldset>
+    <legend>Prices</legend>
+    <label>Ticket Price for Participant:</label>
+    <input type="number" min="0.00" max="10000.00" step="0.01" ng-model="conferenceData.ticketParticipant" value="19.99" /> euro <br>
+    <label>Ticket Price for Contributors:</label>
+    <input type="number" min="0.00" max="10000.00" step="0.01" ng-model="conferenceData.ticketContributor" value="99.99" /> euro
+  </fieldset>  
   <fieldset>
     <legend>ACME Package</legend>
     <label for="selct">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Package: </label>
@@ -291,12 +378,16 @@
     <div id="std" class="unhidden">
       <div class="content3">
         <p><font size="4"><b>Standard package</b></font></p>
-        <label>Address Country</label>
+        <p><font size="3"><b>Insert address</b></font></p>
+        Country
         <input type="text" ng-model="conferenceData.stdAddress.country"/><br>
-        <label>Address City</label>
+        City
         <input type="text" ng-model="conferenceData.stdAddress.city"/><br>
-        <label>Address Street (and number)</label>
+        Street (and number)
         <input type="text" ng-model="conferenceData.stdAddress.street"/><br>
+        <p><font size="3"><b>Other data</b></font></p>
+        <label>Venue Name</label>
+        <input type="text" ng-model="conferenceData.stdVenueName"/><br>
         <label>Max Partecipants</label>
         <input type="number" min="1" max="100000" step="1" ng-model="conferenceData.stdMaxParticipants" value="100" />
       </div>
@@ -304,8 +395,14 @@
     <div id="all" class="hidden">
       <div class="content3">
         <p><font size="4"><b>All-Inclusive package</b></font></p>
-        <label>Zone (City or Location)</label>
-        <input type="text" ng-model="conferenceData.allinLocation"/><br>
+        <p><font size="3"><b>Insert address</b></font></p>
+        Country
+        <input type="text" ng-model="conferenceData.allinLocation.country"/><br>
+        City
+        <input type="text" ng-model="conferenceData.allinLocation.city"/><br>
+        Street or Zone
+        <input type="text" ng-model="conferenceData.allinLocation.street"/><br>
+        <p><font size="3"><b>Other data</b></font></p>
         <label>Expected Attendance</label>
         <input type="number" min="1" max="100000" step="1" ng-model="conferenceData.allinExpectedAttendance" value="100" />
       </div>

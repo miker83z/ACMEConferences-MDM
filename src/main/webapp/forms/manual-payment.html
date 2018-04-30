@@ -2,15 +2,24 @@
 
   <script cam-script type="text/form-script">
 
+    var billsManuallyPayed = $scope.billsManuallyPayed = {
+      bills : []
+    }
+
     $scope.removeItem = function (x) {
-        $scope.billsToPay.bills.splice(x, 1);
+      var tmp = {};
+      tmp.receiver = $scope.billsToPay.bills[x].receiver;
+      tmp.amount = $scope.billsToPay.bills[x].amount;
+      $scope.billsManuallyPayed.bills.push(tmp);
+      $scope.billsToPay.bills.splice(x, 1);
     }
     
-    camForm.on('form-loaded', function() {
-    
+    camForm.on('form-loaded', function() {    
       // fetch the variable named 'billsToPay'
       camForm.variableManager.fetchVariable('billsToPay');
-    
+
+      // fetch the variable named 'billsManuallyPayed'
+      camForm.variableManager.fetchVariable('billsManuallyPayed');   
     });
 
     camForm.on('variables-fetched', function() {
@@ -18,7 +27,23 @@
       // after the variables are fetched, bind the value of billsToPay to a angular
       // scope value such that the form can work on it
       $scope.billsToPay = camForm.variableManager.variable('billsToPay').value;
+      
+      $scope.billsManuallyPayed = camForm.variableManager.variable('billsManuallyPayed').value;
     
+    });
+
+    camForm.on('submit', function() {
+
+      // remove '$$hashKey' properties from bills objects
+      angular.forEach($scope.billsToPay.bills, function(bill) {
+        delete bill.$$hashKey;
+      });
+
+      // remove '$$hashKey' properties from bills objects
+      angular.forEach($scope.billsManuallyPayed.bills, function(bill) {
+        delete bill.$$hashKey;
+      });
+
     });
   </script>
 
