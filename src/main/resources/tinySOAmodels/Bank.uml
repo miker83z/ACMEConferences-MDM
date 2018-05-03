@@ -19,7 +19,63 @@
         <appliedProfile xmi:type="uml:Profile" href="TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
       </profileApplication>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_wTy6QEuLEei0A7KQnWmluA" name="Tasks">
+    <packagedElement xmi:type="uml:Package" xmi:id="_wTy6QEuLEei0A7KQnWmluA" name="ACMEFinancialLane">
+      <packagedElement xmi:type="uml:Class" xmi:id="_tzyx4E7cEeiHQNDgnZCChQ" name="LoginBank">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_19LT0E7cEeiHQNDgnZCChQ" name="username" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6lOdAE7cEeiHQNDgnZCChQ" name="password" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_8YOrsE7cEeiHQNDgnZCChQ" name="execute">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-dQegE7cEeiHQNDgnZCChQ" name="execution"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DONFAE7dEeiHQNDgnZCChQ" name="LogoutBank">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_GpLXEE7dEeiHQNDgnZCChQ" name="execute">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GpLXEU7dEeiHQNDgnZCChQ" name="execution"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_I08rEE7dEeiHQNDgnZCChQ" name="InternalPayment">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_NqdogE7dEeiHQNDgnZCChQ" name="execute">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NqdogU7dEeiHQNDgnZCChQ" name="execution"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_cvbcgE7dEeiHQNDgnZCChQ" name="Bill">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_gHEGsE7dEeiHQNDgnZCChQ" name="username" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_gKOvcE7dEeiHQNDgnZCChQ" name="amount" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_gNNyAE7dEeiHQNDgnZCChQ" name="errorMessage" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mLIh8E7dEeiHQNDgnZCChQ" name="BillsCollection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ndm2cE7dEeiHQNDgnZCChQ" name="bills" visibility="private" type="_cvbcgE7dEeiHQNDgnZCChQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rmySUE7dEeiHQNDgnZCChQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rm_tsE7dEeiHQNDgnZCChQ" value="*"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_swRp8E7dEeiHQNDgnZCChQ" name="addBill">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_w8qK0E7dEeiHQNDgnZCChQ" name="bill" type="_cvbcgE7dEeiHQNDgnZCChQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_x8poME7dEeiHQNDgnZCChQ" name="removeBill">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_x8poMU7dEeiHQNDgnZCChQ" name="bill" type="_cvbcgE7dEeiHQNDgnZCChQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_0fIzEE7dEeiHQNDgnZCChQ" name="removeBill">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_0fIzEU7dEeiHQNDgnZCChQ" name="i">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5cdosE7dEeiHQNDgnZCChQ" name="getBill">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5cdosU7dEeiHQNDgnZCChQ" name="i">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_8imTME7dEeiHQNDgnZCChQ" client="_mLIh8E7dEeiHQNDgnZCChQ" supplier="_I08rEE7dEeiHQNDgnZCChQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_9DDU4E7dEeiHQNDgnZCChQ" client="_cvbcgE7dEeiHQNDgnZCChQ" supplier="_mLIh8E7dEeiHQNDgnZCChQ"/>
       <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_j2B8kEuMEei0A7KQnWmluA">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j2aXEEuMEei0A7KQnWmluA" source="PapyrusVersion">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j2aXEUuMEei0A7KQnWmluA" key="Version" value="1.0.0"/>
@@ -34,11 +90,19 @@
         <appliedProfile xmi:type="uml:Profile" href="TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
       </profileApplication>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_y9ybUEuLEei0A7KQnWmluA" name="Utilities">
+    <packagedElement xmi:type="uml:Package" xmi:id="_y9ybUEuLEei0A7KQnWmluA" name="BankUtilities">
       <packagedElement xmi:type="uml:Interface" xmi:id="_ttA2gEuREei44bAm6EMQYg" name="BankPort">
         <ownedOperation xmi:type="uml:Operation" xmi:id="__KfkkEuSEei44bAm6EMQYg" name="userLogin">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_F-tDUEuTEei44bAm6EMQYg" type="_jh_XgEuSEei44bAm6EMQYg"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_MN2GIEuTEei44bAm6EMQYg" type="_2VjZoEuREei44bAm6EMQYg" direction="out"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xy46IE7bEeiHQNDgnZCChQ" name="userLogout">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xy46IU7bEeiHQNDgnZCChQ" type="_QcG7oE7bEeiHQNDgnZCChQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xy46Ik7bEeiHQNDgnZCChQ" type="_ZxkPIE7bEeiHQNDgnZCChQ" direction="out"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_x2RlUE7bEeiHQNDgnZCChQ" name="transferPayment">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_x2RlUU7bEeiHQNDgnZCChQ" type="_ieMoEE7bEeiHQNDgnZCChQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_x2RlUk7bEeiHQNDgnZCChQ" type="_j8DtME7bEeiHQNDgnZCChQ" direction="out"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_2VjZoEuREei44bAm6EMQYg" name="UserLoginResponse">
@@ -57,8 +121,50 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_ZbPUgEuTEei44bAm6EMQYg" client="_2VjZoEuREei44bAm6EMQYg" supplier="_ttA2gEuREei44bAm6EMQYg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_aQObwEuTEei44bAm6EMQYg" client="_jh_XgEuSEei44bAm6EMQYg" supplier="_ttA2gEuREei44bAm6EMQYg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_QcG7oE7bEeiHQNDgnZCChQ" name="UserLogout">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RjWQgE7bEeiHQNDgnZCChQ" name="userID" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZxkPIE7bEeiHQNDgnZCChQ" name="UserLogoutResponse">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZxkPIU7bEeiHQNDgnZCChQ" name="flag" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ieMoEE7bEeiHQNDgnZCChQ" name="TransferPayment">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mxd0EE7bEeiHQNDgnZCChQ" name="quantity" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_m3oGcE7bEeiHQNDgnZCChQ" name="receiver" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_m6sBgE7bEeiHQNDgnZCChQ" name="userID" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_j8DtME7bEeiHQNDgnZCChQ" name="TransferPaymentResponse">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_uMW4UE7bEeiHQNDgnZCChQ" name="flag" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_udPM8E7bEeiHQNDgnZCChQ" name="message" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_HrF8gE7cEeiHQNDgnZCChQ" client="_jh_XgEuSEei44bAm6EMQYg" supplier="_ttA2gEuREei44bAm6EMQYg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_IXnrUE7cEeiHQNDgnZCChQ" client="_2VjZoEuREei44bAm6EMQYg" supplier="_ttA2gEuREei44bAm6EMQYg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_JQM5IE7cEeiHQNDgnZCChQ" client="_QcG7oE7bEeiHQNDgnZCChQ" supplier="_ttA2gEuREei44bAm6EMQYg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_J0D0IE7cEeiHQNDgnZCChQ" client="_ZxkPIE7bEeiHQNDgnZCChQ" supplier="_ttA2gEuREei44bAm6EMQYg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_SMk-QE7cEeiHQNDgnZCChQ" client="_j8DtME7bEeiHQNDgnZCChQ" supplier="_ttA2gEuREei44bAm6EMQYg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_SqUqME7cEeiHQNDgnZCChQ" client="_ieMoEE7bEeiHQNDgnZCChQ" supplier="_ttA2gEuREei44bAm6EMQYg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_USzD4E7cEeiHQNDgnZCChQ" name="BankPortService">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_W3dZAE7cEeiHQNDgnZCChQ" name="getBankPortServicePort">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bG7DEE7cEeiHQNDgnZCChQ" type="_ttA2gEuREei44bAm6EMQYg" direction="out"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_ddTroE7cEeiHQNDgnZCChQ" client="_ttA2gEuREei44bAm6EMQYg" supplier="_USzD4E7cEeiHQNDgnZCChQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_WNfZgE7dEeiHQNDgnZCChQ" client="_USzD4E7cEeiHQNDgnZCChQ" supplier="_tzyx4E7cEeiHQNDgnZCChQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_YlGxIE7dEeiHQNDgnZCChQ" client="_USzD4E7cEeiHQNDgnZCChQ" supplier="_I08rEE7dEeiHQNDgnZCChQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_asAzQE7dEeiHQNDgnZCChQ" client="_USzD4E7cEeiHQNDgnZCChQ" supplier="_DONFAE7dEeiHQNDgnZCChQ"/>
       <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_p_P9kEuMEei0A7KQnWmluA">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_p_eAAEuMEei0A7KQnWmluA" source="PapyrusVersion">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_p_eAAUuMEei0A7KQnWmluA" key="Version" value="1.0.0"/>
@@ -73,10 +179,14 @@
         <appliedProfile xmi:type="uml:Profile" href="TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
       </profileApplication>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_nK_T8EuREei44bAm6EMQYg" name="Class1"/>
   </uml:Model>
   <TinySOA:Entities xmi:id="_gv4rAEuMEei0A7KQnWmluA" base_Package="_uPOacEuLEei0A7KQnWmluA"/>
   <TinySOA:Tasks xmi:id="_m6kEkEuMEei0A7KQnWmluA" base_Package="_wTy6QEuLEei0A7KQnWmluA"/>
   <TinySOA:Utilities xmi:id="_ry-lAEuMEei0A7KQnWmluA" base_Package="_y9ybUEuLEei0A7KQnWmluA"/>
   <TinySOA:ServiceInterface xmi:id="_g7yU0EuTEei44bAm6EMQYg" base_Interface="_ttA2gEuREei44bAm6EMQYg"/>
+  <TinySOA:Expose xmi:id="_gxFJgE7cEeiHQNDgnZCChQ" base_Dependency="_ddTroE7cEeiHQNDgnZCChQ"/>
+  <TinySOA:Capability xmi:id="_iNCKIE7cEeiHQNDgnZCChQ" base_Class="_USzD4E7cEeiHQNDgnZCChQ"/>
+  <TinySOA:Capability xmi:id="_E7qsYE7dEeiHQNDgnZCChQ" base_Class="_tzyx4E7cEeiHQNDgnZCChQ"/>
+  <TinySOA:Capability xmi:id="_Fkx60E7dEeiHQNDgnZCChQ" base_Class="_DONFAE7dEeiHQNDgnZCChQ"/>
+  <TinySOA:Capability xmi:id="_M0UDoE7dEeiHQNDgnZCChQ" base_Class="_I08rEE7dEeiHQNDgnZCChQ"/>
 </xmi:XMI>
