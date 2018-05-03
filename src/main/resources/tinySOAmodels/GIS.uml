@@ -293,8 +293,6 @@
         </packagedElement>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_7lUu4EmIEeiGuZEw4fqD5g" name="Class13"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_7zydIEmSEeiGuZEw4fqD5g" name="Class13"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FIytQEiZEei4JaLv0Kwtqg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FI9sYEiZEei4JaLv0Kwtqg" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FI9sYUiZEei4JaLv0Kwtqg" key="Version" value="1.0.0"/>

@@ -449,58 +449,6 @@
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_adR-lkiZEei4JaLv0Kwtqg" x="240" y="80"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_7lXLIEmIEeiGuZEw4fqD5g" type="Class_Shape">
-    <children xmi:type="notation:DecorationNode" xmi:id="_7lXyMEmIEeiGuZEw4fqD5g" type="Class_NameLabel"/>
-    <children xmi:type="notation:DecorationNode" xmi:id="_7lXyMUmIEeiGuZEw4fqD5g" type="Class_FloatingNameLabel">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_7lXyMkmIEeiGuZEw4fqD5g" y="15"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_7lXyM0mIEeiGuZEw4fqD5g" type="Class_AttributeCompartment">
-      <styles xmi:type="notation:TitleStyle" xmi:id="_7lXyNEmIEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_7lXyNUmIEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_7lXyNkmIEeiGuZEw4fqD5g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7lXyN0mIEeiGuZEw4fqD5g"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_7lXyOEmIEeiGuZEw4fqD5g" type="Class_OperationCompartment">
-      <styles xmi:type="notation:TitleStyle" xmi:id="_7lXyOUmIEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_7lXyOkmIEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_7lXyO0mIEeiGuZEw4fqD5g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7lXyPEmIEeiGuZEw4fqD5g"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_7lXyPUmIEeiGuZEw4fqD5g" type="Class_NestedClassifierCompartment">
-      <styles xmi:type="notation:TitleStyle" xmi:id="_7lXyPkmIEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_7lXyP0mIEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_7lXyQEmIEeiGuZEw4fqD5g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7lXyQUmIEeiGuZEw4fqD5g"/>
-    </children>
-    <element xmi:type="uml:Class" href="GIS.uml#_7lUu4EmIEeiGuZEw4fqD5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7lXLIUmIEeiGuZEw4fqD5g" x="1260" y="1600"/>
-  </children>
-  <children xmi:type="notation:Shape" xmi:id="_7zzrQEmSEeiGuZEw4fqD5g" type="Class_Shape">
-    <children xmi:type="notation:DecorationNode" xmi:id="_7zzrQkmSEeiGuZEw4fqD5g" type="Class_NameLabel"/>
-    <children xmi:type="notation:DecorationNode" xmi:id="_7z0SUEmSEeiGuZEw4fqD5g" type="Class_FloatingNameLabel">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_7z0SUUmSEeiGuZEw4fqD5g" y="15"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_7z0SUkmSEeiGuZEw4fqD5g" type="Class_AttributeCompartment">
-      <styles xmi:type="notation:TitleStyle" xmi:id="_7z0SU0mSEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_7z0SVEmSEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_7z0SVUmSEeiGuZEw4fqD5g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7z0SVkmSEeiGuZEw4fqD5g"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_7z0SV0mSEeiGuZEw4fqD5g" type="Class_OperationCompartment">
-      <styles xmi:type="notation:TitleStyle" xmi:id="_7z0SWEmSEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_7z0SWUmSEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_7z0SWkmSEeiGuZEw4fqD5g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7z0SW0mSEeiGuZEw4fqD5g"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_7z0SXEmSEeiGuZEw4fqD5g" type="Class_NestedClassifierCompartment">
-      <styles xmi:type="notation:TitleStyle" xmi:id="_7z0SXUmSEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_7z0SXkmSEeiGuZEw4fqD5g"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_7z0SX0mSEeiGuZEw4fqD5g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7z0SYEmSEeiGuZEw4fqD5g"/>
-    </children>
-    <element xmi:type="uml:Class" href="GIS.uml#_7zydIEmSEeiGuZEw4fqD5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7zzrQUmSEeiGuZEw4fqD5g" x="2020" y="740" width="260" height="160"/>
-  </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_FEUc8UiZEei4JaLv0Kwtqg" name="diagram_compatibility_version" stringValue="1.3.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_FEUc8kiZEei4JaLv0Kwtqg"/>
   <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_FEUc80iZEei4JaLv0Kwtqg" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
