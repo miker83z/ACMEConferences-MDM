@@ -1,7 +1,6 @@
 
-package it.unibo.soseng.mdm.acme.generated.gis;
+package it.unibo.soseng.mdm.services.generated.bank;
 
-import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -19,7 +18,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+ *         &lt;element name="flag" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,36 +30,54 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "result"
+    "flag",
+    "message"
 })
-@XmlRootElement(name = "getDistanceBetweenResponse")
-public class GetDistanceBetweenResponse {
+@XmlRootElement(name = "transferPaymentResponse")
+public class TransferPaymentResponse {
 
+    protected boolean flag;
     @XmlElement(required = true)
-    protected BigDecimal result;
+    protected String message;
 
     /**
-     * Gets the value of the result property.
+     * Gets the value of the flag property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
      */
-    public BigDecimal getResult() {
-        return result;
+    public boolean isFlag() {
+        return flag;
     }
 
     /**
-     * Sets the value of the result property.
+     * Sets the value of the flag property.
+     * 
+     */
+    public void setFlag(boolean value) {
+        this.flag = value;
+    }
+
+    /**
+     * Gets the value of the message property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * Sets the value of the message property.
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public void setResult(BigDecimal value) {
-        this.result = value;
+    public void setMessage(String value) {
+        this.message = value;
     }
 
 }

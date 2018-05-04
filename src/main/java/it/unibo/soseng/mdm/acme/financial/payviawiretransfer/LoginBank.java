@@ -6,10 +6,10 @@ import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-import it.unibo.soseng.mdm.acme.generated.bank.BankPort;
-import it.unibo.soseng.mdm.acme.generated.bank.BankPortService;
-import it.unibo.soseng.mdm.acme.generated.bank.UserLogin;
-import it.unibo.soseng.mdm.acme.generated.bank.UserLoginResponse;
+import it.unibo.soseng.mdm.services.generated.bank.BankPort;
+import it.unibo.soseng.mdm.services.generated.bank.BankPortService;
+import it.unibo.soseng.mdm.services.generated.bank.UserLogin;
+import it.unibo.soseng.mdm.services.generated.bank.UserLoginResponse;
 
 /**
  * The Class LoginBank, used for Login task to login to the Bank service.

@@ -7,10 +7,10 @@ import java.util.List;
 import org.camunda.spin.SpinList;
 import org.camunda.spin.json.SpinJsonNode;
 
-import it.unibo.soseng.mdm.acme.generated.gis.GIS;
-import it.unibo.soseng.mdm.acme.generated.gis.GISPortType;
-import it.unibo.soseng.mdm.acme.generated.gis.GetDistanceBetween;
-import it.unibo.soseng.mdm.acme.generated.gis.GetDistanceBetweenResponse;
+import it.unibo.soseng.mdm.services.generated.gis.GIS;
+import it.unibo.soseng.mdm.services.generated.gis.GISPortType;
+import it.unibo.soseng.mdm.services.generated.gis.GetDistanceBetween;
+import it.unibo.soseng.mdm.services.generated.gis.GetDistanceBetweenResponse;
 import it.unibo.soseng.mdm.util.CSVUtils;
 
 /**

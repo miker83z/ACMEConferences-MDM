@@ -1,5 +1,5 @@
 
-package it.unibo.soseng.mdm.acme.generated.bank;
+package it.unibo.soseng.mdm.services.generated.bank;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

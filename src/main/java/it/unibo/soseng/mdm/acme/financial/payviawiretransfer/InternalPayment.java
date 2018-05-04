@@ -8,12 +8,12 @@ import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-import it.unibo.soseng.mdm.acme.generated.bank.BankPort;
-import it.unibo.soseng.mdm.acme.generated.bank.BankPortService;
-import it.unibo.soseng.mdm.acme.generated.bank.TransferPayment;
-import it.unibo.soseng.mdm.acme.generated.bank.TransferPaymentResponse;
 import it.unibo.soseng.mdm.model.Bill;
 import it.unibo.soseng.mdm.model.BillsCollection;
+import it.unibo.soseng.mdm.services.generated.bank.BankPort;
+import it.unibo.soseng.mdm.services.generated.bank.BankPortService;
+import it.unibo.soseng.mdm.services.generated.bank.TransferPayment;
+import it.unibo.soseng.mdm.services.generated.bank.TransferPaymentResponse;
 
 /**
  * The Class InternalPayment, used for Pay task to pay bills through the Bank service. After @see it.unibo.soseng.mdm.acme.financial.delegate.LoginBank it execute the payment process.

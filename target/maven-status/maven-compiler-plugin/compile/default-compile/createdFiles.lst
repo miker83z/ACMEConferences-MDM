@@ -33,6 +33,7 @@ it/unibo/soseng/mdm/acme/financial/payviawiretransfer/PayViaWireTransferManualEn
 it/unibo/soseng/mdm/acme/allin/listener/SetFlagToFalse.class
 it/unibo/soseng/mdm/acme/generated/gis/GISPortType.class
 it/unibo/soseng/mdm/partner/listener/AnalyzeJobOffer.class
+it/unibo/soseng/mdm/acme/management/delegate/CreateDjangoEvProva.class
 it/unibo/soseng/mdm/acme/allin/delegate/UNUSED_AskForAvailability.class
 it/unibo/soseng/mdm/client/listener/ClientTaskListener.class
 it/unibo/soseng/mdm/acme/financial/payviawiretransfer/LogoutBank.class
@@ -43,11 +44,13 @@ it/unibo/soseng/mdm/acme/generated/gis/GIS.class
 it/unibo/soseng/mdm/acme/financial/delegate/SendEmailRemainder.class
 it/unibo/soseng/mdm/acme/financial/payviawiretransfer/ManualPaymentStartListener.class
 it/unibo/soseng/mdm/acme/allin/delegate/NotifyRefusedPartners.class
+it/unibo/soseng/mdm/acme/management/delegate/CreateDjangoEvent.class
 it/unibo/soseng/mdm/client/listener/SendCancellation.class
 it/unibo/soseng/mdm/acme/allin/delegate/AskForAvailability.class
 it/unibo/soseng/mdm/ProvaUnoApplication.class
 it/unibo/soseng/mdm/model/Address.class
 it/unibo/soseng/mdm/acme/generated/bank/UserLoginResponse.class
+it/unibo/soseng/mdm/acme/management/delegate/OpenDjangoSubscriptions.class
 it/unibo/soseng/mdm/acme/generated/bank/TransferPaymentResponse.class
 it/unibo/soseng/mdm/client/delegate/SendPaymentConfirmation.class
 it/unibo/soseng/mdm/acme/management/delegate/NotifyManagementStarted.class
@@ -80,3 +83,4 @@ it/unibo/soseng/mdm/acme/financial/listener/FinalBillsToPayListener.class
 it/unibo/soseng/mdm/model/RelevantEvents.class
 it/unibo/soseng/mdm/acme/financial/payviawiretransfer/PayViaWireTransferEnd.class
 it/unibo/soseng/mdm/acme/generated/bank/package-info.class
+it/unibo/soseng/mdm/acme/management/delegate/CloseDjangoSubscriptions.class
