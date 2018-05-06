@@ -19,6 +19,6 @@ public class ProvaUnoApplication extends ServletProcessApplication {
 	 */
 	@PostDeploy
 	  public void startService(ProcessEngine processEngine) throws Exception {
-	    //Stert Service
+	    //Start Service
 	  }
 }

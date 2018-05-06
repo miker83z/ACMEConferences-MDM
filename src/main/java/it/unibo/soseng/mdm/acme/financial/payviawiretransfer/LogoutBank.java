@@ -5,10 +5,10 @@ import javax.xml.ws.WebServiceException;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-import it.unibo.soseng.mdm.acme.generated.bank.BankPort;
-import it.unibo.soseng.mdm.acme.generated.bank.BankPortService;
-import it.unibo.soseng.mdm.acme.generated.bank.UserLogout;
-import it.unibo.soseng.mdm.acme.generated.bank.UserLogoutResponse;
+import it.unibo.soseng.mdm.services.generated.bank.BankPort;
+import it.unibo.soseng.mdm.services.generated.bank.BankPortService;
+import it.unibo.soseng.mdm.services.generated.bank.UserLogout;
+import it.unibo.soseng.mdm.services.generated.bank.UserLogoutResponse;
 
 /**
  * The Class LogoutBank, used for Logout task to logout from the Bank service.

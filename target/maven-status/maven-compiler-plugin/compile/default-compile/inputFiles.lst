@@ -1,7 +1,9 @@
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/chirpter/delegate/CreateChirpterEvent.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/generated/bank/UserLogoutResponse.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/management/delegate/SendStartCancellationProcess.java
+/home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/management/delegate/CloseDjangoSubscriptions.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/delegate/AskForAvailability.java
+/home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/management/delegate/CreateDjangoEvent.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/financial/delegate/SendACMEInvoice.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/financial/listener/ReceiveClientBillsListener.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/generated/gis/GetDistanceBetween.java
@@ -49,6 +51,7 @@
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/listener/SetFlagToTrue.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/management/listener/ReceiveConferenceDataListener.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/catering/delegate/SendJobEstimate.java
+/home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/management/delegate/CreateDjangoEvProva.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/listener/LoadDataFromCSV.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/financial/payviawiretransfer/InternalPayment.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/listener/SearchRemainingPartners.java
@@ -62,6 +65,7 @@
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/client/delegate/SendPaymentConfirmation.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/financial/listener/AllBillsPayedListener.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/ProvaUnoApplication.java
+/home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/management/delegate/OpenDjangoSubscriptions.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/model/Address.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/delegate/FindFeasiblePartners.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/util/CSVUtils.java

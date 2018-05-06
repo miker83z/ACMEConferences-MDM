@@ -41,7 +41,7 @@ public class ConferenceData {
 	private int allinExpectedAttendance;
 	
 	/** The venue name if it is Standard. */
-	private Address stdVenueName;
+	private String stdVenueName;
 	
 	/** The address if it is Standard. */
 	private Address stdAddress;
@@ -277,7 +277,7 @@ public class ConferenceData {
 	 *
 	 * @return the std venue name
 	 */
-	public Address getStdVenueName() {
+	public String getStdVenueName() {
 		return stdVenueName;
 	}
 
@@ -286,7 +286,7 @@ public class ConferenceData {
 	 *
 	 * @param stdVenueName the new std venue name
 	 */
-	public void setStdVenueName(Address stdVenueName) {
+	public void setStdVenueName(String stdVenueName) {
 		this.stdVenueName = stdVenueName;
 	}
 

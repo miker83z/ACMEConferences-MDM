@@ -1,9 +1,8 @@
 
-package it.unibo.soseng.mdm.acme.generated.bank;
+package it.unibo.soseng.mdm.services.generated.bank;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -18,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="userID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="flag" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +28,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userID"
+    "flag"
 })
-@XmlRootElement(name = "userLogout")
-public class UserLogout {
+@XmlRootElement(name = "userLogoutResponse")
+public class UserLogoutResponse {
 
-    @XmlElement(required = true)
-    protected String userID;
+    protected boolean flag;
 
     /**
-     * Gets the value of the userID property.
+     * Gets the value of the flag property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getUserID() {
-        return userID;
+    public boolean isFlag() {
+        return flag;
     }
 
     /**
-     * Sets the value of the userID property.
+     * Sets the value of the flag property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setUserID(String value) {
-        this.userID = value;
+    public void setFlag(boolean value) {
+        this.flag = value;
     }
 
 }
