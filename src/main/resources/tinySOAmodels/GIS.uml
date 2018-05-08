@@ -29,7 +29,7 @@
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_GaBAgEmJEeiGuZEw4fqD5g" name="PartnerDatas">
+      <packagedElement xmi:type="uml:Class" xmi:id="_GaBAgEmJEeiGuZEw4fqD5g" name="PartnerCollection">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_YYPuYEmOEeiGuZEw4fqD5g" name="partnerList" visibility="protected" type="_XbX90EmLEeiGuZEw4fqD5g">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iTjg8EmOEeiGuZEw4fqD5g"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iTpnkEmOEeiGuZEw4fqD5g" value="*"/>
@@ -186,7 +186,7 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="_QqdRYEmQEeiGuZEw4fqD5g" client="_GaBAgEmJEeiGuZEw4fqD5g" supplier="_3Q3FgEmHEeiGuZEw4fqD5g"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_hsIpsEmQEeiGuZEw4fqD5g" client="_mVIqkEmPEeiGuZEw4fqD5g" supplier="_3Q3FgEmHEeiGuZEw4fqD5g"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_PhJoMEiZEei4JaLv0Kwtqg" name="GISUtilities">
+    <packagedElement xmi:type="uml:Package" xmi:id="_PhJoMEiZEei4JaLv0Kwtqg" name="GISServices">
       <packagedElement xmi:type="uml:Class" xmi:id="_mOQSQEiZEei4JaLv0Kwtqg" name="GetDistanceBetween">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mOQSQUiZEei4JaLv0Kwtqg" name="address1" visibility="protected">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
