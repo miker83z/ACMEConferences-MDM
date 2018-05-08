@@ -1,5 +1,5 @@
 
-package it.unibo.soseng.mdm.acme.generated.gis;
+package it.unibo.soseng.mdm.services.generated.gis;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

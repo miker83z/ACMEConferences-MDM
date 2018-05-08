@@ -1,5 +1,5 @@
 
-package it.unibo.soseng.mdm.acme.generated.gis;
+package it.unibo.soseng.mdm.services.generated.gis;
 
 import java.net.URL;
 import javax.xml.namespace.QName;
@@ -28,7 +28,7 @@ public class GIS
     private final static QName GIS_QNAME = new QName("http://tempuri.org/", "GIS");
 
     static {
-        GIS_WSDL_LOCATION = it.unibo.soseng.mdm.acme.generated.gis.GIS.class.getResource("/gis.wsdl");
+        GIS_WSDL_LOCATION = it.unibo.soseng.mdm.services.generated.gis.GIS.class.getResource("/gis.wsdl");
         WebServiceException e = null;
         if (GIS_WSDL_LOCATION == null) {
             e = new WebServiceException("Cannot find '/gis.wsdl' wsdl. Place the resource correctly in the classpath.");

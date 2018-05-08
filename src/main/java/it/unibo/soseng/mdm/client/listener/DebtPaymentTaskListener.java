@@ -6,15 +6,15 @@ import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateTask;
 import org.camunda.bpm.engine.delegate.TaskListener;
 
-import it.unibo.soseng.mdm.acme.generated.bank.BankPort;
-import it.unibo.soseng.mdm.acme.generated.bank.BankPortService;
-import it.unibo.soseng.mdm.acme.generated.bank.TransferPayment;
-import it.unibo.soseng.mdm.acme.generated.bank.TransferPaymentResponse;
-import it.unibo.soseng.mdm.acme.generated.bank.UserLogin;
-import it.unibo.soseng.mdm.acme.generated.bank.UserLoginResponse;
-import it.unibo.soseng.mdm.acme.generated.bank.UserLogout;
-import it.unibo.soseng.mdm.acme.generated.bank.UserLogoutResponse;
 import it.unibo.soseng.mdm.model.Bill;
+import it.unibo.soseng.mdm.services.generated.bank.BankPort;
+import it.unibo.soseng.mdm.services.generated.bank.BankPortService;
+import it.unibo.soseng.mdm.services.generated.bank.TransferPayment;
+import it.unibo.soseng.mdm.services.generated.bank.TransferPaymentResponse;
+import it.unibo.soseng.mdm.services.generated.bank.UserLogin;
+import it.unibo.soseng.mdm.services.generated.bank.UserLoginResponse;
+import it.unibo.soseng.mdm.services.generated.bank.UserLogout;
+import it.unibo.soseng.mdm.services.generated.bank.UserLogoutResponse;
 
 /**
  * The class DebtPaymentTaskListener, used for "Pay" task to let the user outside of ACME to pay a bill to ACME.

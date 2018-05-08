@@ -34,6 +34,7 @@ public class ReceiveConferenceDataListener implements ExecutionListener{
 		execution.setVariable("partnerBillsToPay", false);
 		execution.setVariable("itsCateringTime", false);
 		execution.setVariable("chirpterToken", "YI7WYvrEwCf7IXOV+N4RJoXHnKj0N5AOA12BlRZfd7E=");
+		execution.setVariable("djangoToken", "Token 12cfa6232776a3213193c9a43c1c5ba27c68d5e2");
 		
 	}
 }

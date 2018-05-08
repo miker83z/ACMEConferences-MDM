@@ -1,5 +1,5 @@
 
-package it.unibo.soseng.mdm.acme.generated.gis;
+package it.unibo.soseng.mdm.services.generated.gis;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

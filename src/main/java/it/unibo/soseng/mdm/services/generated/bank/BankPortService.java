@@ -1,5 +1,5 @@
 
-package it.unibo.soseng.mdm.acme.generated.bank;
+package it.unibo.soseng.mdm.services.generated.bank;
 
 import java.net.URL;
 import javax.xml.namespace.QName;
@@ -26,7 +26,7 @@ public class BankPortService
     private final static QName BANKPORTSERVICE_QNAME = new QName("bank.acme.conference.com.wsdl", "BankPortService");
 
     static {
-        BANKPORTSERVICE_WSDL_LOCATION = it.unibo.soseng.mdm.acme.generated.bank.BankPortService.class.getResource("/bank.wsdl");
+        BANKPORTSERVICE_WSDL_LOCATION = it.unibo.soseng.mdm.services.generated.bank.BankPortService.class.getResource("/bank.wsdl");
         WebServiceException e = null;
         if (BANKPORTSERVICE_WSDL_LOCATION == null) {
             e = new WebServiceException("Cannot find '/bank.wsdl' wsdl. Place the resource correctly in the classpath.");

@@ -11,6 +11,7 @@ import it.unibo.soseng.mdm.model.Invoice;
 
 /**
  *The class GenerateInvoiceTaskListener, used to generate an invoice using global variables.
+ *@author Mirko Zichichi
  */
 public class GenerateInvoiceTaskListener implements TaskListener {
 	
