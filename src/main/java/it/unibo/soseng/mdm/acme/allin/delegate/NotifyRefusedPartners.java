@@ -7,6 +7,12 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import it.unibo.soseng.mdm.model.PartnerData;
 import it.unibo.soseng.mdm.model.PartnerCollection;
 
+/**
+ * Used to notify all the refused partners when the client choose the best one.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class NotifyRefusedPartners implements JavaDelegate {
 
 	@Override

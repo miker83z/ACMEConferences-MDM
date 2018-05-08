@@ -3,6 +3,12 @@ package it.unibo.soseng.mdm.util;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.SimpleEmail;
 
+/**
+ * Class used to send email using GMAIL services.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class EmailSender {	
 	private static final String GMAIL_HOST = "smtp.gmail.com";
 	

@@ -8,6 +8,12 @@ import org.camunda.bpm.engine.variable.value.ObjectValue;
 
 import it.unibo.soseng.mdm.model.PartnerData;
 
+/**
+ * Accept one the proposed offers from partners and notify the chosen one.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class SendSelectedOffer implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {

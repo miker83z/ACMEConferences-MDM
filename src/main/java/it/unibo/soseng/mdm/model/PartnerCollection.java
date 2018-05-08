@@ -1,11 +1,7 @@
 package it.unibo.soseng.mdm.model;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.camunda.spin.SpinList;
-import org.camunda.spin.json.SpinJsonNode;
 
 import it.unibo.soseng.mdm.services.generated.gis.GIS;
 import it.unibo.soseng.mdm.services.generated.gis.GISPortType;
@@ -14,7 +10,9 @@ import it.unibo.soseng.mdm.services.generated.gis.GetDistanceBetweenResponse;
 import it.unibo.soseng.mdm.util.CSVUtils;
 
 /**
- * Stores a list of PartnerData.
+ * Stores a list of PartnerData informations about the partners.
+ * 
+ * @author Davide Marchi
  *
  */
 public class PartnerCollection {
@@ -64,24 +62,6 @@ public class PartnerCollection {
 		return partnerListJSON;
 	}
 		
-	/**
-	 * Get all partner's informations from JSON and save in the object
-	 * @param jsonNode All partner informations in JSON format
-	 */
-	public void definePartnersFromJSON(SpinJsonNode jsonNode) {		
-		// Fetch a list of items when your property is an array of data
-		@SuppressWarnings("rawtypes")
-		SpinList partners = jsonNode.elements();
-		for (int i = 0; i < partners.size(); i++) {
-			// Get the i-th element
-			SpinJsonNode partnerJSON = (SpinJsonNode) partners.get(i);
-			// Convert to PartnerData object
-			PartnerData partnerData = new PartnerData();
-			partnerData.defineValueFromJSON(partnerJSON);
-			// Add to list
-			partnerList.add(partnerData);
-		}
-	}
 	
 	/**
 	 * Set the list of partners reading information from the csvFile.
@@ -123,10 +103,6 @@ public class PartnerCollection {
 			getDistanceBetween.setAddress2(address2);
 			GetDistanceBetweenResponse distance = gis.getDistanceBetween(getDistanceBetween);
 			partner.getAddress().setDistanceFromUserRequest(distance.getResult()); 
-			
-			//BigDecimal distance = gis.getDistanceBetween(address1, address2);
-			// Save the distance
-			//partner.getAddress().setDistanceFromUserRequest(distance);
 		}
 				
 		// Order the list 
@@ -192,21 +168,7 @@ public class PartnerCollection {
 		}
 		partnerList.removeAll(toRemove);
 	}
-	
-	/**
-	 * Update the CSV file with partners informations.
-	 * @param filename The name of CSV file
-	 * @param separator The column separator
-	 * @throws IOException
-	 */
-	public void updatePartnersCSV(String filename, String separator) throws IOException {
-		CSVUtils csvUtils = new CSVUtils(filename, separator);
-		List<String> values = new ArrayList<>();
-		for (PartnerData partner : partnerList) {
-			values.add(partner.retrieveValuesForCSV(separator));
-		}
-		csvUtils.writeLines(values);
-	}
+
 	
 	/**
 	 * Retrieve the index of the partner with this name.

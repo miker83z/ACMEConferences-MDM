@@ -5,6 +5,12 @@ import org.camunda.bpm.engine.delegate.ExecutionListener;
 
 import it.unibo.soseng.mdm.model.PartnerCollection;
 
+/**
+ * Load all the informations about affiliated partners from a local list.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class LoadDataFromCSV implements ExecutionListener {
 
 	// Values for the CSV reader

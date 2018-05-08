@@ -4,6 +4,12 @@ import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
+/**
+ * Accept the job and send the job estimate.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class SendJobEstimate implements JavaDelegate {
 
 	@Override

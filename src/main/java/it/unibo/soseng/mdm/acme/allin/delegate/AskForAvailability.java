@@ -13,6 +13,13 @@ import it.unibo.soseng.mdm.model.PartnerData;
 import it.unibo.soseng.mdm.util.EmailSender;
 import it.unibo.soseng.mdm.util.RandomAlphanumericString;
 
+/**
+ * Send an e-mail to the partner asking for their availability.
+ * This class is also used to create the Camunda instance of the partner pool.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class AskForAvailability implements JavaDelegate {
 
 	// Values for email
