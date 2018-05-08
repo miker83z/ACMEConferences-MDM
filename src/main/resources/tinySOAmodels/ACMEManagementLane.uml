@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_y-ANAFL6EeiQjuM9er86zQ" name="ACMEManagementLane">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_zBdJoFL6EeiQjuM9er86zQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1CcJ8FL6EeiQjuM9er86zQ" name="Entities"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_3jcuIFL6EeiQjuM9er86zQ" name="ACMEManagementLane">
+    <packagedElement xmi:type="uml:Class" xmi:id="_ME0OgFL9EeiQjuM9er86zQ" name="CreateDjangoEvent">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PVIvwFL9EeiQjuM9er86zQ" name="execute">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_R9Kh8FL9EeiQjuM9er86zQ" name="execution"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_4P49YFL6EeiQjuM9er86zQ" name="SubscriptionService">
+    <packagedElement xmi:type="uml:Class" xmi:id="_QZb60FL8EeiQjuM9er86zQ" name="Event">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YBlX8FL8EeiQjuM9er86zQ" name="token" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_bWtgsFL8EeiQjuM9er86zQ" name="eventID" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_S-R2IFL8EeiQjuM9er86zQ" name="post">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kJCR8FL8EeiQjuM9er86zQ" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_mIbW0FL8EeiQjuM9er86zQ" name="dates">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_njhb0FL8EeiQjuM9er86zQ" name="subsStart">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pbSOsFL8EeiQjuM9er86zQ" name="contDeadline">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rdldoFL8EeiQjuM9er86zQ" name="subsDeadline">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xA1DwFL8EeiQjuM9er86zQ" name="address"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zHspoFL8EeiQjuM9er86zQ" name="locationName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1t_9gFL8EeiQjuM9er86zQ" name="maxSeats">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_35HKMFL8EeiQjuM9er86zQ" name="ticketParticipant">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6QpCQFL8EeiQjuM9er86zQ" name="ticketContributor">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_745ZgFL8EeiQjuM9er86zQ" name="isOpen">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_9To5MFL8EeiQjuM9er86zQ" name="isOpenContr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_APC6YFL9EeiQjuM9er86zQ" name="eventID" direction="out">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_UP1koFL8EeiQjuM9er86zQ" name="put">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IJxVQFL9EeiQjuM9er86zQ" name="json">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zBXDAFL6EeiQjuM9er86zQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zBZfQFL6EeiQjuM9er86zQ" source="PapyrusVersion">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zBZfQVL6EeiQjuM9er86zQ" key="Version" value="1.0.0"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zBZfQlL6EeiQjuM9er86zQ" key="Comment" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zBZfQ1L6EeiQjuM9er86zQ" key="Copyright" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zBZfRFL6EeiQjuM9er86zQ" key="Date" value="2016-11-24"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zBZfRVL6EeiQjuM9er86zQ" key="Author" value=""/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zBY4MFL6EeiQjuM9er86zQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="/ACMEConferences-MDM/src/main/resources/tinySOAmodels/TinySOA.profile.uml#_c3UpgLIeEealFoL0yAyV8Q"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="/ACMEConferences-MDM/src/main/resources/tinySOAmodels/TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
+  </profileApplication>
+</uml:Model>
