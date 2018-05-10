@@ -7,6 +7,7 @@ import org.camunda.bpm.engine.variable.value.ObjectValue;
 
 import it.unibo.soseng.mdm.model.Bill;
 import it.unibo.soseng.mdm.model.BillsCollection;
+import it.unibo.soseng.mdm.services.django.Event;
 
 /**
  * The class FinalBillsToPayListener, used for "Bills to pay?" gateway to verify Camunda variables billsToPayFlag, remainingFunds and onlyACMEBill.
@@ -19,8 +20,7 @@ public class FinalBillsToPayListener implements ExecutionListener{
 	 */
 	public void notify(DelegateExecution execution) throws Exception {		
 		//Compute the actual funds state
-		Double availableFunds = obtainAvailableFunds();	//From Registration service
-		execution.setVariable("availableFunds", availableFunds);
+		Double availableFunds = obtainAvailableFunds(execution);	//From Registration service
 		Double actualFunds = availableFunds - (Double) execution.getVariable("sumPayed");
 		execution.setVariable("remainingFunds", false);
 		
@@ -89,9 +89,21 @@ public class FinalBillsToPayListener implements ExecutionListener{
 	 *
 	 * @return the double
 	 */
-	private Double obtainAvailableFunds() {
-		//obtain from registration platform
-		return 1000.0;
+	@SuppressWarnings("finally")
+	private Double obtainAvailableFunds(DelegateExecution execution) {
+		String token = (String) execution.getVariable("djangoToken");
+		int eventID = (Integer) execution.getVariable("djangoEventID");
+		double tmp = (Double) execution.getVariable("availableFunds");
+		Event event = new Event(token, eventID);
+		try {
+			event.get();
+			tmp = event.getAvailableMoney();
+			execution.setVariable("availableFunds", tmp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			return tmp;
+		}
 	}
 
 }

@@ -1,7 +1,5 @@
 package it.unibo.soseng.mdm.client.listener;
 
-import javax.xml.ws.WebServiceException;
-
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateTask;
 import org.camunda.bpm.engine.delegate.TaskListener;
@@ -52,7 +50,9 @@ public class DebtPaymentTaskListener implements TaskListener {
 				@SuppressWarnings("unused")
 				UserLogoutResponse logoutResponse = bank.userLogout(logoutRequest);
 			}
-		} catch(WebServiceException e) {
+			else
+				throw new BpmnError("WEB_SERVICE_ERROR");
+		} catch(Exception e) {
 			throw new BpmnError("WEB_SERVICE_ERROR");
 		} finally {
 			delegateTask.setVariable("ACMEPaymentSuccesful", ACMEPaymentSuccesful);

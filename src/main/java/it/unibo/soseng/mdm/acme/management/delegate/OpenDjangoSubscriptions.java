@@ -23,8 +23,8 @@ public class OpenDjangoSubscriptions implements JavaDelegate {
 		if( !execution.hasVariable("contributionsDeadline") )
 			execution.setVariable("contributionsDeadline", ((RelevantEvents) execution.getVariable("relevantEvents")).getContDeadline());
 		String token = (String) execution.getVariable("djangoToken");
-		Event event = new Event(token);
-		event.setEventID(((Integer) execution.getVariable("djangoEventID")));
+		int eventID = (Integer) execution.getVariable("djangoEventID");
+		Event event = new Event(token, eventID);
 		try {			
 			event.put("{\"is_open\": true, \"is_open_contr\": true }");
 		} catch (Exception e) {

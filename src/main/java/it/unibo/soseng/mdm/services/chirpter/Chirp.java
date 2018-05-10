@@ -13,6 +13,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
  */
 @SuppressWarnings("deprecation")
 public class Chirp {
+	
+	/** The chirp message. */
+	private String chirpMessage;
 		
 	/** The user token. */
 	private String token;
@@ -23,10 +26,12 @@ public class Chirp {
 	/**
 	 * Instantiates a new chirp.
 	 *
+	 * @param chirpMessage the chirp message
 	 * @param token the token
 	 */
-	public Chirp(String token) {
+	public Chirp(String chirpMessage, String token) {
 		super();
+		this.chirpMessage = chirpMessage;
 		this.token = token;
 		this.eventID = -1;
 	}
@@ -34,11 +39,13 @@ public class Chirp {
 	/**
 	 * Instantiates a new chirp for an event.
 	 *
+	 * @param chirpMessage the chirp message
 	 * @param token the token
 	 * @param eventID the event ID
 	 */
-	public Chirp(String token, int eventID) {
+	public Chirp(String chirpMessage, String token, int eventID) {
 		super();
+		this.chirpMessage = chirpMessage;
 		this.token = token;
 		this.eventID = eventID;
 	}
@@ -46,10 +53,9 @@ public class Chirp {
 	/**
 	 * Post.
 	 *
-	 * @param chirpMessage the chirp message
 	 * @throws Exception the exception
 	 */
-	public void post(String chirpMessage) throws Exception {
+	public void post() throws Exception {
 		@SuppressWarnings({ "resource" })
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 		HttpPost postRequest;
@@ -68,6 +74,24 @@ public class Chirp {
 		
 		if (response.getStatusLine().getStatusCode() != 200 )
 			throw new Exception();
+	}
+	
+	/**
+	 * Gets the chirp message.
+	 *
+	 * @return the chirp message
+	 */
+	public String getChirpMessage() {
+		return chirpMessage;
+	}
+
+	/**
+	 * Sets the chirp message.
+	 *
+	 * @param chirpMessage the new chirp message
+	 */
+	public void setChirpMessage(String chirpMessage) {
+		this.chirpMessage = chirpMessage;
 	}
 
 	/**

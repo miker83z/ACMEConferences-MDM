@@ -10,7 +10,6 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.camunda.bpm.engine.impl.util.json.JSONObject;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Event, used to create an Event in Chirpter.
  * @author Michele Contu
@@ -18,6 +17,9 @@ import org.camunda.bpm.engine.impl.util.json.JSONObject;
  */
 @SuppressWarnings("deprecation")
 public class Event {
+	
+	/** The title. */
+	private String title;
 	
 	/** The user token. */
 	private String token;
@@ -28,21 +30,23 @@ public class Event {
 	/**
 	 * Instantiates a new event.
 	 *
+	 * @param title the title
 	 * @param token the token
 	 */
-	public Event(String token) {
+	public Event(String title, String token) {
 		super();
+		this.title = title;
 		this.token = token;
+		this.eventID = -1;
 	}
 
 	/**
 	 * Post a new event.
 	 *
-	 * @param title the title
 	 * @return the eventID
 	 * @throws Exception the exception
 	 */
-	public int post(String title) throws Exception {
+	public int post() throws Exception {
 		@SuppressWarnings("resource")
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 		HttpPost postRequest = new HttpPost("http://lamp/chirpter_api/events/");
@@ -70,6 +74,24 @@ public class Event {
 		
 		this.eventID = eventID;
 		return eventID;
+	}
+
+	/**
+	 * Gets the title.
+	 *
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * Sets the title.
+	 *
+	 * @param title the new title
+	 */
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	/**

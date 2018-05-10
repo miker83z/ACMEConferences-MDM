@@ -11,21 +11,27 @@
   <script cam-script type="text/form-script">
 
     var conferenceData = $scope.conferenceData = {
+      title : 'Conference Title',
       subsStart : '',
       contDeadline : '',
       subsDeadline : '',
       dates : [],
-      isAllin : false, 
+      isAllin : false,
+      ticketParticipant : 9.90,
+      ticketContributor : 59.90, 
       allinLocation: {
-        city : '',
-        street : '',
-        country : ''
+        city : 'Bologna',
+        street : 'via Zamboni',
+        country : 'Italia'
       },
+      allinExpectedAttendance : 100,
       stdAddress: {
-        city : '',
-        street : '',
-        country : ''
-      }
+        city : 'Bologna',
+        street : 'via Zamboni',
+        country : 'Italia'
+      },
+      stdMaxParticipants : 100,
+      stdVenueName : 'Hotel'
     }
 
     $scope.buttonText = 'Choose All-Inclusive';
@@ -114,7 +120,7 @@
 
       //manage null prop
       if( conferenceData.title == null ) {
-        conferenceData.title = 'title';
+        conferenceData.title = 'Conference Title';
       }
       if( conferenceData.isAllin ) {
         if( conferenceData.allinLocation.country == '' ) {
