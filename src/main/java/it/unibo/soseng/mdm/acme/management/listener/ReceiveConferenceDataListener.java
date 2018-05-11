@@ -30,7 +30,12 @@ public class ReceiveConferenceDataListener implements ExecutionListener{
 		execution.setVariable("sumPayed", 0.0);
 		execution.setVariable("payLock", false);
 		execution.setVariable("sumReservedForManualPayment", 0.0);
+		execution.setVariable("availableFunds", 0.0);
 		execution.setVariable("subscriptionClosed", false);
+		execution.setVariable("subsOpened", false);
+		execution.setVariable("loopVar", 0);
+		execution.setVariable("loopVar2", 0);
+		execution.setVariable("loopVar3", 0);
 		execution.setVariable("partnerBillsToPay", false);
 		execution.setVariable("itsCateringTime", false);
 		execution.setVariable("chirpterToken", "YI7WYvrEwCf7IXOV+N4RJoXHnKj0N5AOA12BlRZfd7E=");

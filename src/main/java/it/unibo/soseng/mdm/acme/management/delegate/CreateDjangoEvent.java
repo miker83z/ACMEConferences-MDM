@@ -52,13 +52,13 @@ public class CreateDjangoEvent implements JavaDelegate {
 			else
 				dates += "\"" + new DateTime(data.getDates().get(i)).toString(dtf) + "\"],"; 
 		
-		Event event = new Event(token);
+		Event event = new Event(token, data.getTitle(), dates, new DateTime(data.getSubsStart()).toString(dtf), new DateTime(data.getContDeadline()).toString(dtf),
+				new DateTime(data.getSubsDeadline()).toString(dtf), address, locationName, maxSeats, data.getTicketParticipant(), data.getTicketContributor(),
+				false, false);
 		
 		try {			
-			int eventID = event.post(data.getTitle(), dates, new DateTime(data.getSubsStart()).toString(dtf), new DateTime(data.getContDeadline()).toString(dtf),
-					new DateTime(data.getSubsDeadline()).toString(dtf), address, locationName, maxSeats, data.getTicketParticipant(), data.getTicketContributor(),
-					false, false);
-			execution.setVariable("chirpterEventID", eventID);			
+			int eventID = event.post();
+			execution.setVariable("djangoEventID", eventID);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new BpmnError("CONNECTION_ERROR");

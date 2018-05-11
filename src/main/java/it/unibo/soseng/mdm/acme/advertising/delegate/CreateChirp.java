@@ -1,30 +1,31 @@
-package it.unibo.soseng.mdm.acme.chirpter.delegate;
+package it.unibo.soseng.mdm.acme.advertising.delegate;
 
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-import it.unibo.soseng.mdm.model.ConferenceData;
-import it.unibo.soseng.mdm.services.chirpter.Event;
+import it.unibo.soseng.mdm.model.RelevantEvents;
+import it.unibo.soseng.mdm.services.chirpter.Chirp;
 
 /**
- * The Class CreateChirpterEvent, used in task Create Chirp Event to create a Chirp event for Conference in Chirpter.
+ * The Class CreateChirp, used in task Create Chirp to post a Chirp containing Relevant Event info in Chirpter.
  * @author Mirko Zichichi
  */
-public class CreateChirpterEvent implements JavaDelegate {
+public class CreateChirp implements JavaDelegate {
 	
 	/* (non-Javadoc)
 	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
 	 */
 	public void execute(DelegateExecution execution) throws Exception {
 		execution.setVariable("loopVar2", ((Integer) execution.getVariable("loopVar2")) + 1 );
-		ConferenceData confData = (ConferenceData) execution.getVariable("conferenceData");
-		String title = confData.getTitle();
+		RelevantEvents relEv = (RelevantEvents) execution.getVariable("relevantEvents");
+		String chirpMessage = relEv.retrieveCurrentEventDescription();
 		String token = (String) execution.getVariable("chirpterToken");
-		Event event = new Event(token);
-		try {
-			int eventID = event.post(title);
-			execution.setVariable("chirpterEventID", eventID);
+		int eventID = (Integer) execution.getVariable("chirpterEventID");
+		
+		Chirp chirp = new Chirp(chirpMessage, token, eventID);
+		try{
+			chirp.post();		
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new BpmnError("CONNECTION_ERROR");

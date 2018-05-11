@@ -20,10 +20,10 @@ public class CloseDjangoSubscriptions implements JavaDelegate {
 	public void execute(DelegateExecution execution) throws Exception {
 		execution.setVariable("loopVar", ((Integer) execution.getVariable("loopVar")) + 1 );
 		String token = (String) execution.getVariable("djangoToken");
-		Event event = new Event(token);
-		event.setEventID(((Integer) execution.getVariable("djangoEventID")));
+		int eventID = (Integer) execution.getVariable("djangoEventID");
+		Event event = new Event(token, eventID);
 		try {
-			event.put("{\"is_open\": false");
+			event.put("{\"is_open\": false}");
 		} catch (ConnectException e) {
 			e.printStackTrace();
 			throw new BpmnError("CONNECTION_ERROR");
