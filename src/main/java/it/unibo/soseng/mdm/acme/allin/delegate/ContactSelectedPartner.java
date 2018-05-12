@@ -6,6 +6,12 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 import it.unibo.soseng.mdm.model.PartnerData;
 
+/**
+ * Send a message to the selected partner for venue.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class ContactSelectedPartner implements JavaDelegate {
 
 	@Override

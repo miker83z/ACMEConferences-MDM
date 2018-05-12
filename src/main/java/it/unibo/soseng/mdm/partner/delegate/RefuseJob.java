@@ -4,6 +4,12 @@ import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
+/**
+ * Refuse the received job offer.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class RefuseJob implements JavaDelegate {
 
 	@Override

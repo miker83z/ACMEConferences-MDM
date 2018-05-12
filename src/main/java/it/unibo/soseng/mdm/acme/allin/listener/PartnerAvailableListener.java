@@ -6,6 +6,17 @@ import org.camunda.bpm.engine.delegate.ExecutionListener;
 import it.unibo.soseng.mdm.model.PartnerCollection;
 import it.unibo.soseng.mdm.model.PartnerData;
 
+/**
+ * This Listener is used to update all the Camunda's variables when a partner is available.
+ * In this class we update the information about the contacted partners and the list of
+ * all partners: the first is used to know which are the contacted partners in this moment,
+ * the second is used to know which partners are already been contacted in the case in 
+ * which all the partners refuse the offers or in the case in which the client refuse all 
+ * the presented offers.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class PartnerAvailableListener implements ExecutionListener {
 		
 	@Override

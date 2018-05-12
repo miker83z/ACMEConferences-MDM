@@ -10,6 +10,17 @@ import it.unibo.soseng.mdm.model.PartnerCollection;
 import it.unibo.soseng.mdm.model.ConferenceData;
 import it.unibo.soseng.mdm.util.EmailSender;
 
+/**
+ * Check if there are some feasible partners for venue or catering.
+ * The partners are ordered by distance using GIS external services.
+ * If we are in the Venue Lane, only the nearest 3 partners are contacted, 
+ * else only the nearest one is contacted.
+ * 
+ * In this class we also send an e-mail to partners.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class FindFeasiblePartners implements JavaDelegate {
 	
 	private static final Integer NUMBER_OF_PARTNERS = 3;
@@ -62,9 +73,7 @@ public class FindFeasiblePartners implements JavaDelegate {
 			
 		} 
 		// End
-		else {
-			// FIXME: per la parte del catering è uguale?
-			
+		else {			
 			// Create a connection between Camunda and Google Mail server
 			EmailSender emailSender = new EmailSender(EMAIL_USERNAME, EMAIL_PASSWORD, EMAIL_NAME);
 			emailSender.configureConnection();
@@ -79,14 +88,12 @@ public class FindFeasiblePartners implements JavaDelegate {
 					+ "Demo demo\n"
 					+ "President of ACME Conferences";
 		
-			// FIXME: usare la variabile clientMail dentro conferenceData
 			String clientEmail = "provecamundaisos@gmail.com";
 			emailSender.send(EMAIL_SUBJECT, emailMessage, clientEmail);
 			
 			// Set gateway variable
 			execution.setVariable("remaining_partners", false);
 		}
-		
 		
 	}
 		

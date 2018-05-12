@@ -7,6 +7,13 @@ import it.unibo.soseng.mdm.model.PartnerData;
 import it.unibo.soseng.mdm.model.Bill;
 import it.unibo.soseng.mdm.model.BillsCollection;
 
+/**
+ * First check if we are in Venue Lane or Catering Lane, then create a the Bill
+ * with the amount specified by the partner.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class AddBillToPayments implements JavaDelegate {
 
 	public void execute(DelegateExecution execution) throws Exception {		

@@ -3,6 +3,12 @@ package it.unibo.soseng.mdm.partner.listener;
 import org.camunda.bpm.engine.delegate.DelegateTask;
 import org.camunda.bpm.engine.delegate.TaskListener;
 
+/** 
+ * Assign the task to the correct user.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class AnalyzeJobOffer implements TaskListener {
 
 	@Override

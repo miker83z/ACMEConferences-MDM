@@ -1,11 +1,11 @@
 package it.unibo.soseng.mdm.model;
 
-import org.camunda.spin.json.SpinJsonNode;
-
 import it.unibo.soseng.mdm.model.Address;
 
 /**
- * Stores all informations about a partner for venue.
+ * Stores all informations about a partner.
+ * 
+ * @author Davide Marchi
  *
  */
 public class PartnerData {
@@ -135,50 +135,6 @@ public class PartnerData {
 				+ "\"contacted\": " + contacted
 				+ "}";
 	}	
-	
-	/**
-	 * Convert a JSON into a PartnerData object.
-	 * @param jsonNode The JSON with all partner informations.
-	 * @param nameProperty The name of the JSON property for "name" of partner.
-	 * @param typeProperty The name of the JSON property for "type" of partner.
-	 * @param emailProperty The name of the JSON property for "email" of partner.
-	 * @param phoneNumberProperty The name of the JSON property for "phoneNumber" of partner.
-	 * @param priceProperty The name of the JSON property for "price" of partner.
-	 * @param availableProperty The name of the JSON property for "available" partner's property.
-	 * @param contactedProperty The name of the JSON property for "contacted" partner's property.
-	 * @param addressProperty The name of the JSON property for the "address" of partner.
-	 */
-	public void defineValueFromJSON(SpinJsonNode jsonNode,
-			String nameProperty, String typeProperty, String emailProperty, String phoneNumberProperty,
-			String priceProperty, String availableProperty, String contactedProperty, 
-			String addressProperty) {
-		// Set partners value
-		setName(jsonNode.prop(nameProperty).stringValue());
-		setType(jsonNode.prop(typeProperty).stringValue());
-		setEmail(jsonNode.prop(emailProperty).stringValue());
-		setPhoneNumber(jsonNode.prop(phoneNumberProperty).stringValue());
-		setPrice(jsonNode.prop(priceProperty).numberValue().doubleValue());
-		setAvailable(jsonNode.prop(availableProperty).boolValue());
-		setContacted(jsonNode.prop(contactedProperty).boolValue());
-		
-		// Fetch a list of items when your property is an array of data
-		SpinJsonNode addressJSON = jsonNode.prop(addressProperty);
-		Address address = new Address();
-		address.defineValueFromJSON(addressJSON);
-		setAddress(address);		
-	}
-	/**
-	 * Convert a JSON into a PartnerData object. The properties of the JSON must have the same name
-	 * of PartnerData object's properties:
-	 * "name", "type", "email", "phoneNumber", "price", "available", "contacted", "address".
-	 * @param jsonNode The JSON with all partner informations.
-	 */
-	public void defineValueFromJSON(SpinJsonNode jsonNode) {
-		defineValueFromJSON(jsonNode, 
-				"name", "type", "email", "phoneNumber",
-				"price", "available", "contacted", 
-				"address");
-	}
 	
 	/**
 	 * Convert a string array to a PartnerData object specifying the correct position of 
