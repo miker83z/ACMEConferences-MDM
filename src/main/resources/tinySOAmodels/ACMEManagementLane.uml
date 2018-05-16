@@ -10,61 +10,61 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_R9Kh8FL9EeiQjuM9er86zQ" name="execution"/>
       </ownedOperation>
     </packagedElement>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_4P49YFL6EeiQjuM9er86zQ" name="SubscriptionService">
-    <packagedElement xmi:type="uml:Class" xmi:id="_QZb60FL8EeiQjuM9er86zQ" name="Event">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_YBlX8FL8EeiQjuM9er86zQ" name="token" visibility="public">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FLuMgFO9EeiGEeblHsPf-A" name="Event">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_FLuMgVO9EeiGEeblHsPf-A" name="token" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_bWtgsFL8EeiQjuM9er86zQ" name="eventID" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_FLuMglO9EeiGEeblHsPf-A" name="eventID" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_S-R2IFL8EeiQjuM9er86zQ" name="post">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kJCR8FL8EeiQjuM9er86zQ" name="name">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_FLuMg1O9EeiGEeblHsPf-A" name="post">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMhFO9EeiGEeblHsPf-A" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_mIbW0FL8EeiQjuM9er86zQ" name="dates">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMhVO9EeiGEeblHsPf-A" name="dates">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_njhb0FL8EeiQjuM9er86zQ" name="subsStart">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMhlO9EeiGEeblHsPf-A" name="subsStart">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pbSOsFL8EeiQjuM9er86zQ" name="contDeadline">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMh1O9EeiGEeblHsPf-A" name="contDeadline">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rdldoFL8EeiQjuM9er86zQ" name="subsDeadline">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMiFO9EeiGEeblHsPf-A" name="subsDeadline">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xA1DwFL8EeiQjuM9er86zQ" name="address"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zHspoFL8EeiQjuM9er86zQ" name="locationName">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMiVO9EeiGEeblHsPf-A" name="address"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMilO9EeiGEeblHsPf-A" name="locationName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1t_9gFL8EeiQjuM9er86zQ" name="maxSeats">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMi1O9EeiGEeblHsPf-A" name="maxSeats">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_35HKMFL8EeiQjuM9er86zQ" name="ticketParticipant">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMjFO9EeiGEeblHsPf-A" name="ticketParticipant">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6QpCQFL8EeiQjuM9er86zQ" name="ticketContributor">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMjVO9EeiGEeblHsPf-A" name="ticketContributor">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_745ZgFL8EeiQjuM9er86zQ" name="isOpen">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMjlO9EeiGEeblHsPf-A" name="isOpen">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_9To5MFL8EeiQjuM9er86zQ" name="isOpenContr">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMj1O9EeiGEeblHsPf-A" name="isOpenContr">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_APC6YFL9EeiQjuM9er86zQ" name="eventID" direction="out">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMkFO9EeiGEeblHsPf-A" name="eventID" direction="out">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_UP1koFL8EeiQjuM9er86zQ" name="put">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_IJxVQFL9EeiQjuM9er86zQ" name="json">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_FLuMkVO9EeiGEeblHsPf-A" name="put">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_FLuMklO9EeiGEeblHsPf-A" name="json">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_4P49YFL6EeiQjuM9er86zQ" name="SubscriptionService"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7vrv4FO8EeiGEeblHsPf-A" name="Class6"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_zBXDAFL6EeiQjuM9er86zQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zBZfQFL6EeiQjuM9er86zQ" source="PapyrusVersion">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zBZfQVL6EeiQjuM9er86zQ" key="Version" value="1.0.0"/>
