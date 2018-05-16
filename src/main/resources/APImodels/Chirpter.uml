@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RestProfile="http:///schemas/RestProfile/_aLhbENBGEeejEPbIEGrjRw/29" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/RestProfile/_aLhbENBGEeejEPbIEGrjRw/29 /ACMEConferences-MDM/src/main/resources/APImodels/rest.profile.uml#_aLhbEdBGEeejEPbIEGrjRw">
+  <uml:Model xmi:id="_Hh6ooFX-EeipKP3kUOrO6Q" name="Chirpter">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_If2QgFX-EeipKP3kUOrO6Q">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_h3cx8FX-EeipKP3kUOrO6Q" name="Chirpter" visibility="package">
+      <packagedElement xmi:type="uml:Class" xmi:id="_LRFMkFX_EeipKP3kUOrO6Q" name="EventsCollection"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_JxdFgFYCEeipKP3kUOrO6Q" name="Event"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_MvI-oFYCEeipKP3kUOrO6Q" name="ChirpsCollection"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_QHHnEFYCEeipKP3kUOrO6Q" name="Chirp"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_-yavoFYCEeipKP3kUOrO6Q" name="/{eventsid}" client="_LRFMkFX_EeipKP3kUOrO6Q" supplier="_JxdFgFYCEeipKP3kUOrO6Q"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_FJrMoFYDEeipKP3kUOrO6Q" name="/chirps" client="_JxdFgFYCEeipKP3kUOrO6Q" supplier="_MvI-oFYCEeipKP3kUOrO6Q"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_IyFdwFYDEeipKP3kUOrO6Q" name="/{chirpsid}" client="_MvI-oFYCEeipKP3kUOrO6Q" supplier="_QHHnEFYCEeipKP3kUOrO6Q"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_eDIZgFYDEeipKP3kUOrO6Q" name="Chirps"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_tB1fYFYBEeipKP3kUOrO6Q" name="Models">
+      <packagedElement xmi:type="uml:Class" xmi:id="_0E6gkFYBEeipKP3kUOrO6Q" name="Events"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sHwnUFYCEeipKP3kUOrO6Q" name="Event"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_tnacMFYCEeipKP3kUOrO6Q" name="Chirps"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_u6OH4FYCEeipKP3kUOrO6Q" name="Chirp"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_v_d4sFYCEeipKP3kUOrO6Q" name="Class1"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ie-t0FX-EeipKP3kUOrO6Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IfcA0FX-EeipKP3kUOrO6Q" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IfcA0VX-EeipKP3kUOrO6Q" key="Version" value="0.0.30"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IfcA0lX-EeipKP3kUOrO6Q" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IfcA01X-EeipKP3kUOrO6Q" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IfcA1FX-EeipKP3kUOrO6Q" key="Date" value="2017-11-23"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IfcA1VX-EeipKP3kUOrO6Q" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IfSP0FX-EeipKP3kUOrO6Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/ACMEConferences-MDM/src/main/resources/APImodels/rest.profile.uml#_aLhbEdBGEeejEPbIEGrjRw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/ACMEConferences-MDM/src/main/resources/APImodels/rest.profile.uml#_tjKx8KiUEeWwcK3_Xosvcg"/>
+    </profileApplication>
+  </uml:Model>
+  <RestProfile:API xmi:id="_nPqMwFX-EeipKP3kUOrO6Q" base_Package="_h3cx8FX-EeipKP3kUOrO6Q" name="ChirpterAPI" mediaType="application/json" baseUri="http://lamp/chirpter_api/"/>
+  <RestProfile:Resource xmi:id="_dytCwFYBEeipKP3kUOrO6Q" base_Class="_LRFMkFX_EeipKP3kUOrO6Q" path="/events"/>
+  <RestProfile:Resource xmi:id="_d0WzIFYCEeipKP3kUOrO6Q" base_Class="_JxdFgFYCEeipKP3kUOrO6Q" path=""/>
+  <RestProfile:Resource xmi:id="_ouTYMFYCEeipKP3kUOrO6Q" base_Class="_MvI-oFYCEeipKP3kUOrO6Q"/>
+  <RestProfile:Resource xmi:id="_p-E-AFYCEeipKP3kUOrO6Q" base_Class="_QHHnEFYCEeipKP3kUOrO6Q"/>
+  <RestProfile:ResourcePath xmi:id="_O6at8FYDEeipKP3kUOrO6Q" base_Dependency="_-yavoFYCEeipKP3kUOrO6Q"/>
+  <RestProfile:ResourcePath xmi:id="_RBXMUFYDEeipKP3kUOrO6Q" base_Dependency="_FJrMoFYDEeipKP3kUOrO6Q"/>
+  <RestProfile:ResourcePath xmi:id="_SzB-QFYDEeipKP3kUOrO6Q" base_Dependency="_IyFdwFYDEeipKP3kUOrO6Q"/>
+  <RestProfile:Resource xmi:id="_g-v2EFYDEeipKP3kUOrO6Q" base_Class="_eDIZgFYDEeipKP3kUOrO6Q" path="/chirps"/>
+</xmi:XMI>
