@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_wbOoUG1TEeiSYpWjuVFDaw" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_yf0kAG1YEeiPG6ZpfLHGAg" type="Package_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ygB_YG1YEeiPG6ZpfLHGAg" type="Package_NameLabel"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ygD0kG1YEeiPG6ZpfLHGAg" type="Package_PackagedElementCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_O1pfMG1bEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_O1r7cG1bEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_O1r7cW1bEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_O1r7cm1bEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_O1twoG1bEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_O1uXsG1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_O1uXsW1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_O1uXsm1bEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O1uXs21bEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_O1uXtG1bEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_egwpAG1iEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Jms_AG1kEeiPG6ZpfLHGAg" source="displayNameLabelIcon">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jms_AW1kEeiPG6ZpfLHGAg" key="displayNameLabelIcon_value" value="true"/>
+            </eAnnotations>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_FQcJYG1kEeiPG6ZpfLHGAg" type="StereotypeBrace">
+              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HeYAkG1kEeiPG6ZpfLHGAg" source="PapyrusCSSForceValue">
+                <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HeYnoG1kEeiPG6ZpfLHGAg" key="visible" value="true"/>
+              </eAnnotations>
+              <styles xmi:type="notation:TitleStyle" xmi:id="_FQcJYW1kEeiPG6ZpfLHGAg"/>
+              <styles xmi:type="notation:StringValueStyle" xmi:id="_FQcJYm1kEeiPG6ZpfLHGAg" name="stereotype" stringValue="RestProfile::GET"/>
+              <element xmi:type="uml:Stereotype" href="/ACMEConferences-MDM/src/main/resources/APImodels/rest.profile.uml#_1QnpAKiYEeWwcK3_Xosvcg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FQcJY21kEeiPG6ZpfLHGAg"/>
+            </children>
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_6o14kG1jEeiPG6ZpfLHGAg" name="maskLabel">
+              <stringListValue>parametersName</stringListValue>
+              <stringListValue>parametersDirection</stringListValue>
+              <stringListValue>visibility</stringListValue>
+              <stringListValue>name</stringListValue>
+              <stringListValue>parametersType</stringListValue>
+              <stringListValue>returnType</stringListValue>
+            </styles>
+            <element xmi:type="uml:Operation" href="Django.uml#_eP9z8G1iEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_egwpAW1iEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_hDaL8G1iEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <children xmi:type="notation:BasicCompartment" xmi:id="_oBoiUG1iEeiPG6ZpfLHGAg" type="StereotypeBrace">
+              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ki9y8G1kEeiPG6ZpfLHGAg" source="PapyrusCSSForceValue">
+                <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ki9y8W1kEeiPG6ZpfLHGAg" key="visible" value="true"/>
+              </eAnnotations>
+              <styles xmi:type="notation:TitleStyle" xmi:id="_oBoiUW1iEeiPG6ZpfLHGAg"/>
+              <styles xmi:type="notation:StringValueStyle" xmi:id="_oBoiUm1iEeiPG6ZpfLHGAg" name="stereotype" stringValue="RestProfile::POST"/>
+              <element xmi:type="uml:Stereotype" href="/ACMEConferences-MDM/src/main/resources/APImodels/rest.profile.uml#_OM5xgK2pEeW9Qt8QGHr_Pg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oBoiU21iEeiPG6ZpfLHGAg"/>
+            </children>
+            <element xmi:type="uml:Operation" href="Django.uml#_hBXkkG1iEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hDaL8W1iEeiPG6ZpfLHGAg"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_O1uXtW1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_O1uXtm1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_O1uXt21bEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O1uXuG1bEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_O1uXuW1bEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_O1uXum1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_O1uXu21bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_O1uXvG1bEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O1uXvW1bEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_26pCIG1bEeiPG6ZpfLHGAg" type="StereotypeBrace">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5aM00G1bEeiPG6ZpfLHGAg" source="PapyrusCSSForceValue">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5aM00W1bEeiPG6ZpfLHGAg" key="visible" value="true"/>
+          </eAnnotations>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_26pCIW1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:StringValueStyle" xmi:id="_26pCIm1bEeiPG6ZpfLHGAg" name="stereotype" stringValue="RestProfile::Resource"/>
+          <element xmi:type="uml:Stereotype" href="/ACMEConferences-MDM/src/main/resources/APImodels/rest.profile.uml#_FTDHoKiVEeWwcK3_Xosvcg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_26pCI21bEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_O1DCQG1bEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O1pfMW1bEeiPG6ZpfLHGAg" x="14" y="19" width="321" height="161"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_26q3UG1bEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_26q3UW1bEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_26reYG1bEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_O1DCQG1bEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_26q3Um1bEeiPG6ZpfLHGAg" x="234" y="19"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_8yUAIG1bEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_8yUnMG1bEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_8yVOQG1bEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_8yVOQW1bEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_8yVOQm1bEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_8yVOQ21bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_8yVORG1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_8yVORW1bEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8yVORm1bEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_8yVOR21bEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_WYfE4G1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_WYUFwG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_WYfE4W1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_WYgTAG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_WYTesG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_WYgTAW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_WYhhIG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_WYUs0G1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_WYhhIW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_8yVOSG1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_8yVOSW1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_8yVOSm1bEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8yVOS21bEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_8yV1UG1bEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_8yV1UW1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_8yV1Um1bEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_8yV1U21bEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8yV1VG1bEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_8xzCwG1bEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8yUAIW1bEeiPG6ZpfLHGAg" x="454" y="19" width="281" height="161"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_AzJ_YG1cEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_AzKmcG1cEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_AzKmcm1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_8xzCwG1bEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AzKmcW1cEeiPG6ZpfLHGAg" x="494" y="19"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_TqX9AG1cEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tNcHkG1cEeiPG6ZpfLHGAg" source="displayNameLabelIcon">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tNcuoG1cEeiPG6ZpfLHGAg" key="displayNameLabelIcon_value" value="true"/>
+        </eAnnotations>
+        <children xmi:type="notation:DecorationNode" xmi:id="_TqYkEG1cEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_TqYkEW1cEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_TqYkEm1cEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_TqZLIG1cEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_TqZLIW1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_TqZLIm1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_TqZLI21cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TqZLJG1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_TqZLJW1cEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_50m0sG1iEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_5z0KgG1iEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_50m0sW1iEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_50oC0G1iEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_5z304G1iEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_50oC0W1iEeiPG6ZpfLHGAg"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_TqZLJm1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_TqZLJ21cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_TqZLKG1cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TqZLKW1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_TqZLKm1cEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_TqZLK21cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_TqZLLG1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_TqZLLW1cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TqZLLm1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_Tp4NwG1cEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TqX9AW1cEeiPG6ZpfLHGAg" x="914" y="19" width="181" height="161"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VuP5QG1cEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_VuQgUG1cEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_VuQgUm1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_Tp4NwG1cEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VuQgUW1cEeiPG6ZpfLHGAg" x="794" y="19"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_dLZnUG1cEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_dLaOYG1cEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_dLaOYW1cEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_dLaOYm1cEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_dLa1cG1cEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_dLa1cW1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_dLa1cm1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_dLa1c21cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dLa1dG1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_dLa1dW1cEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_VOZQUG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_VOJYsG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_VOZQUW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_VOaecG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_VOHjgG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_VOaecW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_VObFgG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_VOA10G1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_VObFgW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_dLa1dm1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_dLa1d21cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_dLa1eG1cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dLa1eW1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_dLa1em1cEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_dLa1e21cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_dLa1fG1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_dLa1fW1cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dLa1fm1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_dK5RAG1cEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dLZnUW1cEeiPG6ZpfLHGAg" x="1214" y="19" width="161" height="161"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_jesKUG1cEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_jesxYG1cEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_jesxYm1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Dependency" href="Django.uml#_F6uWIG1cEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jesxYW1cEeiPG6ZpfLHGAg" x="100" y="100"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_mdO_EG1cEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_mdO_EW1cEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_mdO_E21cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Dependency" href="Django.uml#_fggdgG1cEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mdO_Em1cEeiPG6ZpfLHGAg" x="100" y="100"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_q4Q_8G1cEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_q4Q_8W1cEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_q4Q_821cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_dK5RAG1cEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q4Q_8m1cEeiPG6ZpfLHGAg" x="1094" y="19"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_xnbmoG1cEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_xncNsG1cEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_xnc0wG1cEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_xnc0wW1cEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_xnc0wm1cEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_xnc0w21cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_xnc0xG1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_xnc0xW1cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnc0xm1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_xnc0x21cEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_8Im3oG1iEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_8IUjwG1iEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_8IsXMG1iEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_8IvagG1iEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_8IQSUG1iEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_8IvagW1iEeiPG6ZpfLHGAg"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_xnc0yG1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_xnc0yW1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_xndb0G1cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xndb0W1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_xndb0m1cEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_xndb021cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_xndb1G1cEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_xndb1W1cEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xndb1m1cEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_xma6AG1cEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnbmoW1cEeiPG6ZpfLHGAg" x="1494" y="19" width="200" height="161"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_75RC0G1cEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_75RC0W1cEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_75Rp4G1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_xma6AG1cEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75RC0m1cEeiPG6ZpfLHGAg" x="1294" y="19"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_BVtdYG1dEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_BVtdYW1dEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_BVtdY21dEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Dependency" href="Django.uml#_86cL8G1cEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BVtdYm1dEeiPG6ZpfLHGAg" x="100" y="100"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Cb1_AG1dEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Cb2mEW1dEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_Cb3NIG1dEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Cb3NIW1dEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Cb3NIm1dEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_Cb3NI21dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_Cb3NJG1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Cb3NJW1dEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cb3NJm1dEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Cb3NJ21dEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_CfPCgG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_CfLYIG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CfPCgW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_DV7Z8G1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_DP7foG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_DV8BAG1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_LI7cMG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_LHOMAG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_LI7cMW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_Cb3NKG1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_Cb3NKW1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Cb3NKm1dEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cb3NK21dEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Cb3NLG1dEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_Cb3NLW1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_Cb3NLm1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Cb3NL21dEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cb3NMG1dEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_CbCtwG1dEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cb2mEG1dEeiPG6ZpfLHGAg" x="1794" y="19" width="160" height="160"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_NJvsIG1dEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_NJwTMG1dEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_NJwTMm1dEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Dependency" href="Django.uml#_IKe80G1dEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NJwTMW1dEeiPG6ZpfLHGAg" x="100" y="100"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VsUKIG1dEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_VsUKIW1dEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_VsUxMG1dEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_CbCtwG1dEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VsUKIm1dEeiPG6ZpfLHGAg" x="1694" y="19"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_nrPN0G1dEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_nrRqEG1dEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_nrRqEW1dEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_nrRqEm1dEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_nrRqE21dEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_nrRqFG1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_nrRqFW1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_nrRqFm1dEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nrRqF21dEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_nrSRIG1dEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_A_rUQG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_A_ixYG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_A_rUQW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_A_siYG1jEeiPG6ZpfLHGAg" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="Django.uml#_A_jYcG1jEeiPG6ZpfLHGAg"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_A_siYW1jEeiPG6ZpfLHGAg"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_nrSRIW1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_nrSRIm1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_nrSRI21dEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nrSRJG1dEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_nrSRJW1dEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_nrSRJm1dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_nrSRJ21dEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_nrSRKG1dEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nrSRKW1dEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_nqRkgG1dEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nrPN0W1dEeiPG6ZpfLHGAg" x="2034" y="19" width="180" height="160"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_2ukDEG1dEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_2ukDEW1dEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_2ukqIG1dEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_nqRkgG1dEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2ukDEm1dEeiPG6ZpfLHGAg" x="1914" y="19"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_ygD0kW1YEeiPG6ZpfLHGAg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ygD0km1YEeiPG6ZpfLHGAg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_euXWQG1ZEeiPG6ZpfLHGAg" type="StereotypeBrace">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3TyM0G1ZEeiPG6ZpfLHGAg" source="PapyrusCSSForceValue">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3Tyz4G1ZEeiPG6ZpfLHGAg" key="visible" value="true"/>
+      </eAnnotations>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_euXWQW1ZEeiPG6ZpfLHGAg"/>
+      <styles xmi:type="notation:StringValueStyle" xmi:id="_euXWQm1ZEeiPG6ZpfLHGAg" name="stereotype" stringValue="RestProfile::API"/>
+      <element xmi:type="uml:Stereotype" href="/ACMEConferences-MDM/src/main/resources/APImodels/rest.profile.uml#_-kYowKzdEeWrzNwgIZEubw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_euXWQ21ZEeiPG6ZpfLHGAg"/>
+    </children>
+    <element xmi:type="uml:Package" href="Django.uml#_yUp10G1YEeiPG6ZpfLHGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yf0kAW1YEeiPG6ZpfLHGAg" x="-420" y="20" width="2261" height="261"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_eudc4G1ZEeiPG6ZpfLHGAg" type="StereotypeComment">
+    <styles xmi:type="notation:TitleStyle" xmi:id="_eudc4W1ZEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_eueD8G1ZEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Package" href="Django.uml#_yUp10G1YEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eudc4m1ZEeiPG6ZpfLHGAg" x="280" y="60"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_RJV4wG1eEeiPG6ZpfLHGAg" type="Package_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_RJXG4G1eEeiPG6ZpfLHGAg" type="Package_NameLabel"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_RJXG4W1eEeiPG6ZpfLHGAg" type="Package_PackagedElementCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_4rYqMG1fEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_4rZRQG1fEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_4rZRQW1fEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_4rZRQm1fEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_4rZ4UG1fEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_4rZ4UW1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_4rZ4Um1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_4rZ4U21fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rZ4VG1fEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_4rZ4VW1fEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_4rZ4Vm1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_4rZ4V21fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_4rZ4WG1fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rZ4WW1fEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_4rZ4Wm1fEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_4rZ4W21fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_4rZ4XG1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_4rZ4XW1fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rZ4Xm1fEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_4qWvcG1fEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4rYqMW1fEeiPG6ZpfLHGAg" x="14" y="12" width="220" height="160"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_7u3CQG1fEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_7u3pUG1fEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_7u3pUW1fEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_7u3pUm1fEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_7u3pU21fEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_7u3pVG1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_7u3pVW1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_7u3pVm1fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7u3pV21fEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_7u4QYG1fEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_7u4QYW1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_7u4QYm1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_7u4QY21fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7u4QZG1fEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_7u4QZW1fEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_7u4QZm1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_7u4QZ21fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_7u4QaG1fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7u4QaW1fEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_7tcF8G1fEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7u3CQW1fEeiPG6ZpfLHGAg" x="294" y="12" width="240" height="160"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_-_8YgG1fEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_-_8_kG1fEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_-_8_kW1fEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_-_8_km1fEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_-_9moG1fEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_-_9moW1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_-_9mom1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_-_9mo21fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_9mpG1fEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_-_9mpW1fEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_-_9mpm1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_-_9mp21fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_-_9mqG1fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_9mqW1fEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_-_9mqm1fEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_-_9mq21fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_-_9mrG1fEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_-_9mrW1fEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_9mrm1fEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_--r0QG1fEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_8YgW1fEeiPG6ZpfLHGAg" x="594" y="12" width="220" height="160"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_EehhEG1gEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_EeiIIG1gEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_EeiIIW1gEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_EeiIIm1gEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_EeivMG1gEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_EeivMW1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_EeivMm1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_EeivM21gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EeivNG1gEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_EeivNW1gEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_EeivNm1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_EeivN21gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_EeivOG1gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EeivOW1gEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_EeivOm1gEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_EeivO21gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_EeivPG1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_EeivPW1gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EeivPm1gEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_EdRj4G1gEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EehhEW1gEeiPG6ZpfLHGAg" x="872" y="12" width="210" height="160"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_JqczYG1gEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_JqdacG1gEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_JqdacW1gEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Jqdacm1gEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Jqdac21gEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_JqdadG1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_JqdadW1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Jqdadm1gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jqdad21gEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_JqdaeG1gEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_JqdaeW1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_Jqdaem1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Jqdae21gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JqdafG1gEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_JqeBgG1gEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_JqeBgW1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_JqeBgm1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_JqeBg21gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JqeBhG1gEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_JpJL0G1gEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JqczYW1gEeiPG6ZpfLHGAg" x="1134" y="12" width="260" height="160"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_NZQAYG1gEeiPG6ZpfLHGAg" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_NZQncG1gEeiPG6ZpfLHGAg" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_NZQncW1gEeiPG6ZpfLHGAg" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_NZQncm1gEeiPG6ZpfLHGAg" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_NZQnc21gEeiPG6ZpfLHGAg" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_NZQndG1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_NZQndW1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_NZQndm1gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NZQnd21gEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_NZROgG1gEeiPG6ZpfLHGAg" type="Class_OperationCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_NZROgW1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_NZROgm1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_NZROg21gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NZROhG1gEeiPG6ZpfLHGAg"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_NZROhW1gEeiPG6ZpfLHGAg" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_NZROhm1gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_NZROh21gEeiPG6ZpfLHGAg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_NZROiG1gEeiPG6ZpfLHGAg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NZROiW1gEeiPG6ZpfLHGAg"/>
+        </children>
+        <element xmi:type="uml:Class" href="Django.uml#_NXyAwG1gEeiPG6ZpfLHGAg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NZQAYW1gEeiPG6ZpfLHGAg" x="1454" y="12" width="200" height="160"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XCCfkG1gEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_XCCfkW1gEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_XCCfk21gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_4qWvcG1fEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XCCfkm1gEeiPG6ZpfLHGAg" x="214" y="12"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Zw7uwG1gEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_Zw7uwW1gEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_Zw7uw21gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_7tcF8G1fEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zw7uwm1gEeiPG6ZpfLHGAg" x="494" y="12"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_cljygG1gEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_cljygW1gEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_cljyg21gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_--r0QG1fEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cljygm1gEeiPG6ZpfLHGAg" x="794" y="12"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_iMu2YG1gEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_iMu2YW1gEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_iMvdcG1gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_EdRj4G1gEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iMu2Ym1gEeiPG6ZpfLHGAg" x="1072" y="12"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_lo6pYG1gEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_lo6pYW1gEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_lo6pY21gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_JpJL0G1gEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lo6pYm1gEeiPG6ZpfLHGAg" x="1334" y="12"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_65aLgG1gEeiPG6ZpfLHGAg" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_65aLgW1gEeiPG6ZpfLHGAg"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_65aLg21gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="Django.uml#_NXyAwG1gEeiPG6ZpfLHGAg"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_65aLgm1gEeiPG6ZpfLHGAg" x="1654" y="12"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_RJXG4m1eEeiPG6ZpfLHGAg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RJXG421eEeiPG6ZpfLHGAg"/>
+    </children>
+    <element xmi:type="uml:Package" href="Django.uml#_RJQZMG1eEeiPG6ZpfLHGAg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RJV4wW1eEeiPG6ZpfLHGAg" x="-400" y="300" width="1940" height="220"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_jaYiAG1wEei5HvPt_KJ2fQ" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jaugQG1wEei5HvPt_KJ2fQ" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_javHUG1wEei5HvPt_KJ2fQ" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_javuYG1wEei5HvPt_KJ2fQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ja3DIG1wEei5HvPt_KJ2fQ" type="Class_AttributeCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_mtHeEG1wEei5HvPt_KJ2fQ" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="Django.uml#_moDX4G1wEei5HvPt_KJ2fQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mtHeEW1wEei5HvPt_KJ2fQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_qtBpMG1wEei5HvPt_KJ2fQ" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="Django.uml#_qnzK8G1wEei5HvPt_KJ2fQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qtBpMW1wEei5HvPt_KJ2fQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_y2TdcG1wEei5HvPt_KJ2fQ" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="Django.uml#_yvqp8G1wEei5HvPt_KJ2fQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_y2TdcW1wEei5HvPt_KJ2fQ"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_ja3DIW1wEei5HvPt_KJ2fQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ja3DIm1wEei5HvPt_KJ2fQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ja3DI21wEei5HvPt_KJ2fQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ja3DJG1wEei5HvPt_KJ2fQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ja3qMG1wEei5HvPt_KJ2fQ" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_ja3qMW1wEei5HvPt_KJ2fQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ja3qMm1wEei5HvPt_KJ2fQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ja3qM21wEei5HvPt_KJ2fQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ja3qNG1wEei5HvPt_KJ2fQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ja3qNW1wEei5HvPt_KJ2fQ" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_ja3qNm1wEei5HvPt_KJ2fQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ja3qN21wEei5HvPt_KJ2fQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ja3qOG1wEei5HvPt_KJ2fQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ja3qOW1wEei5HvPt_KJ2fQ"/>
+    </children>
+    <element xmi:type="uml:Class" href="Django.uml#_in58MG1wEei5HvPt_KJ2fQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jaYiAW1wEei5HvPt_KJ2fQ" x="1880" y="60" width="81" height="61"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_wbOoUW1TEeiSYpWjuVFDaw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_wbOoUm1TEeiSYpWjuVFDaw"/>
+  <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_wbOoU21TEeiSYpWjuVFDaw" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
+    <owner xmi:type="uml:Model" href="Django.uml#_wYVsYG1TEeiSYpWjuVFDaw"/>
+  </styles>
+  <element xmi:type="uml:Model" href="Django.uml#_wYVsYG1TEeiSYpWjuVFDaw"/>
+  <edges xmi:type="notation:Connector" xmi:id="_euggMG1ZEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_yf0kAG1YEeiPG6ZpfLHGAg" target="_eudc4G1ZEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_euggMW1ZEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_eui8cG1ZEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Package" href="Django.uml#_yUp10G1YEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_euggMm1ZEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_euhuUG1ZEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_euiVYG1ZEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_26reYW1bEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_O1pfMG1bEeiPG6ZpfLHGAg" target="_26q3UG1bEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_26reYm1bEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_26ssgG1bEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_O1DCQG1bEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_26reY21bEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_26sFcG1bEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_26sFcW1bEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_AzLNgG1cEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_8yUAIG1bEeiPG6ZpfLHGAg" target="_AzJ_YG1cEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_AzLNgW1cEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_AzL0kG1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_8xzCwG1bEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_AzLNgm1cEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AzLNg21cEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AzLNhG1cEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_F7QhoG1cEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_O1pfMG1bEeiPG6ZpfLHGAg" target="_8yUAIG1bEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_F7RvwG1cEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_MGoewG1cEeiPG6ZpfLHGAg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_F7SW0G1cEeiPG6ZpfLHGAg" x="4" y="27"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_F7S94G1cEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_MHFxwG1cEeiPG6ZpfLHGAg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_F7S94W1cEeiPG6ZpfLHGAg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_F7RIsG1cEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_F6uWIG1cEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_F7RIsW1cEeiPG6ZpfLHGAg" points="[-64, 210, -643984, -643984]$[75, 210, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_F8mlcG1cEeiPG6ZpfLHGAg" id="(1.0,0.6211180124223602)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_F8nMgG1cEeiPG6ZpfLHGAg" id="(0.0,0.6211180124223602)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_VuRHYG1cEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_TqX9AG1cEeiPG6ZpfLHGAg" target="_VuP5QG1cEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_VuRHYW1cEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_VuRucG1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_Tp4NwG1cEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VuRHYm1cEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VuRHY21cEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VuRHZG1cEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fhFFQG1cEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_TqX9AG1cEeiPG6ZpfLHGAg" target="_dLZnUG1cEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fhGTYG1cEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_m6pT0G1cEeiPG6ZpfLHGAg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fhGTYW1cEeiPG6ZpfLHGAg" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_fhGTYm1cEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_m7UCMG1cEeiPG6ZpfLHGAg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fhGTY21cEeiPG6ZpfLHGAg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fhFFQW1cEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_fggdgG1cEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fhFFQm1cEeiPG6ZpfLHGAg" points="[476, 210, -643984, -643984]$[555, 210, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fidlUG1cEeiPG6ZpfLHGAg" id="(1.0,0.6211180124223602)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fidlUW1cEeiPG6ZpfLHGAg" id="(0.0,0.6211180124223602)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_jesxY21cEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_F7QhoG1cEeiPG6ZpfLHGAg" target="_jesKUG1cEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_jesxZG1cEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_jetYcm1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Dependency" href="Django.uml#_F6uWIG1cEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jesxZW1cEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jetYcG1cEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jetYcW1cEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_mdPmIG1cEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_fhFFQG1cEeiPG6ZpfLHGAg" target="_mdO_EG1cEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_mdPmIW1cEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_mdQ0QG1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Dependency" href="Django.uml#_fggdgG1cEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mdPmIm1cEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mdQNMG1cEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mdQNMW1cEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_q4Q_9G1cEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_dLZnUG1cEeiPG6ZpfLHGAg" target="_q4Q_8G1cEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_q4Q_9W1cEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_q4RnAm1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_dK5RAG1cEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q4Q_9m1cEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q4RnAG1cEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q4RnAW1cEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_75Rp4W1cEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_xnbmoG1cEeiPG6ZpfLHGAg" target="_75RC0G1cEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_75Rp4m1cEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_75SQ8G1cEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_xma6AG1cEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75Rp421cEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75Rp5G1cEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75Rp5W1cEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_87eGsG1cEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_dLZnUG1cEeiPG6ZpfLHGAg" target="_xnbmoG1cEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_87etwG1cEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__jfR0G1cEeiPG6ZpfLHGAg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_87etwW1cEeiPG6ZpfLHGAg" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_87etwm1cEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__kZQwG1cEeiPG6ZpfLHGAg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_87etw21cEeiPG6ZpfLHGAg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_87eGsW1cEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_86cL8G1cEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_87eGsm1cEeiPG6ZpfLHGAg" points="[755, 210, -643984, -643984]$[875, 210, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8_sfYG1cEeiPG6ZpfLHGAg" id="(1.0,0.6211180124223602)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8_tGcG1cEeiPG6ZpfLHGAg" id="(0.0,0.6211180124223602)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_BVtdZG1dEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_87eGsG1cEeiPG6ZpfLHGAg" target="_BVtdYG1dEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_BVtdZW1dEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_BVuEcm1dEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Dependency" href="Django.uml#_86cL8G1cEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BVtdZm1dEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BVuEcG1dEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BVuEcW1dEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ILV4cG1dEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_xnbmoG1cEeiPG6ZpfLHGAg" target="_Cb1_AG1dEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ILWfgG1dEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_WDhwQG1dEeiPG6ZpfLHGAg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ILWfgW1dEeiPG6ZpfLHGAg" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ILWfgm1dEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_WE0wwG1dEeiPG6ZpfLHGAg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ILWfg21dEeiPG6ZpfLHGAg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ILV4cW1dEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_IKe80G1dEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ILV4cm1dEeiPG6ZpfLHGAg" points="[1055, 210, -643984, -643984]$[1195, 210, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_INMSkG1dEeiPG6ZpfLHGAg" id="(1.0,0.6211180124223602)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_INMSkW1dEeiPG6ZpfLHGAg" id="(0.0,0.625)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_NJwTM21dEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_ILV4cG1dEeiPG6ZpfLHGAg" target="_NJvsIG1dEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_NJwTNG1dEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_NJw6Qm1dEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Dependency" href="Django.uml#_IKe80G1dEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NJwTNW1dEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NJw6QG1dEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NJw6QW1dEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_VsUxMW1dEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_Cb1_AG1dEeiPG6ZpfLHGAg" target="_VsUKIG1dEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_VsUxMm1dEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_VsVYQG1dEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_CbCtwG1dEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VsUxM21dEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VsUxNG1dEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VsUxNW1dEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_2ukqIW1dEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_nrPN0G1dEeiPG6ZpfLHGAg" target="_2ukDEG1dEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_2ukqIm1dEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_2ulRMG1dEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_nqRkgG1dEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2ukqI21dEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2ukqJG1dEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2ukqJW1dEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_XCDGoG1gEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_4rYqMG1fEeiPG6ZpfLHGAg" target="_XCCfkG1gEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_XCDGoW1gEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_XCDtsm1gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_4qWvcG1fEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XCDGom1gEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XCDtsG1gEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XCDtsW1gEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Zw8V0G1gEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_7u3CQG1fEeiPG6ZpfLHGAg" target="_Zw7uwG1gEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Zw8V0W1gEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_Zw8V1W1gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_7tcF8G1fEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Zw8V0m1gEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Zw8V021gEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Zw8V1G1gEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_clkZkG1gEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_-_8YgG1fEeiPG6ZpfLHGAg" target="_cljygG1gEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_clkZkW1gEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_cllAom1gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_--r0QG1fEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_clkZkm1gEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cllAoG1gEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cllAoW1gEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_iMvdcW1gEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_EehhEG1gEeiPG6ZpfLHGAg" target="_iMu2YG1gEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_iMvdcm1gEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_iMx5sG1gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_EdRj4G1gEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iMvdc21gEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iMxSoG1gEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iMxSoW1gEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_lo7QcG1gEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_JqczYG1gEeiPG6ZpfLHGAg" target="_lo6pYG1gEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_lo7QcW1gEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_lo73gW1gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_JpJL0G1gEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lo7Qcm1gEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lo7Qc21gEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lo73gG1gEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_65aLhG1gEeiPG6ZpfLHGAg" type="StereotypeCommentLink" source="_NZQAYG1gEeiPG6ZpfLHGAg" target="_65aLgG1gEeiPG6ZpfLHGAg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_65aLhW1gEeiPG6ZpfLHGAg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_65aykm1gEeiPG6ZpfLHGAg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="Django.uml#_NXyAwG1gEeiPG6ZpfLHGAg"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_65aLhm1gEeiPG6ZpfLHGAg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_65aykG1gEeiPG6ZpfLHGAg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_65aykW1gEeiPG6ZpfLHGAg"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_8kQjwG1gEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_O1pfMG1bEeiPG6ZpfLHGAg" target="_4rYqMG1fEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_8kRK0G1gEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_-wUYYG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8kRK0W1gEeiPG6ZpfLHGAg" y="39"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_8kRK0m1gEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_-zu4wG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8kRK021gEeiPG6ZpfLHGAg" x="-1" y="58"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_8kQjwW1gEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_8i1AYG1gEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8kQjwm1gEeiPG6ZpfLHGAg" points="[-300, 260, -643984, -643984]$[-220, 340, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8nxKwG1gEeiPG6ZpfLHGAg" id="(0.3115264797507788,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8nxx0G1gEeiPG6ZpfLHGAg" id="(0.7272727272727273,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_92mVYG1gEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_8yUAIG1bEeiPG6ZpfLHGAg" target="_7u3CQG1fEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_92qm0G1gEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_-3jBwG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_92rN4G1gEeiPG6ZpfLHGAg" x="1" y="38"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_92rN4W1gEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_-6kgkG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_92rN4m1gEeiPG6ZpfLHGAg" x="1" y="58"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_92mVYW1gEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_902B4G1gEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_92mVYm1gEeiPG6ZpfLHGAg" points="[100, 260, -643984, -643984]$[80, 340, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_96EgIG1gEeiPG6ZpfLHGAg" id="(0.6405693950177936,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_96EgIW1gEeiPG6ZpfLHGAg" id="(0.75,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__zxzwG1gEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_TqX9AG1cEeiPG6ZpfLHGAg" target="_-_8YgG1fEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="__zya0G1gEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__BkgcG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__zya0W1gEeiPG6ZpfLHGAg" x="-1" y="37"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="__zzB4G1gEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__G5FUG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__zzB4W1gEeiPG6ZpfLHGAg" x="-1" y="57"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="__zxzwW1gEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#__x4WUG1gEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__zxzwm1gEeiPG6ZpfLHGAg" points="[360, 220, -643984, -643984]$[400, 340, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__4MZsG1gEeiPG6ZpfLHGAg" id="(0.8839779005524862,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__4MZsW1gEeiPG6ZpfLHGAg" id="(0.9090909090909091,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_CXr68G1hEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_dLZnUG1cEeiPG6ZpfLHGAg" target="_EehhEG1gEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CXsiAG1hEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__ND-wG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CXsiAW1hEeiPG6ZpfLHGAg" x="-1" y="37"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CXsiAm1hEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__PckYG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CXtJEG1hEeiPG6ZpfLHGAg" x="-1" y="57"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_CXr68W1hEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_CT5nIG1hEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CXr68m1hEeiPG6ZpfLHGAg" points="[580, 260, -643984, -643984]$[640, 340, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Cm6pwG1hEeiPG6ZpfLHGAg" id="(0.6211180124223602,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Cm6pwW1hEeiPG6ZpfLHGAg" id="(0.7714285714285715,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_GTkhsG1hEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_xnbmoG1cEeiPG6ZpfLHGAg" target="_JqczYG1gEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GTlIwG1hEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__SVgUG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GTlIwW1hEeiPG6ZpfLHGAg" x="-1" y="38"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_GTlIwm1hEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__UrCoG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GTlIw21hEeiPG6ZpfLHGAg" x="-1" y="58"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GTkhsW1hEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_GSHJIG1hEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTkhsm1hEeiPG6ZpfLHGAg" points="[920, 260, -643984, -643984]$[940, 340, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GW8l0G1hEeiPG6ZpfLHGAg" id="(0.7,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GW8l0W1hEeiPG6ZpfLHGAg" id="(0.7692307692307693,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_IK3agG1hEeiPG6ZpfLHGAg" type="Dependency_Edge" source="_Cb1_AG1dEeiPG6ZpfLHGAg" target="_NZQAYG1gEeiPG6ZpfLHGAg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_IK4BkG1hEeiPG6ZpfLHGAg" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__YADcG1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_IK4BkW1hEeiPG6ZpfLHGAg" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_IK4Bkm1hEeiPG6ZpfLHGAg" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="__aWM0G1wEei5HvPt_KJ2fQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_IK4Bk21hEeiPG6ZpfLHGAg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_IK3agW1hEeiPG6ZpfLHGAg"/>
+    <element xmi:type="uml:Dependency" href="Django.uml#_IJUiYG1hEeiPG6ZpfLHGAg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IK3agm1hEeiPG6ZpfLHGAg" points="[1220, 260, -643984, -643984]$[1220, 340, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IOA1IG1hEeiPG6ZpfLHGAg" id="(0.75,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IOBcMG1hEeiPG6ZpfLHGAg" id="(0.8,0.0)"/>
+  </edges>
+</notation:Diagram>

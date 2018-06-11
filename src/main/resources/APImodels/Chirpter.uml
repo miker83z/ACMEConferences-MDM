@@ -116,7 +116,6 @@
   <RestProfile:Resource xmi:id="_dytCwFYBEeipKP3kUOrO6Q" base_Class="_LRFMkFX_EeipKP3kUOrO6Q" path="/events"/>
   <RestProfile:Resource xmi:id="_d0WzIFYCEeipKP3kUOrO6Q" base_Class="_JxdFgFYCEeipKP3kUOrO6Q" path=""/>
   <RestProfile:Resource xmi:id="_ouTYMFYCEeipKP3kUOrO6Q" base_Class="_MvI-oFYCEeipKP3kUOrO6Q"/>
-  <RestProfile:Resource xmi:id="_p-E-AFYCEeipKP3kUOrO6Q" base_Class="_QHHnEFYCEeipKP3kUOrO6Q" path="/chirps"/>
   <RestProfile:ResourcePath xmi:id="_O6at8FYDEeipKP3kUOrO6Q" base_Dependency="_-yavoFYCEeipKP3kUOrO6Q"/>
   <RestProfile:ResourcePath xmi:id="_RBXMUFYDEeipKP3kUOrO6Q" base_Dependency="_FJrMoFYDEeipKP3kUOrO6Q"/>
   <RestProfile:ResourcePath xmi:id="_SzB-QFYDEeipKP3kUOrO6Q" base_Dependency="_IyFdwFYDEeipKP3kUOrO6Q"/>
@@ -137,4 +136,5 @@
   <RestProfile:GET xmi:id="_6cQY4Fk9Eei-rbK93imYLA" base_Operation="_qJ3vgFk9Eei-rbK93imYLA"/>
   <RestProfile:GET xmi:id="_HURNIFk-Eei-rbK93imYLA" base_Operation="_EwGAMFk-Eei-rbK93imYLA"/>
   <RestProfile:POST xmi:id="_uGeVsFlCEei-rbK93imYLA" base_Operation="_kjMBkFlCEei-rbK93imYLA"/>
+  <RestProfile:Resource xmi:id="_t0Zr0G1aEeiPG6ZpfLHGAg" base_Class="_QHHnEFYCEeipKP3kUOrO6Q"/>
 </xmi:XMI>
