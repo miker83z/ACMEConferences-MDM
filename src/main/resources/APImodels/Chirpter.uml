@@ -61,7 +61,12 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="_RXYQ0Fk-Eei-rbK93imYLA" client="_eDIZgFYDEeipKP3kUOrO6Q" supplier="_tnacMFYCEeipKP3kUOrO6Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_tB1fYFYBEeipKP3kUOrO6Q" name="Models">
-      <packagedElement xmi:type="uml:Class" xmi:id="_0E6gkFYBEeipKP3kUOrO6Q" name="Events"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0E6gkFYBEeipKP3kUOrO6Q" name="Events">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sBYmsG21EeiS9LAJmdY3Fg" name="events" type="_sHwnUFYCEeipKP3kUOrO6Q">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1XIOEG21EeiS9LAJmdY3Fg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1XO7wG21EeiS9LAJmdY3Fg" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_sHwnUFYCEeipKP3kUOrO6Q" name="Event">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Tg1hkFlHEei-rbK93imYLA" name="token">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -76,7 +81,12 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_tnacMFYCEeipKP3kUOrO6Q" name="Chirps"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_tnacMFYCEeipKP3kUOrO6Q" name="Chirps">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2od6IG21EeiS9LAJmdY3Fg" name="chirps" type="_u6OH4FYCEeipKP3kUOrO6Q">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4pMbwG21EeiS9LAJmdY3Fg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4pWMwG21EeiS9LAJmdY3Fg" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_u6OH4FYCEeipKP3kUOrO6Q" name="Chirp">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_2SnNgFk-Eei-rbK93imYLA" name="postID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
