@@ -14,51 +14,86 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_8xzCwG1bEeiPG6ZpfLHGAg" name="User">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_WYTesG1jEeiPG6ZpfLHGAg" name="read"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_WYTesG1jEeiPG6ZpfLHGAg" name="read">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_yVcwUG22EeiS9LAJmdY3Fg" type="_7tcF8G1fEeiPG6ZpfLHGAg" direction="return"/>
+        </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_WYUFwG1jEeiPG6ZpfLHGAg" name="update">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_pxR9MG1xEei5HvPt_KJ2fQ" name="user" type="_7tcF8G1fEeiPG6ZpfLHGAg"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_WYUs0G1jEeiPG6ZpfLHGAg" name="delete"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_WYUs0G1jEeiPG6ZpfLHGAg" name="delete">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_0PiecG22EeiS9LAJmdY3Fg" name="user" type="_7tcF8G1fEeiPG6ZpfLHGAg"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_F6uWIG1cEeiPG6ZpfLHGAg" name="/{id}" client="_O1DCQG1bEeiPG6ZpfLHGAg" supplier="_8xzCwG1bEeiPG6ZpfLHGAg"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_Tp4NwG1cEeiPG6ZpfLHGAg" name="EventsCollection">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_5z0KgG1iEeiPG6ZpfLHGAg" name="read"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_5z304G1iEeiPG6ZpfLHGAg" name="create"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5z0KgG1iEeiPG6ZpfLHGAg" name="read">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_J49d8G23EeiS9LAJmdY3Fg" type="_EdRj4G1gEeiPG6ZpfLHGAg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5z304G1iEeiPG6ZpfLHGAg" name="create">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Mi8X8G23EeiS9LAJmdY3Fg" name="event" type="_EdRj4G1gEeiPG6ZpfLHGAg"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_dK5RAG1cEeiPG6ZpfLHGAg" name="Event">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_VOA10G1jEeiPG6ZpfLHGAg" name="delete"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_VOHjgG1jEeiPG6ZpfLHGAg" name="read"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_VOJYsG1jEeiPG6ZpfLHGAg" name="update"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_VOA10G1jEeiPG6ZpfLHGAg" name="delete">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_keVaEG23EeiS9LAJmdY3Fg" name="event" type="_EdRj4G1gEeiPG6ZpfLHGAg"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_VOHjgG1jEeiPG6ZpfLHGAg" name="read">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_eEgxQG23EeiS9LAJmdY3Fg" type="_EdRj4G1gEeiPG6ZpfLHGAg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_VOJYsG1jEeiPG6ZpfLHGAg" name="update">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_cb08MG23EeiS9LAJmdY3Fg" name="event" type="_EdRj4G1gEeiPG6ZpfLHGAg"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_fggdgG1cEeiPG6ZpfLHGAg" name="/{id}" client="_Tp4NwG1cEeiPG6ZpfLHGAg" supplier="_dK5RAG1cEeiPG6ZpfLHGAg"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_xma6AG1cEeiPG6ZpfLHGAg" name="UserReservationsCollection">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_8IQSUG1iEeiPG6ZpfLHGAg" name="create"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_8IUjwG1iEeiPG6ZpfLHGAg" name="read"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_8IQSUG1iEeiPG6ZpfLHGAg" name="create">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_USbWsG24EeiS9LAJmdY3Fg" name="userReservation" type="_NXyAwG1gEeiPG6ZpfLHGAg"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_8IUjwG1iEeiPG6ZpfLHGAg" name="read">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NYfDYG24EeiS9LAJmdY3Fg" type="_NXyAwG1gEeiPG6ZpfLHGAg" direction="return"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_86cL8G1cEeiPG6ZpfLHGAg" name="/user_reservations" client="_dK5RAG1cEeiPG6ZpfLHGAg" supplier="_xma6AG1cEeiPG6ZpfLHGAg"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_CbCtwG1dEeiPG6ZpfLHGAg" name="UserReservation">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_CfLYIG1jEeiPG6ZpfLHGAg" name="read"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_DP7foG1jEeiPG6ZpfLHGAg" name="update"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_LHOMAG1jEeiPG6ZpfLHGAg" name="delete"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CfLYIG1jEeiPG6ZpfLHGAg" name="read">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZGDdwG24EeiS9LAJmdY3Fg" type="_NXyAwG1gEeiPG6ZpfLHGAg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_DP7foG1jEeiPG6ZpfLHGAg" name="update">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bgF3QG24EeiS9LAJmdY3Fg" name="userReservation" type="_NXyAwG1gEeiPG6ZpfLHGAg"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_LHOMAG1jEeiPG6ZpfLHGAg" name="delete">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_coEL8G24EeiS9LAJmdY3Fg" name="userReservation" type="_NXyAwG1gEeiPG6ZpfLHGAg"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_IKe80G1dEeiPG6ZpfLHGAg" name="/{id}" client="_xma6AG1cEeiPG6ZpfLHGAg" supplier="_CbCtwG1dEeiPG6ZpfLHGAg"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_nqRkgG1dEeiPG6ZpfLHGAg" name="EventReservations">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_A_ixYG1jEeiPG6ZpfLHGAg" name="read"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_A_jYcG1jEeiPG6ZpfLHGAg" name="create"/>
-      </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_8i1AYG1gEeiPG6ZpfLHGAg" client="_O1DCQG1bEeiPG6ZpfLHGAg" supplier="_4qWvcG1fEeiPG6ZpfLHGAg"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_902B4G1gEeiPG6ZpfLHGAg" client="_8xzCwG1bEeiPG6ZpfLHGAg" supplier="_7tcF8G1fEeiPG6ZpfLHGAg"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="__x4WUG1gEeiPG6ZpfLHGAg" client="_Tp4NwG1cEeiPG6ZpfLHGAg" supplier="_--r0QG1fEeiPG6ZpfLHGAg"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_CT5nIG1hEeiPG6ZpfLHGAg" client="_dK5RAG1cEeiPG6ZpfLHGAg" supplier="_EdRj4G1gEeiPG6ZpfLHGAg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_GSHJIG1hEeiPG6ZpfLHGAg" client="_xma6AG1cEeiPG6ZpfLHGAg" supplier="_JpJL0G1gEeiPG6ZpfLHGAg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_GSHJIG1hEeiPG6ZpfLHGAg" client="_xma6AG1cEeiPG6ZpfLHGAg" supplier="_RJQZMG1eEeiPG6ZpfLHGAg"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_IJUiYG1hEeiPG6ZpfLHGAg" client="_CbCtwG1dEeiPG6ZpfLHGAg" supplier="_NXyAwG1gEeiPG6ZpfLHGAg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_RJQZMG1eEeiPG6ZpfLHGAg" name="Models">
-      <packagedElement xmi:type="uml:Class" xmi:id="_4qWvcG1fEeiPG6ZpfLHGAg" name="Users"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_4qWvcG1fEeiPG6ZpfLHGAg" name="Users">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_qy7IIG24EeiS9LAJmdY3Fg" name="users" type="_7tcF8G1fEeiPG6ZpfLHGAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tYI24G24EeiS9LAJmdY3Fg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tYNvYG24EeiS9LAJmdY3Fg" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_7tcF8G1fEeiPG6ZpfLHGAg" name="User"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_--r0QG1fEeiPG6ZpfLHGAg" name="Events"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_--r0QG1fEeiPG6ZpfLHGAg" name="Events">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_vEr4QG24EeiS9LAJmdY3Fg" name="events" visibility="public" type="_EdRj4G1gEeiPG6ZpfLHGAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xPxPwG24EeiS9LAJmdY3Fg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xQIcIG24EeiS9LAJmdY3Fg" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_EdRj4G1gEeiPG6ZpfLHGAg" name="Event"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_JpJL0G1gEeiPG6ZpfLHGAg" name="UserReservations"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_JpJL0G1gEeiPG6ZpfLHGAg" name="UserReservations">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ycOb0G24EeiS9LAJmdY3Fg" name="userReservations" visibility="public" type="_NXyAwG1gEeiPG6ZpfLHGAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1gpPEG24EeiS9LAJmdY3Fg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1g-mQG24EeiS9LAJmdY3Fg" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_NXyAwG1gEeiPG6ZpfLHGAg" name="UserReservation"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_in58MG1wEei5HvPt_KJ2fQ" name="Class1">
@@ -91,7 +126,6 @@
   <RestProfile:ResourcePath xmi:id="_BUmDEG1dEeiPG6ZpfLHGAg" base_Dependency="_86cL8G1cEeiPG6ZpfLHGAg"/>
   <RestProfile:ResourcePath xmi:id="_NIgWAG1dEeiPG6ZpfLHGAg" base_Dependency="_IKe80G1dEeiPG6ZpfLHGAg"/>
   <RestProfile:Resource xmi:id="_VrDl4G1dEeiPG6ZpfLHGAg" base_Class="_CbCtwG1dEeiPG6ZpfLHGAg"/>
-  <RestProfile:Resource xmi:id="_2rzC8G1dEeiPG6ZpfLHGAg" base_Class="_nqRkgG1dEeiPG6ZpfLHGAg" path="event_reservations"/>
   <RestProfile:ApiModel xmi:id="_W__RIG1gEeiPG6ZpfLHGAg" base_Class="_4qWvcG1fEeiPG6ZpfLHGAg"/>
   <RestProfile:ApiModel xmi:id="_ZtyUIG1gEeiPG6ZpfLHGAg" base_Class="_7tcF8G1fEeiPG6ZpfLHGAg"/>
   <RestProfile:ApiModel xmi:id="_ciR1AG1gEeiPG6ZpfLHGAg" base_Class="_--r0QG1fEeiPG6ZpfLHGAg"/>
@@ -100,19 +134,17 @@
   <RestProfile:ApiModel xmi:id="_63oC0G1gEeiPG6ZpfLHGAg" base_Class="_NXyAwG1gEeiPG6ZpfLHGAg"/>
   <RestProfile:POST xmi:id="_n_fNQG1iEeiPG6ZpfLHGAg" base_Operation="_hBXkkG1iEeiPG6ZpfLHGAg"/>
   <RestProfile:POST xmi:id="_50p4AG1iEeiPG6ZpfLHGAg" base_Operation="_5z304G1iEeiPG6ZpfLHGAg"/>
-  <RestProfile:GET xmi:id="_50tiYG1iEeiPG6ZpfLHGAg" base_Operation="_5z0KgG1iEeiPG6ZpfLHGAg" mediaType=" "/>
   <RestProfile:POST xmi:id="_8IxPsG1iEeiPG6ZpfLHGAg" base_Operation="_8IQSUG1iEeiPG6ZpfLHGAg"/>
-  <RestProfile:GET xmi:id="_8I06EG1iEeiPG6ZpfLHGAg" base_Operation="_8IUjwG1iEeiPG6ZpfLHGAg" mediaType=" "/>
-  <RestProfile:POST xmi:id="_A_uXkG1jEeiPG6ZpfLHGAg" base_Operation="_A_jYcG1jEeiPG6ZpfLHGAg"/>
-  <RestProfile:GET xmi:id="_A_wz0G1jEeiPG6ZpfLHGAg" base_Operation="_A_ixYG1jEeiPG6ZpfLHGAg" mediaType=" "/>
-  <RestProfile:GET xmi:id="_CfQ3sG1jEeiPG6ZpfLHGAg" base_Operation="_CfLYIG1jEeiPG6ZpfLHGAg" mediaType=" "/>
   <RestProfile:PUT xmi:id="_JxAnAG1jEeiPG6ZpfLHGAg" base_Operation="_DP7foG1jEeiPG6ZpfLHGAg"/>
   <RestProfile:DELETE xmi:id="_NSAokG1jEeiPG6ZpfLHGAg" base_Operation="_LHOMAG1jEeiPG6ZpfLHGAg"/>
-  <RestProfile:GET xmi:id="_VOcToG1jEeiPG6ZpfLHGAg" base_Operation="_VOHjgG1jEeiPG6ZpfLHGAg" mediaType=" "/>
   <RestProfile:DELETE xmi:id="_VOglEG1jEeiPG6ZpfLHGAg" base_Operation="_VOA10G1jEeiPG6ZpfLHGAg"/>
   <RestProfile:PUT xmi:id="_VOhzMG1jEeiPG6ZpfLHGAg" base_Operation="_VOJYsG1jEeiPG6ZpfLHGAg"/>
-  <RestProfile:GET xmi:id="_WYivQG1jEeiPG6ZpfLHGAg" base_Operation="_WYTesG1jEeiPG6ZpfLHGAg" mediaType=" "/>
   <RestProfile:DELETE xmi:id="_WYkkcG1jEeiPG6ZpfLHGAg" base_Operation="_WYUs0G1jEeiPG6ZpfLHGAg"/>
   <RestProfile:PUT xmi:id="_WYmZoG1jEeiPG6ZpfLHGAg" base_Operation="_WYUFwG1jEeiPG6ZpfLHGAg"/>
   <RestProfile:GET xmi:id="_FOHOIG1kEeiPG6ZpfLHGAg" base_Operation="_eP9z8G1iEeiPG6ZpfLHGAg"/>
+  <RestProfile:GET xmi:id="_AcrJsG23EeiS9LAJmdY3Fg" base_Operation="_WYTesG1jEeiPG6ZpfLHGAg"/>
+  <RestProfile:GET xmi:id="_FlNw0G23EeiS9LAJmdY3Fg" base_Operation="_5z0KgG1iEeiPG6ZpfLHGAg"/>
+  <RestProfile:GET xmi:id="_gZuVIG23EeiS9LAJmdY3Fg" base_Operation="_VOHjgG1jEeiPG6ZpfLHGAg"/>
+  <RestProfile:GET xmi:id="_OnU1EG24EeiS9LAJmdY3Fg" base_Operation="_8IUjwG1iEeiPG6ZpfLHGAg"/>
+  <RestProfile:GET xmi:id="_Xr9eUG24EeiS9LAJmdY3Fg" base_Operation="_CfLYIG1jEeiPG6ZpfLHGAg"/>
 </xmi:XMI>

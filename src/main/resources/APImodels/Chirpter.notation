@@ -344,6 +344,15 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_eERB8lYDEeipKP3kUOrO6Q"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eERB81YDEeipKP3kUOrO6Q"/>
         </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KfERIG22EeiS9LAJmdY3Fg" type="StereotypeBrace">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MYJSoG22EeiS9LAJmdY3Fg" source="PapyrusCSSForceValue">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MYJSoW22EeiS9LAJmdY3Fg" key="visible" value="true"/>
+          </eAnnotations>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_KfERIW22EeiS9LAJmdY3Fg"/>
+          <styles xmi:type="notation:StringValueStyle" xmi:id="_KfERIm22EeiS9LAJmdY3Fg" name="stereotype" stringValue="RestProfile::Resource"/>
+          <element xmi:type="uml:Stereotype" href="/ACMEConferences-MDM/src/main/resources/APImodels/rest.profile.uml#_FTDHoKiVEeWwcK3_Xosvcg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KfERI222EeiS9LAJmdY3Fg"/>
+        </children>
         <styles xmi:type="notation:BooleanValueStyle" xmi:id="_yKKZMFYDEeipKP3kUOrO6Q" name="shapeVisibility"/>
         <element xmi:type="uml:Class" href="Chirpter.uml#_eDIZgFYDEeipKP3kUOrO6Q"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eEPMwVYDEeipKP3kUOrO6Q" x="1894" y="19" width="341" height="161"/>
