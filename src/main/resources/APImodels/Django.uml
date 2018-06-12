@@ -96,11 +96,6 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_NXyAwG1gEeiPG6ZpfLHGAg" name="UserReservation"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_in58MG1wEei5HvPt_KJ2fQ" name="Class1">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_moDX4G1wEei5HvPt_KJ2fQ" name="Attribute1"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_qnzK8G1wEei5HvPt_KJ2fQ" name="Attribute2"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_yvqp8G1wEei5HvPt_KJ2fQ" name="Attribute3"/>
-    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xGRwcG1TEeiSYpWjuVFDaw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xGjdQG1TEeiSYpWjuVFDaw" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xGjdQW1TEeiSYpWjuVFDaw" key="Version" value="0.0.30"/>
