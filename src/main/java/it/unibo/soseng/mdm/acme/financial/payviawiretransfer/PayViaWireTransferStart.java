@@ -25,13 +25,6 @@ public class PayViaWireTransferStart implements ExecutionListener{
 		execution.setVariable("logoutResponse", false);
 		execution.setVariable("logoutAttempts", 0 );
 
-		execution.setVariable("payLock", true );
-		
-		if(!execution.hasVariable("billsPayed")) {
-			BillsCollection bills = new BillsCollection(); 
-			ObjectValue typedBillsValue = Variables.objectValue(bills).serializationDataFormat("application/json").create();
-			execution.setVariable("billsPayed", typedBillsValue);
-		}
-		
+		execution.setVariable("payLock", true );		
 	}
 }

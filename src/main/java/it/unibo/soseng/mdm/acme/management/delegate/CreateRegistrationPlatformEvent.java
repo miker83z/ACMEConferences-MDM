@@ -10,23 +10,22 @@ import org.joda.time.format.DateTimeFormatter;
 import it.unibo.soseng.mdm.model.Address;
 import it.unibo.soseng.mdm.model.ConferenceData;
 import it.unibo.soseng.mdm.model.PartnerData;
-import it.unibo.soseng.mdm.model.RelevantEvents;
 import it.unibo.soseng.mdm.services.django.Event;
 
 /**
- * The Class CreateDjangoEvent, used in task "Create Event in Registration Platform" to create an event in the registration platform.
+ * The Class CreateRegistrationPlatformEvent, used in task "Create Event in Registration Platform" to create an event in the registration platform.
  * @author Mirko Zichichi
  */
-public class CreateDjangoEvent implements JavaDelegate {
+public class CreateRegistrationPlatformEvent implements JavaDelegate {
 
 	/* (non-Javadoc)
 	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
 	 */
 	public void execute(DelegateExecution execution) throws Exception {
 		execution.setVariable("loopVar", ((Integer) execution.getVariable("loopVar")) + 1 );
-		if( !execution.hasVariable("subscriptionsStarting") )
-			execution.setVariable("subscriptionsStarting", ((RelevantEvents) execution.getVariable("relevantEvents")).getSubsStart());
 		ConferenceData data = (ConferenceData) execution.getVariable("conferenceData");
+		if( !execution.hasVariable("subscriptionsStarting") )
+			execution.setVariable("subscriptionsStarting", data.getSubsStart());
 		String token = (String) execution.getVariable("djangoToken");
 		Address address = new Address();
 		String locationName = "";

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TinySOA="http:///schemas/TinySOA/_c3UCcLIeEealFoL0yAyV8Q/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/TinySOA/_c3UCcLIeEealFoL0yAyV8Q/1 TinySOA.profile.uml#_c3UpgLIeEealFoL0yAyV8Q">
+  <uml:Model xmi:id="_FDunEEiZEei4JaLv0Kwtqg" name="GIS">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_FJIrgEiZEei4JaLv0Kwtqg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_I4_BYEiZEei4JaLv0Kwtqg" name="Entities"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_M4pU4EiZEei4JaLv0Kwtqg" name="ACMEVenueLane">
+      <packagedElement xmi:type="uml:Class" xmi:id="_3Q3FgEmHEeiGuZEw4fqD5g" name="FindFeasiblePartners">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3Q3FgUmHEeiGuZEw4fqD5g" name="EMAIL_USERNAME" visibility="private" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_3Q3FgkmHEeiGuZEw4fqD5g" value="provecamundaisos@gmail.com"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3Q3Fg0mHEeiGuZEw4fqD5g" name="EMAIL_PASSWORD" visibility="private" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_3Q3FhEmHEeiGuZEw4fqD5g" value="camundaisos"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3Q3FhUmHEeiGuZEw4fqD5g" name="EMAIL_NAME" visibility="private" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_3Q3FhkmHEeiGuZEw4fqD5g" value="ACME Conferences"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3Q3Fh0mHEeiGuZEw4fqD5g" name="EMAIL_SUBJECT" visibility="private" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_3Q3FiEmHEeiGuZEw4fqD5g" value="Job offer from ACME Conferences"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_3Q3FiUmHEeiGuZEw4fqD5g" name="execute">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_3Q3FikmHEeiGuZEw4fqD5g" name="execution">
+            <type xmi:type="uml:Class" href="../ACME-Conferences-TinySOA/GIS.uml#_HgnaEEZFEei6TOTV63Hoag"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_GaBAgEmJEeiGuZEw4fqD5g" name="PartnerCollection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YYPuYEmOEeiGuZEw4fqD5g" name="partnerList" visibility="protected" type="_XbX90EmLEeiGuZEw4fqD5g">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iTjg8EmOEeiGuZEw4fqD5g"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iTpnkEmOEeiGuZEw4fqD5g" value="*"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_pcCmkEmOEeiGuZEw4fqD5g" name="setPartnerList">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9NHkYEmOEeiGuZEw4fqD5g" name="partnerList"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_qwvvsEmOEeiGuZEw4fqD5g" name="removeContactedPartners"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_tp1csEmOEeiGuZEw4fqD5g" name="retrieveNumberOfPartners">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_FB4hMEmPEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_vwPIgEmOEeiGuZEw4fqD5g" name="orderPartnersList">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Mg-I8EmPEeiGuZEw4fqD5g" name="conferenceAddress" type="_ZQXwkEmLEeiGuZEw4fqD5g"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xtSEAEmOEeiGuZEw4fqD5g" name="cutPartnersList">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_T7kSQEmPEeiGuZEw4fqD5g" name="maxNumberOfPartners">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_0kqg0EmOEeiGuZEw4fqD5g" name="cutPartnersList"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_XbX90EmLEeiGuZEw4fqD5g" name="PartnerData">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_r__mgEmNEeiGuZEw4fqD5g" name="name" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_vZ_oMEmNEeiGuZEw4fqD5g" name="type" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_vfMRQEmNEeiGuZEw4fqD5g" name="email" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_vx_4gEmNEeiGuZEw4fqD5g" name="phoneNumber" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_v8LvQEmNEeiGuZEw4fqD5g" name="price" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_wC6CUEmNEeiGuZEw4fqD5g" name="address" visibility="private" type="_ZQXwkEmLEeiGuZEw4fqD5g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_wHzJYEmNEeiGuZEw4fqD5g" name="available" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_wMbxwEmNEeiGuZEw4fqD5g" name="contacted" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ogqq0EmLEeiGuZEw4fqD5g" name="getName" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-tLeYEmNEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CVOjIEmOEeiGuZEw4fqD5g" name="getType" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_CVOjIUmOEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CktwoEmOEeiGuZEw4fqD5g" name="getEmail" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_CktwoUmOEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CpYOMEmOEeiGuZEw4fqD5g" name="getPhoneNumber" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_CpYOMUmOEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CuO5AEmOEeiGuZEw4fqD5g" name="getPrice" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_CuO5AUmOEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_CzkE8EmOEeiGuZEw4fqD5g" name="getAddress" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_CzkE8UmOEeiGuZEw4fqD5g" type="_ZQXwkEmLEeiGuZEw4fqD5g" direction="out"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_C4N7cEmOEeiGuZEw4fqD5g" name="getAvailable" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_C4N7cUmOEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_C9MiEEmOEeiGuZEw4fqD5g" name="getContacted" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_C9MiEUmOEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZQXwkEmLEeiGuZEw4fqD5g" name="Address">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_J40F0EmNEeiGuZEw4fqD5g" name="country" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PIXT4EmNEeiGuZEw4fqD5g" name="city" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PPYh4EmNEeiGuZEw4fqD5g" name="street" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PWl9IEmNEeiGuZEw4fqD5g" name="postalCode" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Pb0bYEmNEeiGuZEw4fqD5g" name="distanceFromUserRequest" visibility="private" type="_MmpXUkmIEeiGuZEw4fqD5g"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_3UAG0EmMEeiGuZEw4fqD5g" name="getCountry">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_XuIP0EmNEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_bTcJoEmNEeiGuZEw4fqD5g" name="getCity">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTcJoUmNEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_bYawQEmNEeiGuZEw4fqD5g" name="getStreet">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bYawQUmNEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_bcZ4YEmNEeiGuZEw4fqD5g" name="getPostalCode">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bcZ4YUmNEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_bgcq4EmNEeiGuZEw4fqD5g" name="getDistanceFromUserRequest">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bgcq4UmNEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_jdPiUEmNEeiGuZEw4fqD5g" name="setDistanceFromUserRequest">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_oZ8F0EmNEeiGuZEw4fqD5g" name="distance" type="_MmpXUkmIEeiGuZEw4fqD5g"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mVIqkEmPEeiGuZEw4fqD5g" name="ConferenceData">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_pdN10EmPEeiGuZEw4fqD5g" name="title" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_qCcCwEmPEeiGuZEw4fqD5g" name="allinAddress" visibility="private" type="_ZQXwkEmLEeiGuZEw4fqD5g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_qiCI0EmPEeiGuZEw4fqD5g" name="clientName" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_1JjhIEmPEeiGuZEw4fqD5g" name="getTitle" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1JjhIUmPEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_3P6JoEmPEeiGuZEw4fqD5g" name="getAllinAddress">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_6xNtMEmPEeiGuZEw4fqD5g" type="_ZQXwkEmLEeiGuZEw4fqD5g" direction="out"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_7RRGQEmPEeiGuZEw4fqD5g" name="getClientName">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9sH_IEmPEeiGuZEw4fqD5g" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_E6aKwEmQEeiGuZEw4fqD5g" client="_ZQXwkEmLEeiGuZEw4fqD5g" supplier="_XbX90EmLEeiGuZEw4fqD5g"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_FbUfcEmQEeiGuZEw4fqD5g" client="_ZQXwkEmLEeiGuZEw4fqD5g" supplier="_mVIqkEmPEeiGuZEw4fqD5g"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_M-HigEmQEeiGuZEw4fqD5g" client="_XbX90EmLEeiGuZEw4fqD5g" supplier="_GaBAgEmJEeiGuZEw4fqD5g"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_QqdRYEmQEeiGuZEw4fqD5g" client="_GaBAgEmJEeiGuZEw4fqD5g" supplier="_3Q3FgEmHEeiGuZEw4fqD5g"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_hsIpsEmQEeiGuZEw4fqD5g" client="_mVIqkEmPEeiGuZEw4fqD5g" supplier="_3Q3FgEmHEeiGuZEw4fqD5g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_PhJoMEiZEei4JaLv0Kwtqg" name="GISServices">
+      <packagedElement xmi:type="uml:Class" xmi:id="_mOQSQEiZEei4JaLv0Kwtqg" name="GetDistanceBetween">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mOQSQUiZEei4JaLv0Kwtqg" name="address1" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mOQSQkiZEei4JaLv0Kwtqg" name="address2" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mOQSQ0iZEei4JaLv0Kwtqg" name="getAddress1">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_mOQSREiZEei4JaLv0Kwtqg" name="address1" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mOQSRUiZEei4JaLv0Kwtqg" name="setAddress1">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_mOQSRkiZEei4JaLv0Kwtqg" name="address1">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mOQSR0iZEei4JaLv0Kwtqg" name="getAddress2">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_mOQSSEiZEei4JaLv0Kwtqg" name="address2" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mOQSSUiZEei4JaLv0Kwtqg" name="setAddress2" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_mOQSSkiZEei4JaLv0Kwtqg" name="address2">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_4OWaoEiZEei4JaLv0Kwtqg" name="GetDistanceBetweenResponse">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4OWaoUiZEei4JaLv0Kwtqg" name="result" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_4OWaokiZEei4JaLv0Kwtqg" name="getResult">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_4OWao0iZEei4JaLv0Kwtqg" name="result" direction="out">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_4OWapEiZEei4JaLv0Kwtqg" name="setResult">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_4OWapUiZEei4JaLv0Kwtqg" name="result">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_9j0DcEiZEei4JaLv0Kwtqg" name="GIS">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9j0DcUiZEei4JaLv0Kwtqg" name="GIS_WSDL_LOCATION" visibility="private" isStatic="true" isReadOnly="true"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9j0DckiZEei4JaLv0Kwtqg" name="GIS_EXCEPTION" visibility="private" isStatic="true" isReadOnly="true"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9j0Dc0iZEei4JaLv0Kwtqg" name="GIS_QNAME" visibility="private" isStatic="true" isReadOnly="true"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_9j0DdEiZEei4JaLv0Kwtqg" name="getGIS()">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9j0DdUiZEei4JaLv0Kwtqg" name="gisPortType" type="_9j0qgEiZEei4JaLv0Kwtqg" direction="out"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_9j0DdkiZEei4JaLv0Kwtqg" name="getGIS">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9j0Dd0iZEei4JaLv0Kwtqg" name="features"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9j0DeEiZEei4JaLv0Kwtqg" name="gisPortType" type="_9j0qgEiZEei4JaLv0Kwtqg" direction="out"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_9j0qgEiZEei4JaLv0Kwtqg" name="GISPortType">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_9j0qgUiZEei4JaLv0Kwtqg" name="getDistanceBetween" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9j0qgkiZEei4JaLv0Kwtqg" name="parameters" type="_mOQSQEiZEei4JaLv0Kwtqg"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9j0qg0iZEei4JaLv0Kwtqg" name="getDistanceBetweenResponse" type="_4OWaoEiZEei4JaLv0Kwtqg" direction="out"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_9yHvwEiaEei4JaLv0Kwtqg" client="_9j0qgEiZEei4JaLv0Kwtqg" supplier="_9j0DcEiZEei4JaLv0Kwtqg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_CDZ-wEibEei4JaLv0Kwtqg" client="_mOQSQEiZEei4JaLv0Kwtqg" supplier="_9j0qgEiZEei4JaLv0Kwtqg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_DD_SAEibEei4JaLv0Kwtqg" client="_4OWaoEiZEei4JaLv0Kwtqg" supplier="_9j0qgEiZEei4JaLv0Kwtqg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_POykoEmQEeiGuZEw4fqD5g" client="_9j0DcEiZEei4JaLv0Kwtqg" supplier="_GaBAgEmJEeiGuZEw4fqD5g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Kl19MEmIEeiGuZEw4fqD5g" name="ACMEConferences">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KmxKQEmIEeiGuZEw4fqD5g" name="it">
+        <packagedElement xmi:type="uml:Package" xmi:id="_KmxKQUmIEeiGuZEw4fqD5g" name="unibo">
+          <packagedElement xmi:type="uml:Package" xmi:id="_KmxxUEmIEeiGuZEw4fqD5g" name="soseng">
+            <packagedElement xmi:type="uml:Package" xmi:id="_KmxxUUmIEeiGuZEw4fqD5g" name="mdm">
+              <packagedElement xmi:type="uml:Package" xmi:id="_KmxxUkmIEeiGuZEw4fqD5g" name="acme">
+                <packagedElement xmi:type="uml:Package" xmi:id="_KmyYYEmIEeiGuZEw4fqD5g" name="model"/>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KrstkEmIEeiGuZEw4fqD5g" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KruiwEmIEeiGuZEw4fqD5g" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Krw_AEmIEeiGuZEw4fqD5g" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_KryNIEmIEeiGuZEw4fqD5g" name="String"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_KtZ9wEmIEeiGuZEw4fqD5g" name="io">
+          <packagedElement xmi:type="uml:Interface" xmi:id="_KtZ9wUmIEeiGuZEw4fqD5g" name="IOException"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_MmpXUUmIEeiGuZEw4fqD5g" name="math">
+          <packagedElement xmi:type="uml:Class" xmi:id="_MmpXUkmIEeiGuZEw4fqD5g" name="BigDecimal"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_NPF3YEmIEeiGuZEw4fqD5g" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_NPF3YUmIEeiGuZEw4fqD5g" name="Date"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KsILYEmIEeiGuZEw4fqD5g" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KsJZgEmIEeiGuZEw4fqD5g" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="_KsKnoEmIEeiGuZEw4fqD5g" name="camunda">
+          <packagedElement xmi:type="uml:Package" xmi:id="_KsL1wEmIEeiGuZEw4fqD5g" name="spin">
+            <packagedElement xmi:type="uml:Package" xmi:id="_KsND4EmIEeiGuZEw4fqD5g" name="json">
+              <packagedElement xmi:type="uml:Class" xmi:id="_KsO5EEmIEeiGuZEw4fqD5g" name="SpinJsonNode"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_FIytQEiZEei4JaLv0Kwtqg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FI9sYEiZEei4JaLv0Kwtqg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FI9sYUiZEei4JaLv0Kwtqg" key="Version" value="1.0.0"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FI9sYkiZEei4JaLv0Kwtqg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FI9sY0iZEei4JaLv0Kwtqg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FI9sZEiZEei4JaLv0Kwtqg" key="Date" value="2016-11-24"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FI9sZUiZEei4JaLv0Kwtqg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FI8eQEiZEei4JaLv0Kwtqg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/ACME-Conferences-TinySOA/TinySOA.profile.uml#_c3UpgLIeEealFoL0yAyV8Q"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/ACME-Conferences-TinySOA/TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KmAVQEmIEeiGuZEw4fqD5g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KmBjYEmIEeiGuZEw4fqD5g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KmDYkEmIEeiGuZEw4fqD5g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KmDYkUmIEeiGuZEw4fqD5g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KmI4IEmIEeiGuZEw4fqD5g">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KmI4IUmIEeiGuZEw4fqD5g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hB5IYEuJEei0A7KQnWmluA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hDJFkEuJEei0A7KQnWmluA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="TinySOA.profile.uml#_c3UpgLIeEealFoL0yAyV8Q"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
+    </profileApplication>
+  </uml:Model>
+  <TinySOA:Utilities xmi:id="_YEBBIEiZEei4JaLv0Kwtqg" base_Package="_PhJoMEiZEei4JaLv0Kwtqg"/>
+  <TinySOA:Tasks xmi:id="_Y_B34EiZEei4JaLv0Kwtqg" base_Package="_M4pU4EiZEei4JaLv0Kwtqg"/>
+  <TinySOA:Entities xmi:id="_adI0oEiZEei4JaLv0Kwtqg" base_Package="_I4_BYEiZEei4JaLv0Kwtqg"/>
+  <TinySOA:Expose xmi:id="_Aptn8EibEei4JaLv0Kwtqg" base_Dependency="_9yHvwEiaEei4JaLv0Kwtqg"/>
+  <TinySOA:Capability xmi:id="_VSOGsEmQEeiGuZEw4fqD5g" base_Class="_9j0DcEiZEei4JaLv0Kwtqg"/>
+  <TinySOA:ServiceInterface xmi:id="_yqLfMEmQEeiGuZEw4fqD5g" base_Interface="_9j0qgEiZEei4JaLv0Kwtqg"/>
+  <TinySOA:Capability xmi:id="_76RVEEmREeiGuZEw4fqD5g" base_Class="_3Q3FgEmHEeiGuZEw4fqD5g"/>
+</xmi:XMI>

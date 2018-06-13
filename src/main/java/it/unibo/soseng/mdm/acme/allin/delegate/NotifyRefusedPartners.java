@@ -21,11 +21,17 @@ public class NotifyRefusedPartners implements JavaDelegate {
 		// Get the JSON variable from Camunda engine (contacted partners)
 		PartnerCollection partners = (PartnerCollection) execution.getVariable("contactedPartners");
 		
-		// Get the JSON variable from Camunda engine (chosen partner)
-		PartnerData chosenPartner = (PartnerData) execution.getVariable("chosenPartner");
-		
-		// Index of the chosen partner in contacted partners list
-		Integer index = partners.indexOf(chosenPartner.getName());
+		Integer index;
+		if( execution.hasVariable("chosenPartner")) {
+			// Get the JSON variable from Camunda engine (chosen partner)
+			PartnerData chosenPartner = (PartnerData) execution.getVariable("chosenPartner");
+			
+			// Index of the chosen partner in contacted partners list
+			index = partners.indexOf(chosenPartner.getName());
+		}
+		else
+			// If client didn't choose any partner
+			index = -1;
 				
 		// Get my id
 		Integer id = (Integer) execution.getVariable("loopCounter");

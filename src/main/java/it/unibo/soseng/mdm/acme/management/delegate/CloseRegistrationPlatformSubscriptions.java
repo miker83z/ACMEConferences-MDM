@@ -9,21 +9,21 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import it.unibo.soseng.mdm.services.django.Event;
 
 /**
- * The Class CloseDjangoContributions, used in task "Open Contributions" to close the contributions submitting to an event in the registration platform.
+ * The Class CloseRegistrationPlatformSubscriptions, used in task "Close Subscriptions" to close the subscriptions to an event in the registration platform.
  * @author Mirko Zichichi
  */
-public class CloseDjangoContributions implements JavaDelegate {
+public class CloseRegistrationPlatformSubscriptions implements JavaDelegate {
 
 	/* (non-Javadoc)
 	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
 	 */
 	public void execute(DelegateExecution execution) throws Exception {
-		execution.setVariable("loopVar3", ((Integer) execution.getVariable("loopVar3")) + 1 );
+		execution.setVariable("loopVar", ((Integer) execution.getVariable("loopVar")) + 1 );
 		String token = (String) execution.getVariable("djangoToken");
 		int eventID = (Integer) execution.getVariable("djangoEventID");
 		Event event = new Event(token, eventID);
 		try {
-			event.put("{\"is_open_contr\": false}");
+			event.put("{\"is_open\": false}");
 		} catch (ConnectException e) {
 			e.printStackTrace();
 			throw new BpmnError("CONNECTION_ERROR");
