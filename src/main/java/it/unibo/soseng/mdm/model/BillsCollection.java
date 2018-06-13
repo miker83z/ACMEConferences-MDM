@@ -61,6 +61,14 @@ public class BillsCollection {
 		bills.remove(bill);
 	}
 	
+	public boolean hasBills() {
+		if( bills == null )
+			return false;
+		if( bills.isEmpty() )
+			return false;
+		return true;
+	}
+	
 	/**
 	 * Gets the bills.
 	 *

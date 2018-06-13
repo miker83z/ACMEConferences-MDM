@@ -61,12 +61,16 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="_RXYQ0Fk-Eei-rbK93imYLA" client="_eDIZgFYDEeipKP3kUOrO6Q" supplier="_tnacMFYCEeipKP3kUOrO6Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_tB1fYFYBEeipKP3kUOrO6Q" name="Models">
+<<<<<<< HEAD
       <packagedElement xmi:type="uml:Class" xmi:id="_0E6gkFYBEeipKP3kUOrO6Q" name="Events">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_sBYmsG21EeiS9LAJmdY3Fg" name="events" type="_sHwnUFYCEeipKP3kUOrO6Q">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1XIOEG21EeiS9LAJmdY3Fg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1XO7wG21EeiS9LAJmdY3Fg" value="*"/>
         </ownedAttribute>
       </packagedElement>
+=======
+      <packagedElement xmi:type="uml:Class" xmi:id="_0E6gkFYBEeipKP3kUOrO6Q" name="Events"/>
+>>>>>>> 4c1c9bced15d7aedf8594ef849aa28ff547cf919
       <packagedElement xmi:type="uml:Class" xmi:id="_sHwnUFYCEeipKP3kUOrO6Q" name="Event">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Tg1hkFlHEei-rbK93imYLA" name="token">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -81,12 +85,16 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
       </packagedElement>
+<<<<<<< HEAD
       <packagedElement xmi:type="uml:Class" xmi:id="_tnacMFYCEeipKP3kUOrO6Q" name="Chirps">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_2od6IG21EeiS9LAJmdY3Fg" name="chirps" type="_u6OH4FYCEeipKP3kUOrO6Q">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4pMbwG21EeiS9LAJmdY3Fg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4pWMwG21EeiS9LAJmdY3Fg" value="*"/>
         </ownedAttribute>
       </packagedElement>
+=======
+      <packagedElement xmi:type="uml:Class" xmi:id="_tnacMFYCEeipKP3kUOrO6Q" name="Chirps"/>
+>>>>>>> 4c1c9bced15d7aedf8594ef849aa28ff547cf919
       <packagedElement xmi:type="uml:Class" xmi:id="_u6OH4FYCEeipKP3kUOrO6Q" name="Chirp">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_2SnNgFk-Eei-rbK93imYLA" name="postID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
@@ -126,6 +134,10 @@
   <RestProfile:Resource xmi:id="_dytCwFYBEeipKP3kUOrO6Q" base_Class="_LRFMkFX_EeipKP3kUOrO6Q" path="/events"/>
   <RestProfile:Resource xmi:id="_d0WzIFYCEeipKP3kUOrO6Q" base_Class="_JxdFgFYCEeipKP3kUOrO6Q" path=""/>
   <RestProfile:Resource xmi:id="_ouTYMFYCEeipKP3kUOrO6Q" base_Class="_MvI-oFYCEeipKP3kUOrO6Q"/>
+<<<<<<< HEAD
+=======
+  <RestProfile:Resource xmi:id="_p-E-AFYCEeipKP3kUOrO6Q" base_Class="_QHHnEFYCEeipKP3kUOrO6Q" path="/chirps"/>
+>>>>>>> 4c1c9bced15d7aedf8594ef849aa28ff547cf919
   <RestProfile:ResourcePath xmi:id="_O6at8FYDEeipKP3kUOrO6Q" base_Dependency="_-yavoFYCEeipKP3kUOrO6Q"/>
   <RestProfile:ResourcePath xmi:id="_RBXMUFYDEeipKP3kUOrO6Q" base_Dependency="_FJrMoFYDEeipKP3kUOrO6Q"/>
   <RestProfile:ResourcePath xmi:id="_SzB-QFYDEeipKP3kUOrO6Q" base_Dependency="_IyFdwFYDEeipKP3kUOrO6Q"/>
@@ -146,5 +158,8 @@
   <RestProfile:GET xmi:id="_6cQY4Fk9Eei-rbK93imYLA" base_Operation="_qJ3vgFk9Eei-rbK93imYLA"/>
   <RestProfile:GET xmi:id="_HURNIFk-Eei-rbK93imYLA" base_Operation="_EwGAMFk-Eei-rbK93imYLA"/>
   <RestProfile:POST xmi:id="_uGeVsFlCEei-rbK93imYLA" base_Operation="_kjMBkFlCEei-rbK93imYLA"/>
+<<<<<<< HEAD
   <RestProfile:Resource xmi:id="_t0Zr0G1aEeiPG6ZpfLHGAg" base_Class="_QHHnEFYCEeipKP3kUOrO6Q"/>
+=======
+>>>>>>> 4c1c9bced15d7aedf8594ef849aa28ff547cf919
 </xmi:XMI>

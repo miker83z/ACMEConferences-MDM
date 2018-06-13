@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TinySOA="http:///schemas/TinySOA/_c3UCcLIeEealFoL0yAyV8Q/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/TinySOA/_c3UCcLIeEealFoL0yAyV8Q/1 /ACMEConferences-MDM/src/main/resources/tinySOAmodels/TinySOA.profile.uml#_c3UpgLIeEealFoL0yAyV8Q">
+  <uml:Model xmi:id="_C7OOgFEVEei_MYqsqGKdlg" name="ACMEAllInclusiveLane">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_DN7vIFEVEei_MYqsqGKdlg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_FwUzYFEVEei_MYqsqGKdlg" name="Entities"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_H6HxcFEVEei_MYqsqGKdlg" name="ACMEAllInclusiveLane">
+      <packagedElement xmi:type="uml:Package" xmi:id="_JydzIFEVEei_MYqsqGKdlg" name="ACMECateringLane"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_LooqkFEVEei_MYqsqGKdlg" name="ACMEVenueLane"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_SYktUFEVEei_MYqsqGKdlg" name="ExternalServices">
+      <packagedElement xmi:type="uml:Package" xmi:id="_fIRTEFEVEei_MYqsqGKdlg" name="GISServices">
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_hv0kIFEVEei_MYqsqGKdlg" client="_fIRTEFEVEei_MYqsqGKdlg" supplier="_LooqkFEVEei_MYqsqGKdlg"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_ieV3AFEVEei_MYqsqGKdlg" client="_fIRTEFEVEei_MYqsqGKdlg" supplier="_JydzIFEVEei_MYqsqGKdlg"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_DNXucFEVEei_MYqsqGKdlg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DNqCUFEVEei_MYqsqGKdlg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DNqCUVEVEei_MYqsqGKdlg" key="Version" value="1.0.0"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DNqCUlEVEei_MYqsqGKdlg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DNqCU1EVEei_MYqsqGKdlg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DNqCVFEVEei_MYqsqGKdlg" key="Date" value="2016-11-24"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DNqCVVEVEei_MYqsqGKdlg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DNoNIFEVEei_MYqsqGKdlg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/ACMEConferences-MDM/src/main/resources/tinySOAmodels/TinySOA.profile.uml#_c3UpgLIeEealFoL0yAyV8Q"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/ACMEConferences-MDM/src/main/resources/tinySOAmodels/TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
+    </profileApplication>
+  </uml:Model>
+  <TinySOA:Entities xmi:id="_oWWMMFEVEei_MYqsqGKdlg" base_Package="_FwUzYFEVEei_MYqsqGKdlg"/>
+  <TinySOA:Tasks xmi:id="_pqUVgFEVEei_MYqsqGKdlg" base_Package="_H6HxcFEVEei_MYqsqGKdlg"/>
+  <TinySOA:Tasks xmi:id="_rtSS0FEVEei_MYqsqGKdlg" base_Package="_JydzIFEVEei_MYqsqGKdlg"/>
+  <TinySOA:Tasks xmi:id="_tDOLAFEVEei_MYqsqGKdlg" base_Package="_LooqkFEVEei_MYqsqGKdlg"/>
+  <TinySOA:Utilities xmi:id="_uYgi8FEVEei_MYqsqGKdlg" base_Package="_fIRTEFEVEei_MYqsqGKdlg"/>
+  <TinySOA:Utilities xmi:id="_yYbVIFEVEei_MYqsqGKdlg" base_Package="_SYktUFEVEei_MYqsqGKdlg"/>
+</xmi:XMI>

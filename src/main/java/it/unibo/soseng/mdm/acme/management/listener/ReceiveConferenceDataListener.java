@@ -6,6 +6,7 @@ import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.ObjectValue;
 import org.joda.time.DateTime;
 
+import it.unibo.soseng.mdm.model.BillsCollection;
 import it.unibo.soseng.mdm.model.ConferenceData;
 import it.unibo.soseng.mdm.model.RelevantEvents;
 
@@ -40,6 +41,19 @@ public class ReceiveConferenceDataListener implements ExecutionListener{
 		execution.setVariable("itsCateringTime", false);
 		execution.setVariable("chirpterToken", "YI7WYvrEwCf7IXOV+N4RJoXHnKj0N5AOA12BlRZfd7E=");
 		execution.setVariable("djangoToken", "Token 12cfa6232776a3213193c9a43c1c5ba27c68d5e2");
+		
+		execution.setVariable("venuePartnerCancFlag", false);
+		execution.setVariable("cateringPartnerCancFlag", false);
+		execution.setVariable("billsPaymentsCancFlag", true);
+		execution.setVariable("clientDebtPayedCancFlag", false);
+		execution.setVariable("eventCreatedRegPlatformCancFlag", false);
+		execution.setVariable("eventCreatedChirpterCancFlag", false);
+		execution.setVariable("cancFlag", true);
+		
+		execution.setVariable("ACMEServiceBillAmount", 500.0);
+		BillsCollection bills = new BillsCollection(); 
+		ObjectValue typedBillsValue = Variables.objectValue(bills).serializationDataFormat("application/json").create();
+		execution.setVariable("billsPayed", typedBillsValue);
 		
 	}
 }
