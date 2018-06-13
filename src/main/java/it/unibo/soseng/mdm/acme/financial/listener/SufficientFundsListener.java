@@ -77,7 +77,7 @@ public class SufficientFundsListener implements ExecutionListener{
 	}
 	
 	/**
-	 * Obtain available funds from Ragistration Service.
+	 * Obtain available funds from Registration Service.
 	 *
 	 * @return the double
 	 */
