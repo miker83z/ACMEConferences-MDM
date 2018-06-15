@@ -7,8 +7,8 @@ import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.ObjectValue;
 import org.joda.time.DateTime;
 
-import it.unibo.soseng.mdm.model.PartnerCollection;
 import it.unibo.soseng.mdm.model.ConferenceData;
+import it.unibo.soseng.mdm.model.PartnerCollection;
 import it.unibo.soseng.mdm.model.PartnerData;
 import it.unibo.soseng.mdm.util.EmailSender;
 import it.unibo.soseng.mdm.util.RandomAlphanumericString;

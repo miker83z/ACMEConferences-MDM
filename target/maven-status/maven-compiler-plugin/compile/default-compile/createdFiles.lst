@@ -14,8 +14,8 @@ it/unibo/soseng/mdm/acme/financial/delegate/SendDebtSettlementRequest.class
 it/unibo/soseng/mdm/acme/allin/delegate/AddBillToPayments.class
 it/unibo/soseng/mdm/catering/listener/AnalyzeJobOffer.class
 it/unibo/soseng/mdm/services/generated/bank/TransferPaymentResponse.class
-it/unibo/soseng/mdm/model/PartnerCollection.class
 it/unibo/soseng/mdm/acme/allin/listener/SearchRemainingPartners.class
+it/unibo/soseng/mdm/model/PartnerCollection.class
 it/unibo/soseng/mdm/services/generated/bank/UserLogin.class
 it/unibo/soseng/mdm/acme/management/delegate/CreateRegistrationPlatformEvent.class
 it/unibo/soseng/mdm/acme/financial/listener/SufficientFundsListener.class
@@ -40,27 +40,19 @@ it/unibo/soseng/mdm/model/PartnerData.class
 it/unibo/soseng/mdm/client/delegate/SendNOBillsNotification.class
 it/unibo/soseng/mdm/acme/financial/payviawiretransfer/LoginBank.class
 it/unibo/soseng/mdm/acme/advertising/delegate/CreateChirp.class
-it/unibo/soseng/mdm/client/delegate/SendBills.class
-<<<<<<< HEAD
 it/unibo/soseng/mdm/services/generated/bank/UserLogoutResponse.class
-=======
+it/unibo/soseng/mdm/client/delegate/SendBills.class
 it/unibo/soseng/mdm/acme/cancellation/delegate/ParticipantRefund.class
 it/unibo/soseng/mdm/services/generated/gis/ObjectFactory.class
->>>>>>> 4c1c9bced15d7aedf8594ef849aa28ff547cf919
 it/unibo/soseng/mdm/services/generated/bank/BankPortService.class
-it/unibo/soseng/mdm/services/generated/gis/ObjectFactory.class
 it/unibo/soseng/mdm/acme/advertising/listener/SetNextRelevantDateListener.class
 it/unibo/soseng/mdm/acme/allin/listener/SetFlagToTrue.class
 it/unibo/soseng/mdm/acme/allin/delegate/ContactSelectedPartner.class
-it/unibo/soseng/mdm/model/BillsCollection.class
 it/unibo/soseng/mdm/acme/allin/listener/PartnerNotAvailableListener.class
+it/unibo/soseng/mdm/model/BillsCollection.class
 it/unibo/soseng/mdm/catering/delegate/SendJobEstimate.class
-it/unibo/soseng/mdm/model/RelevantEvents.class
-<<<<<<< HEAD
 it/unibo/soseng/mdm/acme/financial/listener/FinalBillsToPayListener.class
-it/unibo/soseng/mdm/acme/management/delegate/CloseDjangoSubscriptions.class
-=======
->>>>>>> 4c1c9bced15d7aedf8594ef849aa28ff547cf919
+it/unibo/soseng/mdm/model/RelevantEvents.class
 it/unibo/soseng/mdm/acme/financial/payviawiretransfer/PayViaWireTransferEnd.class
 it/unibo/soseng/mdm/util/RandomAlphanumericString.class
 it/unibo/soseng/mdm/partner/delegate/SendJobEstimate.class
