@@ -18,6 +18,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_PHDwgG4lEeigRvQ0tKu-MQ" name="RegistrationPlatformAPI">
         <packagedElement xmi:type="uml:Dependency" xmi:id="_oiwHwG4lEeigRvQ0tKu-MQ" client="_PHDwgG4lEeigRvQ0tKu-MQ" supplier="_AM2bAG4lEeigRvQ0tKu-MQ"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_9Ym6UHCsEeiBqseA2R3AGQ" client="_PHDwgG4lEeigRvQ0tKu-MQ" supplier="_Jj3NsG4lEeigRvQ0tKu-MQ"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0F4pMG4kEeigRvQ0tKu-MQ">

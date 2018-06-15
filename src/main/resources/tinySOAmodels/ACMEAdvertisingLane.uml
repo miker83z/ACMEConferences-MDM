@@ -79,7 +79,7 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="_gNWs8FlGEei-rbK93imYLA" client="_144QIFlEEei-rbK93imYLA" supplier="_auzrgFlEEei-rbK93imYLA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_gzpQ4FlGEei-rbK93imYLA" client="_JtQkIFlGEei-rbK93imYLA" supplier="_144QIFlEEei-rbK93imYLA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_ECqLEFlBEei-rbK93imYLA" name="ChirpterService">
+    <packagedElement xmi:type="uml:Package" xmi:id="_ECqLEFlBEei-rbK93imYLA" name="ChirpterServices">
       <packagedElement xmi:type="uml:Class" xmi:id="_QzC34FlCEei-rbK93imYLA" name="Chirp">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_U_-yYFlCEei-rbK93imYLA" name="chirpMessage" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
