@@ -55,20 +55,23 @@
 
     //Functions for dates variable
     $scope.addItem = function () {
-      var date = $scope.dayConf;
-      var hours = $scope.dayHours;
-      var minutes = $scope.dayMinutes;
-      var finDate = date.concat('T', hours, ':', minutes);
-
       var flagda = 1;
-      angular.forEach($scope.conferenceData.dates, function(value, key) {
-        if ( angular.equals(value, finDate) ) {
-          flagda = 0;
-        }
-      });
 
-      if(flagda == 1){
-        $scope.conferenceData.dates.push(finDate);
+      if( $scope.dayConf && $scope.dayHours && $scope.dayMinutes){ 
+        var date = $scope.dayConf;
+        var hours = $scope.dayHours;
+        var minutes = $scope.dayMinutes;
+        var finDate = date.concat('T', hours, ':', minutes);
+
+        angular.forEach($scope.conferenceData.dates, function(value, key) {
+          if ( angular.equals(value, finDate) ) {
+            flagda = 0;
+          }
+        });
+
+        if(flagda == 1){
+          $scope.conferenceData.dates.push(finDate);
+        }
       }
     }
 

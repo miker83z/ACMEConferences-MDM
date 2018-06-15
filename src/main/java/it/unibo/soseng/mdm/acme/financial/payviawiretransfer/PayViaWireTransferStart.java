@@ -2,10 +2,6 @@ package it.unibo.soseng.mdm.acme.financial.payviawiretransfer;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.ExecutionListener;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.value.ObjectValue;
-
-import it.unibo.soseng.mdm.model.BillsCollection;
 
 /**
  * The Class PayViaWireTransferStart, used at the start of " Pay via Wire Transfer" sub-process to setup variables.

@@ -1,74 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="bank.acme.conference.com.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="bank.acme.conference.com.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="bank.acme.conference.com.xsd">
+<wsdl:definitions targetNamespace="bank.acme.conference.com.wsdl" xmlns:xsd1="bank.acme.conference.com.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="bank.acme.conference.com.wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
-    <xs:schema targetNamespace="bank.acme.conference.com.xsd" xmlns:sch="bank.acme.conference.com.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <xs:element name="userLogin">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="1" minOccurs="1" name="password" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="1" name="username" type="xs:string"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="userLoginResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="1" minOccurs="1" name="flag" type="xs:boolean"/>
-            <xs:element maxOccurs="1" minOccurs="1" name="message" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="userLogout">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="userLogoutResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="1" minOccurs="1" name="flag" type="xs:boolean"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="transferPayment">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="1" minOccurs="1" name="quantity" type="xs:double"/>
-            <xs:element maxOccurs="1" minOccurs="1" name="receiver" type="xs:string"/>
-            <xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="transferPaymentResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="1" minOccurs="1" name="flag" type="xs:boolean"/>
-            <xs:element maxOccurs="1" minOccurs="1" name="message" type="xs:string"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:schema>
+    <xs:schema targetNamespace="bank.acme.conference.com.xsd" xmlns:sch="bank.acme.conference.com.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="userLogin"><xs:complexType><xs:sequence><xs:element maxOccurs="1" minOccurs="1" name="password" type="xs:string"/><xs:element maxOccurs="1" minOccurs="1" name="username" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="userLoginResponse"><xs:complexType><xs:sequence><xs:element maxOccurs="1" minOccurs="1" name="flag" type="xs:boolean"/><xs:element maxOccurs="1" minOccurs="1" name="message" type="xs:string"/><xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="userLogout"><xs:complexType><xs:sequence><xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="userLogoutResponse"><xs:complexType><xs:sequence><xs:element maxOccurs="1" minOccurs="1" name="flag" type="xs:boolean"/></xs:sequence></xs:complexType></xs:element><xs:element name="transferPayment"><xs:complexType><xs:sequence><xs:element maxOccurs="1" minOccurs="1" name="quantity" type="xs:double"/><xs:element maxOccurs="1" minOccurs="1" name="receiver" type="xs:string"/><xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="transferPaymentResponse"><xs:complexType><xs:sequence><xs:element maxOccurs="1" minOccurs="1" name="flag" type="xs:boolean"/><xs:element maxOccurs="1" minOccurs="1" name="message" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema>
   </wsdl:types>
   <wsdl:message name="LoginResponse">
-    <wsdl:part element="xsd1:userLoginResponse" name="body"/>
+    <wsdl:part name="body" element="xsd1:userLoginResponse"/>
   </wsdl:message>
   <wsdl:message name="LogoutResponse">
-    <wsdl:part element="xsd1:userLogoutResponse" name="body"/>
+    <wsdl:part name="body" element="xsd1:userLogoutResponse"/>
   </wsdl:message>
   <wsdl:message name="UserOperations">
-    <wsdl:part element="xsd1:transferPayment" name="body"/>
+    <wsdl:part name="body" element="xsd1:transferPayment"/>
   </wsdl:message>
   <wsdl:message name="LoginRequest">
-    <wsdl:part element="xsd1:userLogin" name="body"/>
+    <wsdl:part name="body" element="xsd1:userLogin"/>
   </wsdl:message>
   <wsdl:message name="PaymentResponse">
-    <wsdl:part element="xsd1:transferPaymentResponse" name="body"/>
+    <wsdl:part name="body" element="xsd1:transferPaymentResponse"/>
   </wsdl:message>
   <wsdl:message name="UserInformations">
-    <wsdl:part element="xsd1:userLogout" name="body"/>
+    <wsdl:part name="body" element="xsd1:userLogout"/>
   </wsdl:message>
   <wsdl:portType name="BankPort">
     <wsdl:operation name="userLogin">
@@ -115,7 +66,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="BankPortService">
-    <wsdl:port binding="tns:BankPortSOAPBinding" name="BankPortServicePort">
+    <wsdl:port name="BankPortServicePort" binding="tns:BankPortSOAPBinding">
       <soap:address location="http://jolie:8000"/>
     </wsdl:port>
   </wsdl:service>
