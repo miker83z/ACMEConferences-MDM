@@ -4,13 +4,16 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_0gsSAFlAEei-rbK93imYLA">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_CO2EEFlBEei-rbK93imYLA" name="Entities"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_DPuSQFlBEei-rbK93imYLA" name="ACMEAdvertisingLane">
       <packagedElement xmi:type="uml:Class" xmi:id="_GEWOoFlEEei-rbK93imYLA" name="CreateChirp">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_Q_KWYFlEEei-rbK93imYLA" name="execute"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Q_KWYFlEEei-rbK93imYLA" name="execute">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_uK6gkHCKEeiPwLx3Wvx0Iw" name="execution"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_auzrgFlEEei-rbK93imYLA" name="CreateChirpterEvent">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_b9ZlkFlEEei-rbK93imYLA" name="execute"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_b9ZlkFlEEei-rbK93imYLA" name="execute">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_y4S1sHCKEeiPwLx3Wvx0Iw" name="execution"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_kdpvYFlEEei-rbK93imYLA" name="RelevantEvents">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mMIDYFlEEei-rbK93imYLA" name="events" visibility="private">
@@ -78,28 +81,29 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_ECqLEFlBEei-rbK93imYLA" name="ChirpterService">
       <packagedElement xmi:type="uml:Class" xmi:id="_QzC34FlCEei-rbK93imYLA" name="Chirp">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_U_-yYFlCEei-rbK93imYLA" name="chirpMessage">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_U_-yYFlCEei-rbK93imYLA" name="chirpMessage" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_WVaUQFlCEei-rbK93imYLA" name="token">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_WVaUQFlCEei-rbK93imYLA" name="token" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_XQmxMFlCEei-rbK93imYLA" name="eventID">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_XQmxMFlCEei-rbK93imYLA" name="eventID" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_dVqD4FlCEei-rbK93imYLA" name="post"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_TJcHgFlCEei-rbK93imYLA" name="Event">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_D1sbMFlDEei-rbK93imYLA" name="title" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_D1sbMFlDEei-rbK93imYLA" name="title" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_IUb3YFlDEei-rbK93imYLA" name="token" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_IUb3YFlDEei-rbK93imYLA" name="token" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_evQeoFlDEei-rbK93imYLA" name="eventID">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_evQeoFlDEei-rbK93imYLA" name="eventID" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_j37ooFlDEei-rbK93imYLA" name="post"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ZK9fYHCLEeiPwLx3Wvx0Iw" name="delete"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_VCbXgFlEEei-rbK93imYLA" client="_QzC34FlCEei-rbK93imYLA" supplier="_GEWOoFlEEei-rbK93imYLA"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_dMLF0FlEEei-rbK93imYLA" client="_TJcHgFlCEei-rbK93imYLA" supplier="_auzrgFlEEei-rbK93imYLA"/>
@@ -118,7 +122,6 @@
       <appliedProfile xmi:type="uml:Profile" href="/ACMEConferences-MDM/src/main/resources/tinySOAmodels/TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
     </profileApplication>
   </uml:Model>
-  <TinySOA:Entities xmi:id="_GP0mMFlBEei-rbK93imYLA" base_Package="_CO2EEFlBEei-rbK93imYLA"/>
   <TinySOA:Tasks xmi:id="_LA2FMFlBEei-rbK93imYLA" base_Package="_DPuSQFlBEei-rbK93imYLA"/>
   <TinySOA:Utilities xmi:id="_L0qu0FlBEei-rbK93imYLA" base_Package="_ECqLEFlBEei-rbK93imYLA"/>
   <TinySOA:Capability xmi:id="_zeGFMFlDEei-rbK93imYLA" base_Class="_QzC34FlCEei-rbK93imYLA"/>
