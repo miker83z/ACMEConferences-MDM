@@ -131,6 +131,7 @@ public class EmailSender {
 	
 	/**
 	 * Send the email to receiver.
+	 * In case of errors, print the error and do nothing.
 	 * @param senderName The name of the sender
 	 * @param subject The subject of the email
 	 * @param message The message of the email
