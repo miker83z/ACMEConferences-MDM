@@ -15,7 +15,9 @@ import it.unibo.soseng.mdm.model.PartnerCollection;
  *
  */
 public class PresentOffers implements JavaDelegate {
-
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	public void execute(DelegateExecution execution) throws Exception {		
 		// Get the variable from Camunda engine
 		PartnerCollection partners = (PartnerCollection) execution.getVariable("contactedPartners");

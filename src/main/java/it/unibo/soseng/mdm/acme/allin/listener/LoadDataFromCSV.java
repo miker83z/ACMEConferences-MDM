@@ -19,7 +19,10 @@ public class LoadDataFromCSV implements ExecutionListener {
 	private static final String CSV_SPLIT_BY_PARTNERS = ";";
 	private static final String CSV_FILENAME_CATERING = "/data/catering-list.csv";
 	private static final String CSV_SPLIT_BY_CATERING = ";";
-	
+
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void notify(DelegateExecution execution) throws Exception {
 			

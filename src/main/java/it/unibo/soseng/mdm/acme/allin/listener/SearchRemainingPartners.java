@@ -12,7 +12,10 @@ import it.unibo.soseng.mdm.model.PartnerCollection;
  *
  */
 public class SearchRemainingPartners implements ExecutionListener {
-	
+
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void notify(DelegateExecution delegateExecution) throws Exception {		
 		// Get the full partner list

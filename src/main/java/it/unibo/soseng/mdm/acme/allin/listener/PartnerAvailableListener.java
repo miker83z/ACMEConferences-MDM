@@ -18,7 +18,10 @@ import it.unibo.soseng.mdm.model.PartnerData;
  *
  */
 public class PartnerAvailableListener implements ExecutionListener {
-		
+
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void notify(DelegateExecution execution) throws Exception {
 		// Venue/catering flag

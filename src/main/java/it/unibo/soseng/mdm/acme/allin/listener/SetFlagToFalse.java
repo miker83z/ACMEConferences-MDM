@@ -11,6 +11,9 @@ import org.camunda.bpm.engine.delegate.ExecutionListener;
  */
 public class SetFlagToFalse implements ExecutionListener {
 
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void notify(DelegateExecution execution) throws Exception {
 		execution.setVariable("itsCateringTime", false);
