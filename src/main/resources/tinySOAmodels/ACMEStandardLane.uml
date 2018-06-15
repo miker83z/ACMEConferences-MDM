@@ -4,7 +4,6 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_0F86oG4kEeigRvQ0tKu-MQ">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_5nTDUG4kEeigRvQ0tKu-MQ" name="Entities"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_6yWhMG4kEeigRvQ0tKu-MQ" name="ACMEStandardLane">
       <packagedElement xmi:type="uml:Package" xmi:id="_AM2bAG4lEeigRvQ0tKu-MQ" name="ACMEAdvertisingLane"/>
       <packagedElement xmi:type="uml:Package" xmi:id="_D5RpcG4lEeigRvQ0tKu-MQ" name="ACMEManagementLane"/>
@@ -43,5 +42,4 @@
   <TinySOA:Utilities xmi:id="_cFPeMG4lEeigRvQ0tKu-MQ" base_Package="_PHDwgG4lEeigRvQ0tKu-MQ"/>
   <TinySOA:Utilities xmi:id="_c6kjsG4lEeigRvQ0tKu-MQ" base_Package="_7IJyEG4kEeigRvQ0tKu-MQ"/>
   <TinySOA:Tasks xmi:id="_dknmQG4lEeigRvQ0tKu-MQ" base_Package="_6yWhMG4kEeigRvQ0tKu-MQ"/>
-  <TinySOA:Entities xmi:id="_eNoHAG4lEeigRvQ0tKu-MQ" base_Package="_5nTDUG4kEeigRvQ0tKu-MQ"/>
 </xmi:XMI>
