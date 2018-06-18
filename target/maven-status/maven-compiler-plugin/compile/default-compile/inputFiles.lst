@@ -17,7 +17,6 @@
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/client/delegate/RefusePartnerOffers.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/services/django/Event.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/advertising/delegate/CreateChirpterEvent.java
-/home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/financial/listener/SufficientFundsListener.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/delegate/AddBillToPayments.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/financial/payviawiretransfer/PayViaWireTransferStart.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/services/generated/bank/ObjectFactory.java
@@ -36,6 +35,7 @@
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/management/delegate/CloseRegistrationPlatformContributions.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/services/generated/gis/GetDistanceBetween.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/services/django/EventReservation.java
+/home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/financial/delegate/SufficientFunds.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/listener/SetPartnerName.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/delegate/ContactSelectedPartner.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/allin/listener/SetFlagToFalse.java
@@ -63,7 +63,6 @@
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/client/delegate/SendBills.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/services/generated/gis/GetDistanceBetweenResponse.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/client/delegate/SendPaymentConfirmation.java
-/home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/acme/financial/listener/AllBillsPayedListener.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/services/generated/bank/UserLogin.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/ProvaUnoApplication.java
 /home/miker/eclipse-workspace/ACMEConferences/src/main/java/it/unibo/soseng/mdm/model/Address.java

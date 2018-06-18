@@ -18,7 +18,6 @@ it/unibo/soseng/mdm/acme/allin/listener/SearchRemainingPartners.class
 it/unibo/soseng/mdm/model/PartnerCollection.class
 it/unibo/soseng/mdm/services/generated/bank/UserLogin.class
 it/unibo/soseng/mdm/acme/management/delegate/CreateRegistrationPlatformEvent.class
-it/unibo/soseng/mdm/acme/financial/listener/SufficientFundsListener.class
 it/unibo/soseng/mdm/acme/allin/delegate/PresentOffers.class
 it/unibo/soseng/mdm/client/delegate/SendConferenceData.class
 it/unibo/soseng/mdm/services/chirpter/Event.class
@@ -28,7 +27,6 @@ it/unibo/soseng/mdm/partner/listener/AnalyzeJobOffer.class
 it/unibo/soseng/mdm/services/generated/gis/GISPortType.class
 it/unibo/soseng/mdm/acme/financial/payviawiretransfer/LogoutBank.class
 it/unibo/soseng/mdm/services/generated/bank/UserLoginResponse.class
-it/unibo/soseng/mdm/acme/financial/listener/AllBillsPayedListener.class
 it/unibo/soseng/mdm/acme/financial/payviawiretransfer/ManualPaymentStartListener.class
 it/unibo/soseng/mdm/client/listener/SendCancellation.class
 it/unibo/soseng/mdm/model/Address.class
@@ -55,6 +53,7 @@ it/unibo/soseng/mdm/acme/financial/listener/FinalBillsToPayListener.class
 it/unibo/soseng/mdm/model/RelevantEvents.class
 it/unibo/soseng/mdm/acme/financial/payviawiretransfer/PayViaWireTransferEnd.class
 it/unibo/soseng/mdm/util/RandomAlphanumericString.class
+it/unibo/soseng/mdm/acme/financial/delegate/SufficientFunds.class
 it/unibo/soseng/mdm/partner/delegate/SendJobEstimate.class
 it/unibo/soseng/mdm/model/ConferenceData.class
 it/unibo/soseng/mdm/acme/financial/delegate/SumBills.class

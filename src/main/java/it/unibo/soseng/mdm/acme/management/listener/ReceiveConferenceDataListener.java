@@ -50,6 +50,8 @@ public class ReceiveConferenceDataListener implements ExecutionListener{
 		execution.setVariable("eventCreatedChirpterCancFlag", false);
 		execution.setVariable("cancFlag", true);
 		
+		execution.setVariable("passOnce", false);
+		
 		execution.setVariable("ACMEServiceBillAmount", 500.0);
 		BillsCollection bills = new BillsCollection(); 
 		ObjectValue typedBillsValue = Variables.objectValue(bills).serializationDataFormat("application/json").create();

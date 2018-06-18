@@ -1,9 +1,9 @@
-package it.unibo.soseng.mdm.acme.financial.listener;
+package it.unibo.soseng.mdm.acme.financial.delegate;
 
 import java.util.ArrayList;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
-import org.camunda.bpm.engine.delegate.ExecutionListener;
+import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.ObjectValue;
 
@@ -12,16 +12,15 @@ import it.unibo.soseng.mdm.model.BillsCollection;
 import it.unibo.soseng.mdm.services.django.Event;
 
 /**
- * The class SufficientFundsListener, used for "Sufficient Funds?" gateway to check whether there are sufficient funds coming from the registration 
- * platform to pay bills in billsToPay and (if present) bills in otherBillsToPay
+ * The Class SumBills, used for "Sum Bills" task to move bills present in otherBillsToPay to billsToPay.
  * @author Mirko Zichichi
  */
-public class SufficientFundsListener implements ExecutionListener{
-
+public class SufficientFunds implements JavaDelegate{
+	
 	/* (non-Javadoc)
-	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
 	 */
-	public void notify(DelegateExecution execution) throws Exception {
+	public void execute(DelegateExecution execution) throws Exception {
 		boolean sufFun = false;
 		if (execution.hasVariable("djangoEventID")) {
 			Double availableFunds = obtainAvailableFunds(execution);
@@ -97,5 +96,4 @@ public class SufficientFundsListener implements ExecutionListener{
 			return tmp;
 		}
 	}
-
 }
