@@ -15,7 +15,6 @@ import org.camunda.bpm.engine.impl.util.json.JSONObject;
 
 import it.unibo.soseng.mdm.model.Address;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Event, used to manage an Event in RegistrationPlatform.
  * @author Michele Contu

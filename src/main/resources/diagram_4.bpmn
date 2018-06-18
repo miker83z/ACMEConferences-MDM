@@ -69,7 +69,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_0kvtfkc" sourceRef="ExclusiveGateway_0z182tx" targetRef="IntermediateThrowEvent_1ff1jkf" />
     <bpmn:sequenceFlow id="SequenceFlow_03eqq3i" sourceRef="ExclusiveGateway_0z182tx" targetRef="Task_0dvxac5" />
     <bpmn:sequenceFlow id="SequenceFlow_0auzwcl" sourceRef="ExclusiveGateway_0z182tx" targetRef="IntermediateThrowEvent_0bn7tya" />
-    <bpmn:sequenceFlow id="SequenceFlow_0nx4uyd" sourceRef="IntermediateThrowEvent_15s5i82" targetRef="ExclusiveGateway_17772c4" />
+    <bpmn:sequenceFlow id="SequenceFlow_0nx4uyd" sourceRef="IntermediateThrowEvent_15s5i82" targetRef="ExclusiveGateway_0d897f1" />
     <bpmn:sequenceFlow id="SequenceFlow_0w9gxmu" sourceRef="ExclusiveGateway_0x078w0" targetRef="IntermediateThrowEvent_15s5i82" />
     <bpmn:sequenceFlow id="SequenceFlow_1bfx8ht" name="No" sourceRef="ExclusiveGateway_1l3mw0g" targetRef="ExclusiveGateway_0x078w0">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!allin}</bpmn:conditionExpression>
@@ -191,14 +191,9 @@
     <bpmn:sequenceFlow id="SequenceFlow_04zq2iq" sourceRef="ExclusiveGateway_0d897f1" targetRef="Task_131h1bw" />
     <bpmn:exclusiveGateway id="ExclusiveGateway_0d897f1">
       <bpmn:incoming>SequenceFlow_04mbkeh</bpmn:incoming>
-      <bpmn:incoming>SequenceFlow_1v9mg71</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0nx4uyd</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_04zq2iq</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="SequenceFlow_1v9mg71" sourceRef="ExclusiveGateway_17772c4" targetRef="ExclusiveGateway_0d897f1" />
-    <bpmn:parallelGateway id="ExclusiveGateway_17772c4">
-      <bpmn:incoming>SequenceFlow_0nx4uyd</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1v9mg71</bpmn:outgoing>
-    </bpmn:parallelGateway>
     <bpmn:userTask id="Task_131h1bw" name="Provide Bills" camunda:formKey="embedded:app:forms/provide-bills.html">
       <bpmn:extensionElements>
         <camunda:taskListener class="it.unibo.soseng.mdm.client.listener.ClientTaskListener" event="create" />
@@ -2003,6 +1998,10 @@ execution.setVariable("billsPaymentsCancFlag", false)
 </bpmn:textAnnotation>
     <bpmn:textAnnotation id="TextAnnotation_1j06c9t">    <bpmn:text>Not considering ACME Service Bill as a Bill to pay if there are enough funds</bpmn:text>
 </bpmn:textAnnotation>
+    <bpmn:association id="Association_08weqtx" sourceRef="ExclusiveGateway_0qrnfye" targetRef="TextAnnotation_1839q2u" />
+    <bpmn:textAnnotation id="TextAnnotation_1839q2u">    <bpmn:text>Replaces a parallel gateway (Camunda errors)</bpmn:text>
+</bpmn:textAnnotation>
+    <bpmn:association id="Association_03j1rcq" sourceRef="IntermediateThrowEvent_0srt162" targetRef="TextAnnotation_1839q2u" />
   </bpmn:process>
   <bpmn:process id="catering-process" name="Catering Response" isExecutable="true">
     <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_055axq3" name="Refuse the job">
@@ -4460,9 +4459,9 @@ execution.setVariable("billsPaymentsCancFlag", false)
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0nx4uyd_di" bpmnElement="SequenceFlow_0nx4uyd">
         <di:waypoint xsi:type="dc:Point" x="389" y="-9" />
-        <di:waypoint xsi:type="dc:Point" x="411" y="-9" />
+        <di:waypoint xsi:type="dc:Point" x="479" y="-9" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="355" y="-30" width="90" height="12" />
+          <dc:Bounds x="389" y="-30" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="IntermediateCatchEvent_076ilb1_di" bpmnElement="IntermediateThrowEvent_15s5i82">
@@ -6995,19 +6994,6 @@ execution.setVariable("billsPaymentsCancFlag", false)
           <dc:Bounds x="539.5" y="-30" width="0" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_1v9mg71_di" bpmnElement="SequenceFlow_1v9mg71">
-        <di:waypoint xsi:type="dc:Point" x="461" y="-9" />
-        <di:waypoint xsi:type="dc:Point" x="479" y="-9" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="470" y="-30" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="ParallelGateway_1fy38vq_di" bpmnElement="ExclusiveGateway_17772c4">
-        <dc:Bounds x="411" y="-34" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="435.8743768693919" y="20" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1dp13in_di" bpmnElement="SequenceFlow_1dp13in">
         <di:waypoint xsi:type="dc:Point" x="1689" y="394" />
         <di:waypoint xsi:type="dc:Point" x="1730" y="394" />
@@ -7112,6 +7098,17 @@ execution.setVariable("billsPaymentsCancFlag", false)
           <dc:Bounds x="1797" y="403" width="61" height="36" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1839q2u_di" bpmnElement="TextAnnotation_1839q2u">
+        <dc:Bounds x="1777" y="257" width="114" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_08weqtx_di" bpmnElement="Association_08weqtx">
+        <di:waypoint xsi:type="dc:Point" x="1770" y="367" />
+        <di:waypoint xsi:type="dc:Point" x="1813" y="311" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_03j1rcq_di" bpmnElement="Association_03j1rcq">
+        <di:waypoint xsi:type="dc:Point" x="1825" y="363" />
+        <di:waypoint xsi:type="dc:Point" x="1820" y="311" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
