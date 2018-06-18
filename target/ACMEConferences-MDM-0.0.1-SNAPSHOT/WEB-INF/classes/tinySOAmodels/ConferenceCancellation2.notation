@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_X3qogHCsEeiBqseA2R3AGQ" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_ZYlBoHCsEeiBqseA2R3AGQ" type="Package_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZYlBonCsEeiBqseA2R3AGQ" type="Package_NameLabel"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ZYlBo3CsEeiBqseA2R3AGQ" type="Package_PackagedElementCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_pD8HQHCsEeiBqseA2R3AGQ" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_pD8HQnCsEeiBqseA2R3AGQ" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_pD8HQ3CsEeiBqseA2R3AGQ" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_pD8HRHCsEeiBqseA2R3AGQ" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_pD8HRXCsEeiBqseA2R3AGQ" type="Class_AttributeCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_pD8HRnCsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_pD8HR3CsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_pD8HSHCsEeiBqseA2R3AGQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pD8HSXCsEeiBqseA2R3AGQ"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_pD8HSnCsEeiBqseA2R3AGQ" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_u33NsHCsEeiBqseA2R3AGQ" type="Operation_ClassOperationLabel">
+            <styles xmi:type="notation:StringListValueStyle" xmi:id="_xU2NgHCsEeiBqseA2R3AGQ" name="maskLabel">
+              <stringListValue>parametersName</stringListValue>
+              <stringListValue>parametersDirection</stringListValue>
+              <stringListValue>visibility</stringListValue>
+              <stringListValue>name</stringListValue>
+              <stringListValue>returnType</stringListValue>
+            </styles>
+            <element xmi:type="uml:Operation" href="ConferenceCancellation2.uml#_u3uq0HCsEeiBqseA2R3AGQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_u33NsXCsEeiBqseA2R3AGQ"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_pD8HS3CsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_pD8HTHCsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_pD8HTXCsEeiBqseA2R3AGQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pD8HTnCsEeiBqseA2R3AGQ"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_pD8HT3CsEeiBqseA2R3AGQ" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_pD8HUHCsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_pD8HUXCsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_pD8HUnCsEeiBqseA2R3AGQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pD8HU3CsEeiBqseA2R3AGQ"/>
+        </children>
+        <element xmi:type="uml:Class" href="ConferenceCancellation2.uml#_pD310HCsEeiBqseA2R3AGQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pD8HQXCsEeiBqseA2R3AGQ" x="14" y="17" width="201"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_zz7fEHCsEeiBqseA2R3AGQ" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_zz7fEXCsEeiBqseA2R3AGQ"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_zz7fE3CsEeiBqseA2R3AGQ" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="ConferenceCancellation2.uml#_pD310HCsEeiBqseA2R3AGQ"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zz7fEnCsEeiBqseA2R3AGQ" x="214" y="17"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_ZYlBpHCsEeiBqseA2R3AGQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZYlBpXCsEeiBqseA2R3AGQ"/>
+    </children>
+    <element xmi:type="uml:Package" href="ConferenceCancellation2.uml#_ZYjzgHCsEeiBqseA2R3AGQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZYlBoXCsEeiBqseA2R3AGQ" x="240" y="80" width="241"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_aze5YHCsEeiBqseA2R3AGQ" type="Package_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_aze5YnCsEeiBqseA2R3AGQ" type="Package_NameLabel"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_aze5Y3CsEeiBqseA2R3AGQ" type="Package_PackagedElementCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_kDoPEHCsEeiBqseA2R3AGQ" type="Class_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_kDoPEnCsEeiBqseA2R3AGQ" type="Class_NameLabel_CN"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_kDoPE3CsEeiBqseA2R3AGQ" type="Class_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_kDoPFHCsEeiBqseA2R3AGQ" y="15"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_kDoPFXCsEeiBqseA2R3AGQ" type="Class_AttributeCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_lSaWYHCsEeiBqseA2R3AGQ" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="ConferenceCancellation2.uml#_kDly0XCsEeiBqseA2R3AGQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_lSaWYXCsEeiBqseA2R3AGQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_lSaWYnCsEeiBqseA2R3AGQ" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="ConferenceCancellation2.uml#_kDly0nCsEeiBqseA2R3AGQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_lSaWY3CsEeiBqseA2R3AGQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_lSa9cHCsEeiBqseA2R3AGQ" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="ConferenceCancellation2.uml#_kDly03CsEeiBqseA2R3AGQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_lSa9cXCsEeiBqseA2R3AGQ"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_kDoPFnCsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_kDoPF3CsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_kDoPGHCsEeiBqseA2R3AGQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kDoPGXCsEeiBqseA2R3AGQ"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_kDoPGnCsEeiBqseA2R3AGQ" type="Class_OperationCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_lSa9cnCsEeiBqseA2R3AGQ" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="ConferenceCancellation2.uml#_kDly1HCsEeiBqseA2R3AGQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_lSa9c3CsEeiBqseA2R3AGQ"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_lSa9dHCsEeiBqseA2R3AGQ" type="Operation_ClassOperationLabel">
+            <element xmi:type="uml:Operation" href="ConferenceCancellation2.uml#_kDly1XCsEeiBqseA2R3AGQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_lSa9dXCsEeiBqseA2R3AGQ"/>
+          </children>
+          <styles xmi:type="notation:TitleStyle" xmi:id="_kDoPG3CsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_kDoPHHCsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_kDoPHXCsEeiBqseA2R3AGQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kDoPHnCsEeiBqseA2R3AGQ"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_kDoPH3CsEeiBqseA2R3AGQ" type="Class_NestedClassifierCompartment_CN">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_kDoPIHCsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_kDoPIXCsEeiBqseA2R3AGQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_kDoPInCsEeiBqseA2R3AGQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kDoPI3CsEeiBqseA2R3AGQ"/>
+        </children>
+        <element xmi:type="uml:Class" href="ConferenceCancellation2.uml#_kDly0HCsEeiBqseA2R3AGQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kDoPEXCsEeiBqseA2R3AGQ" x="14" y="12" width="181"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_kFDLZ3CsEeiBqseA2R3AGQ" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_kFDLaHCsEeiBqseA2R3AGQ"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_kFDLanCsEeiBqseA2R3AGQ" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="ConferenceCancellation2.uml#_kDly0HCsEeiBqseA2R3AGQ"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kFDLaXCsEeiBqseA2R3AGQ" x="552" y="369"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_aze5ZHCsEeiBqseA2R3AGQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aze5ZXCsEeiBqseA2R3AGQ"/>
+    </children>
+    <element xmi:type="uml:Package" href="ConferenceCancellation2.uml#_azeSUHCsEeiBqseA2R3AGQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aze5YXCsEeiBqseA2R3AGQ" x="500" y="80" width="221"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_oJvv53CsEeiBqseA2R3AGQ" type="StereotypeComment">
+    <styles xmi:type="notation:TitleStyle" xmi:id="_oJvv6HCsEeiBqseA2R3AGQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_oJvv6nCsEeiBqseA2R3AGQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Package" href="ConferenceCancellation2.uml#_azeSUHCsEeiBqseA2R3AGQ"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oJvv6XCsEeiBqseA2R3AGQ" x="740" y="80"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_owhcB3CsEeiBqseA2R3AGQ" type="StereotypeComment">
+    <styles xmi:type="notation:TitleStyle" xmi:id="_owhcCHCsEeiBqseA2R3AGQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_owiDEHCsEeiBqseA2R3AGQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Package" href="ConferenceCancellation2.uml#_ZYjzgHCsEeiBqseA2R3AGQ"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_owhcCXCsEeiBqseA2R3AGQ" x="440" y="80"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_X3qogXCsEeiBqseA2R3AGQ" name="diagram_compatibility_version" stringValue="1.3.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_X3qognCsEeiBqseA2R3AGQ"/>
+  <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_X3qog3CsEeiBqseA2R3AGQ" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
+    <owner xmi:type="uml:Model" href="ConferenceCancellation2.uml#_X3dNIHCsEeiBqseA2R3AGQ"/>
+  </styles>
+  <element xmi:type="uml:Model" href="ConferenceCancellation2.uml#_X3dNIHCsEeiBqseA2R3AGQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_kFDLa3CsEeiBqseA2R3AGQ" type="StereotypeCommentLink" source="_kDoPEHCsEeiBqseA2R3AGQ" target="_kFDLZ3CsEeiBqseA2R3AGQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_kFDLbHCsEeiBqseA2R3AGQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_kFDycnCsEeiBqseA2R3AGQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="ConferenceCancellation2.uml#_kDly0HCsEeiBqseA2R3AGQ"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kFDLbXCsEeiBqseA2R3AGQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kFDycHCsEeiBqseA2R3AGQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kFDycXCsEeiBqseA2R3AGQ"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_oJvv63CsEeiBqseA2R3AGQ" type="StereotypeCommentLink" source="_aze5YHCsEeiBqseA2R3AGQ" target="_oJvv53CsEeiBqseA2R3AGQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_oJvv7HCsEeiBqseA2R3AGQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_oJwW8nCsEeiBqseA2R3AGQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Package" href="ConferenceCancellation2.uml#_azeSUHCsEeiBqseA2R3AGQ"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oJvv7XCsEeiBqseA2R3AGQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oJwW8HCsEeiBqseA2R3AGQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oJwW8XCsEeiBqseA2R3AGQ"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_owiDEXCsEeiBqseA2R3AGQ" type="StereotypeCommentLink" source="_ZYlBoHCsEeiBqseA2R3AGQ" target="_owhcB3CsEeiBqseA2R3AGQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_owiDEnCsEeiBqseA2R3AGQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_owiDFnCsEeiBqseA2R3AGQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Package" href="ConferenceCancellation2.uml#_ZYjzgHCsEeiBqseA2R3AGQ"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_owiDE3CsEeiBqseA2R3AGQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_owiDFHCsEeiBqseA2R3AGQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_owiDFXCsEeiBqseA2R3AGQ"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_zz7fFHCsEeiBqseA2R3AGQ" type="StereotypeCommentLink" source="_pD8HQHCsEeiBqseA2R3AGQ" target="_zz7fEHCsEeiBqseA2R3AGQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_zz7fFXCsEeiBqseA2R3AGQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_zz7fGXCsEeiBqseA2R3AGQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="ConferenceCancellation2.uml#_pD310HCsEeiBqseA2R3AGQ"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zz7fFnCsEeiBqseA2R3AGQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zz7fF3CsEeiBqseA2R3AGQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zz7fGHCsEeiBqseA2R3AGQ"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_1-iVcHCsEeiBqseA2R3AGQ" type="Dependency_Edge" source="_kDoPEHCsEeiBqseA2R3AGQ" target="_pD8HQHCsEeiBqseA2R3AGQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1-iVc3CsEeiBqseA2R3AGQ" type="Dependency_NameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1-iVdHCsEeiBqseA2R3AGQ" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_1-iVdXCsEeiBqseA2R3AGQ" type="Dependency_StereotypeLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1-iVdnCsEeiBqseA2R3AGQ" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_1-iVcXCsEeiBqseA2R3AGQ"/>
+    <element xmi:type="uml:Dependency" href="ConferenceCancellation2.uml#_1-c14HCsEeiBqseA2R3AGQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1-iVcnCsEeiBqseA2R3AGQ" points="[520, 200, -643984, -643984]$[461, 200, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1-uisHCsEeiBqseA2R3AGQ" id="(0.0,0.3939393939393939)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1-uisXCsEeiBqseA2R3AGQ" id="(1.0,0.5454545454545454)"/>
+  </edges>
+</notation:Diagram>
