@@ -28,6 +28,9 @@ public class AskForAvailability implements JavaDelegate {
 	private static final String EMAIL_NAME = "ACME Conferences";
 	private static final String EMAIL_SUBJECT = "Job offer from ACME Conferences";
 	
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
 		// Get Camunda runtime service 

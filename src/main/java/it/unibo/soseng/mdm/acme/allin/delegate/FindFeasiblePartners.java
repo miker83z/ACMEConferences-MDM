@@ -31,7 +31,9 @@ public class FindFeasiblePartners implements JavaDelegate {
 	private static final String EMAIL_PASSWORD = "camundaisos";
 	private static final String EMAIL_NAME = "ACME Conferences";
 	private static final String EMAIL_SUBJECT = "Job offer from ACME Conferences";
-	
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	public void execute(DelegateExecution execution) throws Exception {		
 		// Venue/catering flag
 		Boolean itsCateringTime = (Boolean) execution.getVariable("itsCateringTime");

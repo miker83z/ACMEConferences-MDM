@@ -15,7 +15,9 @@ import it.unibo.soseng.mdm.model.BillsCollection;
  *
  */
 public class AddBillToPayments implements JavaDelegate {
-
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	public void execute(DelegateExecution execution) throws Exception {		
 		// Venue/catering flag
 		Boolean itsCateringTime = (Boolean) execution.getVariable("itsCateringTime");

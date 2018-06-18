@@ -4,7 +4,6 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_DN7vIFEVEei_MYqsqGKdlg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_FwUzYFEVEei_MYqsqGKdlg" name="Entities"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_H6HxcFEVEei_MYqsqGKdlg" name="ACMEAllInclusiveLane">
       <packagedElement xmi:type="uml:Package" xmi:id="_JydzIFEVEei_MYqsqGKdlg" name="ACMECateringLane"/>
       <packagedElement xmi:type="uml:Package" xmi:id="_LooqkFEVEei_MYqsqGKdlg" name="ACMEVenueLane"/>
@@ -29,7 +28,6 @@
       <appliedProfile xmi:type="uml:Profile" href="/ACMEConferences-MDM/src/main/resources/tinySOAmodels/TinySOA.profile.uml#_eL5hsLIcEealFoL0yAyV8Q"/>
     </profileApplication>
   </uml:Model>
-  <TinySOA:Entities xmi:id="_oWWMMFEVEei_MYqsqGKdlg" base_Package="_FwUzYFEVEei_MYqsqGKdlg"/>
   <TinySOA:Tasks xmi:id="_pqUVgFEVEei_MYqsqGKdlg" base_Package="_H6HxcFEVEei_MYqsqGKdlg"/>
   <TinySOA:Tasks xmi:id="_rtSS0FEVEei_MYqsqGKdlg" base_Package="_JydzIFEVEei_MYqsqGKdlg"/>
   <TinySOA:Tasks xmi:id="_tDOLAFEVEei_MYqsqGKdlg" base_Package="_LooqkFEVEei_MYqsqGKdlg"/>

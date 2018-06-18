@@ -4,7 +4,6 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_FJIrgEiZEei4JaLv0Kwtqg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_I4_BYEiZEei4JaLv0Kwtqg" name="Entities"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_M4pU4EiZEei4JaLv0Kwtqg" name="ACMEVenueLane">
       <packagedElement xmi:type="uml:Class" xmi:id="_3Q3FgEmHEeiGuZEw4fqD5g" name="FindFeasiblePartners">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_3Q3FgUmHEeiGuZEw4fqD5g" name="EMAIL_USERNAME" visibility="private" isStatic="true" isReadOnly="true">
@@ -333,7 +332,6 @@
   </uml:Model>
   <TinySOA:Utilities xmi:id="_YEBBIEiZEei4JaLv0Kwtqg" base_Package="_PhJoMEiZEei4JaLv0Kwtqg"/>
   <TinySOA:Tasks xmi:id="_Y_B34EiZEei4JaLv0Kwtqg" base_Package="_M4pU4EiZEei4JaLv0Kwtqg"/>
-  <TinySOA:Entities xmi:id="_adI0oEiZEei4JaLv0Kwtqg" base_Package="_I4_BYEiZEei4JaLv0Kwtqg"/>
   <TinySOA:Expose xmi:id="_Aptn8EibEei4JaLv0Kwtqg" base_Dependency="_9yHvwEiaEei4JaLv0Kwtqg"/>
   <TinySOA:Capability xmi:id="_VSOGsEmQEeiGuZEw4fqD5g" base_Class="_9j0DcEiZEei4JaLv0Kwtqg"/>
   <TinySOA:ServiceInterface xmi:id="_yqLfMEmQEeiGuZEw4fqD5g" base_Interface="_9j0qgEiZEei4JaLv0Kwtqg"/>

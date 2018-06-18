@@ -14,7 +14,9 @@ import it.unibo.soseng.mdm.model.PartnerCollection;
  *
  */
 public class NotifyRefusedPartners implements JavaDelegate {
-
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
 
