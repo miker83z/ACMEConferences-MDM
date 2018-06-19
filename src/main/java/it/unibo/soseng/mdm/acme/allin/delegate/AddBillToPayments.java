@@ -7,8 +7,17 @@ import it.unibo.soseng.mdm.model.PartnerData;
 import it.unibo.soseng.mdm.model.Bill;
 import it.unibo.soseng.mdm.model.BillsCollection;
 
+/**
+ * First check if we are in Venue Lane or Catering Lane, then create a the Bill
+ * with the amount specified by the partner.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class AddBillToPayments implements JavaDelegate {
-
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	public void execute(DelegateExecution execution) throws Exception {		
 		// Venue/catering flag
 		Boolean itsCateringTime = (Boolean) execution.getVariable("itsCateringTime");

@@ -70,7 +70,7 @@ public class Chirp {
 		postRequest.setHeader(HttpHeaders.AUTHORIZATION, token);
 		HttpResponse response = httpClient.execute(postRequest);
 
-		httpClient.getConnectionManager().shutdown();
+		//httpClient.getConnectionManager().shutdown();
 		
 		if (response.getStatusLine().getStatusCode() != 200 )
 			throw new Exception();

@@ -30,7 +30,7 @@ public class FinalBillsToPayListener implements ExecutionListener{
 		//Generate ACME Bill
 		Bill ACMEBill = new Bill();
 	    ACMEBill.setReceiver("ACME");
-	    ACMEBill.setAmount(500.0);
+	    ACMEBill.setAmount((Double)execution.getVariable("ACMEServiceBillAmount"));
 	    ObjectValue value = Variables.objectValue(ACMEBill).serializationDataFormat("application/json").create();
 	    execution.setVariable("ACMEBill", value);
 		Double sumToPay = ACMEBill.getAmount();

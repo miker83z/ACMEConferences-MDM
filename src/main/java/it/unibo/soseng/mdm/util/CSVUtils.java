@@ -3,14 +3,16 @@ package it.unibo.soseng.mdm.util;
 import java.io.BufferedReader;
 
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import java.util.List;
-
-
+/**
+ * Class used to handle CSV.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class CSVUtils {
 
 	private static final String DEFAULT_SEPARATOR = ",";
@@ -101,7 +103,6 @@ public class CSVUtils {
 		Integer counter = 0;
 		
 		// Try to read the file
-		 
 		System.out.println("PRINT-READ: " + getClass().getResource(csvFile).toString());
 		
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(csvFile)))) {	
@@ -122,58 +123,6 @@ public class CSVUtils {
 		}
 		
 		return counter;
-	}
-	
-	/**
-	 * Replace quotes to avoid errors.
-	 * @param value String to check
-	 * @return The corrected string
-	 */
-	private String followCVSformat(String value) {
-
-        String result = value;
-        if (result.contains("\"")) {
-            result = result.replace("\"", "\"\"");
-        }
-        return result;
-
-    }
-	
-	/**
-	 * Write a single line in the file following CSV format
-	 * @param writer The file writer 
-	 * @param value The string to write
-	 * @throws IOException 
-	 */
-	// public void writeLine(FileWriter writer, String value) throws IOException {
-	// public void writeLine(BufferedWriter writer, String value) throws IOException {	
-	public void writeLine(FileOutputStream writer, String value) throws IOException {	
-		StringBuilder sb = new StringBuilder();
-		System.out.println(value);
-		sb.append(followCVSformat(value));
-		sb.append("\n");
-		// writer.append(sb.toString());
-		writer.write(sb.toString().getBytes());
-	}
-	
-	/**
-	 * Write multiple lines in the file following CSV format
-	 * @param values The lines to write
-	 * @throws IOException 
-	 */
-	public void writeLines(List<String> values) throws IOException {		
-		 
-		System.out.println("PRINT-WRITE: " + getClass().getResource(csvFile).getPath());
-		FileOutputStream writer = new FileOutputStream(getClass().getResource(csvFile).getPath());
-		// BufferedWriter writer = new BufferedWriter(new FileWriter(getClass().getResource(csvFile).toString()));
-		// FileWriter writer = new FileWriter(getClass().getResource(csvFile).toString());
-		/* PROVE DA FARE */ 
-
-		for (String value : values) {
-	        writeLine(writer, value);
-		}
-		writer.flush();
-        writer.close();
 	}
 	
 }

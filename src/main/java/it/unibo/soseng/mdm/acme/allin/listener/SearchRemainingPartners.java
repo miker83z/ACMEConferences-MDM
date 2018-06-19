@@ -2,18 +2,24 @@ package it.unibo.soseng.mdm.acme.allin.listener;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.ExecutionListener;
-import org.camunda.spin.json.SpinJsonNode;
 
 import it.unibo.soseng.mdm.model.PartnerCollection;
 
+/**
+ * Check if there are other partners to contacted and set the next gateway.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class SearchRemainingPartners implements ExecutionListener {
-	
+
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.ExecutionListener#notify(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void notify(DelegateExecution delegateExecution) throws Exception {		
-		// Get the JSON variable from Camunda engine
-		SpinJsonNode jsonNode = (SpinJsonNode) delegateExecution.getVariable("allPartners");
-		PartnerCollection partners = new PartnerCollection();
-		partners.definePartnersFromJSON(jsonNode);
+		// Get the full partner list
+		PartnerCollection partners = (PartnerCollection) delegateExecution.getVariable("allPartners");	
 		
 		// Remove contacted partners
 		partners.removeContactedPartners();

@@ -7,12 +7,19 @@ import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.ObjectValue;
 import org.joda.time.DateTime;
 
-import it.unibo.soseng.mdm.model.PartnerCollection;
 import it.unibo.soseng.mdm.model.ConferenceData;
+import it.unibo.soseng.mdm.model.PartnerCollection;
 import it.unibo.soseng.mdm.model.PartnerData;
 import it.unibo.soseng.mdm.util.EmailSender;
 import it.unibo.soseng.mdm.util.RandomAlphanumericString;
 
+/**
+ * Send an e-mail to the partner asking for their availability.
+ * This class is also used to create the Camunda instance of the partner pool.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class AskForAvailability implements JavaDelegate {
 
 	// Values for email
@@ -21,6 +28,9 @@ public class AskForAvailability implements JavaDelegate {
 	private static final String EMAIL_NAME = "ACME Conferences";
 	private static final String EMAIL_SUBJECT = "Job offer from ACME Conferences";
 	
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
 		// Get Camunda runtime service 

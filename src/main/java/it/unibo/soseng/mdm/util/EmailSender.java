@@ -3,6 +3,12 @@ package it.unibo.soseng.mdm.util;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.SimpleEmail;
 
+/**
+ * Class used to send email using GMAIL services.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class EmailSender {	
 	private static final String GMAIL_HOST = "smtp.gmail.com";
 	
@@ -125,6 +131,7 @@ public class EmailSender {
 	
 	/**
 	 * Send the email to receiver.
+	 * In case of errors, print the error and do nothing.
 	 * @param senderName The name of the sender
 	 * @param subject The subject of the email
 	 * @param message The message of the email

@@ -1,6 +1,7 @@
 package it.unibo.soseng.mdm.client.listener;
 
-import org.camunda.bpm.engine.delegate.BpmnError;
+import javax.xml.ws.WebServiceException;
+
 import org.camunda.bpm.engine.delegate.DelegateTask;
 import org.camunda.bpm.engine.delegate.TaskListener;
 
@@ -12,7 +13,6 @@ import it.unibo.soseng.mdm.services.generated.bank.TransferPaymentResponse;
 import it.unibo.soseng.mdm.services.generated.bank.UserLogin;
 import it.unibo.soseng.mdm.services.generated.bank.UserLoginResponse;
 import it.unibo.soseng.mdm.services.generated.bank.UserLogout;
-import it.unibo.soseng.mdm.services.generated.bank.UserLogoutResponse;
 
 /**
  * The class DebtPaymentTaskListener, used for "Pay" task to let the user outside of ACME to pay a bill to ACME.
@@ -30,12 +30,11 @@ public class DebtPaymentTaskListener implements TaskListener {
 		try {
 			BankPortService bankService = new BankPortService();
 			BankPort bank = bankService.getBankPortServicePort();
-			
+
 			UserLogin loginRequest = new UserLogin();
 			loginRequest.setUsername(username);
 			loginRequest.setPassword(password);
 			UserLoginResponse loginResponse = bank.userLogin(loginRequest);
-			
 			if(loginResponse.isFlag()) {
 				String bankID = loginResponse.getUserID();
 				Bill bill = (Bill) delegateTask.getVariable("ACMEBillToPay");
@@ -47,13 +46,10 @@ public class DebtPaymentTaskListener implements TaskListener {
 				ACMEPaymentSuccesful = transferResponse.isFlag();
 				UserLogout logoutRequest = new UserLogout();
 				logoutRequest.setUserID(bankID);
-				@SuppressWarnings("unused")
-				UserLogoutResponse logoutResponse = bank.userLogout(logoutRequest);
+				bank.userLogout(logoutRequest);
 			}
-			else
-				throw new BpmnError("WEB_SERVICE_ERROR");
-		} catch(Exception e) {
-			throw new BpmnError("WEB_SERVICE_ERROR");
+		} catch(WebServiceException e) {
+			e.printStackTrace();
 		} finally {
 			delegateTask.setVariable("ACMEPaymentSuccesful", ACMEPaymentSuccesful);
 		}

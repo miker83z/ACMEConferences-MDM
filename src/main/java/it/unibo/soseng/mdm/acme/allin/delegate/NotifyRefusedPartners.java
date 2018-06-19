@@ -7,19 +7,33 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import it.unibo.soseng.mdm.model.PartnerData;
 import it.unibo.soseng.mdm.model.PartnerCollection;
 
+/**
+ * Used to notify all the refused partners when the client choose the best one.
+ * 
+ * @author Davide Marchi
+ *
+ */
 public class NotifyRefusedPartners implements JavaDelegate {
-
+	/* (non-Javadoc)
+	 * @see org.camunda.bpm.engine.delegate.JavaDelegate#execute(org.camunda.bpm.engine.delegate.DelegateExecution)
+	 */
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
 
 		// Get the JSON variable from Camunda engine (contacted partners)
 		PartnerCollection partners = (PartnerCollection) execution.getVariable("contactedPartners");
 		
-		// Get the JSON variable from Camunda engine (chosen partner)
-		PartnerData chosenPartner = (PartnerData) execution.getVariable("chosenPartner");
-		
-		// Index of the chosen partner in contacted partners list
-		Integer index = partners.indexOf(chosenPartner.getName());
+		Integer index;
+		if( execution.hasVariable("chosenPartner")) {
+			// Get the JSON variable from Camunda engine (chosen partner)
+			PartnerData chosenPartner = (PartnerData) execution.getVariable("chosenPartner");
+			
+			// Index of the chosen partner in contacted partners list
+			index = partners.indexOf(chosenPartner.getName());
+		}
+		else
+			// If client didn't choose any partner
+			index = -1;
 				
 		// Get my id
 		Integer id = (Integer) execution.getVariable("loopCounter");

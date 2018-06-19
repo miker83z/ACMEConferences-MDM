@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
@@ -14,9 +15,8 @@ import org.camunda.bpm.engine.impl.util.json.JSONObject;
 
 import it.unibo.soseng.mdm.model.Address;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Event, used to manage an Event in Django.
+ * The Class Event, used to manage an Event in RegistrationPlatform.
  * @author Michele Contu
  * @author Mirko Zichichi
  */
@@ -164,7 +164,7 @@ public class Event {
 		JSONObject o = new JSONObject(br.readLine());
 		eventID = o.getInt("id");
 		
-		httpClient.getConnectionManager().shutdown();
+		//httpClient.getConnectionManager().shutdown();
 		
 		this.eventID = eventID;
 		return eventID;
@@ -187,7 +187,7 @@ public class Event {
 		putRequest.setHeader(HttpHeaders.AUTHORIZATION, token);
 		HttpResponse response = httpClient.execute(putRequest);
 		
-		httpClient.getConnectionManager().shutdown();
+		//httpClient.getConnectionManager().shutdown();
 		
 		if (response.getStatusLine().getStatusCode() != 200 )
 			throw new Exception();
@@ -206,7 +206,7 @@ public class Event {
 		putRequest.setHeader(HttpHeaders.AUTHORIZATION, token);
 		HttpResponse response = httpClient.execute(putRequest);
 		
-		httpClient.getConnectionManager().shutdown();
+		//httpClient.getConnectionManager().shutdown();
 		
 		if (response.getStatusLine().getStatusCode() != 200 )
 			throw new Exception();
@@ -234,30 +234,22 @@ public class Event {
 	}
 	
 	/**
-	 * The main method.
+	 * Delete.
 	 *
-	 * @param args the arguments
 	 * @throws Exception the exception
 	 */
-	public static void main(String[] args) throws Exception {
+	public void delete() throws Exception {
 		@SuppressWarnings("resource")
 		DefaultHttpClient httpClient = new DefaultHttpClient();
-		HttpPut putRequest = new HttpPut("http://172.17.0.5/events/49/");
+		HttpDelete putRequest = new HttpDelete("http://django/events/" + eventID + "/");
 		
-		StringEntity input = new StringEntity("{\"is_open\": false}");
-		input.setContentType("application/json");
-		putRequest.setEntity(input);
-		putRequest.setHeader(HttpHeaders.AUTHORIZATION, "Token 12cfa6232776a3213193c9a43c1c5ba27c68d5e2");
+		putRequest.setHeader(HttpHeaders.AUTHORIZATION, token);
 		HttpResponse response = httpClient.execute(putRequest);
-	
-		BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent())));
-		String output;
-		while ((output = br.readLine()) != null) {
-			System.out.println(output);
-		}
 		
-		httpClient.getConnectionManager().shutdown();
+		//httpClient.getConnectionManager().shutdown();
 		
+		if (response.getStatusLine().getStatusCode() != 204 )
+			throw new Exception();
 	}
 
 	/**

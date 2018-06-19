@@ -5,13 +5,14 @@ import java.io.InputStreamReader;
 
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.camunda.bpm.engine.impl.util.json.JSONObject;
 
 /**
- * The Class Event, used to create an Event in Chirpter.
+ * The Class Event, used to create and manipulate an Event in Chirpter.
  * @author Michele Contu
  * @author Mirko Zichichi
  */
@@ -39,7 +40,18 @@ public class Event {
 		this.token = token;
 		this.eventID = -1;
 	}
-
+	
+	/**
+	 * Instantiates a new event.
+	 *
+	 * @param title the title
+	 * @param token the token
+	 */
+	public Event(int id) {
+		super();
+		this.eventID = id;
+	}
+	
 	/**
 	 * Post a new event.
 	 *
@@ -70,10 +82,29 @@ public class Event {
 			}
 		}
 
-		httpClient.getConnectionManager().shutdown();
+		//httpClient.getConnectionManager().shutdown();
 		
 		this.eventID = eventID;
 		return eventID;
+	}
+	
+	/**
+	 * Delete an event.
+	 *
+	 * @throws Exception the exception
+	 */
+	public void delete() throws Exception {
+		@SuppressWarnings("resource")
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		HttpDelete postRequest = new HttpDelete("http://lamp/chirpter_api/events/" + eventID);
+		
+		postRequest.setHeader(HttpHeaders.AUTHORIZATION, token);
+		HttpResponse response = httpClient.execute(postRequest);
+		
+		if (response.getStatusLine().getStatusCode() != 200 )
+			throw new Exception();
+		
+		//httpClient.getConnectionManager().shutdown();
 	}
 
 	/**

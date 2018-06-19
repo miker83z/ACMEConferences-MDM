@@ -3,6 +3,7 @@ package it.unibo.soseng.mdm.client.delegate;
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.joda.time.DateTime;
 
 import it.unibo.soseng.mdm.model.ConferenceData;
 import it.unibo.soseng.mdm.util.RandomAlphanumericString;
@@ -20,6 +21,7 @@ public class SendConferenceData implements JavaDelegate {
 	    RuntimeService runtimeService = execution.getProcessEngineServices().getRuntimeService();
 	    
 	    ConferenceData conferenceData = (ConferenceData) execution.getVariable("conferenceData");
+	    execution.setVariable("confLastDayPlus60", new DateTime(conferenceData.getDates().get(conferenceData.getDates().size()-1)).plusDays(60).toDate() );
 	    String clientId = (String) execution.getVariable("processInstantiator");	//Send to ACME the client id
 	    //Generate a Business key for ACME process
 	    String businessKeyA = RandomAlphanumericString.generate();
